@@ -1,0 +1,513 @@
+body {
+  padding-left: 5em;
+  font-family: Georgia, "Times New Roman",
+        Times, serif;
+  width: 800px;
+}
+#container{	
+	width: 800px;
+}
+
+#personal{
+	background-color: #F2E0F7;
+}
+
+#confirmation{
+	background-color: #F5A9A9;
+}
+#header{
+	float: right;
+	padding-top: 52px;
+	height: 122px;
+	width: 650px;
+	color: red;	
+}
+#submit{
+	width: 150px;
+	font-size: large;
+	background-color: #99FFCC;
+}
+
+table#major_events{
+	width: 800px;
+}
+
+table#symptoms_questions{
+	width: 800px;
+}
+
+table#chronic{
+	width: 800px;
+}
+
+table#table_sugar{
+	width: 800px;
+}
+
+table#table_chol{
+	width: 800px;
+}
+               
+table#table_physical{
+	width: 400px;
+}
+
+
+table#table_blood{
+	width: 800px;
+}
+
+table#phq_scoring_guide{
+	width: 800px;
+}
+
+#symptom_section{
+	width: 800px;
+}
+
+table#health{
+	width: 800px;
+}
+
+#title{
+	color: blue;
+}
+
+#top{
+	height: 150px;
+}
+#logo{
+	width: 150px;
+	float: left;	
+}
+
+#gen_header{
+	border-style: solid;
+	width: 800px;
+	color: blue;
+}
+
+td.date_label{
+	width: 100px;
+}
+
+td.gad_scale{
+	width: 50px;
+} 
+
+td.c_ed{
+	width: 20px;
+}
+
+
+td.crafft_scale{
+	width: 100px;
+} 
+
+td.clinic_select
+{
+	width: 100px;
+}
+
+td.cd_scale{
+	width: 75px;
+}
+
+td.psc_scale{
+	width: 100px;
+}
+
+td.kmhb_scale{
+	width: 100px;
+}
+
+td.life_scale{
+	width: 100px;
+}
+
+td.phq_scale{
+	width: 100px;
+}
+
+td.pcl_scale{
+	width: 75px;
+}
+
+td.personal{
+	width: 150px;
+	text-align:right;
+	
+}
+td.audit_scale{
+	width: 75px;
+}
+
+td.duke_scale{
+	width: 75px;
+}
+
+td.cage_scale{
+	width: 100px;
+}
+
+td.crafft_scale{
+	width: 100px;
+}
+
+.tdtopic{
+	background-color: #F2E0F7;
+}
+table#c_stress
+{
+	width: 800px;
+        
+}
+table#bio_mark
+{
+	width: 800px;
+        
+}
+.t_name{
+	width: 75px;
+}
+.t_input{
+	width: 100px;
+}
+
+table#table_stressors{
+	width: 800px;	
+}
+
+
+
+td.bo{
+	width: 50px;
+        text-align: right;
+        
+}
+td.interfere_input{
+	width: 75px;       
+}
+table#table_pp_steps_subtable
+{
+	width: 300px;	
+}
+table#table_pp_steps
+{
+	width: 800px;	
+}
+table#table_pp_area
+{
+	width: 800px;	
+}
+td.c_liv{
+	width: 100px;
+        text-align: right;
+        
+}
+
+table#life_questions{
+	width: 800px;	
+}
+
+table#gad_questions{
+	width: 800px;	
+}
+
+table#phq_questions{
+	width: 800px;
+}
+
+table#cd_questions{
+	width: 800px;
+}
+table#dast_questions{
+	width: 800px;
+}
+
+td.dast_scale{
+	width: 100px;
+}
+
+table#duke_questions{
+	width: 800px;
+}
+table#duke_physical_questions{
+	width: 800px;
+}
+table#duke_week_questions{
+	width: 800px;
+}
+table#duke_social_questions{
+	width: 800px;
+}
+table#duke_living_questions{
+	width: 800px;
+}
+
+table#psc_questions{
+	width: 800px;
+}
+
+table#psc_fu_questions{
+	width: 800px;
+}
+
+table#audit_questions{
+	width: 800px;
+}
+
+table#cage_questions{
+	width: 800px;
+}
+
+table#crafft_questions{
+	width: 800px;
+}
+
+table#self_questions{
+	width: 800px;
+}
+
+table#self_questions_smoking{
+	width: 800px;
+}
+
+
+.st{
+	text-align:left;
+	width: 100px;
+}
+.liv{
+	text-align:left;
+	
+}
+.st{
+	text-align:center;
+}
+.sf{
+	text-align:left;
+	width: 100px;
+}
+.ms{
+	text-align:left;
+	width: 100px;	
+}
+.ed{
+	text-align: left;
+}
+.eth{
+	text-align:left;
+}
+.stress{
+	text-align:left;
+}
+.demo_input{
+	width: 10px;
+}
+.stressor_input{	
+	width: 10px;
+}
+td.demo{
+	width: 100px;
+}
+table#demo{
+	width: 790px;	
+}
+table#table_sex{
+	width: 200px;
+}
+table#table_marital{
+	width: 300px;
+}
+table#table_education{
+	width: 790px;
+}
+table#table_ethnicity{
+	width: 790px;
+}
+table#table_living{
+	width: 790px;
+}
+table#table_program{
+	width: 790px;
+}
+table#clinic_id{
+	width: 500px;
+}
+table#table_tobacco{
+	width: 790px;
+}
+#demo_data{
+	width: 800px;
+	border-style: solid;
+}
+
+#sex_div{
+	width: 200px;
+}
+
+#marital_div{
+	width: 200px;
+}
+
+#education_div{
+	width: 600px;
+}
+
+#reset_button{
+	width: 150px;
+	font-size: large;
+	background-color: #FF0000;
+	
+}
+#psc_fu_txt
+{
+	width: 95%;
+}
+
+hr{
+	background-color: black;
+	height: 5px;
+	width: 800px;
+}
+
+#error_notice {
+	color:red;
+	font-size: 12pt;
+	display:none;
+}
+
+.needsfilled {
+	background:red;
+	color:white;
+}
+
+@media all {
+	.page-break {display: none}
+}
+
+@media print {
+	.page-break {display: block; page-break-before: always;}
+}
+
+
+ul.class1
+{
+float:left;
+width:100%;
+padding:0;
+margin:0;
+list-style-type:none;
+}
+
+.class1 A:link {float:center;width:6em;text-decoration:none;color:white;background-color:#9CADFB;padding:0.2em 0.6em;border-right:1px solid white;}
+.class1 A:visited {text-decoration: none; color:white}
+.class1 A:active {text-decoration: none}
+.class1 A:hover {background-color:#9CFBDB;}
+
+/* MENU */
+
+#nav {
+ background: #292929;
+ float: left;
+ margin: 0; padding: 0;
+ border: 1px solid white;
+ border-bottom: none;
+ width: 800px;
+}
+
+#nav li a, #nav li {
+ float: left;
+ 
+}
+
+#nav li {
+ list-style: none;
+ position: relative;
+ width: 200px;
+}
+
+#nav li a {
+ padding: 1em 2em;
+ text-decoration: none;
+ color: white;
+ background: #292929;
+ background: -moz-linear-gradient(top, black, #3c3c3c 1px, #292929 25px);
+ background: -webkit-gradient(linear, left top, left 25, from(black), color-stop(4%, #3c3c3c), to(#292929));
+ border-right: 1px solid #3c3c3c;
+ border-left: 1px solid #292929;
+ border-bottom: 1px solid #232323;
+ border-top: 1px solid #545454;
+  
+}
+
+#nav li a:hover {
+ background: #2a0d65;
+ background: -moz-linear-gradient(top, #11032e, #2a0d65);
+ background: -webkit-gradient(linear, left top, left bottom, from(#11032e), to(#2a0d65));
+  
+}
+
+
+/* Submenu */
+
+.hasChildren {
+	position: absolute;
+	width: 5px; height: 5px;
+	background: black;
+	right : 0;
+	bottom: 0;
+}
+
+#nav li ul {
+ display: none;
+ position: absolute;
+ left: 0;
+ top: 100%;
+ padding: 0; margin: 0;
+  
+ 
+}
+
+#nav li:hover > ul {
+ display: block;
+}
+
+#nav li ul li, #nav li ul li a {
+ float: none;
+}
+
+#nav li ul li {
+ _display: inline; /* for IE6 */
+}
+
+#nav li ul li a {
+ display: block;
+}
+
+/* SUBSUB Menu */
+
+#nav li ul li ul {
+ display: none;
+  
+}
+
+#nav li ul li:hover ul {
+ left: 100%;
+ top: 0;
+  
+}
+
+input.date {
+	width: 150px;
+	color: #000;
+}
+
+.calendar-icon {
+display: inline-block;
+vertical-align: middle;
+width: 32px;
+height: 32px;
+background: url(images/calendar.png);
+}
