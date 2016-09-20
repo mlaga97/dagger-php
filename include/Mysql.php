@@ -16,13 +16,13 @@ class Mysql
 
     function verify_Username_and_Pass($un, $pwd)
     {
-        $query = "SELECT id,university_id, clinic_id, admin, grouping FROM users WHERE uname =  ?  AND pswd =  ?  AND active = 1 LIMIT 1";
+        $query = "SELECT id,university_id, clinic_id, admin, grouping, test_acc FROM users WHERE uname =  ?  AND pswd =  ?  AND active = 1 LIMIT 1";
         $query_logo = "SELECT logo FROM university WHERE id =  ? LIMIT 1";
         if($stmt = $this->conn->prepare($query))
         {           
             $stmt->bind_param( 'ss', $un, $pwd);
             $stmt->execute();
-            $stmt->bind_result($id_copy, $university_id, $clinic_id, $admin, $grouping);
+            $stmt->bind_result($id_copy, $university_id, $clinic_id, $admin, $grouping, $test_acc);
             if ($stmt->fetch())
             {
                 $_SESSION['user_id']   = $id_copy;
@@ -30,6 +30,7 @@ class Mysql
                 $_SESSION['admin']     = $admin;
                 $_SESSION['university_id'] = $university_id;
                 $_SESSION['grouping'] = $grouping;
+                $_SESSION['test_acc'] = $test_acc;
                 $stmt->close();
                 if($stmt = $this->conn->prepare($query_logo))
                 {    
