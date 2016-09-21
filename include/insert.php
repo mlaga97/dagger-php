@@ -735,7 +735,7 @@ score_questions($_SESSION);
 			&& ($key != 'n3')  && ($key != 'n4') && ($key != 'GRHOP_standard') && ($key != 'admin') && ($key != 'c_p_id')       //throw st away. I can't figure out where this is comming from in adult.php.
                         && ($key != 'previous') && ($key != 'search_select') && ($key != 'university_id')&& ($key != 'grouping') 
                         && ($key != 'contact_date') && ($key != 'entry_date') && ($key != 'contact_outcome') 
-                        && ($key != 'outcome_other') && ($key != 'contact_reason') && ($key != 'reason_other')) 	
+                        && ($key != 'outcome_other') && ($key != 'contact_reason') && ($key != 'reason_other') && ($key != 'test_acc'))
 			{ 													
 			$keys = $keys .   $key . " ,";
 
