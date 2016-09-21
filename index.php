@@ -5,7 +5,7 @@
 <html>
     <head>
         <script>
-        window.location= 'https://dagger.usm.edu/index_redirect.php';
+        window.location= '/index_redirect.php';
         </script>
     </head>
     <body>     
