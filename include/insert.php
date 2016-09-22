@@ -90,6 +90,7 @@ $_SESSION['previous'] = 'insert.php';
         include 'life.php';
         include 'adhd.php';
 	include 'hypertension.php';
+	include 'pediatric.php';
  
    	 ////////////////This is where we will print our strings for our results page////////////////////////////
         if ($_SESSION['grouping']== 10){ echo '<div id="demo_table" <?php style="display: none;">';} else {echo ' <div id="demo_table">';}
@@ -407,6 +408,10 @@ $_SESSION['previous'] = 'insert.php';
         if($_SESSION['hypertension_check'] == 1)
 	{
 	hypertension_scoring($copy, $mysqli);
+	}
+        if($_SESSION['pediatric_check'] == 1)
+	{
+	pediatric_scoring($copy, $mysqli);
 	}
 
 	////////////////////////////////////Checks to see first if the phq-9 was published, second to see if they are at risk for suicide////////////

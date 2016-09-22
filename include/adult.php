@@ -41,7 +41,8 @@ foreach($_SESSION as $key=>$value)
 	&& ($key != 'dast_check')   && ($key != 'duke_check') && ($key != 'symptom_check') && ($key != 'previous') && ($key != 'admin') 
          &&($key != 'self_check')   && ($key != 'sdq_check')  &&($key != 'crafft_check')&&($key != 'life_check')&&($key != 'gad2_check') 
          && ($key != 'pcl2_check')  && ($key != 'diagnosis_check')&& ($key != 'diag_me_check') && ($key != 'grouping') && ($key!='visit_type')&& 
-                ($key!='adhd_check')&&($key!='contact_type') && ($key != 'c_stress_check')&& ($key != 'pp_check') && ($key!='hypertension_check'))
+                ($key!='adhd_check')&&($key!='contact_type') && ($key != 'c_stress_check')&& ($key != 'pp_check') && ($key!='hypertension_check')
+			&& ($key!='pediatric_check'))
 	{
 		$_SESSION[$key] = -1;
 
@@ -761,6 +762,7 @@ function addDate (box) {
                                 include 'presenting_problem.php';
                                 include 'childStressors.php';
                                 include 'hypertension.php';
+                                include 'pediatric.php';
 
                                 if($_SESSION['pp_check'] == 1){
                                     write_presenting_problem($_SESSION['assessment_type'], $mysqli);
@@ -904,6 +906,11 @@ function addDate (box) {
                                 if($_SESSION['hypertension_check'] == 1)
 				{
 					write_hypertension($_SESSION['assessment_type'], $mysqli);	
+				}
+                                
+                                if($_SESSION['pediatric_check'] == 1)
+				{
+					write_pediatric($_SESSION['assessment_type'], $mysqli);	
 				}
 				
 				echo "<br>\n";	
