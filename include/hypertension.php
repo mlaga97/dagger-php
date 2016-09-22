@@ -218,82 +218,132 @@ function write_hypertension($type, $mysqli) {
 }
 
 function hypertension_scoring($copy, $mysqli) {
-	//if ($mysqli->connect_errno)
-	//{
-    //printf("Connect failed: %s\n", $mysqli->connect_error);
-    //exit();
-	//}	
-
-        //$result = $mysqli->query('SELECT * FROM questions WHERE classification="ADHD" AND adult=1 and Sub_ID>6');
-                
-	//$adhd_score = 0;
-
-	//if($copy['adhd_1'] >= 2){
-            //$adhd_score++;
-        //} 
-        //if($copy['adhd_2'] >= 2){
-            //$adhd_score++;
-        //}
-        //if($copy['adhd_3'] >= 2){
-            //$adhd_score++;
-        //}
-        //if($copy['adhd_4'] >= 3){
-            //$adhd_score++;
-        //}
-        //if($copy['adhd_5'] >= 3){
-            //$adhd_score++;
-        //}
-        //if($copy['adhd_6'] >= 3){
-            //$adhd_score++;
-        //}
-
-        
-        //if ($adhd_score >= 4){		
-           
-            //echo '<p style = "color: red; text-align: left">
-            //According to Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist, the client shows evidence of ADHD.
-            //</p>';
-            //if ($result){
-                //$first =0;
-                
-		//while($row = $result->fetch_assoc())  {
-                    //if ($copy['adhd_'. $row['Sub_ID']] > 0){//There was an response to the question
-                        //if ($first ==0){ //Write header info.
-                            //echo "<p><b>Below are the questions and frequency of the client responses to Part B questions (question 7 and above).</b></p>";
-                            //$first++;
-                            //echo "<table id=\"adhd_affirmative_questions\" border=\"0\">\n"; 
-                        //}
-                        //echo "<tr><td>" . $row['question'] . ": " ;
-                            //if ($copy['adhd_'. $row['Sub_ID']] == 0 ){
-                                //echo "Never ";                           
-                            //}
-                            //else if ($copy['adhd_'. $row['Sub_ID']] == 1 ){
-                                //echo "Rarely ";                           
-                            //}
-                            //else if ($copy['adhd_'. $row['Sub_ID']] == 2 ){
-                                //echo "Sometimes ";                           
-                            //}
-                            //else if ($copy['adhd_'. $row['Sub_ID']] == 3 ){
-                                //echo "Often ";                           
-                            //}
-                            //else if ($copy['adhd_'. $row['Sub_ID']] == 4 ){
-                                //echo "Very Often ";                           
-                            //}
-                        //echo "</td></tr>";    
-                    //}
-                    
-                //}
-            //} 
-        //}
-	//else 
-	//{
-            //echo "<tr>";
-            //echo '<td><p "text-align: left">
-            //According to Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist, the client shows NO evidence of ADHD.
-            //</p>';
-            //echo "</tr>";
-	//}
-	//echo "</table>";
+	if ($mysqli->connect_errno) {
+    	printf("Connect failed: %s\n", $mysqli->connect_error);
+    	exit();
+	}
+	
+	$inversions1 = array(false, false, false, false, true, true, true, true, false, true, true, true, true, true, false, false, false, false);
+	$ids1 = array("HT_Med_1", "HT_Med_2", "HT_Med_3", "HT_Diet_1", "HT_Diet_2", "HT_Diet_3", "HT_Diet_4", "HT_Diet_5", "HT_Diet_6", "HT_Diet_7", "HT_Diet_8", "HT_Diet_9", "HT_Diet_10", "HT_Diet_11", "HT_Diet_12", "HT_Phys_1", "HT_Phys_2", "HT_Smoke_1");
+	$questions_bank1 = array(
+			"How many of the past 7 days did you take your blood pressure pills?",
+			"How many of the past 7 days did you take your blood pressure pills at the same time every day?",
+			"How many of the past 7 days did you take the recommended number of blood pressure pills?",
+			"How many of the past 7 days did you follow a healthy eating plan?",
+			"How many of the past 7 days did you eat potato chips, salted nuts, or salted popcorn?",
+			"How many of the past 7 days did you eat processed meats such as ham, bacon, bologna, or sausage?",
+			"How many of the past 7 days did you eat smoked meats or smoked fish?",
+			"How many of the past 7 days did you eat pickles, olives, or other vegetables in brine?",
+			"How many of the past 7 days did you eat 5 or more servings of fruits and vegetables?",
+			"How many of the past 7 days did you eat frozen prepared dinners or frozen pizza?",
+			"How many of the past 7 days did you eat store bought or packaged bakery goods?",
+			"How many of the past 7 days did you salt your food at the table?",
+			"How many of the past 7 days did you add salt to food when you're cooking?",
+			"How many of the past 7 days did you eat fried foods such as chicken, french fries, or fish?",
+			"How many of the past 7 days did you avoid eating fatty foods?",
+			"How many of the past 7 days did you do at least 30 minutes total of physical activity?",
+			"How many of the past 7 days did you do a specific exercise activity (such as swimming, walking, or biking) other than what you do around the house or as part of your work?",
+			"How many of the past 7 days did you smoke a cigarette or cigar, even just one puff?"
+	);
+	
+	$ids2 = array("HT_Wt_1", "HT_Wt_2", "HT_Wt_3", "HT_Wt_4", "HT_Wt_5", "HT_Wt_6", "HT_Wt_7", "HT_Wt_8", "HT_Wt_9", "HT_Wt_10");
+	$questions_bank2 = array(
+			"In order to lose weight or maintain my weight, I am careful about what I eat.",
+			"In order to lose weight or maintain my weight, I read food labels when I grocery shop.",
+			"In order to lose weight or maintain my weight, I exercise.",
+			"In order to lose weight or maintain my weight, I have cut out drinking sugary sodas and sweet tea.",
+			"In order to lose weight or maintain my weight, I eat smaller portions or eat fewer portions.",
+			"In order to lose weight or maintain my weight, I have stopped buying or bringing unhealthy foods into my home.",
+			"In order to lose weight or maintain my weight, I have cut out or limited some foods that I like but that are not good for me.",
+			"In order to lose weight or maintain my weight, I eat at restaurants or fast food places less often.",
+			"In order to lose weight or maintain my weight, I substitute healthier foods for things that I used to eat.",
+			"In order to lose weight or maintain my weight, I have modified my recipes when I cook."
+	);
+	
+	$ids3 = array("HT_Alc_1");
+	$questions_bank3 = array(
+			"On average, how many days per week do you drink alcohol?"
+	);
+	
+	$ids4 = array("HT_Alc_2", "HT_Alc_3");
+	$questions_bank4 = array(
+			"On a typical day that you drink alcohol, how many drinks do you have?",
+			"What is the largest number of drinks that you've had on any given day within the last month?"
+	);
+	
+	echo '
+		<br/>
+		<center>
+			<h3>Hypertension Assessment (H-SCALE)</h3>
+		</center>
+		<table border="1">
+			<tr>
+				<td>Question</td>
+				<td>Result</tb>
+			</tr>
+	';
+	
+	// Bank 1
+	// TODO: Inverted scoring?
+	foreach($ids1 as $index=>$id) {
+		if($inversions1[$index]) {
+			$answer = 7-$copy[$id]; // This reverses the number on a 0-7 scale to return what was given 
+		} else {
+			$answer = $copy[$id];
+		}
+		
+		echo strtr('
+			<tr>
+				<td>{$question}</td>
+				<td><center>{$answer}</center></td>
+			</tr>
+		', array(
+			'{$question}' => $questions_bank1[$index],
+			'{$answer}' => $answer
+		));
+	}
+	
+	// Bank 2
+	foreach($ids2 as $index=>$id) {
+		echo strtr('
+			<tr>
+				<td>{$question}</td>
+				<td><center>{$answer}</center></td>
+			</tr>
+		', array(
+			'{$question}' => $questions_bank2[$index],
+			'{$answer}' => $copy[$id]
+		));
+	}
+	
+	// Bank 3
+	foreach($ids3 as $index=>$id) {
+		echo strtr('
+			<tr>
+				<td>{$question}</td>
+				<td><center>{$answer}</center></td>
+			</tr>
+		', array(
+			'{$question}' => $questions_bank3[$index],
+			'{$answer}' => $copy[$id]
+		));
+	}
+	
+	// Bank 4
+	foreach($ids4 as $index=>$id) {
+		echo strtr('
+			<tr>
+				<td>{$question}</td>
+				<td><center>{$answer}</center></td>
+			</tr>
+		', array(
+			'{$question}' => $questions_bank4[$index],
+			'{$answer}' => $copy[$id]
+		));
+	}
+	
+	
+	echo '</table>';
 }
 
 ?>
