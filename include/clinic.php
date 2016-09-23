@@ -703,7 +703,7 @@ print_r($today);
 										<label><input id=\"hypertension_check\"    input type=\"checkbox\" name=\"hypertension_check\"    value=\"1\" /> H-SCALE          </label>
 									  </div>
                         			  <div title=\"The Pediatric Healthy Lifestyles Screening if \">
-										<label><input id=\"pedaitric_check\"    input type=\"checkbox\" name=\"pediatric_check\"    value=\"1\" /> Pediatric Health Lifestyles          </label>
+										<label><input id=\"pediatric_check\"    input type=\"checkbox\" name=\"pediatric_check\"    value=\"1\" /> Pediatric Health Lifestyles          </label>
 									  </div>";
 							}
                             ?>
