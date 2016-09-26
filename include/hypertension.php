@@ -127,7 +127,7 @@ function write_hypertension($type, $mysqli) {
 				<td class="hypertension_response" id="{$field}-7"><center><input type="radio" name="{$field}" value="7" /></center></td>
 			</tr>
 		', array(
-			'{$id}' => $id + 2,
+			'{$id}' => $id + 1,
 			'{$field}' => $ids1[$id],
 			'{$question}' => $question
 		));
@@ -147,7 +147,7 @@ function write_hypertension($type, $mysqli) {
 				<td class="hypertension_response" id="{$field}-5"><center><input type="radio" name="{$field}" value="5" /></center></td>
 			</tr>
 		', array(
-			'{$id}' => $id + 20,
+			'{$id}' => $id + 19,
 			'{$field}' => $ids2[$id],
 			'{$question}' => $question
 		));
@@ -170,7 +170,7 @@ function write_hypertension($type, $mysqli) {
 				<td class="hypertension_response" id="{$field}-7"><center><input type="radio" name="{$field}" value="7" /></center></td>
 			</tr>
 		', array(
-			'{$id}' => $id + 30,
+			'{$id}' => $id + 29,
 			'{$field}' => $ids3[$id],
 			'{$question}' => $question
 		));
@@ -191,7 +191,7 @@ function write_hypertension($type, $mysqli) {
 				<td class="hypertension_response" id="{$field}-5"><center><input type="radio" name="{$field}" value="10" /></center></td>
 			</tr>
 		', array(
-			'{$id}' => $id + 31,
+			'{$id}' => $id + 30,
 			'{$field}' => $ids4[$id],
 			'{$question}' => $question
 		));
