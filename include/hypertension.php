@@ -4,7 +4,6 @@ function write_hypertension($type, $mysqli) {
 	
 	//TODO: What date did the screening occur?
 	
-	$inversions1 = array(false, false, false, false, true, true, true, true, false, true, true, true, true, true, false, false, false, false);
 	$ids1 = array("HT_Med_1", "HT_Med_2", "HT_Med_3", "HT_Diet_1", "HT_Diet_2", "HT_Diet_3", "HT_Diet_4", "HT_Diet_5", "HT_Diet_6", "HT_Diet_7", "HT_Diet_8", "HT_Diet_9", "HT_Diet_10", "HT_Diet_11", "HT_Diet_12", "HT_Phys_1", "HT_Phys_2", "HT_Smoke_1");
 	$questions_bank1 = array(
 		"How many of the past 7 days did you take your blood pressure pills?",
@@ -114,37 +113,23 @@ function write_hypertension($type, $mysqli) {
 	
 	// Section 1
 	echo $daysPerWeekStart;
-	foreach($questions_bank1 as $id=>$question) {
-		if($inversions1[$id]) {
-			$fieldValues = range(7, 0);
-		} else {
-			$fieldValues = range(0, 7);
-		}
-		
+	foreach($questions_bank1 as $id=>$question) {		
 		echo strtr('
 			<tr class="hypertension_row" style="background-color: #EFFBFB;">
 				<td class="hypertension_question">{$id}: {$question}</td>
-				<td class="hypertension_response" id="{$field}-0"><center><input type="radio" name="{$field}" value="{$value_0}" /></center></td>
-				<td class="hypertension_response" id="{$field}-1"><center><input type="radio" name="{$field}" value="{$value_1}" /></center></td>
-				<td class="hypertension_response" id="{$field}-2"><center><input type="radio" name="{$field}" value="{$value_2}" /></center></td>
-				<td class="hypertension_response" id="{$field}-3"><center><input type="radio" name="{$field}" value="{$value_3}" /></center></td>
-				<td class="hypertension_response" id="{$field}-4"><center><input type="radio" name="{$field}" value="{$value_4}" /></center></td>
-				<td class="hypertension_response" id="{$field}-5"><center><input type="radio" name="{$field}" value="{$value_5}" /></center></td>
-				<td class="hypertension_response" id="{$field}-6"><center><input type="radio" name="{$field}" value="{$value_6}" /></center></td>
-				<td class="hypertension_response" id="{$field}-7"><center><input type="radio" name="{$field}" value="{$value_7}" /></center></td>
+				<td class="hypertension_response" id="{$field}-0"><center><input type="radio" name="{$field}" value="0" /></center></td>
+				<td class="hypertension_response" id="{$field}-1"><center><input type="radio" name="{$field}" value="1" /></center></td>
+				<td class="hypertension_response" id="{$field}-2"><center><input type="radio" name="{$field}" value="2" /></center></td>
+				<td class="hypertension_response" id="{$field}-3"><center><input type="radio" name="{$field}" value="3" /></center></td>
+				<td class="hypertension_response" id="{$field}-4"><center><input type="radio" name="{$field}" value="4" /></center></td>
+				<td class="hypertension_response" id="{$field}-5"><center><input type="radio" name="{$field}" value="5" /></center></td>
+				<td class="hypertension_response" id="{$field}-6"><center><input type="radio" name="{$field}" value="6" /></center></td>
+				<td class="hypertension_response" id="{$field}-7"><center><input type="radio" name="{$field}" value="7" /></center></td>
 			</tr>
 		', array(
 			'{$id}' => $id + 2,
 			'{$field}' => $ids1[$id],
-			'{$question}' => $question,
-			'{$value_0}' => $fieldValues[0],
-			'{$value_1}' => $fieldValues[1],
-			'{$value_2}' => $fieldValues[2],
-			'{$value_3}' => $fieldValues[3],
-			'{$value_4}' => $fieldValues[4],
-			'{$value_5}' => $fieldValues[5],
-			'{$value_6}' => $fieldValues[6],
-			'{$value_7}' => $fieldValues[7],
+			'{$question}' => $question
 		));
 	}
 	echo $daysPerWeekEnd;
@@ -285,13 +270,7 @@ function hypertension_scoring($copy, $mysqli) {
 	
 	// Bank 1
 	// TODO: Inverted scoring?
-	foreach($ids1 as $index=>$id) {
-		if($inversions1[$index]) {
-			$answer = 7-$copy[$id]; // This reverses the number on a 0-7 scale to return what was given 
-		} else {
-			$answer = $copy[$id];
-		}
-		
+	foreach($ids1 as $index=>$id) {		
 		echo strtr('
 			<tr>
 				<td>{$question}</td>
@@ -299,7 +278,7 @@ function hypertension_scoring($copy, $mysqli) {
 			</tr>
 		', array(
 			'{$question}' => $questions_bank1[$index],
-			'{$answer}' => $answer
+			'{$answer}' => $copy[$id]
 		));
 	}
 	
