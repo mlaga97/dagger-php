@@ -115,10 +115,12 @@ function write_pediatric($type, $mysqli) {
 					</center>
 				</td>',
 				array(
-					'{$field}' => '',
-					'{$index}' => '',
-					'{$value}' => '',
-				));
+					'{$field}' => $id,
+					'{$index}' => $index,
+					'{$value}' => $value
+			));
+			
+			$index++;
 		}
 		
 		echo strtr('
