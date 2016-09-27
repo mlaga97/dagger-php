@@ -26,7 +26,58 @@ function write_pediatric($type, $mysqli) {
 	);
 
 	// Print Question Bank 1
-	echo '<table border = "1">';
+	echo '
+		<table border = "1">
+			<tr>
+				<td></td>
+				<td>Mother</td>
+				<td>Father</td>
+				<td>Sibling</td>
+				<td>Grandparent</td>
+				<td>Aunt/Uncle</td>
+				<td>Other</td>
+			</tr>
+	';
+	foreach($questions1 as $index=>$question_data) {
+		echo strtr('
+			<tr>
+				<td>{$question}</td>
+				<td class="hypertension_response" id="{$field}-1">
+					<center>
+						<input type="checkbox" name="{$field}-1" value="1" />
+					</center>
+				</td>
+				<td class="hypertension_response" id="{$field}-2">
+					<center>
+						<input type="checkbox" name="{$field}-2" value="2" />
+					</center>
+				</td>
+				<td class="hypertension_response" id="{$field}-3">
+					<center>
+						<input type="checkbox" name="{$field}-3" value="3" />
+					</center>
+				</td>
+				<td class="hypertension_response" id="{$field}-4">
+					<center>
+						<input type="checkbox" name="{$field}-4" value="4" />
+					</center>
+				</td>
+				<td class="hypertension_response" id="{$field}-5">
+					<center>
+						<input type="checkbox" name="{$field}-5" value="5" />
+					</center>
+				</td>
+				<td class="hypertension_response" id="{$field}-6">
+					<center>
+						<input type="checkbox" name="{$field}-6" value="6" />
+					</center>
+				</td>
+			</tr>
+		', array(
+			'{$field}' => $question_data[0],
+			'{$question}' => $question_data[1]
+		));
+	}
 	
 	// Print Question Bank 2
 	global $last_options_line;
