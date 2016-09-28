@@ -56,7 +56,7 @@ function write_hypertension($type, $mysqli) {
 	############################################################################
 	
 	$daysPerWeekStart = '
-		<table id=\"hypertension_questions\" border=\"1\">
+		<table id="hypertension_questions" border="1" width="100%">
 			<tr>
 				<td class="hypertension_scale_pad"></td>
 				<td class="hypertension_scale"><center>0</center></td>
@@ -74,7 +74,7 @@ function write_hypertension($type, $mysqli) {
 	';
 	
 	$agreementScaleStart = '
-		<table id=\"hypertension_questions\" border=\"1\">
+		<table id="hypertension_questions" border="1" width="100%">
 			<tr>
 				<td class="hypertension_scale_pad"></td>
 				<td class="hypertension_scale"><center>Strongly Disagree</center></td>
@@ -89,7 +89,7 @@ function write_hypertension($type, $mysqli) {
 	';
 	
 	$drinksPerWeekStart = '
-		<table id=\"hypertension_questions\" border=\"1\">
+		<table id="hypertension_questions" border="1" width="100%">
 			<tr>
 				<td class="hypertension_scale_pad"></td>
 				<td class="hypertension_scale"><center>0-1</center></td>
