@@ -25,6 +25,9 @@ function write_pediatric($type, $mysqli) {
 		array("HLS_Now",		array("1"=>"8-10 (Definitely)", "2"=>"5-7 (Yes)", "3"=>"2-4 (Maybe)", "4"=>"0-1 (No)"),				"Is now a good time to work on family eating and activity habits?"),
 	);
 
+	// Begin Div
+	echo '<br><hr><center><h3>Pediatric Assessment</h3></center>';
+	
 	// Print Question Bank 1
 	echo '
 		<table border="1" width="100%">
