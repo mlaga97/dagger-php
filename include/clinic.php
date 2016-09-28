@@ -184,6 +184,7 @@ print_r($today);
                 $_SESSION['diag_me_check'] = 0;
                 $_SESSION['adhd_check'] = 0;
                 $_SESSION['hypertension_check'] = 0;
+                $_SESSION['pediatric_check'] = 0;
                 ?>
 
                 <!--These will be our check boxes for our page.-->
@@ -315,6 +316,7 @@ print_r($today);
                         document.getElementById("diag_me_check").checked = false;
                         document.getElementById("adhd_check").checked = false;
                         document.getElementById("hypertension_check").checked = false;
+                        document.getElementById("pediatric_check").checked = false;
                     }
 
                     function show(rad, q)
@@ -699,6 +701,9 @@ print_r($today);
 							if($_SESSION['test_acc']) {
 								echo "<div title=\"The Hypertension Self-care Activity Level Effects Test is\">
 										<label><input id=\"hypertension_check\"    input type=\"checkbox\" name=\"hypertension_check\"    value=\"1\" /> H-SCALE          </label>
+									  </div>
+                        			  <div title=\"The Pediatric Healthy Lifestyles Screening if \">
+										<label><input id=\"pediatric_check\"    input type=\"checkbox\" name=\"pediatric_check\"    value=\"1\" /> Pediatric Health Lifestyles          </label>
 									  </div>";
 							}
                             ?>

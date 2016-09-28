@@ -275,7 +275,7 @@ if ($_POST && !empty($_POST['pt_id']))
 
     
     //$query_contact = 'SELECT * FROM msihdp.contact_activity where pt_id = '$info_store' AND clinic_id in (select clinic_id from groups where user_id = ' $id_store')';
-    $query_clinic = "SELECT response.pt_id, response.id, response.date, clinic.name, response.stress_check, response.events_check, response.health_check, response.symptom_check, response.gad_check, response.phq_check, response.audit_check, response.cage_check, response.cd_check, response.pcl_check, response.psc_check, response.ces_check, response.dast_check, response.duke_check, response.sdq_check, response.life_check, response.crafft_check, response.gad2_check, response.pcl2_check, response.adhd_check, response.hypertension_check FROM response, clinic where pt_id = '$info_store' AND clinic.id = response.clinic_id AND clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by response.id  DESC";
+    $query_clinic = "SELECT response.pt_id, response.id, response.date, clinic.name, response.stress_check, response.events_check, response.health_check, response.symptom_check, response.gad_check, response.phq_check, response.audit_check, response.cage_check, response.cd_check, response.pcl_check, response.psc_check, response.ces_check, response.dast_check, response.duke_check, response.sdq_check, response.life_check, response.crafft_check, response.gad2_check, response.pcl2_check, response.adhd_check, response.hypertension_check, response.pediatric_check FROM response, clinic where pt_id = '$info_store' AND clinic.id = response.clinic_id AND clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by response.id  DESC";
     //We're going to make the above query into the one below. 
     $query_contact = "SELECT contact_activity.pt_id, (select users.name from users where users.id = contact_activity.user_id) as name, contact_activity.id, contact_activity.contact_date, contact_activity.entry_date, contact_activity.contact_type, contact_activity.contact_outcome, contact_activity.outcome_other, contact_activity.contact_reason, contact_activity.reason_other, contact_activity.clinic_id, contact_activity.contact_time, contact_activity.group_other FROM contact_activity where pt_id = '$info_store' AND contact_activity.clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by contact_activity.contact_date  DESC";
     $info = $mysqli->query($query_clinic);
@@ -348,6 +348,8 @@ if ($_POST && !empty($_POST['pt_id']))
               echo "ADHD ";
             if ($row['hypertension_check'] == 1)
               echo "Hypertension ";
+            if ($row['pediatric_check'] == 1)
+              echo "Pediatric Lifestyles ";
           echo "</p>";
           echo "</td>";
           echo "</tr>";    
