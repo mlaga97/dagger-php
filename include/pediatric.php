@@ -27,7 +27,7 @@ function write_pediatric($type, $mysqli) {
 
 	// Print Question Bank 1
 	echo '
-		<table border = "1">
+		<table border="1" width="100%">
 			<tr>
 				<td></td>
 				<td>Mother</td>
@@ -94,7 +94,7 @@ function write_pediatric($type, $mysqli) {
 		if($options_line != $last_options_line) {
 			echo strtr('
 				</table>
-				<table border="1">
+				<table border="1"  width="100%">
 					<tr>
 						<td></td>
 						{$options_line}
