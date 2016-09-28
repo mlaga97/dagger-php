@@ -41,7 +41,7 @@ function write_pediatric($type, $mysqli) {
 	foreach($questions1 as $index=>$question_data) {
 		echo strtr('
 			<tr>
-				<td>{$question}</td>
+				<td>{$index}. {$question}</td>
 				<td class="hypertension_response" id="{$field}-1">
 					<center>
 						<input type="checkbox" name="{$field}-1" value="1" />
@@ -75,14 +75,14 @@ function write_pediatric($type, $mysqli) {
 			</tr>
 		', array(
 			'{$field}' => $question_data[0],
-			'{$question}' => $question_data[1]
+			'{$question}' => $question_data[1],
+			'{$index}' => $index+1
 		));
 	}
 	
 	// Print Question Bank 2
 	global $last_options_line;
 	foreach($questions2 as $index=>$question_data) {
-		$index = $index;
 		$id = $question_data[0];
 		$options = $question_data[1];
 		$question = $question_data[2];
@@ -106,7 +106,7 @@ function write_pediatric($type, $mysqli) {
 		$last_options_line = $options_line;
 		
 		$buttons = '';
-		$index = 0;
+		$field_index = 0;
 		foreach($options as $value=>$answer) {
 			$buttons = $buttons . strtr(
 				'<td class="hypertension_response" id="{$field}-{$index}">
@@ -116,21 +116,22 @@ function write_pediatric($type, $mysqli) {
 				</td>',
 				array(
 					'{$field}' => $id,
-					'{$index}' => $index,
+					'{$index}' => $field_index,
 					'{$value}' => $value
 			));
 			
-			$index++;
+			$field_index++;
 		}
 		
 		echo strtr('
 					<tr>
-						<td>{$question}</td>
+						<td>{$index}. {$question}</td>
 						{$buttons}
 					</tr>
 		', array(
 			'{$question}' => $question,
 			'{$buttons}' => $buttons,
+			'{$index}' => $index+5
 		));
 		
 	}
