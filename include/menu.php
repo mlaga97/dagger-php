@@ -1,6 +1,6 @@
 <ul id="nav">
             <li><a href="/index.php">Logout</a></li>
-            <li><a href="/clinic.php">Assessment</a></li>
+            <li><a href="/preassessment.php">Assessment</a></li>
             <li><a href="/searchdata.php">Search</a></li>
             <li><a href="#">Help</a>
                 <ul>

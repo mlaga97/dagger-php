@@ -23,7 +23,7 @@ if (isset($_SESSION['contact_type']) && ($_SESSION['contact_type'] != "face to f
 }
 
 if (!isset($_SESSION['status']) || ($_SESSION['status']   != 'authorized' || // && if such and such session != whatever previous page is. 
-    $_SESSION['previous'] != '/clinic.php' ||
+    $_SESSION['previous'] != '/preassessment.php' ||
     $_SESSION['clinic_id'] < 1    || !isset($_SESSION['assessment_type'])))//added the isset test. I found you could move 
 									//to this page from adult without the assessment_type set.
     {
