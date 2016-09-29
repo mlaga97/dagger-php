@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once('log4php/Logger.php');
-Logger::configure('log4php/config.xml');
+require_once('include/log4php/Logger.php');
+Logger::configure('include/log4php/config.xml');
 $log = Logger::getLogger('myLogger');
 date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
 
@@ -16,17 +16,17 @@ if (($key != 'status') && ($key != 'previous'))
 //print_r($_SESSION);
 
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized'   ||
-	$_SESSION['previous'] != 'submit.php' ||
+	$_SESSION['previous'] != '/submit.php' ||
 	!array_key_exists('n1', $_SESSION)    ||
     !array_key_exists('n2', $_SESSION)    ||
     !array_key_exists('n3', $_SESSION)    ||
     !array_key_exists('n4', $_SESSION)    )
 	{
-		header("location:../index.php");
+		header("location: /index.php");
 		die("Authentication required, redirecting");
 	}
 
-$_SESSION['previous'] = 'insert.php';
+$_SESSION['previous'] = '/insert.php';
 //print_r($_SESSION);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
@@ -37,7 +37,7 @@ $_SESSION['previous'] = 'insert.php';
 		</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="Brief Assessment Evaluation">
-		<link rel="stylesheet" href="mystyle.css" type="text/css">
+		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 	</head>
 	<body onload="clearForm();">
 		<div id="container">
@@ -65,32 +65,32 @@ $_SESSION['previous'] = 'insert.php';
 				</script>				
 <?php
 
-	require_once'constants.php';
+	require_once 'include/constants.php';
 	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
 
-	include 'stressors.php';
-        include 'presenting_problem.php';
-	include 'events.php';
-	include 'health.php';
-	include 'cd.php';
-	include 'gad.php';
-	include 'phq.php';
-	include 'audit.php';
-	include 'cage.php';	
-	include 'pcl.php';
-	include 'psc.php';
-	include 'ces_d.php';
-	include 'dast.php';
- 	include 'duke.php';
-        include 'self.php';
-        include 'sdq.php';
-        include 'pcl-2.php';
-        include 'gad-2.php';
-        include 'crafft.php';
-        include 'life.php';
-        include 'adhd.php';
-	include 'hypertension.php';
-	include 'pediatric.php';
+	include 'include/stressors.php';
+        include 'include/presenting_problem.php';
+	include 'include/events.php';
+	include 'include/health.php';
+	include 'include/cd.php';
+	include 'include/gad.php';
+	include 'include/phq.php';
+	include 'include/audit.php';
+	include 'include/cage.php';	
+	include 'include/pcl.php';
+	include 'include/psc.php';
+	include 'include/ces_d.php';
+	include 'include/dast.php';
+ 	include 'include/duke.php';
+        include 'include/self.php';
+        include 'include/sdq.php';
+        include 'include/pcl-2.php';
+        include 'include/gad-2.php';
+        include 'include/crafft.php';
+        include 'include/life.php';
+        include 'include/adhd.php';
+	include 'include/hypertension.php';
+	include 'include/pediatric.php';
  
    	 ////////////////This is where we will print our strings for our results page////////////////////////////
         if ($_SESSION['grouping']== 10){ echo '<div id="demo_table" <?php style="display: none;">';} else {echo ' <div id="demo_table">';}
@@ -812,12 +812,11 @@ score_questions($_SESSION);
 	
 ?>
 </center>
-<center><input type="button" value="Return to Start" style= "height: 25px; width: 100px" onclick="window.location='../index.php';" />
-    <?php if ($_SESSION['grouping'] != 10){echo "<input type=\"button\" value=\"Edit Personal Data\" style= \"height: 25px; width: 125px\" onclick=\"window.location=\'edit.php\';\"/>";} ?>
+<center><input type="button" value="Return to Start" style= "height: 25px; width: 100px" onclick="window.location='/index.php';" />
+    <?php if ($_SESSION['grouping'] != 10){echo "<input type=\"button\" value=\"Edit Personal Data\" style= \"height: 25px; width: 125px\" onclick=\"window.location=\'/edit.php\';\"/>";} ?>
 	<!-- <input type="button" value="Edit Personal Data" style= "height: 25px; width: 125px" onclick="window.location='edit.php';"/> -->
 	<input type="button" style= "height: 25px; width: 100px" value="Print this page" onclick="printpage()" /></center>
-<footer><center><p> &copy; The University of Southern Mississippi <br> Funded by the Gulf Region Health Outreach Program, 2012</p></center></footer>
-<center><a href="https://www.lphi.org/home2/section/3-416/primary-care-capacity-project-"><img src="images/GRHOP.png" style="border:none;max-width:100%;" width="100" alt="G.R.H.O.P"></a></center>
+<?php include 'include/footer.php' ?>
 </div>	
 </body>
 </html>

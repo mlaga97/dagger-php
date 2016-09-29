@@ -14,12 +14,12 @@ foreach ($_POST as $key => $value) {
 //print_r($_SESSION);
 // These are page security parameters. We will not let the user in unless they meet all these conditions. 
 if ($_SESSION['status'] != 'authorized' ||
-        $_SESSION['previous'] != 'adult.php') {
-    header("location:../index.php");
+        $_SESSION['previous'] != '/adult.php') {
+    header("location: /index.php");
     die("Authentication required, redirecting");
 }
 //print_r($_SESSION);
-$_SESSION['previous'] = 'assessment_time.php';
+$_SESSION['previous'] = '/assessment_time.php';
 ?>
 
 <html>
@@ -29,7 +29,7 @@ $_SESSION['previous'] = 'assessment_time.php';
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="description" content="Brief Adult Assessment">
-        <link rel="stylesheet" href="mystyle.css" type="text/css">
+        <link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 
 
 <script type="text/javascript">
@@ -73,7 +73,7 @@ $_SESSION['previous'] = 'assessment_time.php';
                     <?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
                 </div><!-- div logo end -->
             </div><!--close div top -->    
-                <form id="form" name="form1" action="submit.php" method="post">
+                <form id="form" name="form1" action="/submit.php" method="post">
                     <!-- ************************************************************** -->
                     
                         <center><h1>Time spent with the client.</h1></center>    
@@ -91,7 +91,6 @@ $_SESSION['previous'] = 'assessment_time.php';
                     <br>
                     <br>
                     <br>
-                    <footer><center><p> &copy; The University of Southern Mississippi <br> Funded by the Gulf Region Health Outreach Program, 2012</p></center></footer>
-                    <center><a href="https://www.lphi.org/home2/section/3-416/primary-care-capacity-project-"><img src="images/GRHOP.png" style="border:solid; border-color:black;" width="100" height="100" alt="G.R.H.O.P"></a></center>
+                    <?php include 'include/footer.php' ?>
                     </body>
                     </html>

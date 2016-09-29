@@ -65,7 +65,7 @@ class Membership
         if($ensure_credentials)
         {
             $_SESSION['status'] = 'authorized';
-            header("location: include/options.php");
+            header("location: /options.php");
             
         } 
 
@@ -80,7 +80,7 @@ class Membership
     {
        session_start();
        if($_SESSION['status'] !='authorized'){
-        header("location: ../index.php");
+        header("location: /index.php");
         die("Authentication required, redirecting");
        } 
     }

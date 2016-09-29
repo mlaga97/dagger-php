@@ -1,8 +1,8 @@
 <?php 
 session_start();
 
-require_once('log4php/Logger.php');
-Logger::configure('log4php/config.xml');
+require_once('include/log4php/Logger.php');
+Logger::configure('include/log4php/config.xml');
 $log = Logger::getLogger('myLogger');
 date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
 $log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
@@ -23,11 +23,11 @@ if (isset($_SESSION['contact_type']) && ($_SESSION['contact_type'] != "face to f
 }
 
 if (!isset($_SESSION['status']) || ($_SESSION['status']   != 'authorized' || // && if such and such session != whatever previous page is. 
-    $_SESSION['previous'] != 'clinic.php' ||
+    $_SESSION['previous'] != '/clinic.php' ||
     $_SESSION['clinic_id'] < 1    || !isset($_SESSION['assessment_type'])))//added the isset test. I found you could move 
 									//to this page from adult without the assessment_type set.
     {
-	header("location:../index.php");
+	header("location: /index.php");
 	die("Authentication required, redirecting");
     }
 
@@ -64,7 +64,7 @@ foreach($_SESSION as $key=>$value)
 	}
 }
 
-$_SESSION['previous'] = 'adult.php';
+$_SESSION['previous'] = '/adult.php';
 //    print_r($_SESSION);
 ?>
 
@@ -76,8 +76,8 @@ $_SESSION['previous'] = 'adult.php';
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="description" content="Brief Assessment">
-        <link rel="stylesheet" href="mystyle.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="src/datepickr.min.css">
+        <link rel="stylesheet" href="/include/mystyle.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="/include/src/datepickr.min.css">
         
 <style>
 .calendar-icon {
@@ -92,7 +92,7 @@ background: url(images/calendar.png);
     </head>
 
     <body>     
-        <form id ="adult_form" action="assessment_time.php" method="post">
+        <form id ="adult_form" action="/assessment_time.php" method="post">
             
 <script type="text/javascript"> //This function checks to make sure that our zip and date are entered correctly.
 function isValidZip(txt){
@@ -398,10 +398,7 @@ function addDate (box) {
     
 };
 </script>
-<?php
-    include 'menu.php';
-    write_menu();
-?>
+<?php include 'include/menu.php'; ?>
                 <div id="container">
                     <div id="top">
                         <div id="logo">
@@ -731,38 +728,38 @@ function addDate (box) {
             <div class="page-break"></div><!--force page break here. good for 8.5X11 pages -->
 			<?php
 
-				require_once 'constants.php';
+				require_once 'include/constants.php';
 				$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
 				$i = 0;
 
-				include 'stressors.php';
-				include 'current_stress.php';
-				include 'health.php';
-				include 'events.php';
-				include 'gad.php';
-                                include 'gad-2.php';
-				include 'phq.php';
-				include 'audit.php';
-				include 'cage.php';
-				include 'cd.php';
-				include 'pcl.php';
-				include 'ces_d.php';
-				include 'symptoms.php';
-				include 'psc.php';
-				include 'dast.php';
-				include 'duke.php';
-                                include 'self.php';
-                                include 'sdq.php';     
-                                include 'life.php';
-                                include 'crafft.php';
-                                include 'pcl-2.php';
-                                include 'diagnosis.php';
-                                include 'diag_me.php';
-                                include 'adhd.php';
-                                include 'presenting_problem.php';
-                                include 'childStressors.php';
-                                include 'hypertension.php';
-                                include 'pediatric.php';
+				include 'include/stressors.php';
+				include 'include/current_stress.php';
+				include 'include/health.php';
+				include 'include/events.php';
+				include 'include/gad.php';
+                                include 'include/gad-2.php';
+				include 'include/phq.php';
+				include 'include/audit.php';
+				include 'include/cage.php';
+				include 'include/cd.php';
+				include 'include/pcl.php';
+				include 'include/ces_d.php';
+				include 'include/symptoms.php';
+				include 'include/psc.php';
+				include 'include/dast.php';
+				include 'include/duke.php';
+                                include 'include/self.php';
+                                include 'include/sdq.php';     
+                                include 'include/life.php';
+                                include 'include/crafft.php';
+                                include 'include/pcl-2.php';
+                                include 'include/diagnosis.php';
+                                include 'include/diag_me.php';
+                                include 'include/adhd.php';
+                                include 'include/presenting_problem.php';
+                                include 'include/childStressors.php';
+                                include 'include/hypertension.php';
+                                include 'include/pediatric.php';
 
                                 if($_SESSION['pp_check'] == 1){
                                     write_presenting_problem($_SESSION['assessment_type'], $mysqli);
@@ -938,10 +935,8 @@ function addDate (box) {
 		<br>
 	</div><!-- div container end -->
 		</form>
-		<footer><center><p> &copy; The University of Southern Mississippi <br> Funded by the Gulf Region Health Outreach Program, 2012</p></center></footer>
-		<center><a href="https://www.lphi.org/home2/section/3-416/primary-care-capacity-project-"><img src="images/GRHOP.png" style="border:solid; border-color:black;" width="100" height="100" alt="G.R.H.O.P"></a></center>
-
-                <script src="src/datepickr.min.js"></script>
+		<?php include 'include/footer.php' ?>
+                <script src="/include/src/datepickr.min.js"></script>
 <script>
 // Regular datepickr
 datepickr('#datepickr');

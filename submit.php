@@ -10,7 +10,7 @@ $_SESSION[$key] = $value;
 // These are page security parameters. We will not let the user in unless they meet all these conditions. 
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized')// || ($_SESSION['previous'] != 'assessment_time.php' && $_SESSION['previous'] != 'adult.php'))    
     {
-	header("location:../index.php");
+	header("location: /index.php");
 	   die("Authentication required, redirecting");
     }
 
@@ -50,7 +50,7 @@ if(!array_key_exists('last_name', $_SESSION))
     $_SESSION['last_name'] = "";
 }
 
-$_SESSION['previous'] = 'submit.php';
+$_SESSION['previous'] = '/submit.php';
 
 
 ?>
@@ -64,7 +64,7 @@ $_SESSION['previous'] = 'submit.php';
 		</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="Brief Adult Assessment">
-		<link rel="stylesheet" href="mystyle.css" type="text/css">
+		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 		
 
 <script type="text/javascript">
@@ -128,7 +128,7 @@ $_SESSION['previous'] = 'submit.php';
             	</div><!--close div top -->
 					<div id="clinic_id">
 				<br><center><p>Please enter the clinic identification code and then submit.</p></center>
-				<form id="form1" name="form1" action="insert.php" method="post">
+				<form id="form1" name="form1" action="/insert.php" method="post">
 				<center><table id="clinic_id" border="1">
 
                      <tr><td class="n"><center></center></td>
@@ -205,7 +205,6 @@ $_SESSION['previous'] = 'submit.php';
 		<br>
 	
 
-		<footer><center><p> &copy; The University of Southern Mississippi <br> Funded by the Gulf Region Health Outreach Program, 2012</p></center></footer>
-		<center><a href="https://www.lphi.org/home2/section/3-416/primary-care-capacity-project-"><img src="images/GRHOP.png" style="border:solid; border-color:black;" width="100" height="100" alt="G.R.H.O.P"></a></center>
+		<?php include 'include/footer.php' ?>
 	</body>
 </html>

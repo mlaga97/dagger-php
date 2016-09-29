@@ -7,20 +7,20 @@ session_start();
 //   ($_SESSION['previous'] != 'searchdataresults.php' && $_SESSION['previous'] != 'searchdata.php' && $_SESSION['previous'] != 'options.php'))  
     if ($_SESSION['status']   != 'authorized' )  
     {
-    header("location:../index.php");
+    header("location: /index.php");
        die("Authentication required, redirecting");
     }
 
   unset($_SESSION['search_select']);
-  require_once('gad.php');
-  require_once('Mysql.php');
-  require_once ('constants.php');
-  require_once ("pChart/class/pDraw.class.php"); 
-  require_once("pChart/class/pImage.class.php"); 
-  require_once("pChart/class/pData.class.php");
+  require_once('include/gad.php');
+  require_once('include/Mysql.php');
+  require_once ('include/constants.php');
+  require_once ("include/pChart/class/pDraw.class.php"); 
+  require_once("include/pChart/class/pImage.class.php"); 
+  require_once("include/pChart/class/pData.class.php");
  
 
-$_SESSION['previous'] = 'searchdata.php';
+$_SESSION['previous'] = '/searchdata.php';
 //print_r($_SESSION);
 
 ?>
@@ -33,13 +33,10 @@ $_SESSION['previous'] = 'searchdata.php';
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="description" content="Brief Adult Assessment">
-    <link rel="stylesheet" href="mystyle.css" type="text/css">
+    <link rel="stylesheet" href="/include/mystyle.css" type="text/css">
   </head>
   <body onload="clearForm();">
-<?php
-include 'menu.php';
-write_menu();
-?>
+<?php include 'include/menu.php'; ?>
     <div id="container">
       <div id="top">
         <div id="logo">
@@ -182,7 +179,7 @@ write_menu();
                   $employee_select = $employee_info->fetch_assoc();                  
               }
               echo "</td></table><br>";
-              echo " <button type = \"submit\" action = \"searchdata.php\" method = \"post\" style= \"height: 25px; width: 150px\">Search Clinic Data</button><br><br><br>";
+              echo " <button type = \"submit\" action = \"/searchdata.php\" method = \"post\" style= \"height: 25px; width: 150px\">Search Clinic Data</button><br><br><br>";
               }
                 else
                 {
@@ -194,12 +191,12 @@ write_menu();
             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then nothing will be returned.</i><br><br> <!--%nbsp; provides a single space.-->
             <label for="pt_id">Patient ID:</label>
             <input type="text" autofocus="autofocus" name="pt_id"/>
-            <button action = "searchdata.php"  style= "height: 25px; width: 100px">Search</button>
+            <button action = "/searchdata.php"  style= "height: 25px; width: 100px">Search</button>
         </form>  
     </body>
 </html>
 
-<form id = "form2" action = "searchdataresults.php" method = "post" target="_blank"> 
+<form id = "form2" action = "/searchdataresults.php" method = "post" target="_blank"> 
 
 <!-- Javascript function for -->
 <script type="text/javascript">
@@ -253,7 +250,7 @@ function search_select(form2)
   //$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
   alert("Employee activity updated. ");
   document.getElementById("form3").submit();
-  header("location:../index.php");
+  header("location: /index.php");
 
   //while()
  }
@@ -364,7 +361,7 @@ if ($_POST && !empty($_POST['pt_id']))
         {  
            if ($first == 0){
                echo "<br><br><hr>";
-               echo '<form id = "form4" action = "searchdataresultscontacts.php" method = "post" target="_blank">' ;
+               echo '<form id = "form4" action = "/searchdataresultscontacts.php" method = "post" target="_blank">' ;
                echo '<table border = "0"><tr ><td colspan = "5"><center><font size="">Patient Contacts</font></center></td></tr>';
                echo '<tr><td></td><td width="150">Date</td>';
                echo '<td width="200">Clinician</td>';
@@ -398,14 +395,14 @@ if ($_POST && !empty($_POST['pt_id']))
         echo "<br><center><h1>Select trend options below.</h1></center>";
         echo'<span class="class1">
         <ul>
-        <li style = "display:inline;"><a href="pChart/trend/trend_gad.php" target ="_blank" >GAD-7</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_phq.php" target ="_blank" >PHQ-9</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_pcl-c.php" target ="_blank" >PCL-C</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_audit.php" target ="_blank">AUDIT-C</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_cage.php" target ="_blank">CAGE</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_psc.php" target ="_blank">PSC-17</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_ces.php" target ="_blank">CES-D</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_dast.php" target ="_blank">DAST-10</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_gad.php" target ="_blank" >GAD-7</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_phq.php" target ="_blank" >PHQ-9</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_pcl-c.php" target ="_blank" >PCL-C</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_audit.php" target ="_blank">AUDIT-C</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_cage.php" target ="_blank">CAGE</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_psc.php" target ="_blank">PSC-17</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_ces.php" target ="_blank">CES-D</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_dast.php" target ="_blank">DAST-10</a></li>
         </ul>
         <p>
         Please note: <ol><li>If there are no scorable assessments, there will be no trend graphic presented.</li> 
@@ -417,19 +414,19 @@ if ($_POST && !empty($_POST['pt_id']))
         </p>';
         echo "<br><center><h1>Select The Duke trend options below.</h1></center>";
         echo '<ul>  
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_bar.php" target ="_blank">Composite (Bar)</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_line.php" target ="_blank">Composite (Line)</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_physical.php" target ="_blank">Physical</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_mental.php" target ="_blank">Mental</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_social.php" target ="_blank">Social</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_general.php" target ="_blank">General</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_perceived.php" target ="_blank">Perceived</a></li><br><br>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_self-esteem.php" target ="_blank">Self-Esteem</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_anxiety.php" target ="_blank">Anxiety</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_depression.php" target ="_blank">Depression</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_anxiety-depression.php" target ="_blank">Anxiety-Depression</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_pain.php" target ="_blank">Pain</a></li>
-        <li style = "display:inline;"><a href="pChart/trend/trend_duke_disability.php" target ="_blank">Disability</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_bar.php" target ="_blank">Composite (Bar)</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_line.php" target ="_blank">Composite (Line)</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_physical.php" target ="_blank">Physical</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_mental.php" target ="_blank">Mental</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_social.php" target ="_blank">Social</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_general.php" target ="_blank">General</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_perceived.php" target ="_blank">Perceived</a></li><br><br>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_self-esteem.php" target ="_blank">Self-Esteem</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_anxiety.php" target ="_blank">Anxiety</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_depression.php" target ="_blank">Depression</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_anxiety-depression.php" target ="_blank">Anxiety-Depression</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_pain.php" target ="_blank">Pain</a></li>
+        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_disability.php" target ="_blank">Disability</a></li>
         </ul>
         </span>
         <p>
@@ -511,7 +508,7 @@ else
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="description" content="Brief Adult Assessment">
-    <link rel="stylesheet" href="mystyle.css" type="text/css">
+    <link rel="stylesheet" href="/include/mystyle.css" type="text/css">
   </head>
   <br>
   <br>
@@ -519,15 +516,9 @@ else
   
   <p style = "color: red; text-align: center"><b>Warning: once you click these links, you will not be able to return.</b></p>
     
-    <center><input type="button" value="Return to Start" style= "height: 25px; width: 100px" onclick="window.location='../index.php';"/>
-    <input type="submit" value="Assessment" style= "height: 25px; width: 100px" onclick="window.location='clinic.php'" /></center>
+    <center><input type="button" value="Return to Start" style= "height: 25px; width: 100px" onclick="window.location='/index.php';"/>
+    <input type="submit" value="Assessment" style= "height: 25px; width: 100px" onclick="window.location='/clinic.php'" /></center>
    
  
 
-    <footer><center><p> &copy; The University of Southern Mississippi <br> Funded by the Gulf Region Health Outreach Program, 2012</p></center></footer>
-    <center><a href="https://www.lphi.org/home2/section/3-416/primary-care-capacity-project-" target="_blank"><img src="images/GRHOP.png" style="border:solid; border-color:black;" width="100" height="100" alt="G.R.H.O.P"></a></center>
-
-
-
-
-
+	<?php include 'include/footer.php' ?>

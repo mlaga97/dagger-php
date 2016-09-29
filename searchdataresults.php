@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once('Mysql.php');
+require_once('include/Mysql.php');
 
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
 
@@ -16,13 +16,13 @@ $_SESSION[$key] = $value;
 //print_r($_POST);
 
 if(!isset($_SESSION['search_select'])) {
-header("location:searchdata.php");
+header("location: /searchdata.php");
    die("Authentication required, redirecting");
 }
 $id_search = $_SESSION['search_select'];
 $query_search_results =  $mysqli->query("SELECT * FROM response WHERE id = $id_search");
 $row = $query_search_results->fetch_assoc();
-$_SESSION['previous'] = 'searchdataresults.php';
+$_SESSION['previous'] = '/searchdataresults.php';
 $regexp = "/duke*/";
 $regexp1 = "/cd_*/";
 $regexp2 = "/self_*/";
@@ -46,7 +46,7 @@ $regexp5 = "/adhd_*/";
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="description" content="Brief Adult Assessment">
-        <link rel="stylesheet" href="mystyle.css" type="text/css">
+        <link rel="stylesheet" href="/include/mystyle.css" type="text/css">
     </head>
     <body onload="clearForm();">
         <div id="container">
@@ -248,31 +248,31 @@ $regexp5 = "/adhd_*/";
 
      echo "</table>";
 
-require_once 'stressors.php';
-require_once 'childStressors.php';
-require_once 'presenting_problem.php';
-require_once 'current_stress.php';
-require_once 'health.php';
-require_once 'events.php';
-require_once 'gad.php';
-require_once 'gad-2.php';
-require_once 'phq.php';
-require_once 'audit.php';
-require_once 'cage.php';
-require_once 'cd.php';
-require_once 'pcl.php';
-require_once 'psc.php';
-require_once 'ces_d.php';
-require_once 'dast.php';
-require_once 'duke.php';
-require_once 'self.php';
-require_once 'sdq.php';
-require_once 'pcl-2.php';
-require_once 'crafft.php';
-require_once 'life.php';
-require_once 'adhd.php';
-require_once 'hypertension.php';
-require_once 'pediatric.php';
+require_once 'include/stressors.php';
+require_once 'include/childStressors.php';
+require_once 'include/presenting_problem.php';
+require_once 'include/current_stress.php';
+require_once 'include/health.php';
+require_once 'include/events.php';
+require_once 'include/gad.php';
+require_once 'include/gad-2.php';
+require_once 'include/phq.php';
+require_once 'include/audit.php';
+require_once 'include/cage.php';
+require_once 'include/cd.php';
+require_once 'include/pcl.php';
+require_once 'include/psc.php';
+require_once 'include/ces_d.php';
+require_once 'include/dast.php';
+require_once 'include/duke.php';
+require_once 'include/self.php';
+require_once 'include/sdq.php';
+require_once 'include/pcl-2.php';
+require_once 'include/crafft.php';
+require_once 'include/life.php';
+require_once 'include/adhd.php';
+require_once 'include/hypertension.php';
+require_once 'include/pediatric.php';
 
 
 $sex = $row['sex'];
@@ -559,15 +559,14 @@ score_questions($row);
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="description" content="Brief Adult Assessment">
-        <link rel="stylesheet" href="mystyle.css" type="text/css">
+        <link rel="stylesheet" href="/include/mystyle.css" type="text/css">
     </head>
 
     <br><br>
     <p style = "color: red; text-align: center"><b>Warning: once you click these links, you will not be able to return.</b></p>
     
-    <center><input type="submit" value="Assessment" style= "height: 25px; width: 100px" onclick="window.location='clinic.php'" /> 
-    <input type="submit" value="Search" style= "height: 25px; width: 100px" onclick="window.location='searchdata.php';" /> 
+    <center><input type="submit" value="Assessment" style= "height: 25px; width: 100px" onclick="window.location='/clinic.php'" /> 
+    <input type="submit" value="Search" style= "height: 25px; width: 100px" onclick="window.location='/searchdata.php';" /> 
     <input type="button" style= "height: 25px; width: 100px" value="Print this page" onclick="printpage()" /> </center>
-
-        <footer><center><p> &copy; The University of Southern Mississippi <br> Funded by the Gulf Region Health Outreach Program, 2012</p></center></footer>
-        <center><a href="https://www.lphi.org/home2/section/3-416/primary-care-capacity-project-"><img src="images/GRHOP.png" style="border:solid; border-color:black;" width="100" height="100" alt="G.R.H.O.P"></a></center>
+        
+	<?php include 'include/footer.php' ?>

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once('Mysql.php');
+require_once('include/Mysql.php');
 
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
 
@@ -16,7 +16,7 @@ $_SESSION[$key] = $value;
 //print_r($_POST);
 
 if(!isset($_SESSION['search_select_contact'])) {
-header("location:searchdata.php");
+header("location: /searchdata.php");
    die("Authentication required, redirecting");
 }
 
@@ -24,7 +24,7 @@ $id_search = $_SESSION['search_select_contact'];
 $query_search_results =  $mysqli->query("SELECT contact_activity.id, (select users.name from users where users.id = contact_activity.user_id) as user, contact_activity.pt_id, contact_activity.contact_date, contact_activity.entry_date, contact_activity.contact_type, contact_activity.contact_outcome, contact_activity.outcome_other, contact_activity.contact_reason, (select clinic.name from clinic where clinic.id= contact_activity.clinic_id) as clinic, contact_activity.contact_time, contact_activity.group_other FROM contact_activity, users WHERE contact_activity.id = $id_search");
 $row = $query_search_results->fetch_assoc();
 //print_r($row);
-$_SESSION['previous'] = 'searchdataresultscontacts.php';
+$_SESSION['previous'] = '/searchdataresultscontacts.php';
 ?>
 
   <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
@@ -35,7 +35,7 @@ $_SESSION['previous'] = 'searchdataresultscontacts.php';
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="description" content="Contact Information">
-        <link rel="stylesheet" href="mystyle.css" type="text/css">
+        <link rel="stylesheet" href="/include/mystyle.css" type="text/css">
     </head>
     <body onload="clearForm();">
         <div id="container">

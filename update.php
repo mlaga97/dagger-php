@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once('log4php/Logger.php');
+require_once('include/log4php/Logger.php');
 Logger::configure('log4php/config.xml');
 $log = Logger::getLogger('myLogger');
 date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
@@ -64,7 +64,7 @@ $_SESSION['previous'] = 'update.php';
                                 <br>
 <?php
 
-	require_once'constants.php';
+	require_once'include/constants.php';
 	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
 
 	if(strcmp($_POST['chronic_care'], 1) == 0)

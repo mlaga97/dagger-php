@@ -1,15 +1,7 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-function write_menu(){
-echo'       <ul id="nav">
-            <li><a href="../index.php">Logout</a></li>
-            <li><a href="clinic.php">Assessment</a></li>
-            <li><a href="searchdata.php">Search</a></li>
+<ul id="nav">
+            <li><a href="/index.php">Logout</a></li>
+            <li><a href="/clinic.php">Assessment</a></li>
+            <li><a href="/searchdata.php">Search</a></li>
             <li><a href="#">Help</a>
                 <ul>
                 <li><a href="#">Self-Care</a>
@@ -90,6 +82,4 @@ echo'       <ul id="nav">
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/scripts.js"></script>';
-}
-?>
+<script type="text/javascript" src="js/scripts.js"></script>

@@ -1,23 +1,23 @@
 <?php
 session_start();          //This starts our session.
-require_once('Mysql.php');
-require_once 'constants.php';
+require_once('include/Mysql.php');
+require_once 'include/constants.php';
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
 
 //Here, we are checking to see if the user is authorized. $_SESSION['status'] is a variable that is set if the user successfully logs in. This functionality can be seen in
 //If the user is not authorized, we will re-locate them to our starting page.
-require_once('log4php/Logger.php');
-Logger::configure('log4php/config.xml');
+require_once('include/log4php/Logger.php');
+Logger::configure('include/log4php/config.xml');
 $log = Logger::getLogger('myLogger');
 date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
 
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized') {
 //if ($_SESSION['status']   != 'authorized'  ||	$_SESSION['previous'] != 'options.php')	
-    header("location:../index.php");
+    header("location: /index.php");
     die("Authentication required, redirecting");
 }
 $log->info("CLINICS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
-$_SESSION['previous'] = 'clinic.php';
+$_SESSION['previous'] = '/preassess.php';
 //print_r($_SESSION);
 
 foreach ($_SESSION as $key => $value) {
@@ -40,7 +40,7 @@ foreach ($_SESSION as $key => $value) {
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="description" content="Clinic Select">
-        <link rel="stylesheet" href="mystyle.css" type="text/css">
+        <link rel="stylesheet" href="/include/mystyle.css" type="text/css">
         <script type="text/javascript">
 
 // gets the values from the radio buttons	
@@ -101,11 +101,10 @@ function clearForm()
 	</script>
 </head>
 
-<body onload="clearForm();"><form id="form1" action="adult.php" method="post" >
+<body onload="clearForm();"><form id="form1" action="/adult.php" method="post" >
         
 <?php
-include 'menu.php';
-write_menu();
+include 'include/menu.php';
 ?>
 <div id="container">
     <div id="top">
@@ -132,7 +131,7 @@ print_r($today);
                 <br>
 
                 <?php
-                require_once'constants.php';
+                require_once 'include/constants.php';
                 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
 
                 if ($mysqli->connect_errno) {
@@ -734,11 +733,7 @@ print_r($today);
                 <center>
                     <input id="submit"  type="submit" onclick="return formSubmit(form1);" value="Submit" >
                 </center>	
-                <div>
-                    <footer><center><p> &copy; The University of Southern Mississippi <br> Funded by the Gulf Region Health Outreach Program, 2012</p></center></footer>
-                </div>
-                <center><a href="https://www.lphi.org/home2/section/3-416/primary-care-capacity-project-"><img src="images/GRHOP.png" style="border:solid; border-color:black;" width="100" height="100" alt="G.R.H.O.P"></a></center>
-        
+                <?php include 'include/footer.php' ?>
     
 </body>
 </html>
