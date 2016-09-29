@@ -38,7 +38,7 @@
 	<body>
 		<?php include 'include/menu.php' ?>
 		<?php echo $_SESSION['logo'] ?>
-		<form id='preassessment_form' action='/adult.php' method='post'>
+		<form id='preassessment_form' action='/assessment.php' method='post'>
 			<?php
 		
 				// Show Modules

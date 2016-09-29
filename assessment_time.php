@@ -14,7 +14,7 @@ foreach ($_POST as $key => $value) {
 //print_r($_SESSION);
 // These are page security parameters. We will not let the user in unless they meet all these conditions. 
 if ($_SESSION['status'] != 'authorized' ||
-        $_SESSION['previous'] != '/adult.php') {
+        $_SESSION['previous'] != '/assessment.php') {
     header("location: /index.php");
     die("Authentication required, redirecting");
 }
