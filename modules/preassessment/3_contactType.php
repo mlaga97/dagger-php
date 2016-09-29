@@ -1,4 +1,4 @@
-<table border="1" width = "800" id="table_contact_type"><td>
+<table border="1" style='width: 800;' id="table_contact_type"><tr><td>
 	<h3> Please select a patient contact type.</h3>
 
 	<div title="Group">
@@ -22,4 +22,4 @@
 	</div>
 
 	<br/>
-</td></table>
+</td></tr></table>

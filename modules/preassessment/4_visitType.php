@@ -8,7 +8,7 @@
 	}
 </script>
 
-<table border="1" width = "800" id="table_visit_type"><td>
+<table border="1" style='width: 800;' id="table_visit_type"><tr><td>
 	<h3>Please select a visit type.</h3>
 
 	<div title="Comprehensive visit to include MH/BH assessments">
@@ -24,4 +24,4 @@
 	</div>
 
 	<br>
-</td></table>
+</td></tr></table>
