@@ -17,7 +17,7 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized') {
     die("Authentication required, redirecting");
 }
 $log->info("CLINICS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
-$_SESSION['previous'] = '/preassess.php';
+$_SESSION['previous'] = '/preassessment.php';
 //print_r($_SESSION);
 
 foreach ($_SESSION as $key => $value) {
