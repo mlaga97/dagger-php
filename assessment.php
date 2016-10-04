@@ -55,7 +55,7 @@ foreach($_SESSION as $key=>$value)
 			{
 		  		$_SESSION['eth'] = "";
 			}
-		
+
 			if($key == 'living')
 			{
 		  		$_SESSION['living'] = "";
@@ -86,7 +86,7 @@ $modules = array_diff(scandir('modules/assessment'), array('..', '.'));
 			}
 		</style>
 	</head>
-	
+
 	<body>
 		<?php include 'include/menu.php' ?>
 		<?php echo $_SESSION['logo'] ?>
@@ -99,29 +99,29 @@ $modules = array_diff(scandir('modules/assessment'), array('..', '.'));
 					} else {
 						echo '<h1>Brief Patient Visit</h1>';
 					}
-						
+
 					date_default_timezone_set('America/Chicago');
 					$today = date('l jS \of F Y h:i:s A');
 					print_r($today);
 				?>
 			</div>
-		
+
 		<br/><br/><br/>
-		
-		<form id='preassessment_form' action='/assessment.php' method='post'>
+
+		<form id='assessment_form' action='/assessment_time.php' method='post'>
 			<?php
-		
+
 				// Show Modules
 				// TODO: assessment_type and mysqli
 				foreach($modules as $module) {
 					include 'modules/assessment/' . $module;
 					echo '<br/>';
 				}
-		
+
 			?>
 		</form>
 	</body>
-	
+
 	<script src="/include/src/datepickr.min.js"></script>
 <script>
 // Regular datepickr

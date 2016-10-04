@@ -1,14 +1,16 @@
 <?php
 
-/* Last thing. We need to record the time spent on the assessment. */
+/* 
+ Last thing. We need to record the time spent on the assessment.
+*/
 
 session_start();
-// A necessary function for translating our post variables into session variables.
+// A necessary function for translating our post variables into session variables. 
 foreach ($_POST as $key => $value) {
     $_SESSION[$key] = $value;
 }
 //print_r($_SESSION);
-// These are page security parameters. We will not let the user in unless they meet all these conditions.
+// These are page security parameters. We will not let the user in unless they meet all these conditions. 
 if ($_SESSION['status'] != 'authorized' ||
         $_SESSION['previous'] != '/assessment.php') {
     header("location: /index.php");
@@ -49,22 +51,22 @@ $_SESSION['previous'] = '/assessment_time.php';
 			<div id="logo">
 				<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
 			</div><!-- div logo end -->
-		</div><!--close div top -->
-
+		</div><!--close div top -->    
+		
 		<form id="form" name="form1" action="/submit.php" method="post">
 			<center><h1>Time spent with the client.</h1></center>
 			<p><strong>Please record the time, in minutes, you spent associated with this assessment: </strong>
 			<input type="text" autofocus="autofocus" name="assessment_time" id="assessment_time"> 
-			</p>
+			</p>                                
 		</form>
-
+		
 		<center>
 			<input id="submit"  type="submit" onclick="formSubmit();" value="Submit" >
 			<input id="reset_button" type="reset" onclick="clearForm()" value="Reset" />
 		</center>
-
+		
 		<br/><br/><br/>
-
+		
 		<?php include 'include/footer.php' ?>
 	</body>
 </html>
