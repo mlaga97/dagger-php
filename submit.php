@@ -108,7 +108,7 @@
 
 				<center><p>Please enter the clinic identification code and then submit.</p></center>
 
-				<form id="form1" name="form1" action="/insert.php" method="post">
+				<form id="form1" name="form1" action="/reviewAssessment.php" method="post">
 					<center>
 						<table id="clinic_id" border="1">
 							<tr>
