@@ -290,6 +290,33 @@ $_SESSION['previous'] = 'insert.php';
 	
 	////////////////////////////////////////This is where we are doing our calculations/////////////////////
 
+
+	// Do the other side of pediatric.php
+	// Yep, this looks like a good place to put this...
+	// TODO: Much of this could be moved into the bitmask library.
+	if($_SESSION['pediatric_check']) {
+		$pediatric_bitmask_fields = array("HLS_FH_Diab", "HLS_FH_HBP", "HLS_FH_HD", "HLS_FH_Overwt");
+		foreach($pediatric_bitmask_fields as $field_name) {
+			$sum = 0;
+
+			$sum += $_SESSION[$field_name . '-1'];
+			$sum += $_SESSION[$field_name . '-2'];
+			$sum += $_SESSION[$field_name . '-3'];
+			$sum += $_SESSION[$field_name . '-4'];
+			$sum += $_SESSION[$field_name . '-5'];
+			$sum += $_SESSION[$field_name . '-6'];
+
+			unset($_SESSION[$field_name . '-1']);
+			unset($_SESSION[$field_name . '-2']);
+			unset($_SESSION[$field_name . '-3']);
+			unset($_SESSION[$field_name . '-4']);
+			unset($_SESSION[$field_name . '-5']);
+			unset($_SESSION[$field_name . '-6']);
+
+			$_SESSION[$field_name] = $sum;
+		}
+	}
+
 	//we'll make a copy of the values saved in $_SESSION and set all '-1' values to 0 so we can do the cut-off calculations.
 	//except the duke and the cd-risc. They need to keep the -1 values for scoring.
 	$copy = $_SESSION;
@@ -672,31 +699,6 @@ score_questions($_SESSION);
 
 
 ///////////////Additional Coding///////////////////////////////////////////////////////////////////////////////
-
-	// Do the other side of pediatric.php
-	// TODO: Much of this could be moved into the bitmask library.
-	if($_SESSION['pediatric_check']) {
-		$pediatric_bitmask_fields = array("HLS_FH_Diab", "HLS_FH_HBP", "HLS_FH_HD", "HLS_FH_Overwt");
-		foreach($pediatric_bitmask_fields as $field_name) {
-			$sum = 0;
-
-			$sum += $_SESSION[$field_name . '-1'];
-			$sum += $_SESSION[$field_name . '-2'];
-			$sum += $_SESSION[$field_name . '-3'];
-			$sum += $_SESSION[$field_name . '-4'];
-			$sum += $_SESSION[$field_name . '-5'];
-			$sum += $_SESSION[$field_name . '-6'];
-
-			unset($_SESSION[$field_name . '-1']);
-			unset($_SESSION[$field_name . '-2']);
-			unset($_SESSION[$field_name . '-3']);
-			unset($_SESSION[$field_name . '-4']);
-			unset($_SESSION[$field_name . '-5']);
-			unset($_SESSION[$field_name . '-6']);
-
-			$_SESSION[$field_name] = $sum;
-		}
-	}
 
 
     //Convert the strings to the mysql default format.
