@@ -1,4 +1,5 @@
 <?php
+// Ensure that Mike has the correct copy of pediatric.php
 
 function write_pediatric($type, $mysqli) {
 	$questions1 = array(
