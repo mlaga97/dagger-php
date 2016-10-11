@@ -186,6 +186,7 @@ function pediatric_scoring($copy, $mysqli) {
 	';
 	
 	// Bank 1
+	include 'bitwise.php';
 	foreach($questions1 as $question) {
 		echo strtr('
 			<tr>
@@ -194,7 +195,7 @@ function pediatric_scoring($copy, $mysqli) {
 			</tr>
 		', array(
 					'{$question}' => $question[1],
-					'{$answer}' => $copy[$question[0]]
+					'{$answer}' => unmaskValuesToString($copy[$question[0]], $familyMembers)
 			));
 	}
 	
