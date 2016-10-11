@@ -37,7 +37,6 @@ function unmaskValues($bitwise, $column=0) {
 }
 
 // Takes a composite integer, returns an array of bools.
-// NOTE: Prints in reverse order? Not entirely sure why, but it's just a demo.
 function unmaskValuesIndexed($bitwise, $index) {
 	$values = array();
 	$column = count($index);
@@ -55,15 +54,14 @@ function unmaskValuesIndexed($bitwise, $index) {
 		}
 	}
 
-	return $values;
+	// Reverse the order, so it is the same as given.
+	return array_reverse($values);
 }
 
 // Takes a composite integer, returns an array of bools in the form of a string.
-// NOTE: Prints in reverse order? Not entirely sure why, but it's just a demo.
 function unmaskValuesToString($bitwise, $index) {
-	$values = '';
+	$values = array();
 	$column = count($index);
-	$first = true;
 
 	// Use that information to descend through
 	for(; $column >= 1; $column--) {
@@ -72,19 +70,30 @@ function unmaskValuesToString($bitwise, $index) {
 		// Subtract when possible, and make note.
 		if ($bitwise >= $bitmask) {
 			$bitwise -= $bitmask;
+			$values[$index[$column-1]] = true;
+		} else {
+			$values[$index[$column-1]] = false;
+		}
+	}
 
+	// Reverse the order, so it is the same as given.
+	$values = array_reverse($values);
+	$string = '';
+	$first = true;
+	foreach ($values as $key=>$value) {
+		if($value) {
 			// Comma Separation
 			if($first) {
 				$first = false;
 			} else {
-				$values = $values . ', ';
+				$string = $string . ', ';
 			}
 
-			$values = $values . $index[$column-1];
+			$string = $string . $key;
 		}
 	}
-
-	return $values;
+	
+	return $string;
 }
 
 ?>
