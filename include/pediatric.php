@@ -58,22 +58,22 @@ function write_pediatric($type, $mysqli) {
 				</td>
 				<td class="hypertension_response" id="{$field}-3">
 					<center>
-						<input type="checkbox" name="{$field}-3" value="3" />
+						<input type="checkbox" name="{$field}-3" value="4" />
 					</center>
 				</td>
 				<td class="hypertension_response" id="{$field}-4">
 					<center>
-						<input type="checkbox" name="{$field}-4" value="4" />
+						<input type="checkbox" name="{$field}-4" value="8" />
 					</center>
 				</td>
 				<td class="hypertension_response" id="{$field}-5">
 					<center>
-						<input type="checkbox" name="{$field}-5" value="5" />
+						<input type="checkbox" name="{$field}-5" value="16" />
 					</center>
 				</td>
 				<td class="hypertension_response" id="{$field}-6">
 					<center>
-						<input type="checkbox" name="{$field}-6" value="6" />
+						<input type="checkbox" name="{$field}-6" value="32" />
 					</center>
 				</td>
 			</tr>
