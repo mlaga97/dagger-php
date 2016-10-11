@@ -27,34 +27,8 @@
 
 	$_SESSION['previous'] = '/insertAssessment.php';
 
-	var_dump($_SESSION);
-
-	///////////////Additional Coding///////////////////////////////////////////////////////////////////////////////
-
-	// Do the other side of pediatric.php
-	// TODO: Much of this could be moved into the bitmask library.
-	if($_SESSION['pediatric_check']) {
-		$pediatric_bitmask_fields = array("HLS_FH_Diab", "HLS_FH_HBP", "HLS_FH_HD", "HLS_FH_Overwt");
-		foreach($pediatric_bitmask_fields as $field_name) {
-			$sum = 0;
-
-			$sum += $_SESSION[$field_name . '-1'];
-			$sum += $_SESSION[$field_name . '-2'];
-			$sum += $_SESSION[$field_name . '-3'];
-			$sum += $_SESSION[$field_name . '-4'];
-			$sum += $_SESSION[$field_name . '-5'];
-			$sum += $_SESSION[$field_name . '-6'];
-
-			unset($_SESSION[$field_name . '-1']);
-			unset($_SESSION[$field_name . '-2']);
-			unset($_SESSION[$field_name . '-3']);
-			unset($_SESSION[$field_name . '-4']);
-			unset($_SESSION[$field_name . '-5']);
-			unset($_SESSION[$field_name . '-6']);
-
-			$_SESSION[$field_name] = $sum;
-		}
-	}
+	require_once 'include/constants.php';
+	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
 
 	//Convert the strings to the mysql default format.
 	//YYYY-MM-DD
@@ -113,11 +87,6 @@
 	$keys = "(id,";
 	$values = "(0, ";
 	foreach($_SESSION as $key=>$value) { 	//We want to insert the values contained in $_SESSION not $copy.
-		//Allowing a '-1' to be inserted will notify us that the pt did not respond to the question.
-	//if (($key != 'st')         && ($key != 'status')     && ($key != 'id')           &&($key != 'logo')          && ($key != 'n1')           && ($key != 'n2') //took out st, so if it barfs, we'll leave it in.
-	//&& ($key != 'n3')          && ($key != 'n4')         && ($key != 'stress_check') && ($key != 'health_check') && ($key != 'events_check') && ($key != 'gad_check') && ($key != 'phq_check')
-			//&& ($key != 'audit_check') && ($key != 'cage_check') && ($key != 'cd_check')     && ($key != 'pcl_check')    && ($key != 'ces_check')    && ($key != 'previous')  && ($key != 'GRHOP_standard')
-			//&& ($key != 'admin') && ($key != 'dast_check') && ($key != 'duke_check') && ($key != 'psc_check') && ($key != 'c_p_id')&& ($key != 'symptom_check') && ($key != 'self_check'))
 			if (($key != 'st')  && ($key != 'status') && ($key != 'id') &&($key != 'logo') && ($key != 'n1') && ($key != 'n2')  //took out st, so if it barfs, we'll leave it in.
 					&& ($key != 'n3')  && ($key != 'n4') && ($key != 'GRHOP_standard') && ($key != 'admin') && ($key != 'c_p_id')       //throw st away. I can't figure out where this is comming from in adult.php.
 					&& ($key != 'previous') && ($key != 'search_select') && ($key != 'university_id')&& ($key != 'grouping')
