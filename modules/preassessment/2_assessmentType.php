@@ -32,3 +32,5 @@ if ($_SESSION['grouping'] === 2 || $_SESSION['grouping'] === 6 || $_SESSION['gro
             </td></table>";
 }
 ?>
+
+<br/>

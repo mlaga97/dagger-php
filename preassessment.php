@@ -44,7 +44,6 @@
 				// Show Modules
 				foreach($modules as $module) {
 					include 'modules/preassessment/' . $module;
-					echo '<br/>';
 				}
 
 			?>
