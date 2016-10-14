@@ -1,25 +1,23 @@
 <?php
-session_start();
-session_unset();
+	session_start();
+	session_unset();
 
-require_once('include/Mysql.php');
-$membership = new Membership();
+	require_once('include/Mysql.php');
+	$membership = new Membership();
 
-//include('include/log4php/Logger.php');
-//Logger::configure('include/log4php/config.xml');
-//$log = Logger::getLogger('myLogger');
-//date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
+	//include('include/log4php/Logger.php');
+	//Logger::configure('include/log4php/config.xml');
+	//$log = Logger::getLogger('myLogger');
+	//date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
 
-// Checking to see if the username and password were entered correctly.
-if ($_POST && !empty($_POST['username']) && !empty($_POST['password']))
-{
-    $response = $membership->validate_User($_POST['username'], $_POST['password']);
-    //$log->info("GRHOP: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". $_POST['username']);
-}
-//print_r($_SESSION);
-// Here we set our session previous variable. This variable is used to allow user access to the next web-page.
-$_SESSION['previous'] = '/index.php';
+	// Checking to see if the username and password were entered correctly.
+	if ($_POST && !empty($_POST['username']) && !empty($_POST['password'])) {
+	    $response = $membership->validate_User($_POST['username'], $_POST['password']);
+	    //$log->info("GRHOP: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". $_POST['username']);
+	}
 
+	// Here we set our session previous variable. This variable is used to allow user access to the next web-page.
+	$_SESSION['previous'] = '/index.php';
 ?>
 
 <html>
@@ -29,14 +27,13 @@ $_SESSION['previous'] = '/index.php';
 		<link rel="stylesheet" href="include/mystyle.css" type="text/css">
 		<title>Login Page</title>
 	</head>
-	
+
 	<body>
-		
 		<!-- Show the date and time. -->
 		<?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today); ?><br>
-		
+
 		<br/>
-		
+
 		<!-- Show Shuffled Logo Array -->
 		<table style="width: 400;">
 			<?php
@@ -55,25 +52,25 @@ $_SESSION['previous'] = '/index.php';
 
 			?>
 		</table>
-		
+
 		<br/><br/><br/>
-		
+
 		<!-- Login Form -->
 		<form method="post">
 			<h2>Login<br><small>Enter your credentials</small></h2>
-	
+
 			<label>Username: <input type="text" autofocus="autofocus" name="username" /></label>
 			<br/><br/>
-			
+
 			<label>Password: <input type="password" autofocus="autofocus" name="password" /></label>
 			<br/><br/>
-			
+
 			<input type="submit" id="submit" value="Login" name="submit" />
 		</form>
-		
+
 		<!-- Error Message -->
 		<?php if (isset($response)) echo "<br><hf class='alert'>" . $response. "</hf>"; ?>
-		
+
 		<!-- Show Footer -->
 		<?php include 'include/footer.php'; ?>
 	</body>

@@ -1,72 +1,62 @@
 <?php 
-session_start();
+	session_start();
 
-require_once('include/log4php/Logger.php');
-Logger::configure('include/log4php/config.xml');
-$log = Logger::getLogger('myLogger');
-date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
-$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
+	require_once('include/log4php/Logger.php');
+	Logger::configure('include/log4php/config.xml');
+	$log = Logger::getLogger('myLogger');
+	date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
+	$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 
-foreach($_POST as $key=>$value) 
-{
-	if (($key != 'status') && ($key != 'previous'))
-	{
-		$_SESSION[$key] = $value;
+	foreach($_POST as $key=>$value) {
+		if (($key != 'status') && ($key != 'previous')) {
+			$_SESSION[$key] = $value;
+		}
 	}
-}
-// Redirect submission from clinic.php to contact.php if $_SESSION['assessment_type'] != 'face to face'
+	// Redirect submission from clinic.php to contact.php if $_SESSION['assessment_type'] != 'face to face'
 
-//We're now not using the contact system. The contact_type will be stored in the database in table response.
-if (isset($_SESSION['contact_type']) && ($_SESSION['contact_type'] != "face to face")){
-//    header("location:contact.php");
-//    die("Redirecting"); 
-}
+	//We're now not using the contact system. The contact_type will be stored in the database in table response.
+	if (isset($_SESSION['contact_type']) && ($_SESSION['contact_type'] != "face to face")) {
+	//    header("location:contact.php");
+	//    die("Redirecting"); 
+	}
 
-if (!isset($_SESSION['status']) || ($_SESSION['status']   != 'authorized' || // && if such and such session != whatever previous page is. 
-    $_SESSION['previous'] != '/preassessment.php' ||
-    $_SESSION['clinic_id'] < 1    || !isset($_SESSION['assessment_type'])))//added the isset test. I found you could move 
-									//to this page from adult without the assessment_type set.
-    {
-	header("location: /index.php");
-	die("Authentication required, redirecting");
-    }
+	if (!isset($_SESSION['status']) || ($_SESSION['status']   != 'authorized' || // && if such and such session != whatever previous page is. 
+	    $_SESSION['previous'] != '/preassessment.php' ||
+	    $_SESSION['clinic_id'] < 1    || !isset($_SESSION['assessment_type']))) {
+			header("location: /index.php");
+			die("Authentication required, redirecting");
+	    }
 
-foreach($_SESSION as $key=>$value)
-{
+	foreach($_SESSION as $key=>$value) {
+		if(($key != 'id')           && ($key != 'uname')      && ($key != 'pswd')       && ($key != 'university_id') && ($key != 'clinic_id')    && ($key != 'status')       && 
+		   ($key != 'logo')         && ($key != 'user_id')    && ($key != 'first_name') && ($key != 'last_name')     && ($key != 'stress_check') && ($key != 'health_check') && 
+		   ($key != 'events_check') && ($key != 'gad_check')  && ($key != 'pcl_check')  && ($key != 'audit_check')   && ($key != 'cage_check')   && ($key != 'cd_check')     && 
+		   ($key != 'phq_check')    && ($key != 'ces_check')  && ($key != 'GRHOP_standard') && ($key != 'assessment_type') && ($key != 'psc_check') 
+		&& ($key != 'dast_check')   && ($key != 'duke_check') && ($key != 'symptom_check') && ($key != 'previous') && ($key != 'admin') 
+	         &&($key != 'self_check')   && ($key != 'sdq_check')  &&($key != 'crafft_check')&&($key != 'life_check')&&($key != 'gad2_check') 
+	         && ($key != 'pcl2_check')  && ($key != 'diagnosis_check')&& ($key != 'diag_me_check') && ($key != 'grouping') && ($key!='visit_type')&& 
+	                ($key!='adhd_check')&&($key!='contact_type') && ($key != 'c_stress_check')&& ($key != 'pp_check') && ($key!='hypertension_check')
+				&& ($key!='pediatric_check'))
+		{
+			$_SESSION[$key] = -1;
 
-	if(($key != 'id')           && ($key != 'uname')      && ($key != 'pswd')       && ($key != 'university_id') && ($key != 'clinic_id')    && ($key != 'status')       && 
-	   ($key != 'logo')         && ($key != 'user_id')    && ($key != 'first_name') && ($key != 'last_name')     && ($key != 'stress_check') && ($key != 'health_check') && 
-	   ($key != 'events_check') && ($key != 'gad_check')  && ($key != 'pcl_check')  && ($key != 'audit_check')   && ($key != 'cage_check')   && ($key != 'cd_check')     && 
-	   ($key != 'phq_check')    && ($key != 'ces_check')  && ($key != 'GRHOP_standard') && ($key != 'assessment_type') && ($key != 'psc_check') 
-	&& ($key != 'dast_check')   && ($key != 'duke_check') && ($key != 'symptom_check') && ($key != 'previous') && ($key != 'admin') 
-         &&($key != 'self_check')   && ($key != 'sdq_check')  &&($key != 'crafft_check')&&($key != 'life_check')&&($key != 'gad2_check') 
-         && ($key != 'pcl2_check')  && ($key != 'diagnosis_check')&& ($key != 'diag_me_check') && ($key != 'grouping') && ($key!='visit_type')&& 
-                ($key!='adhd_check')&&($key!='contact_type') && ($key != 'c_stress_check')&& ($key != 'pp_check') && ($key!='hypertension_check')
-			&& ($key!='pediatric_check'))
-	{
-		$_SESSION[$key] = -1;
-
-			if($key == 'sex')
-			{
+			if($key == 'sex') {
 		 		$_SESSION['sex'] = "";
 			}
 
-			if($key == 'eth')
-			{
+			if($key == 'eth') {
 		  		$_SESSION['eth'] = "";
 			}
 
-			if($key == 'living')
-			{
+			if($key == 'living') {
 		  		$_SESSION['living'] = "";
 			}
-
+		}
 	}
-}
 
-$_SESSION['previous'] = '/assessment.php';
+	$_SESSION['previous'] = '/assessment.php';
 
-$modules = array_diff(scandir('modules/assessment'), array('..', '.'));
+	$modules = array_diff(scandir('modules/assessment'), array('..', '.'));
 ?>
 
 <html>
@@ -124,6 +114,8 @@ $modules = array_diff(scandir('modules/assessment'), array('..', '.'));
 
 	<script src="/include/src/datepickr.min.js"></script>
 <script>
+
+
 // Regular datepickr
 datepickr('#datepickr');
 // Custom date format

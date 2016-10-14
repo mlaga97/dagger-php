@@ -1,6 +1,6 @@
 <?php
-
 	session_start();
+
 	require_once('include/Mysql.php');
 	require_once 'include/constants.php';
 	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
@@ -14,7 +14,9 @@
 	    header("location: /index.php");
 	    die("Authentication required, redirecting");
 	}
+
 	$log->info("CLINICS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
+
 	$_SESSION['previous'] = '/preassessment.php';
 
 	foreach ($_SESSION as $key => $value) {
