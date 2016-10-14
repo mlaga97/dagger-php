@@ -18,6 +18,8 @@ if ($_SESSION['status'] != 'authorized' ||
 }
 //print_r($_SESSION);
 $_SESSION['previous'] = '/assessment_time.php';
+
+$modules = array_diff(scandir('modules/postassessment'), array('..', '.'));
 ?>
 
 <html>
@@ -53,6 +55,17 @@ $_SESSION['previous'] = '/assessment_time.php';
 			</div><!-- div logo end -->
 		</div><!--close div top -->    
 		
+		<?php
+
+			// Show Modules
+			// TODO: assessment_type and mysqli
+			foreach($modules as $module) {
+				include 'modules/postassessment/' . $module;
+				echo '<br/>';
+			}
+
+		?>
+
 		<form id="form" name="form1" action="/submit.php" method="post">
 			<center><h1>Time spent with the client.</h1></center>
 			<p><strong>Please record the time, in minutes, you spent associated with this assessment: </strong>
