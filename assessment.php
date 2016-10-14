@@ -108,7 +108,7 @@ $modules = array_diff(scandir('modules/assessment'), array('..', '.'));
 
 		<br/><br/><br/>
 
-		<form id='assessment_form' action='/assessment_time.php' method='post'>
+		<form id='assessment_form' action='/postassessment.php' method='post'>
 			<?php
 
 				// Show Modules
