@@ -25,7 +25,6 @@
 	include 'include/adhd.php';
 	include 'include/presenting_problem.php';
 	include 'include/childStressors.php';
-	include 'include/hypertension.php';
 	include 'include/pediatric.php';
 	
 	if($_SESSION['pp_check'] == 1) {
@@ -146,10 +145,6 @@
 	
 	if($_SESSION['adhd_check'] == 1) {
 		write_adhd($_SESSION['assessment_type'], $mysqli);
-	}
-	
-	if($_SESSION['hypertension_check'] == 1) {
-		write_hypertension($_SESSION['assessment_type'], $mysqli);
 	}
 	
 	if($_SESSION['pediatric_check'] == 1) {
