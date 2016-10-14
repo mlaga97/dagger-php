@@ -1,8 +1,4 @@
 <?php
-	require_once 'include/constants.php';
-	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
-	$i = 0;
-	
 	include 'include/stressors.php';
 	include 'include/current_stress.php';
 	include 'include/health.php';
@@ -159,6 +155,4 @@
 	if($_SESSION['pediatric_check'] == 1) {
 		write_pediatric($_SESSION['assessment_type'], $mysqli);
 	}
-	
-	mysqli_close($mysqli);
 ?>
