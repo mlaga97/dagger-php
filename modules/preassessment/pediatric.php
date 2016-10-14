@@ -1,6 +1,6 @@
 <?php
 
-$_SESSION['hypertension_check'] = 0;
+$_SESSION['pediatric_check'] = 0;
 
 if($_SESSION['test_acc']) {
 	echo '
