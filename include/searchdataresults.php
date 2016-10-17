@@ -272,7 +272,6 @@ require_once 'crafft.php';
 require_once 'life.php';
 require_once 'adhd.php';
 require_once 'hypertension.php';
-require_once 'pediatric.php';
 
 
 $sex = $row['sex'];
@@ -337,9 +336,6 @@ if ($row['adhd_check'] ==1){
 }
 if ($row['hypertension_check'] ==1){
     hypertension_scoring($row, $mysqli);
-}
-if ($row['pediatric_check'] ==1){
-    pediatric_scoring($row, $mysqli);
 }
 
 if(isset($row['phq_9'])||isset($row['life_1'])||(isset($row['life_2'])))
