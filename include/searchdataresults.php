@@ -175,7 +175,7 @@ $regexp5 = "/adhd_*/";
      echo "<b>Sex:</b>";
      echo "</td><td width = \"400\">";
      echo " Data unspecified.";
-     echo "</td></tr>";;
+     echo "</td></tr>";
      }
 
      if ($row['eth']!= '')  
