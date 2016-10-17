@@ -520,7 +520,10 @@ print_r($today);
                     </div>
                     <div title=\"The ADHD Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.\">
                         <label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" /> ADHD Self-Report Scale          </label>
-                    </div>";
+                    </div>
+					<div title=\"The Hypertension Self-care Activity Level Effects Test is\">
+										<label><input id=\"hypertension_check\"    input type=\"checkbox\" name=\"hypertension_check\"    value=\"1\" /> Hypertension (H-SCALE)          </label>
+					</div>";
                             } else if ($_SESSION['grouping'] == 2 || $_SESSION['grouping'] === 10) { //grouping = 2 is for the MS GRHOP
                                 echo "
                     <div title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\">
@@ -597,7 +600,10 @@ print_r($today);
                     </div>
                     <div title=\"The ADHD Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.\">
                         <label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" /> ADHD Self-Report Scale          </label>
-                    </div>";
+                    </div>
+					<div title=\"The Hypertension Self-care Activity Level Effects Test is\">
+										<label><input id=\"hypertension_check\"    input type=\"checkbox\" name=\"hypertension_check\"    value=\"1\" /> Hypertension (H-SCALE)          </label>
+					</div>";
                             } else if ($_SESSION['grouping'] == 6) { //grouping = 6 is for the MS GRHOP non social work students
                                 echo "
         
@@ -624,7 +630,10 @@ print_r($today);
                     </div>
                     <div title=\"The ADHD Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.\">
                         <label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" /> ADHD Self-Report Scale          </label>
-                    </div>";
+                    </div>
+					<div title=\"The Hypertension Self-care Activity Level Effects Test is\">
+										<label><input id=\"hypertension_check\"    input type=\"checkbox\" name=\"hypertension_check\"    value=\"1\" /> Hypertension (H-SCALE)          </label>
+					</div>";
                             } else { //default is everything
                                 echo "
                     <div title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\">
@@ -695,7 +704,10 @@ print_r($today);
                     </div>
                     <div title=\"The ADHD Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.\">
                         <label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" /> ADHD Self-Report Scale          </label>
-                    </div>";
+                    </div>
+					<div title=\"The Hypertension Self-care Activity Level Effects Test is\">
+										<label><input id=\"hypertension_check\"    input type=\"checkbox\" name=\"hypertension_check\"    value=\"1\" /> Hypertension (H-SCALE)          </label>
+					</div>";
                             }
                          
 							if($_SESSION['test_acc']) {
