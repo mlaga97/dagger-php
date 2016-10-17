@@ -368,7 +368,7 @@ table#table_tobacco{
 
 hr{
 	background-color: black;
-	height: 5px;
+	height: 2px;
 	width: 800px;
 }
 
@@ -511,3 +511,76 @@ width: 32px;
 height: 32px;
 background: url(images/calendar.png);
 }
+
+
+/* Hypertension - MG 10/13/2016 */
+#hypertension_section, #hypertension_results{
+	font-family: arial, helvetica;
+	font-size: 120%;
+	
+}
+
+#hypertension_section h3, #hypertension_results h3{
+	text-align:center;
+}
+
+#hypertension_section table, #hypertension_results table {
+    border-collapse: collapse;
+	
+}
+
+#hypertension_section table, #hypertension_results table, #hypertension_results table, #hypertension_results td {
+    border: 1px solid black;
+}
+
+#hypertension_section th, td.hypertension_response, td.hypertension_scale, #hypertension_results td {
+    padding: 5px 10px 5px 10px;
+    text-align: left;
+	vertical-align: middle;
+	
+
+}
+
+#hypertension_section input[type='radio'] {
+    transform: scale(1.7);
+}
+
+#hypertension_section td.hypertension_question  {
+	width: 60%;
+	padding:0px;
+}
+
+
+#hypertension_questions3 td.hypertension_scale {
+	white-space: nowrap;
+}
+
+#hypertension_section .radio_caption {
+	color:gray;
+	font-size:60%;
+	line-height:60%;
+	position:relative;
+	top:-5px;
+	white-space: nowrap;
+}
+
+
+#hypertension_section .question_criteria {
+	font-size: 120%;
+	font-weight:bold;
+	
+}
+
+
+#hypertension_section .hypertension_row, #hypertension_results td {
+	
+	background-color: #EFFBFB;
+}
+
+
+
+
+
+
+
+
