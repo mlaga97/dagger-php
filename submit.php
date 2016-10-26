@@ -47,6 +47,7 @@
 		<meta name="description" content="Brief Adult Assessment">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 		<script type="text/javascript">
+
 			// Need to get the clinic_id into the javascript so it must be read here. 
 			// I would love to have another way to do this since this exposes the value if you "view source" of the resultant webpage.
 			var c_id = <?php echo $_SESSION['user_id'];?>;
@@ -86,6 +87,7 @@
 					return false;
 				}
 			}
+
 		</script>
 	</head>
 

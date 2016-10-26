@@ -1,23 +1,17 @@
-<?php 
+<?php
 	session_start();
 
 	require_once('include/log4php/Logger.php');
 	Logger::configure('include/log4php/config.xml');
 	$log = Logger::getLogger('myLogger');
-	date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
+	date_default_timezone_set('America/Chicago');
+	$today = date('m-d-y h:i:s');
 	$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 
 	foreach($_POST as $key=>$value) {
 		if (($key != 'status') && ($key != 'previous')) {
 			$_SESSION[$key] = $value;
 		}
-	}
-	// Redirect submission from clinic.php to contact.php if $_SESSION['assessment_type'] != 'face to face'
-
-	//We're now not using the contact system. The contact_type will be stored in the database in table response.
-	if (isset($_SESSION['contact_type']) && ($_SESSION['contact_type'] != "face to face")) {
-	//    header("location:contact.php");
-	//    die("Redirecting"); 
 	}
 
 	if (!isset($_SESSION['status']) || ($_SESSION['status']   != 'authorized' || // && if such and such session != whatever previous page is. 
@@ -113,31 +107,38 @@
 	</body>
 
 	<script src="/include/src/datepickr.min.js"></script>
-<script>
+	<script>
+		/* DatePickr Configuration */
 
+		// Regular datepickr
+		datepickr('#datepickr');
 
-// Regular datepickr
-datepickr('#datepickr');
-// Custom date format
-datepickr('.datepickr', { dateFormat: 'Y-m-d'});
-// Min and max date
-datepickr('#minAndMax', {
-// few days ago
-minDate: new Date().getTime() - 2.592e8,
-// few days from now
-maxDate: new Date().getTime() + 2.592e8
-});
-// datepickr on an icon, using altInput to store the value
-// altInput must be a direct reference to an input element (for now)
-datepickr('.calendar-icon', { altInput: document.getElementById('calendar-input') });
-// If the input contains a value, datepickr will attempt to run Date.parse on it
-datepickr('[title="parseMe"]');
-// Overwrite the global datepickr prototype
-// Won't affect previously created datepickrs, but will affect any new ones
-datepickr.prototype.l10n.months.shorthand = ['jan', 'feb', 'mar', 'april', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec'];
-datepickr.prototype.l10n.months.longhand = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-datepickr.prototype.l10n.weekdays.shorthand = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-datepickr.prototype.l10n.weekdays.longhand = ['Sunday', 'Monday', 'Tuesdat', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-datepickr('#someFrench.sil-vous-plait', { dateFormat: '\\le j F Y' });
-</script>
+		// Custom date format
+		datepickr('.datepickr', { dateFormat: 'Y-m-d'});
+
+		// Min and max date
+		datepickr('#minAndMax', {
+			// few days ago
+			minDate: new Date().getTime() - 2.592e8,
+			// few days from now
+			maxDate: new Date().getTime() + 2.592e8
+		});
+
+		// datepickr on an icon, using altInput to store the value
+		// altInput must be a direct reference to an input element (for now)
+		datepickr('.calendar-icon', { altInput: document.getElementById('calendar-input') });
+
+		// If the input contains a value, datepickr will attempt to run Date.parse on it
+		datepickr('[title="parseMe"]');
+
+		// Overwrite the global datepickr prototype
+		// Won't affect previously created datepickrs, but will affect any new ones
+		datepickr.prototype.l10n.months.shorthand = ['jan', 'feb', 'mar', 'april', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec'];
+		datepickr.prototype.l10n.months.longhand = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		datepickr.prototype.l10n.weekdays.shorthand = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+		datepickr.prototype.l10n.weekdays.longhand = ['Sunday', 'Monday', 'Tuesdat', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+		datepickr('#someFrench.sil-vous-plait', { dateFormat: '\\le j F Y' });
+
+	</script>
+
 </html>
