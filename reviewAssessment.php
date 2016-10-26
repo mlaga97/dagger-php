@@ -53,12 +53,17 @@
 		<center>
 			<?php
 
+				require_once 'include/constants.php';
+				$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
+
 				// Show Modules
 				// TODO: assessment_type and mysqli
 				foreach($modules as $module) {
 					include 'modules/reviewAssessment/' . $module;
 					echo '<br/>';
 				}
+
+				mysqli_close($mysqli);
 
 			?>
 		</center>
