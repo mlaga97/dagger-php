@@ -1,32 +1,11 @@
 <?php
-	session_start();
-
-	require_once('include/Mysql.php');
-	require_once 'include/constants.php';
-	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
-
-	require_once('include/log4php/Logger.php');
-	Logger::configure('include/log4php/config.xml');
-	$log = Logger::getLogger('myLogger');
-	date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
-
-	if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized') {
-	    header("location: /index.php");
-	    die("Authentication required, redirecting");
-	}
+	include 'include/dagger.php';
+	loggingInit();
+	allowPrevious('/options.php', '/preassessment.php');
 
 	$log->info("CLINICS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 
-	$_SESSION['previous'] = '/preassessment.php';
-
-	foreach ($_SESSION as $key => $value) {
-	    if (($key != 'user_id') && ($key != 'clinic_id') && ($key != 'admin') && ($key != 'university_id') && ($key != 'grouping') && ($key != 'logo') &&
-	            ($key != 'status') && ($key != 'previous') && ($key != 'test_acc')) {
-	        unset($_SESSION[$key]);
-	    }
-	}
-
-	$modules = array_diff(scandir('modules/preassessment'), array('..', '.'));
+	unsetAllButTheseKeys(array('user_id', 'clinic_id', 'admin', 'university_id', 'grouping', 'logo', 'status', 'previous', 'test_acc'));
 ?>
 
 <html>
@@ -43,10 +22,10 @@
 		<form id='preassessment_form' action='/assessment.php' method='post'>
 			<?php
 
-				// Show Modules
-				foreach($modules as $module) {
-					include 'modules/preassessment/' . $module;
-				}
+				// Load and run the modules with database access
+				dbOpen();
+				loadModules('modules/preassessment/');
+				dbClose();
 
 			?>
 		</form>

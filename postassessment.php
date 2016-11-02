@@ -1,21 +1,8 @@
 <?php
-	session_start();
-
-	// A necessary function for translating our post variables into session variables. 
-	foreach ($_POST as $key => $value) {
-	    $_SESSION[$key] = $value;
-	}
-
-	// These are page security parameters. We will not let the user in unless they meet all these conditions. 
-	if ($_SESSION['status'] != 'authorized' ||
-	        $_SESSION['previous'] != '/assessment.php') {
-	    header("location: /index.php");
-	    die("Authentication required, redirecting");
-	}
-
-	$_SESSION['previous'] = '/assessment_time.php';
-
-	$modules = array_diff(scandir('modules/postassessment'), array('..', '.'));
+	include 'include/dagger.php';
+	loggingInit();
+	allowPrevious('/assessment.php', '/postassessment.php');
+	postToSession();
 ?>
 
 <html>
@@ -47,30 +34,24 @@
 	<body onload="clearForm()">
 		<div id="top">
 			<div id="logo">
-				<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
-			</div><!-- div logo end -->
-		</div><!--close div top -->    
+				<?php echo $_SESSION['logo'] ?>
+			</div>
+		</div>
 
 		<?php
 
-			require_once 'include/constants.php';
-			$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
-
 			// Show Modules
-			// TODO: assessment_type and mysqli
-			foreach($modules as $module) {
-				include 'modules/postassessment/' . $module;
-				echo '<br/>';
-			}
+			dbOpen();
+			loadModules('modules/postAssessment/');
+			dbClose();
 
-			mysqli_close($mysqli);
 		?>
 
 		<form id="form" name="form1" action="/submit.php" method="post">
 			<center><h1>Time spent with the client.</h1></center>
 			<p><strong>Please record the time, in minutes, you spent associated with this assessment: </strong>
 			<input type="text" autofocus="autofocus" name="assessment_time" id="assessment_time"> 
-			</p>                                
+			</p>
 		</form>
 
 		<center>

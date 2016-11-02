@@ -5,15 +5,9 @@
 	require_once('include/Mysql.php');
 	$membership = new Membership();
 
-	//include('include/log4php/Logger.php');
-	//Logger::configure('include/log4php/config.xml');
-	//$log = Logger::getLogger('myLogger');
-	//date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
-
 	// Checking to see if the username and password were entered correctly.
 	if ($_POST && !empty($_POST['username']) && !empty($_POST['password'])) {
 	    $response = $membership->validate_User($_POST['username'], $_POST['password']);
-	    //$log->info("GRHOP: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". $_POST['username']);
 	}
 
 	// Here we set our session previous variable. This variable is used to allow user access to the next web-page.

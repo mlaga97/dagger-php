@@ -1,4 +1,5 @@
 <?php
+	global $log, $today;
 
 	// These keys should not be inserted into the DB
 	$insert_blacklist = array(
@@ -20,6 +21,18 @@
 
 	$keys = "(id,";
 	$values = "(0, ";
+
+	if(array_key_exists('admin', $insert_blacklist)) {
+		echo 'admin blacklisted';
+	} else {
+		echo 'admin not blacklisted';
+	}
+
+	if(array_key_exists('stress_check', $insert_blacklist)) {
+		echo 'stress_check blacklisted';
+	} else {
+		echo 'stress_check not blacklisted';
+	}
 
 	// Pull the desired keys from $_SESSION and do some final post-processing
 	foreach($_SESSION as $key=>$value) {

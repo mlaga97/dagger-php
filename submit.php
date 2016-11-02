@@ -1,41 +1,17 @@
 <?php
-	session_start();
+	include 'include/dagger.php';
+	loggingInit();
+	allowPrevious('/postassessment.php', '/submit.php');
+	postToSession();
 
-	// A necessary function for translating our post variables into session variables. 
-	foreach($_POST as $key=>$value) {
-		$_SESSION[$key] = $value;
-	}
-
-	// These are page security parameters. We will not let the user in unless they meet all these conditions. 
-	if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized') {
-		header("location: /index.php");
-		die("Authentication required, redirecting");
-	}
-
-	// The following conditions change a variable from not existing to "" for later. 
-	if(!array_key_exists('eth', $_SESSION)) {
-		$_SESSION['eth'] = "";
-	}
-	if(!array_key_exists('sex', $_SESSION)) {
-		$_SESSION['sex'] = "";
-	}
-	if(!array_key_exists('m_status', $_SESSION)) {
-		$_SESSION['m_status'] = "";
-	}
-	if(!array_key_exists('living', $_SESSION)) {
-		$_SESSION['living'] = "";
-	}
-	if(!array_key_exists('ed', $_SESSION)) {
-		$_SESSION['ed'] = "";
-	}
-	if(!array_key_exists('first_name', $_SESSION)) {
-		$_SESSION['first_name'] = "";
-	}
-	if(!array_key_exists('last_name', $_SESSION)) {
-		$_SESSION['last_name'] = "";
-	}
-	
-	$_SESSION['previous'] = '/submit.php';
+	// The following conditions change a variable from not existing to "" for later.
+	if(!array_key_exists('ed', $_SESSION))			$_SESSION['ed'] = "";
+	if(!array_key_exists('eth', $_SESSION))			$_SESSION['eth'] = "";
+	if(!array_key_exists('sex', $_SESSION))			$_SESSION['sex'] = "";
+	if(!array_key_exists('living', $_SESSION))		$_SESSION['living'] = "";
+	if(!array_key_exists('m_status', $_SESSION))	$_SESSION['m_status'] = "";
+	if(!array_key_exists('last_name', $_SESSION))	$_SESSION['last_name'] = "";
+	if(!array_key_exists('first_name', $_SESSION))	$_SESSION['first_name'] = "";
 ?>
 
 <!-- HTML Start -->

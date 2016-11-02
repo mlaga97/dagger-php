@@ -59,4 +59,4 @@
                                 </td></tr>
                         </table><!-- end table chronic -->
                     </div>';
-?>
+?><br/>

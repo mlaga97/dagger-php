@@ -1,33 +1,19 @@
 <?php
-	session_start();
+	include 'include/dagger.php';
+	loggingInit();
+	allowPrevious('/submit.php', '/reviewAssessment.php');
+	postToSession(array('status', 'previous'));
 
-	require_once('include/log4php/Logger.php');
-	Logger::configure('include/log4php/config.xml');
-	$log = Logger::getLogger('myLogger');
-	date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
-
-	foreach($_POST as $key=>$value) {
-		if (($key != 'status') && ($key != 'previous')) {
-			$_SESSION[$key] = $value;
-		}
-	}
-
+	// Check for submission key
 	if(
-			!isset($_SESSION['status']) ||
-			$_SESSION['status'] != 'authorized' ||
-			$_SESSION['previous'] != '/submit.php' ||
-			!array_key_exists('n1', $_SESSION) ||
-			!array_key_exists('n2', $_SESSION) ||
-			!array_key_exists('n3', $_SESSION) ||
-			!array_key_exists('n4', $_SESSION)
+		!array_key_exists('n1', $_SESSION) ||
+		!array_key_exists('n2', $_SESSION) ||
+		!array_key_exists('n3', $_SESSION) ||
+		!array_key_exists('n4', $_SESSION)
 	) {
 		header("location: /index.php");
 		die("Authentication required, redirecting");
 	}
-
-	$_SESSION['previous'] = '/reviewAssessment.php';
-
-	$modules = array_diff(scandir('modules/reviewAssessment'), array('..', '.'));
 ?>
 
 
@@ -53,17 +39,10 @@
 		<center>
 			<?php
 
-				require_once 'include/constants.php';
-				$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
-
 				// Show Modules
-				// TODO: assessment_type and mysqli
-				foreach($modules as $module) {
-					include 'modules/reviewAssessment/' . $module;
-					echo '<br/>';
-				}
-
-				mysqli_close($mysqli);
+				// TODO: assessment_type
+				//$mysqli = dbOpen();
+				loadModules('modules/reviewAssessment/');
 
 			?>
 		</center>

@@ -1,25 +1,10 @@
 <?php
-	session_start();
+	include 'include/dagger.php';
+	loggingInit();
+	allowPrevious('/preassessment.php', '/assessment.php');
+	postToSession(array('status', 'previous'));
 
-	require_once('include/log4php/Logger.php');
-	Logger::configure('include/log4php/config.xml');
-	$log = Logger::getLogger('myLogger');
-	date_default_timezone_set('America/Chicago');
-	$today = date('m-d-y h:i:s');
 	$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
-
-	foreach($_POST as $key=>$value) {
-		if (($key != 'status') && ($key != 'previous')) {
-			$_SESSION[$key] = $value;
-		}
-	}
-
-	if (!isset($_SESSION['status']) || ($_SESSION['status']   != 'authorized' || // && if such and such session != whatever previous page is. 
-	    $_SESSION['previous'] != '/preassessment.php' ||
-	    $_SESSION['clinic_id'] < 1    || !isset($_SESSION['assessment_type']))) {
-			header("location: /index.php");
-			die("Authentication required, redirecting");
-	    }
 
 	foreach($_SESSION as $key=>$value) {
 		if(($key != 'id')           && ($key != 'uname')      && ($key != 'pswd')       && ($key != 'university_id') && ($key != 'clinic_id')    && ($key != 'status')       && 
@@ -47,10 +32,6 @@
 			}
 		}
 	}
-
-	$_SESSION['previous'] = '/assessment.php';
-
-	$modules = array_diff(scandir('modules/assessment'), array('..', '.'));
 ?>
 
 <html>
@@ -96,11 +77,10 @@
 			<?php
 
 				// Show Modules
-				// TODO: assessment_type and mysqli
-				foreach($modules as $module) {
-					include 'modules/assessment/' . $module;
-					echo '<br/>';
-				}
+				// TODO: assessment_type
+				dbOpen();
+				loadModules('modules/assessment/');
+				dbClose();
 
 			?>
 		</form>
