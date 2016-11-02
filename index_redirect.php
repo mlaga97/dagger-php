@@ -4,7 +4,7 @@ session_unset();
 
 require_once('include/Mysql.php');
 $membership = new Membership();
-//test-MG
+//test2 - MG - Luc
 //include('include/log4php/Logger.php');
 //Logger::configure('include/log4php/config.xml');
 //$log = Logger::getLogger('myLogger');
