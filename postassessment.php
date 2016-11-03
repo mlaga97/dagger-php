@@ -47,7 +47,7 @@
 
 		?>
 
-		<form id="form" name="form1" action="/submit.php" method="post">
+		<form id="form" name="form1" action="/reviewAssessment.php" method="post">
 			<center><h1>Time spent with the client.</h1></center>
 			<p><strong>Please record the time, in minutes, you spent associated with this assessment: </strong>
 			<input type="text" autofocus="autofocus" name="assessment_time" id="assessment_time"> 
@@ -55,7 +55,7 @@
 		</form>
 
 		<center>
-			<input id="submit"  type="submit" onclick="formSubmit();" value="Submit" >
+			<input id="submit"  type="submit" onclick="formSubmit();" value="Review Assessment" >
 			<input id="reset_button" type="reset" onclick="clearForm()" value="Reset" />
 		</center>
 

@@ -1,19 +1,8 @@
 <?php
 	include 'include/dagger.php';
 	loggingInit();
-	allowPrevious('/submit.php', '/reviewAssessment.php');
+	allowPrevious('/postAssessment.php', '/reviewAssessment.php');
 	postToSession(array('status', 'previous'));
-
-	// Check for submission key
-	if(
-		!array_key_exists('n1', $_SESSION) ||
-		!array_key_exists('n2', $_SESSION) ||
-		!array_key_exists('n3', $_SESSION) ||
-		!array_key_exists('n4', $_SESSION)
-	) {
-		header("location: /index.php");
-		die("Authentication required, redirecting");
-	}
 ?>
 
 

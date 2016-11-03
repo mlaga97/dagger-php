@@ -3,17 +3,6 @@
 	loggingInit();
 	allowPrevious('/reviewAssessment.php', '/insertAssessment.php');
 	postToSession(array('status', 'previous'));
-
-	// Check for submission key
-	if(
-		!array_key_exists('n1', $_SESSION) ||
-		!array_key_exists('n2', $_SESSION) ||
-		!array_key_exists('n3', $_SESSION) ||
-		!array_key_exists('n4', $_SESSION)
-	) {
-		header("location: /index.php");
-		die("Authentication required, redirecting");
-	}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
