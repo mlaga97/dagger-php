@@ -324,42 +324,7 @@ if ($_POST && ! empty ( $_POST ['pt_id'] )) {
 	echo "<button onclick =\"search_select(form2);\" type =\"submit\" style = \"height: 25px; width: 100px\">View</button>";
 	echo "<br>";
 	echo "<br></form>";
-	
-	$first = 0;
-	while ( $row = $contact_info->fetch_assoc () ) {
-		if ($first == 0) {
-			echo "<br><br><hr>";
-			echo '<form id = "form4" action = "/searchdataresultscontacts.php" method = "post" target="_blank">';
-			echo '<table border = "0"><tr ><td colspan = "5"><center><font size="">Patient Contacts</font></center></td></tr>';
-			echo '<tr><td></td><td width="150">Date</td>';
-			echo '<td width="200">Clinician</td>';
-			echo '<td width="150">Contact Type</td>';
-			echo '<td width="300">Contact Outcome</td></tr>';
-			$first ++;
-		}
-		echo "<tr><td>";
-		echo "<input type =\"radio\" input id = \"id\" name =\"search_select_contact\"  value=\"" . $row ['id'] . "\">";
-		echo "</td>";
-		echo "<td>  ";
-		echo $row ['contact_date'];
-		echo "</td>  ";
-		echo "<td>  ";
-		echo $row ['name'];
-		echo "</td>";
-		echo "<td>  ";
-		echo $row ['contact_type'];
-		echo "</td>";
-		echo "<td>  ";
-		echo $row ['contact_outcome'];
-		echo "</td>";
-		echo "</tr>";
-	}
-	if ($first > 0) {
-		echo "</table><br>";
-		echo "<button onclick =\"search_select_contact(form4);\" type =\"submit\" style = \"height: 50px; width: 100px\">View Contact Details</button>";
-		echo "</form>";
-		echo "<br><br><hr>";
-	}
+
 	echo "<br><center><h1>Select trend options below.</h1></center>";
 	echo '<span class="class1">
         <ul>
