@@ -514,7 +514,7 @@ background: url(images/calendar.png);
 
 
 /* Hypertension - MG 10/13/2016 */
-#hypertension_section, #hypertension_results{
+#hypertension_section, #hypertension_results, #pediatric_section, #pediatric_results{
 	font-family: arial, helvetica;
 	font-size: 120%;
 	
@@ -524,16 +524,18 @@ background: url(images/calendar.png);
 	text-align:center;
 }
 
-#hypertension_section table, #hypertension_results table {
+#hypertension_section table, #hypertension_results table, #pediatric_section table, #pediatric_results table {
     border-collapse: collapse;
 	
 }
 
-#hypertension_section table, #hypertension_results table, #hypertension_results table, #hypertension_results td {
+#hypertension_section table, #pediatric_section table, 
+#hypertension_results table,  #hypertension_results td,
+#pediatric_results table, #pediatric_results td {
     border: 1px solid black;
 }
 
-#hypertension_section th, td.hypertension_response, td.hypertension_scale, #hypertension_results td {
+#hypertension_section th, td.hypertension_response, td.hypertension_scale, #hypertension_results td, td.pediatric_scale, #pediatric_results td{
     padding: 5px 10px 5px 10px;
     text-align: left;
 	vertical-align: middle;
@@ -541,21 +543,21 @@ background: url(images/calendar.png);
 
 }
 
-#hypertension_section input[type='radio'] {
+#hypertension_section input[type='radio'], #pediatric_section input[type='radio'], #pediatric_section input[type='checkbox'] {
     transform: scale(1.7);
 }
 
-#hypertension_section td.hypertension_question  {
+#hypertension_section td.hypertension_question, #pediatric_section td.pediatric_question  {
 	width: 60%;
 	padding:0px;
 }
 
 
-#hypertension_questions3 td.hypertension_scale {
+#hypertension_questions3 td.hypertension_scale, .nowrap {
 	white-space: nowrap;
 }
 
-#hypertension_section .radio_caption {
+.radio_caption {
 	color:gray;
 	font-size:60%;
 	line-height:60%;
@@ -565,14 +567,14 @@ background: url(images/calendar.png);
 }
 
 
-#hypertension_section .question_criteria {
+.question_criteria {
 	font-size: 120%;
 	font-weight:bold;
 	
 }
 
 
-#hypertension_section .hypertension_row, #hypertension_results td {
+#hypertension_section .hypertension_row, #hypertension_results td, #pediatric_section .pediatric_row, #pediatric_results td{
 	
 	background-color: #EFFBFB;
 }
