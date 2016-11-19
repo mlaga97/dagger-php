@@ -139,7 +139,7 @@ function write_pediatric($type, $mysqli) {
 					'{$index}' => $field_index,
 					'{$value}' => $value
 			));
-			
+			$_SESSION[$id] = 99;
 			$field_index++;
 		}
 		
@@ -169,19 +169,19 @@ function pediatric_scoring($copy, $mysqli) {
 	$familyMembers = array("Mother", "Father", "Sibling", "Grandparent", "Aunt/Uncle", "Other");
 	
 	$questions2 = array(
-			array("HLS_Servings",	array("0"=>"0 - 1 servings", "2"=>"2 - 3 servings", "4"=>"4 - 5 servings", "6"=>"More than 5 servings"),	"How many servings per day (1 serving = 1/2 cup) of fruits and vegetables does your child eat?"),
-			array("HLS_Screentime",	array("1"=>"More than 4 hours", "2"=>"3 - 4 hours", "3"=>"1 - 2 hours", "4"=>"1 hour or less"),			"In total, how many hours per day does your child watch TV or movies, play video or computer games?"),
-			array("HLS_PhysAct",	array("0"=>"0 - 1 day", "2"=>"2 - 3 days", "4"=>"4 - 5 days", "6"=>"6 - 7 days"),							"How many days per week is your child physically active, outside of school time, for at least 60 minutes? (walking, running, biking, swimming, playing outside, dancing, etc.)"),
-			array("HLS_FamAct",		array("0"=>"0 - 1 day", "2"=>"2 - 3 days", "4"=>"4 - 5 days", "6"=>"6 - 7 days"),							"How many times per week does your family do something active together?"),
-			array("HLS_Drink",		array("1"=>"4 or more times", "2"=>"3 times", "3"=>"1 - 2 times", "4"=>"0 times"),					"How many times per day does your child drink any of the following: juice, soda, sports drinks, energy drinks, flavored milk, lemonade, sweetened tea, or coffee drinks?"),
-			array("HLS_Brkfst",		array("0"=>"0 - 1 time", "2"=>"2 - 3 times", "4"=>"4 - 5 times", "6"=>"6 - 7 times"),						"How many times per week does your child eat breakfast?"),
-			array("HLS_Table",		array("0"=>"0 - 1 time", "2"=>"2 - 3 times", "4"=>"4 - 5 times", "6"=>"6 - 7 times"),						"How many days per week does your family eat dinner together at the table?"),
-			array("HLS_EatOut",		array("1"=>"6 - 7 times", "2"=>"4 - 5 times", "3"=>"2 - 3 times", "4"=>"0 - 1 time"),						"How many times per week does your child eat food outside the home/school?"),
-			array("HLS_Money",		array("1"=>"Often", "2"=>"Sometimes", "3"=>"Rarely", "4"=>"Never"),									"Are you ever worried that food will run out before you get more money to buy more?"),
-			array("HLS_Sleep",		array("1"=>"Often", "2"=>"Sometimes", "3"=>"Rarely", "4"=>"Never"),									"Is your child having difficulty with sleeping or snoring?"),
-			array("HLS_Health",		array("1"=>"8 - 10 (Very)", "2"=>"5 - 7", "3"=>"2 - 4", "4"=>"0 - 1 (Low)"),								"How worried are you about your child's health?"),
-			array("HLS_Weight",		array("1"=>"8 - 10 (Very)", "2"=>"5 - 7", "3"=>"2 - 4", "4"=>"0 - 1 (Low)"),								"How worried are you about your child's weight?"),
-			array("HLS_Now",		array("1"=>"8 - 10 (Definitely)", "2"=>"5 - 7 (Yes)", "3"=>"2 - 4 (Maybe)", "4"=>"0 - 1 (No)"),				"Is now a good time to work on family eating and activity habits?"),
+			array("HLS_Servings",	array("0"=>"0 - 1 servings", "2"=>"2 - 3 servings", "4"=>"4 - 5 servings", "6"=>"More than 5 servings", "99"=>"No response"),	"How many servings per day (1 serving = 1/2 cup) of fruits and vegetables does your child eat?"),
+			array("HLS_Screentime",	array("1"=>"More than 4 hours", "2"=>"3 - 4 hours", "3"=>"1 - 2 hours", "4"=>"1 hour or less", "99"=>"No response"),			"In total, how many hours per day does your child watch TV or movies, play video or computer games?"),
+			array("HLS_PhysAct",	array("0"=>"0 - 1 day", "2"=>"2 - 3 days", "4"=>"4 - 5 days", "6"=>"6 - 7 days", "99"=>"No response"),							"How many days per week is your child physically active, outside of school time, for at least 60 minutes? (walking, running, biking, swimming, playing outside, dancing, etc.)"),
+			array("HLS_FamAct",		array("0"=>"0 - 1 day", "2"=>"2 - 3 days", "4"=>"4 - 5 days", "6"=>"6 - 7 days", "99"=>"No response"),							"How many times per week does your family do something active together?"),
+			array("HLS_Drink",		array("1"=>"4 or more times", "2"=>"3 times", "3"=>"1 - 2 times", "4"=>"0 times", "99"=>"No response"),					"How many times per day does your child drink any of the following: juice, soda, sports drinks, energy drinks, flavored milk, lemonade, sweetened tea, or coffee drinks?"),
+			array("HLS_Brkfst",		array("0"=>"0 - 1 time", "2"=>"2 - 3 times", "4"=>"4 - 5 times", "6"=>"6 - 7 times", "99"=>"No response"),						"How many times per week does your child eat breakfast?"),
+			array("HLS_Table",		array("0"=>"0 - 1 time", "2"=>"2 - 3 times", "4"=>"4 - 5 times", "6"=>"6 - 7 times", "99"=>"No response"),						"How many days per week does your family eat dinner together at the table?"),
+			array("HLS_EatOut",		array("1"=>"6 - 7 times", "2"=>"4 - 5 times", "3"=>"2 - 3 times", "4"=>"0 - 1 time", "99"=>"No response"),						"How many times per week does your child eat food outside the home/school?"),
+			array("HLS_Money",		array("1"=>"Often", "2"=>"Sometimes", "3"=>"Rarely", "4"=>"Never", "99"=>"No response"),									"Are you ever worried that food will run out before you get more money to buy more?"),
+			array("HLS_Sleep",		array("1"=>"Often", "2"=>"Sometimes", "3"=>"Rarely", "4"=>"Never", "99"=>"No response"),									"Is your child having difficulty with sleeping or snoring?"),
+			array("HLS_Health",		array("1"=>"8 - 10 (Very)", "2"=>"5 - 7", "3"=>"2 - 4", "4"=>"0 - 1 (Low)", "99"=>"No response"),								"How worried are you about your child's health?"),
+			array("HLS_Weight",		array("1"=>"8 - 10 (Very)", "2"=>"5 - 7", "3"=>"2 - 4", "4"=>"0 - 1 (Low)", "99"=>"No response"),								"How worried are you about your child's weight?"),
+			array("HLS_Now",		array("1"=>"8 - 10 (Definitely)", "2"=>"5 - 7 (Yes)", "3"=>"2 - 4 (Maybe)", "4"=>"0 - 1 (No)", "99"=>"No response"),				"Is now a good time to work on family eating and activity habits?"),
 	);
 	
 	if ($mysqli->connect_errno) {
