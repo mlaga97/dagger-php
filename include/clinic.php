@@ -710,11 +710,11 @@ print_r($today);
 					</div>";
                             }
                          
-							if($_SESSION['test_acc']) {
+							//if($_SESSION['test_acc']) {
 								echo "<div title=\"The Pediatric Healthy Lifestyles Screening if \">
 										<label><input id=\"pediatric_check\"    input type=\"checkbox\" name=\"pediatric_check\"    value=\"1\" /> Pediatric Health Lifestyles          </label>
 									  </div>";
-							}
+							//}
                             ?>
                            
                             <br>
