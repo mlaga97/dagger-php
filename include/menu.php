@@ -1,7 +1,12 @@
 <ul id="nav">
-            <li><a href="/index.php">Logout</a></li>
+            <li><a href="#">Settings</a>
+                <ul>
+                	<li><a href="/clinicSearch.php">Search Clinic Data</a></li>
+            		<li><a href="/index.php">Logout</a></li>
+                </ul>
+            </li>
             <li><a href="/preassessment.php">Assessment</a></li>
-            <li><a href="/searchdata.php">Search</a></li>
+            <li><a href="/clientSearch.php">Client Search</a></li>
             <li><a href="#">Help</a>
                 <ul>
                 <li><a href="#">Self-Care</a>
@@ -76,7 +81,7 @@
                         </ul>
                     </li>
                 </ul>
-            </li>		
+            </li>
         </ul>
         <br> <br> <br> <br>
 

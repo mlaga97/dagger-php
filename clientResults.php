@@ -17,7 +17,7 @@ if (! isset ( $_SESSION ['search_select'] )) {
 $id_search = $_SESSION ['search_select'];
 $query_search_results = $mysqli->query ( "SELECT * FROM response WHERE id = $id_search" );
 $row = $query_search_results->fetch_assoc ();
-$_SESSION ['previous'] = '/searchdataresults.php';
+$_SESSION ['previous'] = '/clientResults.php';
 $regexp = "/duke*/";
 $regexp1 = "/cd_*/";
 $regexp2 = "/self_*/";
