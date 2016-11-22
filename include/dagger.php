@@ -6,7 +6,7 @@
 	// Reject the unauthorized
 	if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized') {
 		header("location: /index.php");
-		die("Authentication required, redirecting");
+		die("Authentication required, redirecting!");
 	}
 ?>
 
@@ -42,10 +42,14 @@
 				break;
 
 			case "boolean":
+				if(!$access_whitelist) {
+					header("location: /index.php");
+					die("Access denied, redirecting!");
+				}
 				break;
 
 			default:
-				die("checkPrevious requires a string or an array");
+				die("checkPrevious requires a string, boolean, or an array");
 		}
 
 		$_SESSION['previous'] = $new_name;
