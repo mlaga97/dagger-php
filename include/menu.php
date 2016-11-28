@@ -1,13 +1,16 @@
 <ul id="nav">
-            <li><a href="#">Settings</a>
-                <ul>
-                	<li><a href="/clinicSearch.php">Search Clinic Data</a></li>
-            		<li><a href="/index.php">Logout</a></li>
-                </ul>
-            </li>
-            <li><a href="/preassessment.php">Assessment</a></li>
-            <li><a href="/clientSearch.php">Client Search</a></li>
-            <li><a href="#">Help</a>
+	<li><a href="#"><img width="20px" height="20px" src='/include/menu.svg'></a>
+		<ul>
+			<?php if($_SESSION['admin'] == true) { ?>
+			<li><a href="/clinicSearch.php">Admin Panel</a></li>
+			<?php } ?>
+			<li><a href="/settings.php">Settings</a></li>
+			<li><a href="/index.php">Logout</a></li>
+		</ul>
+	</li>
+	<li><a href="/preassessment.php">Assessment</a></li>
+	<li><a href="/clientSearch.php">Search</a></li>
+	<li><a href="#">Help</a>
                 <ul>
                 <li><a href="#">Self-Care</a>
                         <ul>
