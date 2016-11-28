@@ -42,9 +42,29 @@
 					$clinicIds = $mysqli->query('SELECT id,name from clinic where id in (select clinic_id from groups where user_id = ' . $_SESSION['user_id'] . ');');
 
 					$results_query = 'SELECT COUNT(id) AS clients FROM response WHERE clinic_id IN (select clinic_id from groups where user_id = ' . $_SESSION['user_id'] . ') ';
-					/*******************************************
-					*               Pick up here               *
-					*******************************************/
+
+					// TODO: Move elsewhere
+					function validateDate($date)
+					{
+						$d = DateTime::createFromFormat('Y-m-d', $date);
+						return $d && $d->format('Y-m-d') === $date;
+					}
+
+					if(array_key_exists('clinicStats_startDate', $_POST) && validateDate($_POST['clinicStats_startDate'])) {
+						$results_query = $results_query . ' AND date > "' . $_POST['clinicStats_startDate']. '"';
+					}
+					if(array_key_exists('clinicStats_endDate', $_POST) && validateDate($_POST['clinicStats_endDate'])) {
+						$results_query = $results_query . ' AND date < "' . $_POST['clinicStats_endDate']. '"';
+					}
+					if(array_key_exists('clinicStats_clinicId', $_POST)) {
+						$results_query = $results_query;
+					}
+					if(array_key_exists('clinicStats_userId', $_POST)) {
+						$results_query = $results_query;
+					}
+
+					echo $results_query;
+
 					// If statements for various combinations of inputs
 					$results = $mysqli->query($results_query);
 				?>
@@ -62,7 +82,7 @@
 						<?php endwhile; ?>
 					</select>
 
-					End date: <input type='date' name='clinicStats_startDate' value='<?php $_POST['clinicStats_startDate']?>'>
+					Start date: <input type='date' name='clinicStats_startDate' value='<?php $_POST['clinicStats_startDate']?>'>
 					End date: <input type='date' name='clinicStats_endDate' value='<?php $_POST['clinicStats_endDate']?>'>
 
 					<br><br>
