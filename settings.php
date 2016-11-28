@@ -1,7 +1,6 @@
 <?php
 	include 'include/dagger.php';
 	loggingInit();
-	allowPrevious(true, '/clinicSearch.php');
 	$mysqli = dbOpen();
 
 	// Update User Record
@@ -14,6 +13,10 @@
 		}
 		$null = $mysqli->query($update_query);
 	}
+
+	// Force logout to reload settings.
+	// TODO: Not this.
+	allowPrevious($_SERVER['REQUEST_METHOD'] !== 'POST', '/clinicSearch.php');
 
 	// Get Current User Record
 	$query = 'SELECT id, uname, pswd, university_id, clinic_id, admin, employee_id, grouping, test_acc FROM users WHERE id = ' . $_SESSION['user_id'] . ' LIMIT 1';
