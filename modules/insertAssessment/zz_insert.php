@@ -24,36 +24,24 @@
 	$keys = "(id,";
 	$values = "(0, ";
 
-	if(array_key_exists('admin', $insert_blacklist)) {
-		echo 'admin blacklisted';
-	} else {
-		echo 'admin not blacklisted';
-	}
-
-	if(array_key_exists('stress_check', $insert_blacklist)) {
-		echo 'stress_check blacklisted';
-	} else {
-		echo 'stress_check not blacklisted';
-	}
-
 	// Pull the desired keys from $_SESSION and do some final post-processing
 	foreach($_SESSION as $key=>$value) {
 
 		// Ignore keys in blacklist
 		// TODO: Perhaps a whitelist would be less likely to fail upon insertion?
-		if( !array_key_exists($key, $insert_blacklist) ) {
+		if( !in_array($key, $insert_blacklist) ) {
 
 			// Append key to list of keys
 			$keys = $keys . $key . " ,";
 
-			if( array_key_exists($key, $insert_encrypted_whitelist) ) {
+			if( in_array($key, $insert_encrypted_whitelist) ) {
 
 				// Encrypt values to protect patient privacy
 				$value = strtolower($value);
 				$value = hash('sha256', $value);
 				$values = $values . " '" . $value . "',";
 
-			} elseif( array_key_exists($key, $insert_dates_whitelist) && ($value === '') ) {
+			} elseif( in_array($key, $insert_dates_whitelist) && ($value === '') ) {
 
 				// Empty date values need to be substituted with 0000-00-00 in order to please the DB
 				$values = $values ." '" . "0000-00-00" . "',";
