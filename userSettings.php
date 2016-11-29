@@ -6,7 +6,7 @@
 	// Update User Record
 	$update_query = 'UPDATE users ';
 	foreach($_POST as $key=>$value) {
-		if($key == "pswd" || $key == "uname") {
+		if($key == "name" || $key == "uname" || $key == "pswd") {
 			$update_query = 'UPDATE users SET ' . $key . '="' . $value . '" WHERE id=' . $_SESSION['user_id'] . ';';
 		} else {
 			$update_query = 'UPDATE users SET ' . $key . '=' . $value . ' WHERE id=' . $_SESSION['user_id'] . ';';
@@ -19,7 +19,7 @@
 	allowPrevious($_SERVER['REQUEST_METHOD'] !== 'POST', '/clinicSearch.php');
 
 	// Get Current User Record
-	$query = 'SELECT id, uname, pswd, university_id, clinic_id, admin, employee_id, grouping, test_acc FROM users WHERE id = ' . $_SESSION['user_id'] . ' LIMIT 1';
+	$query = 'SELECT id, name, uname, pswd, university_id, clinic_id, admin, employee_id, grouping, test_acc FROM users WHERE id = ' . $_SESSION['user_id'] . ' LIMIT 1';
 	$info = $mysqli->query($query);
 	$row = $info->fetch_assoc();
 ?>
@@ -44,6 +44,7 @@
 		<div style='text-align: center;'>
 	        <form action="settings.php" method="post">
 				id:<br><input type="text" name="id" value="<?php echo $row['id'] ?>"><br><br>
+				name:<br><input type="text" name="name" value="<?php echo $row['name'] ?>"><br><br>
 				uname:<br><input type="text" name="uname" value="<?php echo $row['uname'] ?>"><br><br>
 				pswd:<br><input type="text" name="pswd" value="<?php echo $row['pswd'] ?>"><br><br>
 				university_id:<br><input type="text" name="university_id" value="<?php echo $row['university_id'] ?>"><br><br>
