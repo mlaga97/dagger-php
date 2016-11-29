@@ -23,9 +23,7 @@
 			<?php
 
 				// Load and run the modules with database access
-				dbOpen();
 				loadModules('modules/preassessment/');
-				dbClose();
 
 			?>
 		</form>

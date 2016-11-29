@@ -78,9 +78,7 @@
 
 				// Show Modules
 				// TODO: assessment_type
-				dbOpen();
 				loadModules('modules/assessment/');
-				dbClose();
 
 			?>
 		</form>

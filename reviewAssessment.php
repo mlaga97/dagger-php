@@ -30,7 +30,6 @@
 
 				// Show Modules
 				// TODO: assessment_type
-				//$mysqli = dbOpen();
 				loadModules('modules/reviewAssessment/');
 
 			?>

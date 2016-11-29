@@ -41,9 +41,7 @@
 		<?php
 
 			// Show Modules
-			dbOpen();
 			loadModules('modules/postAssessment/');
-			dbClose();
 
 		?>
 

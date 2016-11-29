@@ -1,4 +1,6 @@
 <?php
+	$mysqli = dbOpen();
+
 	global $log, $today;
 
 	// These keys should not be inserted into the DB
