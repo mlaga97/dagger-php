@@ -1,4 +1,6 @@
 <?php
+	$mysqli = dbOpen();
+
 	//we'll make a copy of the values saved in $_SESSION and set all '-1' values to 0 so we can do the cut-off calculations.
 	//except the duke and the cd-risc. They need to keep the -1 values for scoring.
 	$copy = $_SESSION;

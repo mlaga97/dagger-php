@@ -83,6 +83,10 @@
 	function moduleList() {
 		return array_diff(scandir("modules/"), array('..', '.'));
 	}
+	
+	function moduleProvides($module) {
+		return array_diff(scandir("modules/" . $module), array('..', '.'));
+	}
 
 	function moduleListKeys() {
 		$keyList = array();
@@ -90,9 +94,11 @@
 			$keys = array_diff(scandir("modules/" . $module), array('..', '.'));
 
 			foreach($keys as $key) {
-				$keyList[$key] = true;
+				array_push($keyList, $key);
 			}
 		}
+
+		return array_unique($keyList);
 	}
 
 	function moduleListProviders($key) {

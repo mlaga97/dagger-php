@@ -65,7 +65,7 @@ class Membership
         if($ensure_credentials)
         {
             $_SESSION['status'] = 'authorized';
-            header("location: /options.php");
+            header("location: /home.php");
             
         } 
 

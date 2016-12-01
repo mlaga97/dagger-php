@@ -10,7 +10,7 @@ unset ( $_SESSION ['search_select'] );
 	<head>
 		<title>Options</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Clinic Select">
+		<meta name="description" content="Search Response Data">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 	</head>
 

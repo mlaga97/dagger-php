@@ -2,15 +2,17 @@
 	<li><a href="#"><img width="20px" height="20px" src='/include/menu.svg'></a>
 		<ul>
 			<?php if($_SESSION['admin'] == true) { ?>
-			<li><a href="/clinicSearch.php">Admin Panel</a></li>
+			<li><a href="/adminSettings.php">Administration</a></li>
+			<li><a href="/clinicStatistics.php">Clinic Statistics</a></li>
 			<li><a href="/moduleList.php">Modules</a></li>
 			<?php } ?>
+			<li><a href="/userStatistics.php">User Statistics</a></li>
 			<li><a href="/userSettings.php">Settings</a></li>
 			<li><a href="/index.php">Logout</a></li>
 		</ul>
 	</li>
 	<li><a href="/preassessment.php">Assessment</a></li>
-	<li><a href="/clientSearch.php">Search</a></li>
+	<li><a href="/searchResponses.php">Search</a></li>
 	<li><a href="#">Help</a>
                 <ul>
                 <li><a href="#">Self-Care</a>

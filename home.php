@@ -17,7 +17,7 @@
 	    die("Authentication required, redirecting");
 	}
 
-	$_SESSION['previous'] = '/options.php';
+	$_SESSION['previous'] = '/home.php';
 
 	$log->info("OPTIONS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ".  print_r($_SESSION, true));
 ?>

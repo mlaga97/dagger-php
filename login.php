@@ -11,13 +11,13 @@
 	}
 
 	// Here we set our session previous variable. This variable is used to allow user access to the next web-page.
-	$_SESSION['previous'] = '/index.php';
+	$_SESSION['previous'] = '/login.php';
 ?>
 
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Brief Adult Assessment">
+		<meta name="description" content="Login">
 		<link rel="stylesheet" href="include/mystyle.css" type="text/css">
 		<title>Login Page</title>
 	</head>

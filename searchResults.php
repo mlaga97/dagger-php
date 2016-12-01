@@ -40,7 +40,7 @@ foreach ( $row as $key => $value ) {
            <?php echo $row['date']?>
         </title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="Brief Adult Assessment">
+<meta name="description" content="Client Data Search Results">
 <link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 </head>
 <body onload="clearForm();">

@@ -1,7 +1,7 @@
 <?php
 	include 'include/dagger.php';
 	loggingInit();
-	allowPrevious($_SESSION['admin'] == 1, '/clinicSearch.php');
+	allowPrevious($_SESSION['admin'] == 1, '/moduleList.php');
 ?>
 
 <!-- HTML start -->
@@ -10,7 +10,7 @@
 	<head>
 		<title>Module List</title>
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-		<meta name='description' content='Brief Adult Assessment'>
+		<meta name='description' content='Module List'>
 		<link rel='stylesheet' href='/include/mystyle.css' type='text/css'>
 	</head>
 	<body>

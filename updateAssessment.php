@@ -7,7 +7,7 @@ if ($_SESSION['status'] != 'authorized' ||  $_SESSION['previous'] != 'insert.php
     header("location:../index.php");
     die("Authentication required, redirecting");
 }
-$_SESSION['previous'] = 'edit.php';
+$_SESSION['previous'] = 'updateAssessment.php';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
