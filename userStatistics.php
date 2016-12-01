@@ -1,7 +1,7 @@
 <?php
 	include 'include/dagger.php';
 	loggingInit();
-	allowPrevious($_SESSION['admin'] == 1, '/userStatistics.php');
+	allowPrevious(true, '/userStatistics.php');
 
 	$mysqli = dbOpen();
 

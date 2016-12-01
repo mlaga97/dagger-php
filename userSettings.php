@@ -28,7 +28,7 @@
 	<head>
 		<title>Options</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Admin Settings">
+		<meta name="description" content="User Settings">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 	</head>
 
@@ -54,7 +54,7 @@
 			<br/><br/><br/>
 
 			<div style='text-align: center;'>
-		        <form action="settings.php" method="post">
+		        <form action="userSettings.php" method="post">
 					id:<br><input type="text" name="id" value="<?php echo $row['id'] ?>"><br><br>
 					name:<br><input type="text" name="name" value="<?php echo $row['name'] ?>"><br><br>
 					uname:<br><input type="text" name="uname" value="<?php echo $row['uname'] ?>"><br><br>
