@@ -1,7 +1,7 @@
 <?php
 include 'include/dagger.php';
 loggingInit();
-allowPrevious($_SESSION['admin'] == 1, '/clientSearch.php');
+allowPrevious(true, '/clientSearch.php');
 
 unset ( $_SESSION ['search_select'] );
 ?>
