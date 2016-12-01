@@ -4,6 +4,6 @@
 
 	<center>
 		<input type="button" value="Return to Start" style="height: 25px; width: 100px" onclick="window.location='/index.php';" />
-		<input type="submit" value="Assessment" style="height: 25px; width: 100px" onclick="window.location='/clinic.php'" />
+		<input type="submit" value="Assessment" style="height: 25px; width: 100px" onclick="window.location='/preassessment.php'" />
 	</center>
 </form>

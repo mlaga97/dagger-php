@@ -1,6 +1,6 @@
 <br/><br/>
 
-<form id="form2" action="/clientResults.php" method="post" target="_blank">
+<form id="form2" action="/searchResults.php" method="post" target="_blank">
 
 	<script type="text/javascript">
 		function search_select(form2) {

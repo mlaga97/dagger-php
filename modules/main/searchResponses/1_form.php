@@ -8,5 +8,5 @@
 	<!--%nbsp; provides a single space.-->
 	<label for="pt_id">Patient ID:</label> <input type="text"
 			autofocus="autofocus" name="pt_id" />
-	<button action="/clientSearch.php" style="height: 25px; width: 100px">Search</button>
+	<button action="/searchResponses.php" style="height: 25px; width: 100px">Search</button>
 </form>

@@ -36,7 +36,7 @@ unset ( $_SESSION ['search_select'] );
 			<?php
 
 				// Show modules
-				moduleLoad('clientSearch');
+				moduleLoad('searchResponses');
 
 			?>
 
