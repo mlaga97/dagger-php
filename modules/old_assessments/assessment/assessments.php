@@ -1,4 +1,6 @@
 <?php
+	$mysqli = dbOpen();
+
 	include 'include/stressors.php';
 	include 'include/current_stress.php';
 	include 'include/health.php';
