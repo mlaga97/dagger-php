@@ -3,6 +3,7 @@
 		<ul>
 			<?php if($_SESSION['admin'] == true) { ?>
 			<li><a href="/clinicSearch.php">Admin Panel</a></li>
+			<li><a href="/moduleList.php">Modules</a></li>
 			<?php } ?>
 			<li><a href="/userSettings.php">Settings</a></li>
 			<li><a href="/index.php">Logout</a></li>
