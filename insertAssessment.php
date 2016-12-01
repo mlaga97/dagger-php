@@ -19,7 +19,7 @@
 		<?php
 
 			// Show Modules
-			loadModules('modules/insertAssessment/');
+			moduleLoad('insertAssessment');
 
 		?>
 

@@ -29,8 +29,7 @@
 			<?php
 
 				// Show Modules
-				// TODO: assessment_type
-				loadModules('modules/reviewAssessment/');
+				moduleLoad('reviewAssessment');
 
 			?>
 		</center>

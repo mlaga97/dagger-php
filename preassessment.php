@@ -22,8 +22,8 @@
 		<form id='preassessment_form' action='/assessment.php' method='post'>
 			<?php
 
-				// Load and run the modules with database access
-				loadModules('modules/preassessment/');
+				// Show modules
+				moduleLoad('preassessment');
 
 			?>
 		</form>

@@ -80,19 +80,48 @@
 
 	}
 
-	function loadModules($modulePath) {
-		$modules = array_diff(scandir($modulePath), array('..', '.'));
+	function moduleList() {
+		return array_diff(scandir("modules/"), array('..', '.'));
+	}
 
-		require_once('include/Mysql.php');
-		require_once 'include/constants.php';
-		$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
+	function moduleListKeys() {
+		$keyList = array();
+		foreach(moduleList() as $module) {
+			$keys = array_diff(scandir("modules/" . $module), array('..', '.'));
 
-		// Show Modules
-		foreach($modules as $module) {
-			include $modulePath . $module;
+			foreach($keys as $key) {
+				$keyList[$key] = true;
+			}
+		}
+	}
+
+	function moduleListProviders($key) {
+		return array_diff(glob("modules/*/" . $key), array('..', '.'));
+	}
+
+	function moduleListPaths($key) {
+		$files = array();
+		foreach(moduleListProviders($key) as $provider) {
+			$files = array_merge($files, array_diff(scandir($provider), array('..', '.')));
 		}
 
-		mysqli_close($mysqli);
+		sort($files);
+
+		$paths = array();
+		foreach($files as $file) {
+			$paths = array_merge($paths, array_diff(glob("modules/*/" . $key . '/' . $file), array('..', '.')));
+		}
+
+		return $paths;
+	}
+
+	// Takes variable argument list
+	function moduleLoad() {
+		foreach(func_get_args() as $key) {
+			foreach(moduleListPaths($key) as $file) {
+				include $file;
+			}
+		}
 	}
 
 	function postToSession($ignoreKeys = array()) {

@@ -35,8 +35,8 @@ unset ( $_SESSION ['search_select'] );
 
 			<?php
 
-				// Load and run the modules
-				loadModules('modules/clientSearch/');
+				// Show modules
+				moduleLoad('clientSearch');
 
 			?>
 

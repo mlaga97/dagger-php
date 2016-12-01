@@ -41,7 +41,7 @@
 		<?php
 
 			// Show Modules
-			loadModules('modules/postAssessment/');
+			moduleLoad('postAssessment');
 
 		?>
 
