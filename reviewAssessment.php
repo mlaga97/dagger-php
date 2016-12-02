@@ -36,7 +36,7 @@
 
 		<center>
 			<input type="button" value="Submit" style= "height: 25px; width: 100px" onclick="window.location='/insertAssessment.php';" />
-			<?php if ($_SESSION['grouping'] != 10){echo "<input type=\"button\" value=\"Edit Personal Data\" style= \"height: 25px; width: 125px\" onclick=\"window.location=\'/edit.php\';\"/>";} ?>
+			<?php if ($_SESSION['grouping'] != 10){echo "<input type=\"button\" value=\"Edit Personal Data\" style= \"height: 25px; width: 125px\" onclick=\"window.location=\'/updateAssessment.php\';\"/>";} ?>
 			<input type="button" style= "height: 25px; width: 100px" value="Print this page" onclick="printpage()" />
 		</center>
 

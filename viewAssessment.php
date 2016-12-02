@@ -78,7 +78,7 @@
 		<center>
 			<input type="submit" value="Assessment"
 				style="height: 25px; width: 100px"
-				onclick="window.location='/clinic.php'" /> <input type="submit"
+				onclick="window.location='/preassessment.php'" /> <input type="submit"
 				value="Search" style="height: 25px; width: 100px"
 				onclick="window.location='/searchAssessments.php';" /> <input type="button"
 				style="height: 25px; width: 100px" value="Print this page"
