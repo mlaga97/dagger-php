@@ -12,7 +12,7 @@
 		</ul>
 	</li>
 	<li><a href="/preassessment.php">Assessment</a></li>
-	<li><a href="/searchResponses.php">Search</a></li>
+	<li><a href="/searchAssessments.php">Search</a></li>
 	<li><a href="#">Help</a>
                 <ul>
                 <li><a href="#">Self-Care</a>

@@ -1,7 +1,7 @@
 <?php
 include 'include/dagger.php';
 loggingInit();
-allowPrevious(true, '/clientSearch.php');
+allowPrevious(true, '/searchAssessments.php');
 
 unset ( $_SESSION ['search_select'] );
 ?>
@@ -36,7 +36,7 @@ unset ( $_SESSION ['search_select'] );
 			<?php
 
 				// Show modules
-				moduleLoad('searchResponses');
+				moduleLoad('searchAssessments');
 
 			?>
 
