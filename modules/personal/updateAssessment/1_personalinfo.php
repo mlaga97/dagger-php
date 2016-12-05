@@ -6,7 +6,7 @@
 	}
 ?>
 
-	<h1 style="align: center;">Personal Information</h1>
+	<center><h1 style="align: center;">Personal Information</h1></center>
 	<table id="tblPersonal">
 		<tr>
 			<td class="personal">
