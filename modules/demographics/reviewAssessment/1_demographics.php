@@ -1,4 +1,6 @@
 <?php
+	global $mysqli, $copy;
+
 	////////////////This is where we will print our strings for our results page////////////////////////////
 	if ($_SESSION['grouping']== 10){ echo '<div id="demo_table" <?php style="display: none;">';} else {echo ' <div id="demo_table">';}
 	echo "<table border=\"1\" width=\"800\">"; //Printing a magical 14!?

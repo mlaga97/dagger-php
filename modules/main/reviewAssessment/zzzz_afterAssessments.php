@@ -1,4 +1,6 @@
 <?php
+	global $mysqli, $copy;
+
 	////////////////////////////////////Checks to see first if the phq-9 was published, second to see if they are at risk for suicide////////////
 	$alert=false;
 	if (isset($_SESSION['phq_check']) && ($_SESSION['phq_check']>0)) {
