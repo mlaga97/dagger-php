@@ -1,5 +1,5 @@
 <?php
-	$mysqli = dbOpen();
+	global $mysqli, $copy;
 
 	// Assessments
 	include 'include/stressors.php';
