@@ -32,6 +32,8 @@
 			}
 		}
 	}
+
+	$mysqli = dbOpen();
 ?>
 
 <html>
