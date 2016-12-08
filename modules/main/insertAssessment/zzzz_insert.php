@@ -8,7 +8,7 @@
 			'admin', 'university_id', 'grouping', 'logo', 'status', 'previous', 'test_acc',
 			'n1', 'n2', 'n3', 'n4',
 			'st', 'id', 'GRHOP_standard', 'c_p_id', 'search_select', 'contact_date',
-			'entry_date', 'contact_outcome', 'outcome_other', 'contact_reason', 'reason_other',
+			'entry_date', 'contact_outcome', 'outcome_other', 'contact_reason', 'reason_other', 'date'
 	);
 
 	// These keys should be encrypted to protect patient privacy 
