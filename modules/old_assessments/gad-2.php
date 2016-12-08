@@ -83,7 +83,7 @@
 function gad2_scoring($copy)
 	{
 	//	print_r($copy);
-	require_once'../../include/constants.php';
+	require_once __DIR__ . '/../../include/constants.php';
 	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
 	if ($mysqli->connect_errno)
 	{

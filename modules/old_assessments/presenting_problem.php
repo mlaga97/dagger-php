@@ -179,7 +179,7 @@
 	//This scores the continum scale of stress level. There is no cut-off for the individual stressors.
 	function pp_scoring($copy, $mysqli)
 	{
-            require_once'../../include/constants.php';
+		require_once __DIR__ . '/../../include/constants.php';
 
 		
 		if ((array_key_exists('pp', $copy))&&($copy['pp']!=""))  // If there is no stress in the array, set the value == -1. 
