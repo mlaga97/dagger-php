@@ -27,7 +27,6 @@
 	include __DIR__ . '/../adhd.php';
 	include __DIR__ . '/../presenting_problem.php';
 	include __DIR__ . '/../childStressors.php';
-	include __DIR__ . '/../pediatric.php';
 	
 	if($_SESSION['pp_check'] == 1) {
 		write_presenting_problem($_SESSION['assessment_type'], $mysqli);
@@ -147,9 +146,5 @@
 	
 	if($_SESSION['adhd_check'] == 1) {
 		write_adhd($_SESSION['assessment_type'], $mysqli);
-	}
-	
-	if($_SESSION['pediatric_check'] == 1) {
-		write_pediatric($_SESSION['assessment_type'], $mysqli);
 	}
 ?><br/>

@@ -23,7 +23,6 @@
 	include __DIR__ . '/../crafft.php';
 	include __DIR__ . '/../life.php';
 	include __DIR__ . '/../adhd.php';
-	include __DIR__ . '/../pediatric.php';
 
 	////////////////////////////////////////These are where we score our tests/////////////////////
 	echo "<table border=\"1\" width=\"800\">";
@@ -88,8 +87,5 @@
 	}
 	if($_SESSION['adhd_check'] == 1) {
 		adhd_scoring($copy, $mysqli);
-	}
-	if($_SESSION['pediatric_check'] == 1) {
-		pediatric_scoring($copy, $mysqli);
 	}
 ?>

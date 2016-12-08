@@ -188,7 +188,7 @@ function pediatric_scoring($copy, $mysqli) {
 	';
 	
 	// Bank 1
-	include '../bitwise/bitwise.php';
+	include __DIR__ . '/../bitwise/bitwise.php';
 	$idx = 1;
 	foreach($questions1 as $question) {
 		echo strtr('
