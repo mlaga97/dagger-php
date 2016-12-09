@@ -34,12 +34,4 @@
 				}
 			}
 		}
-
-		function update_employee_activity(form3, $i) {
-			//This function is where we update the database.
-			//$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
-			alert("Employee activity updated. ");
-			document.getElementById("form3").submit();
-			header("location: /index.php");
-		}
 	</script>
