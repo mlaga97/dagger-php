@@ -56,7 +56,7 @@
 							?>
 						</td>
 						<td>
-							<h2>Files by Page</h2>
+							<h2>Files by Key</h2>
 							<?php
 								foreach(moduleListKeys() as $key) {
 									echo '<br/><br/><h4>' . $key . '</h4>';
@@ -71,7 +71,11 @@
 									$paths = array();
 									foreach($files as $file) {
 										$paths = array_merge($paths, array_diff(glob("modules/*/" . $key . '/' . $file), array('..', '.')));
-										echo $file . '<br/>';
+									}
+
+									foreach($paths as $path) {
+										$explodedPath = explode('/', $path);
+										echo $explodedPath[1] . '/' . $explodedPath[3] . '<br/>';
 									}
 								}
 							?>

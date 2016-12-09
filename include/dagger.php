@@ -83,9 +83,18 @@
 	function moduleList() {
 		return array_diff(scandir("modules/"), array('..', '.'));
 	}
-	
+
 	function moduleProvides($module) {
-		return array_diff(scandir("modules/" . $module), array('..', '.'));
+		$raw = array_diff(scandir("modules/" . $module), array('..', '.'));
+
+		$processed = array();
+		foreach($raw as $file) {
+			if(!preg_match('/\.php/', $file)) {
+				array_push($processed, $file);
+			}
+		}
+
+		return $processed;
 	}
 
 	function moduleListKeys() {
@@ -94,7 +103,9 @@
 			$keys = array_diff(scandir("modules/" . $module), array('..', '.'));
 
 			foreach($keys as $key) {
-				array_push($keyList, $key);
+				if(!preg_match('/\.php/', $key)) {
+					array_push($keyList, $key);
+				}
 			}
 		}
 
@@ -102,7 +113,16 @@
 	}
 
 	function moduleListProviders($key) {
-		return array_diff(glob("modules/*/" . $key), array('..', '.'));
+		$raw = array_diff(glob("modules/*/" . $key), array('..', '.'));
+
+		$processed = array();
+		foreach($raw as $file) {
+			if(!preg_match('/\.php/', $file)) {
+				array_push($processed, $file);
+			}
+		}
+
+		return $processed;
 	}
 
 	function moduleListPaths($key) {
