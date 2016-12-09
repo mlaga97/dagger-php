@@ -18,6 +18,7 @@
 		echo "<tr>";
 		$first = 0;
 
+		global $row;
 		while ( $row = $info->fetch_assoc () ) {
 			if (($first === 0) && ($_SESSION ['admin'] == 1)) {
 				echo $row ['pt_id'];
@@ -40,47 +41,10 @@
 
 			echo "<td>";
 			echo "<p style = color:red>";
-			if ($row ['stress_check'] == 1)
-				echo "Stress ";
-			if ($row ['events_check'] == 1)
-				echo "Event ";
-			if ($row ['health_check'] == 1)
-				echo "Health ";
-			if ($row ['symptom_check'] == 1)
-				echo "Symptom ";
-			if ($row ['gad_check'] == 1)
-				echo "GAD-7 ";
-			if ($row ['gad2_check'] == 1)
-				echo "GAD-2 ";
-			if ($row ['phq_check'] == 1)
-				echo "PHQ-9 ";
-			echo "<br>";
-			if ($row ['audit_check'] == 1)
-				echo "Audit ";
-			if ($row ['cage_check'] == 1)
-				echo "Cage ";
-			if ($row ['cd_check'] == 1)
-				echo "CD ";
-			if ($row ['pcl_check'] == 1)
-				echo "PCL-C ";
-			if ($row ['pcl2_check'] == 1)
-				echo "PCL-A ";
-			if ($row ['psc_check'] == 1)
-				echo "PSC ";
-			if ($row ['ces_check'] == 1)
-				echo "CES-D ";
-			if ($row ['dast_check'] == 1)
-				echo "DAST ";
-			if ($row ['duke_check'] == 1)
-				echo "DUKE ";
-			if ($row ['sdq_check'] == 1)
-				echo "SDQ ";
-			if ($row ['adhd_check'] == 1)
-				echo "ADHD ";
-			if ($row ['hypertension_check'] == 1)
-				echo "Hypertension ";
-			if ($row ['pediatric_check'] == 1)
-				echo "Pediatric Lifestyles ";
+
+			// Load the assessment tags
+			moduleLoad('searchAssessment_tag');
+
 			echo "</p>";
 			echo "</td>";
 			echo "</tr>";
