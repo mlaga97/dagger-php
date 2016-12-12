@@ -3,7 +3,7 @@
 	loggingInit();
 	allowPrevious('/options.php', '/preassessment.php');
 
-	$mysqli = dbOpen();
+	global $mysqli;
 
 	$log->info("CLINICS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 

@@ -3,6 +3,8 @@
 	loggingInit();
 	allowPrevious('/reviewAssessment.php', '/insertAssessment.php');
 	postToSession(array('status', 'previous'));
+
+	global $mysqli;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">

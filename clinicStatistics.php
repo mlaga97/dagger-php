@@ -3,7 +3,7 @@
 	loggingInit();
 	allowPrevious($_SESSION['admin'] == 1, '/clinicStatistics.php');
 
-	$mysqli = dbOpen();
+	global $mysqli;
 
 	// TODO: Move elsewhere
 	function validateDate($date) {

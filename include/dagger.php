@@ -1,5 +1,6 @@
 <?php /* Initial Setup */
 	if(!$login_page) {
+
 		// User session
 		session_start();
 
@@ -8,7 +9,16 @@
 			header("location: /index.php");
 			die("Authentication required, redirecting!");
 		}
+
 	}
+
+	// MySQL Object is useful everywhere
+	$mysqli = new mysqli(
+			getConfigKey("edu.usm.dagger.main.db.server"),
+			getConfigKey("edu.usm.dagger.main.db.user"),
+			getConfigKey("edu.usm.dagger.main.db.password"),
+			getConfigKey("edu.usm.dagger.main.db.name")
+	);
 ?>
 
 <?php /* Function Library */
@@ -22,16 +32,6 @@
 		// Set Timezone Data
 		date_default_timezone_set('America/Chicago');
 		$GLOBALS["today"] = date('m-d-y h:i:s');
-	}
-
-	function dbOpen() {
-		$mysqli = new mysqli(
-				getConfigKey("edu.usm.dagger.main.db.server"),
-				getConfigKey("edu.usm.dagger.main.db.user"),
-				getConfigKey("edu.usm.dagger.main.db.password"),
-				getConfigKey("edu.usm.dagger.main.db.name")
-		);
-		return $mysqli;
 	}
 
 	// Allow only certain pages to access this one

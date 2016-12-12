@@ -1,5 +1,5 @@
 <?php
-	$mysqli = dbOpen();
+	global $mysqli;
 
 	$membership = new Membership ();
 

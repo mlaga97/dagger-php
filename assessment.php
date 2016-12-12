@@ -16,7 +16,7 @@
 		}
 	}
 
-	$mysqli = dbOpen();
+	global $mysqli;
 ?>
 
 <html>

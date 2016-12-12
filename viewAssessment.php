@@ -4,7 +4,7 @@
 	allowPrevious(true, '/viewAssessment.php');
 	postToSession(array('status', 'previous'));
 
-	$mysqli = dbOpen();
+	global $mysqli;
 
 	$membership = new Membership ();
 

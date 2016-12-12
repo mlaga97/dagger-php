@@ -1,7 +1,7 @@
 <?php
 	include 'include/dagger.php';
 	loggingInit();
-	$mysqli = dbOpen();
+	global $mysqli;
 
 	// Update User Record
 	$update_query = 'UPDATE users ';

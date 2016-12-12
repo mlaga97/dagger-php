@@ -3,7 +3,7 @@
 	loggingInit();
 	allowPrevious(true, '/userStatistics.php');
 
-	$mysqli = dbOpen();
+	global $mysqli;
 
 	// TODO: Move elsewhere
 	function validateDate($date) {
