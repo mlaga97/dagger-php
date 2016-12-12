@@ -2,7 +2,7 @@
 	if(!$login_page) {
 		// User session
 		session_start();
-	
+
 		// Reject the unauthorized
 		if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized') {
 			header("location: /index.php");
@@ -25,7 +25,6 @@
 	}
 
 	function dbOpen() {
-		require_once __DIR__ . '/Mysql.php';
 		$mysqli = new mysqli(
 				getConfigKey("edu.usm.dagger.main.db.server"),
 				getConfigKey("edu.usm.dagger.main.db.user"),
