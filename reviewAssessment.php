@@ -9,16 +9,8 @@
 	//we'll make a copy of the values saved in $_SESSION and set all '-1' values to 0 so we can do the cut-off calculations.
 	//except the duke and the cd-risc. They need to keep the -1 values for scoring.
 	$copy = $_SESSION;
-	$regexp = "/duke*/";
-	$regexp1 = "/cd_*/";
-	$regexp2 = "/self_*/";
-	$regexp3 = "/phq_*/";
-	foreach($copy as $key=>$value) {
-		if ((!preg_match($regexp, $key)) && (!preg_match($regexp1, $key)) && (!preg_match($regexp2, $key)) && (!preg_match($regexp3, $key))){ //exclude the duke and cd-risc responses from the zeroing.
-			if ($value == '-1') {
-				$copy[$key] = 0;
-			}
-		}
+	if($value == '-1' && !multiPregMatch(getConfigKey("edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0"), $key)) {
+		$copy[$key] = 0;
 	}
 ?>
 

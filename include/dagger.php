@@ -168,6 +168,14 @@
 			}
 		}
 	}
+
+	function multiPregMatch($patterns, $subject) {
+		foreach($patterns as $pattern) {
+			if(preg_match($pattern, $subject)) {
+				return true;
+			}
+		}
+	}
 ?>
 
 

@@ -27,10 +27,10 @@
 		"grouping", "logo", "status", "previous", "test_acc"
 	],
 
-	"edu.usm.dagger.main.viewAssessment.dontSet_NULL_To_-1": [
+	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0": [
 		"/duke*/", "/cd_*/", "/self_*/" ,"/phq_*/"
 	],
-	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_To_0": [
+	"edu.usm.dagger.main.viewAssessment.dontSet_-1_to_0": [
 		"/duke*/", "/cd_*/", "/self_*/", "/phq_*/", "/value*/", "/adhd_*/"
 	],
 
