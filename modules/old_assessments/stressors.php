@@ -69,13 +69,6 @@
 //This scores the continum scale of stress level. There is no cut-off for the individual stressors.
 function stressors_scoring($copy, $mysqli)
 	{
-		require_once __DIR__ . '/../../include/constants.php';
-
-		if ($mysqli->connect_errno)
-		{
-    	printf("Connect failed: %s\n", $mysqli->connect_error);
-    	exit();
-		}	
 
 		$result = $mysqli->query('SELECT cutoff_value FROM scoring WHERE name ="stressor" AND type = "stressor-cutoff"');
    		$row = $result->fetch_assoc(); 

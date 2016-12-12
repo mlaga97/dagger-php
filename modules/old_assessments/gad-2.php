@@ -80,16 +80,9 @@
 
 //Passing by reference if deprecated. 
 
-function gad2_scoring($copy)
-	{
-	//	print_r($copy);
-	require_once __DIR__ . '/../../include/constants.php';
-	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
-	if ($mysqli->connect_errno)
-	{
-	    printf("Connect failed: %s\n", $mysqli->connect_error);
-	    exit();
-	}	
+function gad2_scoring($copy) {
+	global $mysqli;
+
 	$result = $mysqli->query('SELECT cutoff_value FROM scoring WHERE name ="GAD-2" AND type = "GAD-cutoff"');
     $row = $result->fetch_assoc();  
 	$gad2_score = $copy['gad2_1']+$copy['gad2_2'];
