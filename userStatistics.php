@@ -1,9 +1,7 @@
 <?php
 	include 'include/dagger.php';
-	loggingInit();
+	global $log, $mysqli, $today;
 	allowPrevious(true, '/userStatistics.php');
-
-	global $mysqli;
 
 	// TODO: Move elsewhere
 	function validateDate($date) {

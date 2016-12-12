@@ -1,7 +1,8 @@
 <?php
 	include 'include/dagger.php';
-	loggingInit();
+	global $log, $mysqli, $today;
 	allowPrevious('/preassessment.php', '/assessment.php');
+
 	postToSession(array('status', 'previous'));
 
 	$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
@@ -16,7 +17,6 @@
 		}
 	}
 
-	global $mysqli;
 ?>
 
 <html>

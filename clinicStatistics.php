@@ -1,9 +1,7 @@
 <?php
 	include 'include/dagger.php';
-	loggingInit();
+	global $log, $mysqli, $today;
 	allowPrevious($_SESSION['admin'] == 1, '/clinicStatistics.php');
-
-	global $mysqli;
 
 	// TODO: Move elsewhere
 	function validateDate($date) {

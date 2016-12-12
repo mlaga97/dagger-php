@@ -1,7 +1,8 @@
 <?php
 	include 'include/dagger.php';
-	loggingInit();
+	global $log, $mysqli, $today;
 	allowPrevious('/assessment.php', '/postassessment.php');
+
 	postToSession();
 ?>
 

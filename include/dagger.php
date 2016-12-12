@@ -12,27 +12,25 @@
 
 	}
 
-	// MySQL Object is useful everywhere
+	// MySQL Setup
 	$mysqli = new mysqli(
 			getConfigKey("edu.usm.dagger.main.db.server"),
 			getConfigKey("edu.usm.dagger.main.db.user"),
 			getConfigKey("edu.usm.dagger.main.db.password"),
 			getConfigKey("edu.usm.dagger.main.db.name")
 	);
+
+	// Log4php Setup
+	require_once('include/log4php/Logger.php');
+	Logger::configure('include/log4php/config.xml');
+	$log = Logger::getLogger('myLogger');
+
+	// Set Timezone Data
+	date_default_timezone_set('America/Chicago');
+	$today = date('m-d-y h:i:s');
 ?>
 
 <?php /* Function Library */
-
-	function loggingInit() {
-		// Log4php Setup
-		require_once('include/log4php/Logger.php');
-		Logger::configure('include/log4php/config.xml');
-		$GLOBALS["log"] = Logger::getLogger('myLogger');
-
-		// Set Timezone Data
-		date_default_timezone_set('America/Chicago');
-		$GLOBALS["today"] = date('m-d-y h:i:s');
-	}
 
 	// Allow only certain pages to access this one
 	function allowPrevious($access_whitelist, $new_name) {

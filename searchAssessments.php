@@ -1,9 +1,9 @@
 <?php
-include 'include/dagger.php';
-loggingInit();
-allowPrevious(true, '/searchAssessments.php');
+	include 'include/dagger.php';
+	global $log, $mysqli, $today;
+	allowPrevious(true, '/searchAssessments.php');
 
-unset ( $_SESSION ['search_select'] );
+	unset($_SESSION ['search_select']);
 ?>
 
 <html>

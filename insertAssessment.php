@@ -1,10 +1,9 @@
 <?php
 	include 'include/dagger.php';
-	loggingInit();
+	global $log, $mysqli, $today;
 	allowPrevious('/reviewAssessment.php', '/insertAssessment.php');
-	postToSession(array('status', 'previous'));
 
-	global $mysqli;
+	postToSession(array('status', 'previous'));
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">

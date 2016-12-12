@@ -6,9 +6,8 @@
 	require_once 'include/dagger.php';
 	$login_page = false;
 
-	$membership = new Membership();
-
 	// Checking to see if the username and password were entered correctly.
+	$membership = new Membership();
 	if ($_POST && !empty($_POST['username']) && !empty($_POST['password'])) {
 	    $response = $membership->validate_User($_POST['username'], $_POST['password']);
 	}

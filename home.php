@@ -1,23 +1,9 @@
 <?php
-	session_start();
+	include 'include/dagger.php';
+	global $log, $mysqli, $today;
+	allowPrevious(true, '/home.php');
 
-	require_once('include/log4php/Logger.php');
-	Logger::configure('include/log4php/config.xml');
-	$log = Logger::getLogger('myLogger');
-	date_default_timezone_set('America/Chicago');$today = date('m-d-y h:i:s');
-
-	foreach($_POST as $key=>$value) {
-	    if (($key != 'status') && ($key != 'previous')) {
-	        $_SESSION[$key] = $value;
-	    }
-	}
-
-	if ($_SESSION['status'] != 'authorized' ) {
-	    header("location: /index.php");
-	    die("Authentication required, redirecting");
-	}
-
-	$_SESSION['previous'] = '/home.php';
+	postToSession(array('status', 'previous'));
 
 	$log->info("OPTIONS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ".  print_r($_SESSION, true));
 ?>

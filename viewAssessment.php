@@ -1,10 +1,9 @@
 <?php
 	include 'include/dagger.php';
-	loggingInit();
+	global $log, $mysqli, $today;
 	allowPrevious(true, '/viewAssessment.php');
-	postToSession(array('status', 'previous'));
 
-	global $mysqli;
+	postToSession(array('status', 'previous'));
 
 	$membership = new Membership ();
 
