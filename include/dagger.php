@@ -1,15 +1,16 @@
 <?php /* Initial Setup */
-	if(!$login_page) {
+	// User session
+	session_start();
 
-		// User session
-		session_start();
+	if(empty($noRedirect)) {
 
 		// Reject the unauthorized
 		if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized') {
 			header("location: /index.php");
 			die("Authentication required, redirecting!");
 		}
-
+	} else {
+		unset($noRedirect);
 	}
 
 	// MySQL Setup

@@ -1,10 +1,7 @@
 <?php
-	session_start();
-	session_unset();
-
-	$login_page = true;
+	$noRedirect = true;
 	require_once 'include/dagger.php';
-	$login_page = false;
+	session_unset();
 
 	// Checking to see if the username and password were entered correctly.
 	$membership = new Membership();
@@ -13,7 +10,7 @@
 	}
 
 	// Here we set our session previous variable. This variable is used to allow user access to the next web-page.
-	$_SESSION['previous'] = '/login.php';
+	allowPrevious(true, '/login.php');
 ?>
 
 <html>
