@@ -13,9 +13,11 @@
 		"contact_outcome", "outcome_other",
 		"contact_reason", "reason_other", "date"
 	],
+
 	"edu.usm.dagger.main.insert.encryption_whitelist": [
 		"pt_id", "first_name", "last_name"
 	],
+
 	"edu.usm.dagger.main.insert.datefix_whitelist": [
 		"A1CDate", "eAGDate", "cholestoralDate",
 		"bpDate", "physicalDate", "hospital_visit_date",
@@ -27,51 +29,15 @@
 		"grouping", "logo", "status", "previous", "test_acc"
 	],
 
-	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0": [
-		"/duke*/", "/cd_*/", "/self_*/" ,"/phq_*/"
-	],
-	"edu.usm.dagger.main.viewAssessment.dontSet_-1_to_0": [
-		"/duke*/", "/cd_*/", "/self_*/", "/phq_*/", "/value*/", "/adhd_*/"
+	"edu.usm.dagger.main.assessment.dontReset": [
+		"id", "uname", "pswd", "university_id",
+		"clinic_id", "status", "logo", "user_id",
+		"first_name", "last_name", "GRHOP_standard",
+		"assessment_type", "previous", "admin",
+		"grouping", "visit_type", "contact_type"
 	],
 
-	"edu.usm.dagger.main.assessment.dontReset": [
-		"id", "uname", "pswd", "university_id", "clinic_id",
-		"status", "logo", "user_id", "first_name", "last_name",
-		"stress_check", "health_check", "events_check",
-		"gad_check", "pcl_check", "audit_check", "cage_check",
-		"cd_check", "phq_check", "ces_check", "GRHOP_standard",
-		"assessment_type", "psc_check", "dast_check", "duke_check",
-		"symptom_check", "previous", "admin", "self_check",
-		"sdq_check", "crafft_check", "life_check", "gad2_check",
-		"pcl2_check", "diagnosis_check", "diag_me_check",
-		"grouping", "visit_type", "adhd_check", "contact_type",
-		"c_stress_check", "pp_check", "hypertension_check",
-		"pediatric_check"
-	],
 	"edu.usm.dagger.main.assessment.setBlank": [
 		"sex", "eth", "living"
-	],
-
-	"edu.usm.dagger.main.searchAssessment.tags": {
-		"stress_check": "Stress",
-		"events_check":	"Event",
-		"health_check":	"Health",
-		"symptom_check": "Symptom",
-		"gad_check": "GAD-7",
-		"gad2_check": "GAD-2",
-		"phq_check": "PHQ-9",
-		"audit_check": "Audit",
-		"cage_check": "Cage",
-		"cd_check": "CD",
-		"pcl_check": "PCL-C",
-		"pcl2_check": "PCL-A",
-		"psc_check": "PSC",
-		"ces_check": "CES-D",
-		"dast_check": "DAST",
-		"duke_check": "DUKE",
-		"sdq_check": "SDQ",
-		"adhd_check": "ADHD",
-		"hypertension_check": "Hypertension",
-		"pediatric_check": "Pediatric"
-	}
+	]
 }
