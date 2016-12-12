@@ -35,7 +35,7 @@
 				<label for="assessment_date">Date of Assessment:</label>
 			</td>
 			<td class="personal">
-				<input id ="assessment_date" name = "assessment_date" class="datepickr" placeholder="">
+				<input id ="assessment_date" name = "assessment_date" type="date" placeholder="">
 			</td>
 		</tr>
 		<tr>
@@ -51,7 +51,7 @@
 				<label for="dob">Date of birth:</label>
 			</td>
 			<td class="personal">
-				<input id="dob" type="text" name="dob">
+				<input id="dob" type="date" name="dob">
 			</td>
 
 			<td class="personal">

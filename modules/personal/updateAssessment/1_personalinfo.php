@@ -35,7 +35,7 @@
 				<label for="assessment_date">Date of Assessment:</label>
 			</td>
 			<td class="personal">
-				<input id ="assessment_date" name = "assessment_date" class="datepickr" placeholder="" value="<?php echo $_SESSION['assessment_date']; ?>">
+				<input id ="assessment_date" name = "assessment_date" type="date" placeholder="" value="<?php echo $_SESSION['assessment_date']; ?>">
 			</td>
 		</tr>
 		<tr>
