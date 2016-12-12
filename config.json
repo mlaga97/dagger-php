@@ -48,11 +48,11 @@
 		"c_stress_check", "pp_check", "hypertension_check",
 		"pediatric_check"
 	],
-	"edu.dagger.main.assessment.setBlank": [
+	"edu.usm.dagger.main.assessment.setBlank": [
 		"sex", "eth", "living"
 	],
 
-	"edu.dagger.main.searchAssessment.tags": {
+	"edu.usm.dagger.main.searchAssessment.tags": {
 		"stress_check": "Stress",
 		"events_check":	"Event",
 		"health_check":	"Health",

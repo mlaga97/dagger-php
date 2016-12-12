@@ -13,7 +13,7 @@
 		// TODO: Determine why the following line is not a suitable substitute.
 		//$query_clinic = "SELECT * FROM response, clinic where pt_id = '$info_store' AND clinic.id = response.clinic_id AND clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by response.id  DESC";
     	$query_clinic = "SELECT response.pt_id, response.id, response.date, clinic.name";
-    	foreach(getConfigKey("edu.dagger.main.searchAssessment.tags") as $key => $value) {
+    	foreach(getConfigKey("edu.usm.dagger.main.searchAssessment.tags") as $key => $value) {
     		$query_clinic = $query_clinic . ', response.' . $key;
     	}
     	$query_clinic = $query_clinic . " FROM response, clinic where pt_id = '$info_store' AND clinic.id = response.clinic_id AND clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by response.id  DESC";
@@ -51,7 +51,7 @@
 			echo "<td>";
 			echo "<p style = color:red>";
 
-			foreach(getConfigKey("edu.dagger.main.searchAssessment.tags") as $key => $value) {
+			foreach(getConfigKey("edu.usm.dagger.main.searchAssessment.tags") as $key => $value) {
 				if($row[$key] == 1) {
 					echo $value . ' ';
 				}
