@@ -1,12 +1,6 @@
 <?php
-
-	require_once 'include/constants.php';
-	$mysqli = new mysqli(DB_SERVER, DB_USER, DB_Password, DB_NAME);
+	global $mysqli;
 	
-	if ($mysqli->connect_errno) {
-		printf("Connect failed: %s\n", $mysqli->connect_error);
-		exit();
-	}
 	$clinic_select = $mysqli->query('SELECT clinic_id from groups where user_id = ' . $_SESSION['user_id']);
 	if ($clinic_select) {
 	

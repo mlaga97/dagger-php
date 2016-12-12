@@ -2,7 +2,10 @@
 	session_start();
 	session_unset();
 
-	require_once('include/Mysql.php');
+	$login_page = true;
+	require_once 'include/dagger.php';
+	$login_page = false;
+
 	$membership = new Membership();
 
 	// Checking to see if the username and password were entered correctly.

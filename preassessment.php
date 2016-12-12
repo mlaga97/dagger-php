@@ -3,9 +3,11 @@
 	loggingInit();
 	allowPrevious('/options.php', '/preassessment.php');
 
+	$mysqli = dbOpen();
+
 	$log->info("CLINICS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 
-	unsetAllButTheseKeys(array('user_id', 'clinic_id', 'admin', 'university_id', 'grouping', 'logo', 'status', 'previous', 'test_acc'));
+	unsetAllButTheseKeys(getConfigKey("edu.usm.dagger.main.preassessment.keysToKeep"));
 ?>
 
 <html>

@@ -1,0 +1,54 @@
+{
+	"edu.usm.dagger.main.db.server": "localhost",
+	"edu.usm.dagger.main.db.user": "hho",
+	"edu.usm.dagger.main.db.password": "tommymyson",
+	"edu.usm.dagger.main.db.name": "msihdp",
+
+	"edu.usm.dagger.main.insert.insert_blacklist": [
+		"admin", "university_id", "grouping",
+		"logo", "status", "previous", "test_acc",
+		"n1", "n2", "n3", "n4",
+		"st", "id", "GRHOP_standard", "c_p_id",
+		"search_select", "contact_date", "entry_date",
+		"contact_outcome", "outcome_other",
+		"contact_reason", "reason_other", "date"
+	],
+	"edu.usm.dagger.main.insert.encryption_whitelist": [
+		"pt_id", "first_name", "last_name"
+	],
+	"edu.usm.dagger.main.insert.datefix_whitelist": [
+		"A1CDate", "eAGDate", "cholestoralDate",
+		"bpDate", "physicalDate", "hospital_visit_date",
+		"er_visit_date", "office_visit_date", "assessment_date"
+	],
+
+	"edu.usm.dagger.main.preassessment.keysToKeep": [
+		"user_id", "clinic_id", "admin", "university_id",
+		"grouping", "logo", "status", "previous", "test_acc"
+	],
+
+	"edu.usm.dagger.main.viewAssessment.dontSet_NULL_To_-1": [
+		"/duke*/", "/cd_*/", "/self_*/" ,"/phq_*/"
+	],
+	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_To_0": [
+		"/duke*/", "/cd_*/", "/self_*/", "/phq_*/", "/value*/", "/adhd_*/"
+	],
+
+	"edu.usm.dagger.main.assessment.dontReset": [
+		"id", "uname", "pswd", "university_id", "clinic_id",
+		"status", "logo", "user_id", "first_name", "last_name",
+		"stress_check", "health_check", "events_check",
+		"gad_check", "pcl_check", "audit_check", "cage_check",
+		"cd_check", "phq_check", "ces_check", "GRHOP_standard",
+		"assessment_type", "psc_check", "dast_check", "duke_check",
+		"symptom_check", "previous", "admin", "self_check",
+		"sdq_check", "crafft_check", "life_check", "gad2_check",
+		"pcl2_check", "diagnosis_check", "diag_me_check",
+		"grouping", "visit_type", "adhd_check", "contact_type",
+		"c_stress_check", "pp_check", "hypertension_check",
+		"pediatric_check"
+	],
+	"edu.dagger.main.assessment.setBlank": [
+		"sex", "eth", "living"
+	]
+}

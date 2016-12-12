@@ -3,20 +3,6 @@
 
 	global $log, $today;
 
-	// These keys should not be inserted into the DB
-	$insert_blacklist = array(
-			'admin', 'university_id', 'grouping', 'logo', 'status', 'previous', 'test_acc',
-			'n1', 'n2', 'n3', 'n4',
-			'st', 'id', 'GRHOP_standard', 'c_p_id', 'search_select', 'contact_date',
-			'entry_date', 'contact_outcome', 'outcome_other', 'contact_reason', 'reason_other', 'date'
-	);
-
-	// These keys should be encrypted to protect patient privacy 
-	$insert_encrypted_whitelist = array('pt_id', 'first_name', 'last_name');
-
-	// These keys need to have empty values substituted with 0000-00-00 in order to please the DB
-	$insert_dates_whitelist = array('A1CDate', 'eAGDate', 'cholestoralDate', 'bpDate', 'physicalDate', 'hospital_visit_date', 'er_visit_date', 'office_visit_date', 'assessment_date');
-
 	/**************************************************************************
 	***************************************************************************
 	**************************************************************************/
@@ -29,19 +15,19 @@
 
 		// Ignore keys in blacklist
 		// TODO: Perhaps a whitelist would be less likely to fail upon insertion?
-		if( !in_array($key, $insert_blacklist) ) {
+		if( !in_array($key, getConfigKey("edu.usm.dagger.main.insert.insert_blacklist")) ) {
 
 			// Append key to list of keys
 			$keys = $keys . $key . " ,";
 
-			if( in_array($key, $insert_encrypted_whitelist) ) {
+			if( in_array($key, getConfigKey("edu.usm.dagger.main.insert.encryption_whitelist")) ) {
 
 				// Encrypt values to protect patient privacy
 				$value = strtolower($value);
 				$value = hash('sha256', $value);
 				$values = $values . " '" . $value . "',";
 
-			} elseif( in_array($key, $insert_dates_whitelist) && ($value === '') ) {
+			} elseif( in_array($key, getConfigKey("edu.usm.dagger.main.insert.datefix_whitelist")) && ($value === '') ) {
 
 				// Empty date values need to be substituted with 0000-00-00 in order to please the DB
 				$values = $values ." '" . "0000-00-00" . "',";

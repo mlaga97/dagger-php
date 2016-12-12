@@ -7,28 +7,11 @@
 	$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 
 	foreach($_SESSION as $key=>$value) {
-		if(($key != 'id')           && ($key != 'uname')      && ($key != 'pswd')       && ($key != 'university_id') && ($key != 'clinic_id')    && ($key != 'status')       && 
-		   ($key != 'logo')         && ($key != 'user_id')    && ($key != 'first_name') && ($key != 'last_name')     && ($key != 'stress_check') && ($key != 'health_check') && 
-		   ($key != 'events_check') && ($key != 'gad_check')  && ($key != 'pcl_check')  && ($key != 'audit_check')   && ($key != 'cage_check')   && ($key != 'cd_check')     && 
-		   ($key != 'phq_check')    && ($key != 'ces_check')  && ($key != 'GRHOP_standard') && ($key != 'assessment_type') && ($key != 'psc_check') 
-		&& ($key != 'dast_check')   && ($key != 'duke_check') && ($key != 'symptom_check') && ($key != 'previous') && ($key != 'admin') 
-	         &&($key != 'self_check')   && ($key != 'sdq_check')  &&($key != 'crafft_check')&&($key != 'life_check')&&($key != 'gad2_check') 
-	         && ($key != 'pcl2_check')  && ($key != 'diagnosis_check')&& ($key != 'diag_me_check') && ($key != 'grouping') && ($key!='visit_type')&& 
-	                ($key!='adhd_check')&&($key!='contact_type') && ($key != 'c_stress_check')&& ($key != 'pp_check') && ($key!='hypertension_check')
-				&& ($key!='pediatric_check'))
-		{
+		if(!in_array($key, getConfigKey("edu.usm.dagger.main.assessment.dontReset"))) {
 			$_SESSION[$key] = -1;
 
-			if($key == 'sex') {
-		 		$_SESSION['sex'] = "";
-			}
-
-			if($key == 'eth') {
-		  		$_SESSION['eth'] = "";
-			}
-
-			if($key == 'living') {
-		  		$_SESSION['living'] = "";
+			if(in_array($key, getConfigKey("edu.usm.dagger.main.assessment.setBlank"))) {
+				$_SESSION[$key] = '';
 			}
 		}
 	}
