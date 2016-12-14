@@ -2,7 +2,6 @@
 	<li><a href="#"><img width="20px" height="20px" src='/include/menu.svg'></a>
 		<ul>
 			<?php if($_SESSION['admin'] == true) { ?>
-			<li><a href="/adminSettings.php">Administration</a></li>
 			<li><a href="/clinicStatistics.php">Clinic Statistics</a></li>
 			<li><a href="/moduleList.php">Modules</a></li>
 			<?php } ?>
