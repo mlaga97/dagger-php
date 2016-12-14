@@ -1,0 +1,45 @@
+{
+	"module_name": "old_assessments",
+
+	"edu.usm.dagger.main.assessment.dontReset": [
+		"stress_check", "health_check", "events_check",
+		"gad_check", "pcl_check", "audit_check",
+		"cage_check", "cd_check", "phq_check",
+		"ces_check", "psc_check","dast_check",
+		"duke_check", "symptom_check", "self_check",
+		"sdq_check", "crafft_check", "life_check",
+		"gad2_check", "pcl2_check", "diagnosis_check",
+		"diag_me_check", "grouping", "visit_type",
+		"adhd_check", "contact_type", "c_stress_check",
+		"pp_check"
+	],
+
+	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0": [
+		"/duke*/", "/cd_*/", "/self_*/" ,"/phq_*/"
+	],
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"stress_check": "Stress",
+		"events_check":	"Event",
+		"health_check":	"Health",
+		"symptom_check": "Symptom",
+		"gad_check": "GAD-7",
+		"gad2_check": "GAD-2",
+		"phq_check": "PHQ-9",
+		"audit_check": "Audit",
+		"cage_check": "Cage",
+		"cd_check": "CD",
+		"pcl_check": "PCL-C",
+		"pcl2_check": "PCL-A",
+		"psc_check": "PSC",
+		"ces_check": "CES-D",
+		"dast_check": "DAST",
+		"duke_check": "DUKE",
+		"sdq_check": "SDQ",
+		"adhd_check": "ADHD"
+	},
+
+	"edu.usm.dagger.main.viewAssessment.dontSet_-1_to_0": [
+		"/duke*/", "/cd_*/", "/self_*/", "/phq_*/", "/value*/", "/adhd_*/"
+	]
+}

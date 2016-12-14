@@ -1,0 +1,43 @@
+{
+	"edu.usm.dagger.main.db.server": "localhost",
+	"edu.usm.dagger.main.db.user": "hho",
+	"edu.usm.dagger.main.db.password": "tommymyson",
+	"edu.usm.dagger.main.db.name": "msihdp",
+
+	"edu.usm.dagger.main.insert.insert_blacklist": [
+		"admin", "university_id", "grouping",
+		"logo", "status", "previous", "test_acc",
+		"n1", "n2", "n3", "n4",
+		"st", "id", "GRHOP_standard", "c_p_id",
+		"search_select", "contact_date", "entry_date",
+		"contact_outcome", "outcome_other",
+		"contact_reason", "reason_other", "date"
+	],
+
+	"edu.usm.dagger.main.insert.encryption_whitelist": [
+		"pt_id", "first_name", "last_name"
+	],
+
+	"edu.usm.dagger.main.insert.datefix_whitelist": [
+		"A1CDate", "eAGDate", "cholestoralDate",
+		"bpDate", "physicalDate", "hospital_visit_date",
+		"er_visit_date", "office_visit_date", "assessment_date"
+	],
+
+	"edu.usm.dagger.main.preassessment.keysToKeep": [
+		"user_id", "clinic_id", "admin", "university_id",
+		"grouping", "logo", "status", "previous", "test_acc"
+	],
+
+	"edu.usm.dagger.main.assessment.dontReset": [
+		"id", "uname", "pswd", "university_id",
+		"clinic_id", "status", "logo", "user_id",
+		"first_name", "last_name", "GRHOP_standard",
+		"assessment_type", "previous", "admin",
+		"grouping", "visit_type", "contact_type"
+	],
+
+	"edu.usm.dagger.main.assessment.setBlank": [
+		"sex", "eth", "living"
+	]
+}
