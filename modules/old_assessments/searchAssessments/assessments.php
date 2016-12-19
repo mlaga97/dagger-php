@@ -1,8 +1,6 @@
 <?php
 	global $mysqli;
 
-	$membership = new Membership ();
-
 	if ($_POST && ! empty ( $_POST ['pt_id'] )) {
 		$_SESSION ['pt_id'] = $_POST ['pt_id'];
 		$info_store = strtolower ( $_SESSION ['pt_id'] );

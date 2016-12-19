@@ -4,9 +4,8 @@
 	session_unset();
 
 	// Checking to see if the username and password were entered correctly.
-	$membership = new Membership();
 	if ($_POST && !empty($_POST['username']) && !empty($_POST['password'])) {
-	    $response = $membership->validate_User($_POST['username'], $_POST['password']);
+	    $response = login($_POST['username'], $_POST['password']);
 	}
 
 	// Here we set our session previous variable. This variable is used to allow user access to the next web-page.

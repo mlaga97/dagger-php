@@ -5,10 +5,10 @@
 	"edu.usm.dagger.main.db.name": "msihdp",
 
 	"edu.usm.dagger.main.insert.insert_blacklist": [
-		"admin", "university_id", "grouping",
-		"logo", "status", "previous", "test_acc",
+		"id", "university_id", "admin", "grouping", "test_acc", "logo",
+		"status", "previous",
 		"n1", "n2", "n3", "n4",
-		"st", "id", "GRHOP_standard", "c_p_id",
+		"st", "GRHOP_standard", "c_p_id",
 		"search_select", "contact_date", "entry_date",
 		"contact_outcome", "outcome_other",
 		"contact_reason", "reason_other", "date"
@@ -39,5 +39,9 @@
 
 	"edu.usm.dagger.main.assessment.setBlank": [
 		"sex", "eth", "living"
+	],
+	
+	"edu.usm.dagger.main.login.user.keys": [
+		"university_id", "clinic_id", "admin", "grouping", "test_acc", "logo"
 	]
 }

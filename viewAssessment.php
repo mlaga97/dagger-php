@@ -5,8 +5,6 @@
 
 	postToSession(array('status', 'previous'));
 
-	$membership = new Membership ();
-
 	foreach ( $_POST as $key => $value ) {
 		$_SESSION [$key] = $value;
 	}
