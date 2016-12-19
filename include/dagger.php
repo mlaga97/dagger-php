@@ -22,8 +22,8 @@
 	);
 
 	// Log4php Setup
-	require_once('include/log4php/Logger.php');
-	Logger::configure('include/log4php/config.xml');
+	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/log4php/Logger.php');
+	Logger::configure($_SERVER['DOCUMENT_ROOT'] . '/include/log4php/config.xml');
 	$log = Logger::getLogger('myLogger');
 
 	// Set Timezone Data
@@ -84,11 +84,11 @@
 	}
 
 	function moduleList() {
-		return array_diff(scandir("modules/"), array('..', '.'));
+		return array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/"), array('..', '.'));
 	}
 
 	function moduleProvides($module) {
-		$raw = array_diff(scandir("modules/" . $module), array('..', '.'));
+		$raw = array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module), array('..', '.'));
 
 		$processed = array();
 		foreach($raw as $file) {
@@ -103,7 +103,7 @@
 	function moduleListKeys() {
 		$keyList = array();
 		foreach(moduleList() as $module) {
-			$keys = array_diff(scandir("modules/" . $module), array('..', '.'));
+			$keys = array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module), array('..', '.'));
 
 			foreach($keys as $key) {
 				if(!preg_match('/\.php/', $key)) {
@@ -116,7 +116,7 @@
 	}
 
 	function moduleListProviders($key) {
-		$raw = array_diff(glob("modules/*/" . $key), array('..', '.'));
+		$raw = array_diff(glob($_SERVER['DOCUMENT_ROOT'] . "/modules/*/" . $key), array('..', '.'));
 
 		$processed = array();
 		foreach($raw as $file) {
@@ -138,7 +138,7 @@
 
 		$paths = array();
 		foreach($files as $file) {
-			$paths = array_merge($paths, array_diff(glob("modules/*/" . $key . '/' . $file), array('..', '.')));
+			$paths = array_merge($paths, array_diff(glob($_SERVER['DOCUMENT_ROOT'] . "/modules/*/" . $key . '/' . $file), array('..', '.')));
 		}
 
 		return $paths;
