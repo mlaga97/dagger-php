@@ -1,6 +1,7 @@
 <?php
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
+	allowPrevious(true, '/updateAssessment.php');
 
 	// Get Current User Record
 	$query = 'SELECT id, name, uname, pswd, university_id, clinic_id, admin, employee_id, grouping, test_acc FROM users WHERE id = ' . $_SESSION['user_id'] . ' LIMIT 1';

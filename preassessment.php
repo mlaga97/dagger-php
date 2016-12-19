@@ -1,7 +1,7 @@
 <?php
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
-	allowPrevious('/options.php', '/preassessment.php');
+	allowPrevious(true, '/preassessment.php');
 
 	$log->info("CLINICS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 

@@ -1,7 +1,7 @@
 <?php
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
-	allowPrevious(true, '/viewAssessment.php');
+	allowPrevious('/searchAssessments.php', '/viewAssessment.php');
 
 	postToSession(array('status', 'previous'));
 

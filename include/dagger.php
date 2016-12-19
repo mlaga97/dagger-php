@@ -39,9 +39,17 @@
 
 		switch ($type) {
 			case "string":
+				if($_SESSION['previous'] != $access_whitelist) {
+					header("location: /index.php");
+					die("Access denied, redirecting!");
+				}
 				break;
 
 			case "array":
+				if(!array_key_exists($_SESSION['previous'], $access_whitelist)) {
+					header("location: /index.php");
+					die("Access denied, redirecting!");
+				}
 				break;
 
 			case "boolean":
