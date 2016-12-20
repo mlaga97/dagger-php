@@ -7,5 +7,17 @@
 
 	"edu.usm.dagger.main.searchAssessment.tags": {
 		"hypertension_check": "Hypertension"
-	}
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"HT_Med_1", "HT_Med_2", "HT_Med_3", "HT_Diet_1", "HT_Diet_2",
+		"HT_Diet_3", "HT_Diet_4", "HT_Diet_5", "HT_Diet_6", "HT_Diet_7",
+		"HT_Diet_8", "HT_Diet_9", "HT_Diet_10", "HT_Diet_11", "HT_Diet_12",
+		"HT_Phys_1", "HT_Phys_2", "HT_Smoke_1",
+
+		"HT_Wt_1", "HT_Wt_2", "HT_Wt_3", "HT_Wt_4", "HT_Wt_5", "HT_Wt_6",
+		"HT_Wt_7", "HT_Wt_8", "HT_Wt_9", "HT_Wt_10", 
+
+		"HT_Alc_1", "HT_Alc_2", "HT_Alc_3"
+	]
 }

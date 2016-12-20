@@ -14,14 +14,8 @@
 		"contact_reason", "reason_other", "date"
 	],
 
-	"edu.usm.dagger.main.insert.encryption_whitelist": [
-		"pt_id", "first_name", "last_name"
-	],
-
 	"edu.usm.dagger.main.insert.datefix_whitelist": [
-		"A1CDate", "eAGDate", "cholestoralDate",
-		"bpDate", "physicalDate", "hospital_visit_date",
-		"er_visit_date", "office_visit_date", "assessment_date"
+		"assessment_date"
 	],
 
 	"edu.usm.dagger.main.preassessment.keysToKeep": [
@@ -33,12 +27,7 @@
 		"id", "uname", "pswd", "university_id",
 		"clinic_id", "status", "logo", "user_id",
 		"first_name", "last_name", "GRHOP_standard",
-		"assessment_type", "previous", "admin",
-		"grouping", "visit_type", "contact_type"
-	],
-
-	"edu.usm.dagger.main.assessment.setBlank": [
-		"sex", "eth", "living"
+		"previous", "admin", "grouping"
 	],
 
 	"edu.usm.dagger.main.login.user.keys": [
@@ -48,11 +37,10 @@
 	"edu.usm.dagger.main.insert.whitelist": [
 		"id", "user_id", "clinic_id", "date",
 
-		"first_name", "last_name", "pt_id", "zip", "sex", "m_status", "ed", "eth", "living", "dob",
-
-		"assessment_type", "homeless", "chronic_care", "clinic_care", "stress_check", "events_check", "health_check", "symptom_check",
-		"gad_check", "phq_check", "audit_check", "cage_check", "cd_check", "pcl_check", "psc_check", "ces_check",
-		"dast_check", "duke_check", "hypertension_check", "pediatric_check",
+		"stress_check", "events_check", "health_check", "symptom_check",
+		"gad_check", "phq_check", "audit_check", "cage_check", "cd_check",
+		"pcl_check", "psc_check", "ces_check", "dast_check", "duke_check",
+		"hypertension_check", "pediatric_check",
 
 		"s_1", "s_2", "s_3", "s_4", "s_5", "s_6", "s_7", "s_8", "s_9", "s_10",
 		"s_11", "s_12", "s_13", "s_14", "s_15", "s_16", "s_17", "s_18", "s_19", "s_20",
@@ -126,21 +114,14 @@
 		"diag_me_reported_type_1", "diag_me_reported_type_2", "diag_me_reported_type_3", "diag_me_reported_type_4", "diag_me_reported_type_5",
 		"diag_me_reported_type_6", "diag_me_reported_type_7", "diag_me_reported_type_8", "diag_me_reported_type_9", "diag_me_reported_type_10",
 
-		"q1",
+		"q1", "q2", "q3", "bh_care",
 
-		"valueA1C", "A1CDate", "valueEAG", "eAGDate", "valueLDL", "valueHDL", "cholestoralDate", "valueSYS", "valueDIA", "bpDate", "valueHeight", "valueWeight", "physicalDate",
-
-		"hospital_visit_date", "hospital_visit_reason", "hospital_visit_other", "q2", "er_visit_date", "er_visit_reason",
-		"er_visit_other", "q3", "office_visit_date", "office_visit_reason", "office_visit_other", "bh_care",
-
-		"assessment_time", "contact_type",
+		"assessment_time",
 
 		"adhd_check", "adhd_1", "adhd_2", "adhd_3", "adhd_4", "adhd_5", "adhd_6", "adhd_7", "adhd_8", "adhd_9", "adhd_10",
 		"adhd_11", "adhd_12", "adhd_13", "adhd_14", "adhd_15", "adhd_16", "adhd_17", "adhd_18",
 
-		"assessment_date", "visit_type", "hep_c", "ryan_white", "care_team",
-		"system_involvement_singing_river", "system_involvement_gulf_coast", "system_involvement_memorial",
-		"community_connections",
+		"assessment_date",
 
 		"interfere_area_home", "interfere_area_friendship", "interfere_area_school", "interfere_area_leisure",
 
@@ -153,15 +134,6 @@
 
 		"h_15", "h_16", "h_17", "h_18", "h_19",
 
-		"diag_me_11", "diag_me_11_3", "diag_me_reported_type_11",
-
-		"HT_Med_1", "HT_Med_2", "HT_Med_3", "HT_Diet_1", "HT_Diet_2", "HT_Diet_3", "HT_Diet_4", "HT_Diet_5", "HT_Diet_6",
-		"HT_Diet_7", "HT_Diet_8", "HT_Diet_9", "HT_Diet_10", "HT_Diet_11", "HT_Diet_12", "HT_Phys_1", "HT_Phys_2",
-		"HT_Smoke_1", "HT_Wt_1", "HT_Wt_2", "HT_Wt_3", "HT_Wt_4", "HT_Wt_5", "HT_Wt_6", "HT_Wt_7", "HT_Wt_8", "HT_Wt_9",
-		"HT_Wt_10", "HT_Alc_1", "HT_Alc_2", "HT_Alc_3",
-
-		"HLS_Date_Perf", "HLS_FH_Diab", "HLS_FH_HBP", "HLS_FH_HD", "HLS_FH_Overwt", "HLS_Servings", "HLS_Screentime",
-		"HLS_PhysAct", "HLS_FamAct", "HLS_Drink", "HLS_Brkfst", "HLS_EatOut", "HLS_Table", "HLS_Money", "HLS_Sleep",
-		"HLS_Health", "HLS_Weight", "HLS_Now"
+		"diag_me_11", "diag_me_11_3", "diag_me_reported_type_11"
 	]
 }

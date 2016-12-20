@@ -1,0 +1,11 @@
+{
+	"edu.usm.dagger.main.insert.datefix_whitelist": [
+		"hospital_visit_date", "er_visit_date", "office_visit_date"
+	],
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"hospital_visit_date", "hospital_visit_reason", "hospital_visit_other",
+		"er_visit_date", "er_visit_reason", "er_visit_other",
+		"office_visit_date", "office_visit_reason", "office_visit_other"
+	]
+}

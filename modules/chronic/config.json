@@ -1,0 +1,9 @@
+{
+	"edu.usm.dagger.main.insert.whitelist": [
+		"valueA1C", "A1CDate", "valueEAG", "eAGDate", "valueLDL", "valueHDL", "cholestoralDate", "valueSYS", "valueDIA", "bpDate", "valueHeight", "valueWeight", "physicalDate"
+	],
+
+	"edu.usm.dagger.main.insert.datefix_whitelist": [
+		"A1CDate", "eAGDate", "cholestoralDate", "bpDate", "physicalDate"
+	]
+}
