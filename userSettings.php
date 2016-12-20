@@ -15,10 +15,13 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="User Settings">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
 	</head>
 
 	<body>
-		<?php include 'include/menu.php'; ?>
+		<?php showMenu(); ?>
 		<div id='container'>
 			<div id='top'>
 				<div id='logo'>

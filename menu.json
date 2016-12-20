@@ -1,0 +1,208 @@
+{
+	"edu.usm.dagger.menu.hamburger": {
+		"name": "<img width='20px' height='20px' src='/include/menu.svg' />",
+		"href": "#",
+		"children": {
+			"edu.usm.dagger.menu.hamburger.clinicStatistics": {
+				"name": "Clinic Statistics",
+				"href": "/clinicStatistics.php",
+				"displayOnlyIfThisSessionKeyIsTrue": "admin"
+			},
+			"edu.usm.dagger.menu.hamburger.moduleList": {
+				"name": "Modules",
+				"href": "/moduleList.php",
+				"displayOnlyIfThisSessionKeyIsTrue": "admin"
+			},
+			"edu.usm.dagger.menu.hamburger.userStatistics": {
+				"name": "User Statistics",
+				"href": "/userStatistics.php"
+			},
+			"edu.usm.dagger.menu.hamburger.userSettings": {
+				"name": "User Settings",
+				"href": "/userSettings.php"
+			},
+			"edu.usm.dagger.menu.hamburger.index": {
+				"name": "Logout",
+				"href": "/index.php"
+			}
+		}
+	},
+	"edu.usm.dagger.menu.assessment": {
+		"name": "Assessment",
+		"href": "/preassessment.php"
+	},
+	"edu.usm.dagger.menu.search": {
+		"name": "Search",
+		"href": "/searchAssessments.php"
+	},
+	"edu.usm.dagger.menu.help": {
+		"name": "Help",
+		"href": "#",
+		"children": {
+			"edu.usm.dagger.menu.help.self-care": {
+				"name": "Self-Care",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.self-care.library": {
+						"name": "Library",
+						"href": "/include/help/support/self-care/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.gad": {
+				"name": "GAD-7",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.gad.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/gad/gad_questionaire.pdf"
+					},
+					"edu.usm.dagger.menu.help.gad.library": {
+						"name": "Library",
+						"href": "/include/help/support/gad/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.phq": {
+				"name": "PHQ-9",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.phq.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/phq/PHQ_Questionaire.pdf"
+					},
+					"edu.usm.dagger.menu.help.phq.library": {
+						"name": "Library",
+						"href": "/include/help/support/phq/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.audit": {
+				"name": "Audit-C",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.audit.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/audit/Overview.pdf"
+					},
+					"edu.usm.dagger.menu.help.audit.library": {
+						"name": "Library",
+						"href": "/include/help/support/audit/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.cage": {
+				"name": "CAGE",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.cage.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/cage/cage_questionaire.pdf"
+					},
+					"edu.usm.dagger.menu.help.cage.library": {
+						"name": "Library",
+						"href": "/include/help/support/cage/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.cd": {
+				"name": "Connor-Davidson",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.cd.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/cd/CD-RISC_modified.pdf"
+					},
+					"edu.usm.dagger.menu.help.cd.library": {
+						"name": "Library",
+						"href": "/include/help/support/cd/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.pcl": {
+				"name": "PCL-C",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.pcl.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/pcl/PCL_questionaire.pdf"
+					},
+					"edu.usm.dagger.menu.help.pcl.library": {
+						"name": "Library",
+						"href": "/include/help/support/pcl/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.cesd": {
+				"name": "CES-D",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.cesd.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/cesd/cesd_questionaire.pdf"
+					},
+					"edu.usm.dagger.menu.help.cesd.library": {
+						"name": "Library",
+						"href": "/include/help/support/cesd/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.psc": {
+				"name": "PSC-17",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.psc.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/psc/PSC-17.pdf"
+					},
+					"edu.usm.dagger.menu.help.psc.library": {
+						"name": "Library",
+						"href": "/include/help/support/psc/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.dast": {
+				"name": "DAST-10",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.dast.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/dast/QUESTIONNAIRE.pdf"
+					},
+					"edu.usm.dagger.menu.help.dast.library": {
+						"name": "Library",
+						"href": "/include/help/support/dast/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.duke": {
+				"name": "The Duke",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.duke.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/duke/DukeForm.pdf"
+					},
+					"edu.usm.dagger.menu.help.duke.library": {
+						"name": "Library",
+						"href": "/include/help/support/duke/library.html"
+					}
+				}
+			},
+			"edu.usm.dagger.menu.help.adhd": {
+				"name": "ADHD",
+				"href": "#",
+				"children": {
+					"edu.usm.dagger.menu.help.adhd.instrument": {
+						"name": "Instrument",
+						"href": "/include/help/support/ADHD/ASRS.pdf"
+					},
+					"edu.usm.dagger.menu.help.adhd.library": {
+						"name": "Library",
+						"href": "/include/help/support/ADHD/library.html"
+					}
+				}
+			}
+		}
+	}
+}

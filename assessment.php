@@ -34,10 +34,13 @@
 				background: url(images/calendar.png);
 			}
 		</style>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
 	</head>
 
 	<body>
-		<?php include 'include/menu.php' ?>
+		<?php showMenu(); ?>
 		<?php echo $_SESSION['logo'] ?>
 			<div style="text-align: center;">
 				<?php
