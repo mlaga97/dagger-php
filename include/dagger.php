@@ -2,15 +2,12 @@
 	// User session
 	session_start();
 
+	// Reject the unauthorized
 	if(empty($noRedirect)) {
-
-		// Reject the unauthorized
 		if (!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized') {
 			header("location: /index.php");
 			die("Authentication required, redirecting!");
 		}
-	} else {
-		unset($noRedirect);
 	}
 
 	// MySQL Setup
@@ -21,6 +18,11 @@
 			getConfigKey("edu.usm.dagger.main.db.name")
 	);
 
+	// Reload user settings and reject anyone that is inactive
+	if(empty($noRedirect)) {
+		reloadUserSettings();
+	}
+
 	// Log4php Setup
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/log4php/Logger.php');
 	Logger::configure($_SERVER['DOCUMENT_ROOT'] . '/include/log4php/config.xml');
@@ -29,6 +31,10 @@
 	// Set Timezone Data
 	date_default_timezone_set('America/Chicago');
 	$today = date('m-d-y h:i:s');
+	
+	if(!empty($noRedirect)) {
+		unset($noRedirect);
+	}
 ?>
 
 <?php /* Function Library */
@@ -259,7 +265,6 @@
 			// Copy user data to $_SESSION
 			foreach($results->fetch_assoc() as $key => $value) {
 				$_SESSION[$key] = $value;
-				echo $key . ': ' . $value . '<br/>';
 			}
 
 			// Allow user through
@@ -270,6 +275,36 @@
 
 			// Return Error Message
 			return "Please enter a correct username and password.";
+
+		}
+	}
+
+	// Function to reload user settings
+	function reloadUserSettings() {
+		global $log, $mysqli;
+
+		// Build query from configuration data
+		$query = 'SELECT ';
+		foreach(getConfigKey("edu.usm.dagger.main.login.user.keys") as $key) {
+			$query .= $key . ', ';
+		}
+		$query .= 'users.id AS user_id FROM users INNER JOIN university ON users.university_id = university.id WHERE users.id = "' . $_SESSION['user_id'] . '" AND active = 1 LIMIT 1';
+
+		// Run query
+		$results = $mysqli->query($query);
+
+		// Check if query returned anything
+		if($results && $results->num_rows === 1) {
+
+			// Copy user data to $_SESSION
+			foreach($results->fetch_assoc() as $key => $value) {
+				$_SESSION[$key] = $value;
+			}
+
+		} else {
+
+			// User was deleted or is no longer authorized, so kick them out
+			header("location: /index.php");
 
 		}
 	}
