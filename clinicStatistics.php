@@ -60,11 +60,11 @@
 					if(array_key_exists('clinicStats_endDate', $_POST) && validateDate($_POST['clinicStats_endDate'])) {
 						$results_query = $results_query . ' AND date < "' . $mysqli->real_escape_string($_POST['clinicStats_endDate']) . '"';
 					}
-					if(array_key_exists('clinicStats_clinicId', $_POST)) {
-						$results_query = $results_query;
+					if(array_key_exists('clinicStats_clinicId', $_POST) && $_POST['clinicStats_clinicId'] !== '' ) {
+						$results_query = $results_query . ' AND clinic_id = "' . $mysqli->real_escape_string($_POST['clinicStats_clinicId']) . '"';;
 					}
-					if(array_key_exists('clinicStats_userId', $_POST)) {
-						$results_query = $results_query;
+					if(array_key_exists('clinicStats_userId', $_POST) && $_POST['clinicStats_userId'] !== '' ) {
+						$results_query = $results_query . ' AND user_id = "' . $mysqli->real_escape_string($_POST['clinicStats_userId']) . '"';;
 					}
 
 					// Once we have narrowed down as far as possible, we make
