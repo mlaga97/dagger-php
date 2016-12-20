@@ -27,7 +27,7 @@
 
 		global $row;
 		while ( $row = $info->fetch_assoc () ) {
-			if (($first === 0) && ($_SESSION ['admin'] == 1)) {
+			if (($first == 0) && ($_SESSION ['admin'] == 1)) {
 				echo $row ['pt_id'];
 				echo "</tr><tr>";
 				$first ++;

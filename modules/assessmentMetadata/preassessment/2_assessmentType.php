@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION['grouping'] === 2 || $_SESSION['grouping'] === 6 || $_SESSION['grouping'] === 10) { //ms grhop and coastal's employees
+if ($_SESSION['grouping'] == 2 || $_SESSION['grouping'] == 6 || $_SESSION['grouping'] == 10) { //ms grhop and coastal's employees
 	echo
 	"<table border=\"1\" width = \"800\" id=\"table_select_assessment\"><td>
                     <h3> Please select an assessment type.</h3>

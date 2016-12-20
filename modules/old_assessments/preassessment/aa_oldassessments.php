@@ -115,7 +115,7 @@
 				<label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" /> ADHD Self-Report Scale          </label>
 			</div>
 		";
-	} else if ($_SESSION['grouping'] == 2 || $_SESSION['grouping'] === 10) { //grouping = 2 is for the MS GRHOP
+	} else if ($_SESSION['grouping'] == 2 || $_SESSION['grouping'] == 10) { //grouping = 2 is for the MS GRHOP
 		echo "
 			<div title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\">
 				<label><input id=\"sdq_check\" input type=\"checkbox\" name=\"sdq_check\" value=\"1\" /> SDQ        </label>

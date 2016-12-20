@@ -32,7 +32,7 @@ function write_adhd($type, $mysqli)
 	if ($result){ //we got a result from the query 
             echo "<table id=\"adhd_questions\" border=\"1\">\n"; 
             while($row = $result->fetch_assoc())  {	
-                    if ($first === true){
+                    if ($first == true){
                         echo "<tr><td class=\"adhd_scale_pad\">Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist</td><td class=\"adhd_scale\"><center>Never</center></td>\n";
                         echo "<td class=\"adhd_scale\" ><center>Rarely</center></td><td class=\"adhd_scale\" ><center>Sometimes</center></td>\n";
                         echo "<td class=\"adhd_scale\" ><center>Often</center></td>";
