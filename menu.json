@@ -1,6 +1,6 @@
 {
 	"edu.usm.dagger.menu.hamburger": {
-		"name": "<img width='20px' height='20px' src='/include/menu.svg' />",
+		"name": "<img width='20px' height='20px' src='/include/images/menu.svg' />",
 		"href": "#",
 		"children": {
 			"edu.usm.dagger.menu.hamburger.clinicStatistics": {
@@ -45,7 +45,7 @@
 				"children": {
 					"edu.usm.dagger.menu.help.self-care.library": {
 						"name": "Library",
-						"href": "/include/help/support/self-care/library.html"
+						"href": "/modules/old_assessments/help/self-care/library.html"
 					}
 				}
 			},
@@ -55,11 +55,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.gad.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/gad/gad_questionaire.pdf"
+						"href": "/modules/old_assessments/help/gad/gad_questionaire.pdf"
 					},
 					"edu.usm.dagger.menu.help.gad.library": {
 						"name": "Library",
-						"href": "/include/help/support/gad/library.html"
+						"href": "/modules/old_assessments/help/gad/library.html"
 					}
 				}
 			},
@@ -69,11 +69,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.phq.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/phq/PHQ_Questionaire.pdf"
+						"href": "/modules/old_assessments/help/phq/PHQ_Questionaire.pdf"
 					},
 					"edu.usm.dagger.menu.help.phq.library": {
 						"name": "Library",
-						"href": "/include/help/support/phq/library.html"
+						"href": "/modules/old_assessments/help/phq/library.html"
 					}
 				}
 			},
@@ -83,11 +83,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.audit.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/audit/Overview.pdf"
+						"href": "/modules/old_assessments/help/audit/Overview.pdf"
 					},
 					"edu.usm.dagger.menu.help.audit.library": {
 						"name": "Library",
-						"href": "/include/help/support/audit/library.html"
+						"href": "/modules/old_assessments/help/audit/library.html"
 					}
 				}
 			},
@@ -97,11 +97,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.cage.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/cage/cage_questionaire.pdf"
+						"href": "/modules/old_assessments/help/cage/cage_questionaire.pdf"
 					},
 					"edu.usm.dagger.menu.help.cage.library": {
 						"name": "Library",
-						"href": "/include/help/support/cage/library.html"
+						"href": "/modules/old_assessments/help/cage/library.html"
 					}
 				}
 			},
@@ -111,11 +111,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.cd.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/cd/CD-RISC_modified.pdf"
+						"href": "/modules/old_assessments/help/cd/CD-RISC_modified.pdf"
 					},
 					"edu.usm.dagger.menu.help.cd.library": {
 						"name": "Library",
-						"href": "/include/help/support/cd/library.html"
+						"href": "/modules/old_assessments/help/cd/library.html"
 					}
 				}
 			},
@@ -125,11 +125,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.pcl.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/pcl/PCL_questionaire.pdf"
+						"href": "/modules/old_assessments/help/pcl/PCL_questionaire.pdf"
 					},
 					"edu.usm.dagger.menu.help.pcl.library": {
 						"name": "Library",
-						"href": "/include/help/support/pcl/library.html"
+						"href": "/modules/old_assessments/help/pcl/library.html"
 					}
 				}
 			},
@@ -139,11 +139,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.cesd.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/cesd/cesd_questionaire.pdf"
+						"href": "/modules/old_assessments/help/cesd/cesd_questionaire.pdf"
 					},
 					"edu.usm.dagger.menu.help.cesd.library": {
 						"name": "Library",
-						"href": "/include/help/support/cesd/library.html"
+						"href": "/modules/old_assessments/help/cesd/library.html"
 					}
 				}
 			},
@@ -153,11 +153,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.psc.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/psc/PSC-17.pdf"
+						"href": "/modules/old_assessments/help/psc/PSC-17.pdf"
 					},
 					"edu.usm.dagger.menu.help.psc.library": {
 						"name": "Library",
-						"href": "/include/help/support/psc/library.html"
+						"href": "/modules/old_assessments/help/psc/library.html"
 					}
 				}
 			},
@@ -167,11 +167,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.dast.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/dast/QUESTIONNAIRE.pdf"
+						"href": "/modules/old_assessments/help/dast/QUESTIONNAIRE.pdf"
 					},
 					"edu.usm.dagger.menu.help.dast.library": {
 						"name": "Library",
-						"href": "/include/help/support/dast/library.html"
+						"href": "/modules/old_assessments/help/dast/library.html"
 					}
 				}
 			},
@@ -181,11 +181,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.duke.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/duke/DukeForm.pdf"
+						"href": "/modules/old_assessments/help/duke/DukeForm.pdf"
 					},
 					"edu.usm.dagger.menu.help.duke.library": {
 						"name": "Library",
-						"href": "/include/help/support/duke/library.html"
+						"href": "/modules/old_assessments/help/duke/library.html"
 					}
 				}
 			},
@@ -195,11 +195,11 @@
 				"children": {
 					"edu.usm.dagger.menu.help.adhd.instrument": {
 						"name": "Instrument",
-						"href": "/include/help/support/ADHD/ASRS.pdf"
+						"href": "/modules/old_assessments/help/ADHD/ASRS.pdf"
 					},
 					"edu.usm.dagger.menu.help.adhd.library": {
 						"name": "Library",
-						"href": "/include/help/support/ADHD/library.html"
+						"href": "/modules/old_assessments/help/ADHD/library.html"
 					}
 				}
 			}
