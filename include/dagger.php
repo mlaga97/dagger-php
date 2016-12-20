@@ -52,7 +52,7 @@
 				break;
 
 			case "array":
-				if(!array_key_exists($_SESSION['previous'], $access_whitelist)) {
+				if(!in_array($_SESSION['previous'], $access_whitelist)) {
 					header("location: /index.php");
 					die("Access denied, redirecting!");
 				}
