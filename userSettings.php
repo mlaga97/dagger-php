@@ -52,7 +52,7 @@
 					if(array_key_exists('oldPassword', $_POST) && array_key_exists('newPassword', $_POST) && array_key_exists('confirmPassword', $_POST)) {
 						if($row['pswd'] == $_POST['oldPassword']) {
 							if($_POST['newPassword'] == $_POST['confirmPassword']) {
-								$update_query = 'UPDATE users SET pswd = "' . $_POST['newPassword'] . '" WHERE id=' . $_SESSION['user_id'] . ';';
+								$update_query = 'UPDATE users SET pswd = "' . $mysqli->real_escape_string($_POST['newPassword']) . '" WHERE id=' . $_SESSION['user_id'] . ';';
 								$null = $mysqli->query($update_query);
 
 								echo 'Password updated successfully!';

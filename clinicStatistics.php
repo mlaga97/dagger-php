@@ -55,10 +55,10 @@
 					// Then, for each possible form value, we narrow the search
 					// down according to those criteria (if applicable).
 					if(array_key_exists('clinicStats_startDate', $_POST) && validateDate($_POST['clinicStats_startDate'])) {
-						$results_query = $results_query . ' AND date > "' . $_POST['clinicStats_startDate']. '"';
+						$results_query = $results_query . ' AND date > "' . $mysqli->real_escape_string($_POST['clinicStats_startDate']) . '"';
 					}
 					if(array_key_exists('clinicStats_endDate', $_POST) && validateDate($_POST['clinicStats_endDate'])) {
-						$results_query = $results_query . ' AND date < "' . $_POST['clinicStats_endDate']. '"';
+						$results_query = $results_query . ' AND date < "' . $mysqli->real_escape_string($_POST['clinicStats_endDate']) . '"';
 					}
 					if(array_key_exists('clinicStats_clinicId', $_POST)) {
 						$results_query = $results_query;

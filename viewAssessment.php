@@ -16,7 +16,7 @@
 
 
 	$id_search = $_SESSION ['search_select'];
-	$query_search_results = $mysqli->query ( "SELECT * FROM response WHERE id = $id_search" );
+	$query_search_results = $mysqli->query("SELECT * FROM response WHERE id = " . $mysqli->real_escape_string($id_search) );
 	$copy = $query_search_results->fetch_assoc ();
 
 	foreach ( $copy as $key => $value ) {
