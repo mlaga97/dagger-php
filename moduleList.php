@@ -89,7 +89,7 @@
 
 			<br/><br/><br/>
 
-			<?php include 'include/footer.php' ?>
+			<?php include 'modules/main/footer.php' ?>
 		</div>
 	</body>
 </html>

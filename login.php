@@ -64,6 +64,6 @@
 		<?php if (isset($response)) echo "<br><hf class='alert'>" . $response. "</hf>"; ?>
 
 		<!-- Show Footer -->
-		<?php include 'include/footer.php'; ?>
+		<?php include 'modules/main/footer.php'; ?>
 	</body>
 </html>

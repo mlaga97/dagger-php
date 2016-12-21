@@ -28,6 +28,6 @@
 
 		<center><input type="button" value="Return to Start" style= "height: 25px; width: 100px" onclick="window.location='/index.php';" /></center>
 
-		<?php include 'include/footer.php' ?>
+		<?php include 'modules/main/footer.php' ?>
 	</body>
 </html>

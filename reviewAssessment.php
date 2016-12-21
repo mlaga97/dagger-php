@@ -52,6 +52,6 @@
 			<input type="button" style= "height: 25px; width: 100px" value="Print this page" onclick="printpage()" />
 		</center>
 
-		<?php include 'include/footer.php' ?>
+		<?php include 'modules/main/footer.php' ?>
 	</body>
 </html>

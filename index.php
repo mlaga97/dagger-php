@@ -9,6 +9,6 @@
 			<h1>Please enable Javascript and reload the page.</h1>
 		</div>
 
-		<?php include 'include/footer.php'; ?>
+		<?php include 'modules/main/footer.php'; ?>
 	</body>
 </html>
