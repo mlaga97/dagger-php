@@ -10,6 +10,8 @@
 	},
 
 	"edu.usm.dagger.main.insert.whitelist": [
+		"hypertension_check",
+
 		"HT_Med_1", "HT_Med_2", "HT_Med_3", "HT_Diet_1", "HT_Diet_2",
 		"HT_Diet_3", "HT_Diet_4", "HT_Diet_5", "HT_Diet_6", "HT_Diet_7",
 		"HT_Diet_8", "HT_Diet_9", "HT_Diet_10", "HT_Diet_11", "HT_Diet_12",

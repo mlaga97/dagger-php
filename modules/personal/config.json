@@ -3,7 +3,11 @@
 		"pt_id", "first_name", "last_name"
 	],
 
+	"edu.usm.dagger.main.insert.datefix_whitelist": [
+		"assessment_date"
+	],
+
 	"edu.usm.dagger.main.insert.whitelist": [
-		"first_name", "last_name", "pt_id", "dob", "zip"
+		"first_name", "last_name", "pt_id", "dob", "assessment_date", "zip"
 	]
 }

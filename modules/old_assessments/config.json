@@ -41,5 +41,87 @@
 
 	"edu.usm.dagger.main.viewAssessment.dontSet_-1_to_0": [
 		"/duke*/", "/cd_*/", "/self_*/", "/phq_*/", "/value*/", "/adhd_*/"
+	],
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"adhd_check", "adhd_1", "adhd_2", "adhd_3", "adhd_4", "adhd_5", "adhd_6", "adhd_7", "adhd_8", "adhd_9", "adhd_10",
+		"adhd_11", "adhd_12", "adhd_13", "adhd_14", "adhd_15", "adhd_16", "adhd_17", "adhd_18",
+
+		"audit_check", "audit_1", "audit_2", "audit_3",
+
+		"cage_check", "cage_1", "cage_2", "cage_3", "cage_4",
+
+		"cd_check", "cd_1", "cd_2", "cd_3", "cd_4",
+
+		"ces_check", "ces_d_1", "ces_d_2", "ces_d_3", "ces_d_4", "ces_d_5", "ces_d_6", "ces_d_7", "ces_d_8", "ces_d_9", "ces_d_10",
+		"ces_d_11", "ces_d_12", "ces_d_13", "ces_d_14", "ces_d_15", "ces_d_16", "ces_d_17", "ces_d_18", "ces_d_19", "ces_d_20",
+
+		"c_stress_check",
+
+		"crafft_check", "crafft_1", "crafft_2", "crafft_3", "crafft_4", "crafft_5", "crafft_6", "crafft_7", "crafft_8", "crafft_9",
+
+		"dast_check", "dast_1", "dast_2", "dast_3", "dast_4", "dast_5", "dast_6", "dast_7", "dast_8", "dast_9", "dast_10",
+
+		"diag_me_check", "diag_me_1", "diag_me_1_3", "diag_me_2", "diag_me_2_3", "diag_me_3", "diag_me_3_3", "diag_me_4", "diag_me_4_3",
+		"diag_me_5", "diag_me_5_3", "diag_me_6", "diag_me_6_3", "diag_me_7", "diag_me_7_3", "diag_me_8", "diag_me_8_3", "diag_me_9",
+		"diag_me_9_3", "diag_me_10", "diag_me_10_3", "diag_me_reported_type_1", "diag_me_reported_type_2", "diag_me_reported_type_3",
+		"diag_me_reported_type_4", "diag_me_reported_type_5", "diag_me_reported_type_6", "diag_me_reported_type_7",
+		"diag_me_reported_type_8", "diag_me_reported_type_9", "diag_me_reported_type_10", "diag_me_11", "diag_me_11_3", "diag_me_reported_type_11",
+
+		"diagnosis_check", "diagnosis_1", "diagnosis_1_3", "diagnosis_2", "diagnosis_2_3", "diagnosis_3", "diagnosis_3_3", "diagnosis_4",
+		"diagnosis_4_3", "diagnosis_5", "diagnosis_5_3", "diagnosis_6", "diagnosis_6_3", "diagnosis_7", "diagnosis_7_3", "diagnosis_8",
+		"diagnosis_8_3", "diagnosis_9", "diagnosis_9_3", "diagnosis_10", "diagnosis_10_3",
+
+		"duke_check", "duke_1", "duke_2", "duke_3", "duke_4", "duke_5", "duke_6", "duke_7", "duke_8", "duke_9", "duke_10",
+		"duke_11", "duke_12", "duke_13", "duke_14", "duke_15", "duke_16", "duke_17",
+
+		"events_check", "e_1", "e_2", "e_3", "e_4", "e_5", "e_6", "e_7", "e_8", "e_9", "e_10",
+
+		"gad2_check", "gad2_1", "gad2_2",
+
+		"gad_check", "gad_1", "gad_2", "gad_3", "gad_4", "gad_5", "gad_6", "gad_7",
+
+		"health_check", "h_1", "h_2", "h_3", "h_4", "h_5", "h_6", "h_7", "h_8", "h_9", "h_10",
+		"h_11", "h_12", "h_13", "h_14", "h_15", "h_16", "h_17", "h_18", "h_19",
+
+		"life_check", "life_1", "life_2", "life_3", "life_4", "life_5",
+
+		"pcl2_check", "pcl2_1", "pcl2_2",
+
+		"pcl_check", "pcl_1", "pcl_2", "pcl_3", "pcl_4", "pcl_5", "pcl_6", "pcl_7", "pcl_8", "pcl_9", "pcl_10",
+		"pcl_11", "pcl_12", "pcl_13", "pcl_14", "pcl_15", "pcl_16", "pcl_17",
+
+		"phq_check", "phq_1", "phq_2", "phq_3", "phq_4", "phq_5", "phq_6", "phq_7", "phq_8", "phq_9",
+
+		"pp_check", "pp_5", "pp", "pp_time", "pp_fam_dist",	"pp_steps_classes", "pp_steps_tutoring", "pp_steps_mh_individual",
+		"pp_steps_mh_family", "pp_steps_mh_school", "pp_steps_inpatient", "pp_steps_IEP", "pp_steps_DHS", "pp_steps_law",
+		"pp_steps_extracurricular", "pp_steps_volunteer", "pp_steps_healthcare", "pp_steps_religious", "pp_steps_mentoring",
+		"pp_steps_counseling", "pp_steps_speech", "interfere_area_home", "interfere_area_friendship", "interfere_area_school",
+		"interfere_area_leisure",
+
+		"psc_check", "psc_1", "psc_2", "psc_3", "psc_4", "psc_5", "psc_6", "psc_7", "psc_8", "psc_9", "psc_10",
+		"psc_11", "psc_12", "psc_13", "psc_14", "psc_15", "psc_16", "psc_17", "psc_18", "psc_19", "psc_20",
+		"psc_21", "psc_22", "psc_23", "psc_24", "psc_25", "psc_26", "psc_27", "psc_28", "psc_29", "psc_30",
+		"psc_31", "psc_32", "psc_33", "psc_34", "psc_35",
+		"psc_fu_1", "psc_fu_2", "psc_fu_3", "psc_fu_4", "psc_fu_5", "psc_fu_6",
+
+		"sdq_check", "sdq_1", "sdq_2", "sdq_3", "sdq_4", "sdq_5", "sdq_6", "sdq_7", "sdq_8", "sdq_9", "sdq_10",
+		"sdq_11", "sdq_12", "sdq_13", "sdq_14", "sdq_15", "sdq_16", "sdq_17", "sdq_18", "sdq_19", "sdq_20",
+		"sdq_21", "sdq_22", "sdq_23", "sdq_24", "sdq_25", "sdq_26", "sdq_27", "sdq_28", "sdq_29", "sdq_30",
+		"sdq_31", "sdq_32", "sdq_33",
+
+		"self_check", "self_1", "self_2", "self_3", "self_4", "self_5", "self_6", "self_7", "self_8", "self_9", "self_10",
+		"self_11", "self_12", "self_13", "self_14", "self_15", "self_16", "self_17", "self_18", "self_19", "self_20",
+		"self_21", "self_22",
+
+		"stress_check", "stress", "s_1", "s_2", "s_3", "s_4", "s_5", "s_6", "s_7", "s_8", "s_9", "s_10",
+		"s_11", "s_12", "s_13", "s_14", "s_15", "s_16", "s_17", "s_18", "s_19", "s_20",
+		"s_21", "s_22", "s_23", "s_24", "s_25", "s_26", "s_27", "s_28", "s_29", "s_30",
+		"s_31", "s_32", "s_33", "s_34", "s_35", "s_36", "s_37", "s_38", "s_39", "s_40",
+		"s_41", "s_42", "s_43", "s_44", "s_45", "s_46", "s_47", "s_48", "s_49", "s_50",
+		"s_51", "s_53", "s_52",
+
+		"symptom_check", "symptom_1", "symptom_2", "symptom_3", "symptom_4", "symptom_5", "symptom_6", "symptom_7", "symptom_8", "symptom_9", "symptom_10",
+		"symptom_11", "symptom_12", "symptom_13", "symptom_14", "symptom_15"
 	]
 }

@@ -10,6 +10,8 @@
 	},
 
 	"edu.usm.dagger.main.insert.whitelist": [
+		"pediatric_check",
+
 		"HLS_Date_Perf", "HLS_FH_Diab", "HLS_FH_HBP", "HLS_FH_HD",
 		"HLS_FH_Overwt", "HLS_Servings", "HLS_Screentime", "HLS_PhysAct",
 		"HLS_FamAct", "HLS_Drink", "HLS_Brkfst", "HLS_EatOut", "HLS_Table",
