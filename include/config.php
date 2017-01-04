@@ -1,13 +1,13 @@
 <?php
 
-	function getConfig() {
-		$path = $_SERVER['DOCUMENT_ROOT'] . '/config.json';
+	function getConfig($filename = 'config.json') {
+		$path = $_SERVER['DOCUMENT_ROOT'] . '/' . $filename;
 		$contents = file_get_contents($path);
 		$config = json_decode($contents, true);
 
 		foreach(moduleList() as $module) {
-			if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/config.json')) {
-				$path = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/config.json';
+			if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/modules/' . '/' . $filename)) {
+				$path = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . '/' . $filename;
 				$contents = file_get_contents($path);
 				$config = array_merge_recursive($config, json_decode($contents, true));
 			}
