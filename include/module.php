@@ -9,7 +9,7 @@
 
 		$processed = array();
 		foreach($raw as $file) {
-			if(!preg_match('/\.php/', $file)) {
+			if(is_dir($_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module . '/' . $file)) {
 				array_push($processed, $file);
 			}
 		}
@@ -19,13 +19,10 @@
 
 	function moduleListKeys() {
 		$keyList = array();
-		foreach(moduleList() as $module) {
-			$keys = array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module), array('..', '.'));
 
-			foreach($keys as $key) {
-				if(!preg_match('/\.php/', $key)) {
-					array_push($keyList, $key);
-				}
+		foreach(moduleList() as $module) {
+			foreach(moduleProvides($module) as $key) {
+				array_push($keyList, $key);
 			}
 		}
 
