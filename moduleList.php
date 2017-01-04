@@ -64,21 +64,9 @@
 								foreach(moduleListKeys() as $key) {
 									echo '<br/><br/><h4>' . $key . '</h4>';
 
-									$files = array();
-									foreach(moduleListProviders($key) as $provider) {
-										$files = array_merge($files, array_diff(scandir($provider), array('..', '.')));
-									}
-
-									sort($files);
-
-									$paths = array();
-									foreach($files as $file) {
-										$paths = array_merge($paths, array_diff(glob("modules/*/" . $key . '/' . $file), array('..', '.')));
-									}
-
-									foreach($paths as $path) {
+									foreach(moduleListPaths($key) as $path) {
 										$explodedPath = explode('/', $path);
-										echo $explodedPath[1] . '/' . $explodedPath[3] . '<br/>';
+										echo $explodedPath[5] . '/' . $explodedPath[7] . '<br/>';
 									}
 								}
 							?>

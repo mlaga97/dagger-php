@@ -30,28 +30,34 @@
 	}
 
 	function moduleListProviders($key) {
-		$raw = array_diff(glob($_SERVER['DOCUMENT_ROOT'] . "/modules/*/" . $key), array('..', '.'));
+		$providerList = array();
 
-		$processed = array();
-		foreach($raw as $file) {
-			if(!preg_match('/\.php/', $file)) {
-				array_push($processed, $file);
+		foreach(moduleList() as $module) {
+			if(in_array($key, moduleProvides($module))) {
+				array_push($providerList, $module);
 			}
 		}
 
-		return $processed;
+		return $providerList;
 	}
 
-	function moduleListPaths($key) {
+	function moduleListFiles($key) {
 		$files = array();
-		foreach(moduleListProviders($key) as $provider) {
-			$files = array_merge($files, array_diff(scandir($provider), array('..', '.')));
+
+		foreach(moduleListProviders($key) as $module) {
+			$providerPath = $_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module . '/' . $key;
+			$files = array_merge($files, array_diff(scandir($providerPath), array('..', '.')));
 		}
 
 		sort($files);
 
+		return array_unique($files);
+	}
+
+	function moduleListPaths($key) {
 		$paths = array();
-		foreach($files as $file) {
+
+		foreach(moduleListFiles($key) as $file) {
 			$paths = array_merge($paths, array_diff(glob($_SERVER['DOCUMENT_ROOT'] . "/modules/*/" . $key . '/' . $file), array('..', '.')));
 		}
 
