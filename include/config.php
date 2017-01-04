@@ -6,8 +6,8 @@
 		$config = json_decode($contents, true);
 
 		foreach(moduleList() as $module) {
-			if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/modules/' . '/' . $filename)) {
-				$path = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . '/' . $filename;
+			if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename)) {
+				$path = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename;
 				$contents = file_get_contents($path);
 				$config = array_merge_recursive($config, json_decode($contents, true));
 			}
