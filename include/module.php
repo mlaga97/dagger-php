@@ -65,11 +65,9 @@
 	}
 
 	// Takes variable argument list
-	function moduleLoad() {
-		foreach(func_get_args() as $key) {
-			foreach(moduleListPaths($key) as $file) {
-				include $file;
-			}
+	function moduleLoad($key) {
+		foreach(moduleListPaths($key) as $file) {
+			include $file;
 		}
 	}
 
