@@ -12,29 +12,29 @@
 	 * 
 	 * Here is an example of 3 installed modules:
 	 * - modules/
-	 *   - module1/
-	 *     - key1/
-	 *       - 1_file.php
-	 *     - key2/
-	 *       - 9_file.php
-	 *       - zzzz_file.php
-	 *     - key3/
-	 *       - file.php
-	 *   - module2/
-	 *     - key1/
-	 *       - file.php
-	 *     - key2/
-	 *       - file.php
-	 *     - key4/
-	 *       - 1_file.php
-	 *   - module3/
-	 *     - key2/
-	 *       - 1_file.php
-	 *     - key4/
-	 *       - file.php
+	 *     - module1/
+	 *         - key1/
+	 *             - 1_file.php
+	 *         - key2/
+	 *             - 9_file.php
+	 *             - zzzz_file.php
+	 *         - key3/
+	 *             - file.php
+	 *     - module2/
+	 *         - key1/
+	 *             - file.php
+	 *         - key2/
+	 *             - file.php
+	 *         - key4/
+	 *             - 1_file.php
+	 *     - module3/
+	 *         - key2/
+	 *             - 1_file.php
+	 *         - key4/
+	 *             - file.php
 	 * 
-	 * If one were to run 'moduleLoad("key2")', then the files would be loaded in
-	 * the following order within the page:
+	 * Running 'moduleLoad("key2")' would load the files for "key2" in the
+	 * following order within the page:
 	 * - modules/module3/key2/1_file.php
 	 * - modules/module1/key2/9_file.php
 	 * - modules/module2/key2/file.php
