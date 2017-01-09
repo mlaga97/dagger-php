@@ -1,7 +1,35 @@
 <?php
 
+	/**
+	 * Loads and displays menu from menu.json configuration files.
+	 * 
+	 * This function uses the getConfig function from config.php in order to
+	 * load and merge the menu structure data from available modules.
+	 * 
+	 * 
+	 * Menu item keys:
+	 * 
+	 * | Key                               | Type       |
+	 * |-----------------------------------|------------|
+	 * | name                              | string     |
+	 * | href                              | string     |
+	 * | displayOnlyIfThisSessionKeyIsTrue | string     |
+	 * | children                          | menuItem[] |
+	 * 
+	 * 
+	 * Example menu.json stanza:
+	 * 
+	 * 		"edu.usm.dagger.menu.example_menu": {
+	 * 			"name": "Clinic Statistics",
+	 * 			"href": "/clinicStatistics.php",
+	 * 			"displayOnlyIfThisSessionKeyIsTrue": "admin",
+	 * 			"children": {
+	 * 			}
+	 * 		}
+	 */
 	function showMenu() {
 
+		// This function is pretty much only useful here, so it will remain.
 		function menu2html($menu) {
 			$html = '';
 

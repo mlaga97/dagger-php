@@ -1,4 +1,4 @@
-<?php /* Function Library */
+<?php
 
 	/**
 	 * Unsets the keys $_SESSION from a blacklist.
