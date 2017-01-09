@@ -44,7 +44,7 @@
 	 * @param string[] $patterns Array of regular expressions to attempt to
 	 * match.
 	 * @param string $subject The string to attempt to match.
-	 * @return boolean True if a match was found.
+	 * @return boolean True if a match was found, false if not.
 	 */
 	function multiPregMatch($patterns, $subject) {
 		foreach($patterns as $pattern) {
@@ -52,6 +52,7 @@
 				return true;
 			}
 		}
+		return false;
 	}
 
 ?>
