@@ -22,13 +22,13 @@
 
 	<body>
 		<?php showMenu(); ?>
-		<div id='container'>
-			<div id='top'>
-				<div id='logo'>
+		<div class='container'>
+			<div class='top'>
+				<div class='logo'>
 					<?php echo $_SESSION['logo']?>
 				</div>
-				<div id='header'>
-					<div id='title'>
+				<div class='header'>
+					<div class='title'>
 						<center>
 							<h1>User Settings</h1>
 						</center>

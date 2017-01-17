@@ -12,15 +12,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="Brief Assessment">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
-        <style>
-			.calendar-icon {
-				display: inline-block;
-				vertical-align: middle;
-				width: 32px;
-				height: 32px;
-				background: url(images/calendar.png);
-			}
-		</style>
 	</head>
 
 	<body>
@@ -31,7 +22,7 @@
 
 		<br/><br/><br/>
 
-		<form id='assessment_form' action='/reviewAssessment.php' method='post'>
+		<form class='assessment_form' action='/reviewAssessment.php' method='post'>
 			<?php
 
 				// Show Modules
@@ -39,5 +30,30 @@
 
 			?>
 		</form>
+	</body>
+
+	<body>
+		<div class='container'>
+
+			<!-- Header -->
+			<div class='top'>
+				<div class='logo'>
+					<?php echo $_SESSION['logo']?>
+				</div>
+				<div class='header'>
+					<div class='title'>
+						<h1>Edit Personal Information</h1>
+					</div>
+				</div>
+			</div>
+
+			<br/><br/><br/>
+
+			<!-- Body -->
+			<form id='assessment_form' action='/reviewAssessment.php' method='post'>
+				<?php moduleLoad('adminSettings'); ?>
+			</form>
+
+		</div>
 	</body>
 </html>

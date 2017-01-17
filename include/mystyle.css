@@ -1,32 +1,78 @@
-body {
-  padding-left: 5em;
-  font-family: Georgia, "Times New Roman",
-        Times, serif;
-  width: 800px;
-}
-#container{	
+/* Base Classes */
+.container {
 	width: 800px;
 }
 
-#personal{
-	background-color: #F2E0F7;
+/* Header Classes */
+.top {
+	height: 150px;
 }
-
-#confirmation{
-	background-color: #F5A9A9;
+.logo {
+	width: 150px;
+	float: left;	
 }
-#header{
+.header {
 	float: right;
 	padding-top: 52px;
 	height: 122px;
 	width: 650px;
-	color: red;	
+	color: red;
+	text-align: center;
+	margin: auto;
 }
-#submit{
+.title {
+	color: blue;
+}
+
+/* Other Classes */
+.confirmation {
+	background-color: #F5A9A9;
+}
+.submit {
 	width: 150px;
 	font-size: large;
 	background-color: #99FFCC;
 }
+.welcome-message {
+	text-align: center;
+	margin: auto;
+}
+.reset_button{
+	width: 150px;
+	font-size: large;
+	background-color: #FF0000;
+}
+
+/* Base Tags */
+body {
+	padding-left: 5em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	width: 800px;
+}
+
+/* Base ID's */
+#personal {
+	background-color: #F2E0F7;
+}
+
+/* Login Page Classes */
+.login-header {
+	float: none;
+}
+.login-form {
+	text-align: center;
+	margin: auto;
+}
+.login-error {
+	text-align: center;
+	margin: auto;
+	color: red;
+}
+
+
+/*******************************************************************************
+*****            Other stuff that hasn't been dealt with yet...            *****
+*******************************************************************************/
 
 table#major_events{
 	width: 800px;
@@ -67,18 +113,6 @@ table#phq_scoring_guide{
 
 table#health{
 	width: 800px;
-}
-
-#title{
-	color: blue;
-}
-
-#top{
-	height: 150px;
-}
-#logo{
-	width: 150px;
-	float: left;	
 }
 
 #gen_header{
@@ -355,12 +389,6 @@ table#table_tobacco{
 	width: 600px;
 }
 
-#reset_button{
-	width: 150px;
-	font-size: large;
-	background-color: #FF0000;
-	
-}
 #psc_fu_txt
 {
 	width: 95%;

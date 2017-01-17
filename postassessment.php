@@ -33,8 +33,8 @@
 	</head>
 
 	<body onload="clearForm()">
-		<div id="top">
-			<div id="logo">
+		<div class="top">
+			<div class="logo">
 				<?php echo $_SESSION['logo'] ?>
 			</div>
 		</div>
@@ -54,8 +54,8 @@
 		</form>
 
 		<center>
-			<input id="submit"  type="submit" onclick="formSubmit();" value="Review Assessment" >
-			<input id="reset_button" type="reset" onclick="clearForm()" value="Reset" />
+			<input class="submit"  type="submit" onclick="formSubmit();" value="Review Assessment" >
+			<input class="reset_button" type="reset" onclick="clearForm()" value="Reset" />
 		</center>
 
 		<br/><br/><br/>
