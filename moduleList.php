@@ -52,7 +52,8 @@
 										$files = array_diff(scandir("modules/" . $module . '/' . $directory), array('..', '.'));
 
 										foreach($files as $file) {
-											echo $directory . '/' . $file . '<br/>';
+											$path = '/var/www/html/modules/' . $module . '/' . $directory . '/' . $file;
+											echo $directory . '/' . $file . ' (' . substr(md5_file($path), 0, 5) . ')<br/>';
 										}
 									}
 								}
@@ -66,7 +67,7 @@
 
 									foreach(moduleListPaths($key) as $path) {
 										$explodedPath = explode('/', $path);
-										echo $explodedPath[5] . '/' . $explodedPath[7] . '<br/>';
+										echo $explodedPath[5] . '/' . $explodedPath[7] . ' (' . substr(md5_file($path), 0, 5) . ')<br/>';
 									}
 								}
 							?>
