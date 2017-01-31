@@ -48,7 +48,7 @@
 			If other, what was the specific reason? (Maximum 150 characters)
 		</p>
 		<p>
-			<input type="date"  name="er_visit_other" id="er_visit_other" maxlength="150" size="150">
+			<input type="text"  name="er_visit_other" id="er_visit_other" maxlength="150" size="150">
 		</p>
 	</div>
 
