@@ -52,7 +52,8 @@
 				echo "</table>";								
 		};
         }
-        echo "</div>";
+		//div class container closing prematurely
+        //echo "</div>";
 		 $result->close();
             }            
         }     

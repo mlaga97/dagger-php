@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 	</head>
 	<body>
+	<div class="container">
 		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
 
 		<?php
@@ -29,5 +30,6 @@
 		<center><input type="button" value="Return to Start" style= "height: 25px; width: 100px" onclick="window.location='/index.php';" /></center>
 
 		<?php include 'modules/main/footer.php' ?>
+	</div> <!-- Close DIV Class 'container' -->
 	</body>
 </html>

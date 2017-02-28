@@ -33,6 +33,7 @@
 	</head>
 
 	<body onload="clearForm()">
+	<div class="container">
 		<div class="top">
 			<div class="logo">
 				<?php echo $_SESSION['logo'] ?>
@@ -61,5 +62,6 @@
 		<br/><br/><br/>
 
 		<?php include 'modules/main/footer.php' ?>
+	</div>	<!-- Close DIV Class 'container' -->
 	</body>
 </html>

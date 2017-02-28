@@ -17,8 +17,8 @@
 		<script type="text/javascript" src="js/scripts.js"></script>
 	</head>
 	<body>
-		<?php showMenu(); ?>
 		<div class='container'>
+		<?php showMenu(); ?>
 			<div class='top'>
 				<div class='logo'>
 					<?php echo $_SESSION['logo']?>

@@ -1,7 +1,4 @@
-/* Base Classes */
-.container {
-	width: 800px;
-}
+
 
 /* Header Classes */
 .top {
@@ -16,39 +13,23 @@
 	padding-top: 52px;
 	height: 122px;
 	width: 650px;
-	color: red;
 	text-align: center;
 	margin: auto;
 }
-.title {
-	color: blue;
-}
+
 
 /* Other Classes */
 .confirmation {
 	background-color: #F5A9A9;
 }
-.submit {
-	width: 150px;
-	font-size: large;
-	background-color: #99FFCC;
-}
+
+
 .welcome-message {
 	text-align: center;
 	margin: auto;
 }
-.reset_button{
-	width: 150px;
-	font-size: large;
-	background-color: #FF0000;
-}
 
-/* Base Tags */
-body {
-	padding-left: 5em;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	width: 800px;
-}
+
 
 /* Base ID's */
 #personal {
@@ -394,11 +375,7 @@ table#table_tobacco{
 	width: 95%;
 }
 
-hr{
-	background-color: black;
-	height: 2px;
-	width: 800px;
-}
+
 
 #error_notice {
 	color:red;
@@ -541,7 +518,11 @@ background: url(images/calendar.png);
 }
 
 
+
+
 /* Hypertension - MG 10/13/2016 */
+
+/*
 #hypertension_section, #hypertension_results, #pediatric_section, #pediatric_results{
 	font-family: arial, helvetica;
 	font-size: 120%;
@@ -585,6 +566,15 @@ background: url(images/calendar.png);
 	white-space: nowrap;
 }
 
+#hypertension_section .hypertension_row, #hypertension_results td, #pediatric_section .pediatric_row, #pediatric_results td{
+	
+	background-color: #EFFBFB;
+}
+
+*/
+
+
+/* .radio_caption class is used with <label> tags wrapped around radio button inputs */
 .radio_caption {
 	color:gray;
 	font-size:60%;
@@ -602,12 +592,101 @@ background: url(images/calendar.png);
 }
 
 
-#hypertension_section .hypertension_row, #hypertension_results td, #pediatric_section .pediatric_row, #pediatric_results td{
+
+
+/* New testing 2/26/17 - MG */
+
+/* Font stack adapted from http://www.cssfontstack.com/Tahoma set to Golden Mean proportion */
+
+
+
+body{
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 26px;
+	color: #333;
 	
-	background-color: #EFFBFB;
+	background-color: #dcdcdc;
+	margin:auto;
+	width:1040px;
+}
+
+.container {
+	width: 800px;
+	background-color: #FBFBFB;
+	padding:0px 120px 60px 120px
+
+}
+
+h1, h2 {
+	font-size: 26px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26px;
+}
+h3, h4, h5, th {
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26px;
+}
+
+blockquote {
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 26px;
+}
+pre {
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 26px;
+}
+
+/* End font stack */
+
+
+input[type='radio'], input[type='checkbox']{
+	transform:scale(1.6);
+	margin:10px;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+	transform:scale(1.6);
+}
+
+input[type=reset] {
+	display:none;
 }
 
 
+table{
+	border-collapse:collapse;
+	width:100%;
+}
+
+td{
+	padding:10px;
+}
+
+hr{
+	border-top: 1px solid #8c8b8b;
+	border-bottom: 1px solid #ccc;
+}
 
 
 

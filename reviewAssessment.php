@@ -25,6 +25,7 @@
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 	</head>
 	<body onload="clearForm();">
+	<div class="container">
 		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
 		<center><h1>Assessment Evaluation</h1></center>
 		<center><?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today); ?></center>
@@ -53,5 +54,6 @@
 		</center>
 
 		<?php include 'modules/main/footer.php' ?>
+	</div> <!-- Close DIV Class 'container' -->
 	</body>
 </html>
