@@ -1,4 +1,9 @@
+<h3>New Assessments?</h3>
+
+<label><input id="visit_type" type="radio" name="visit_type" value="initial" onclick="document.getElementById('assessment_selection').style.display = 'block';"/>Yes</label>
+<label><input id="visit_type" type="radio" name="visit_type" value="brief" onclick="document.getElementById('assessment_selection').style.display = 'none';"/>No</label>
+
+<br/><br/>
+
 <div id="assessment_selection" style="display: none;">
-	<table border="1" style='width: 800;' id="table_test_check"><tr><td>
-		<h3> Please select from the following list of assessment instruments. Hover cursor over a selection to see details.</h3>
-		<i>If an assessment instrument is not selected, it will be shown.</i><br>
+	<h3>Select Assessments</h3>
