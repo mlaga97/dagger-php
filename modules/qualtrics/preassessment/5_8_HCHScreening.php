@@ -15,6 +15,4 @@
 	<label><input type="radio" name="hchScreening_eligibility" value="false"/>No</label>
 </div>
 
-<br/><br/>
-
-<hr/>
+<br/><br/><hr/>

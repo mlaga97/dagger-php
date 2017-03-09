@@ -1,3 +1,5 @@
+<!-- TODO: Skip if only one clinic available. -->
+
 <h3>Clinic</h3>
 
 <?php
@@ -12,5 +14,4 @@
 
 ?>
 
-<br/><br/>
-<hr/>
+<br/><br/><hr/>
