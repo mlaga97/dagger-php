@@ -39,12 +39,12 @@
 <!-- Living Arrangements -->
 <h3>Living Arrangements</h3>
 
-<label><input type="radio" name="demographics_maritalStatus" value="parents"/>with Parents</label><br/>
-<label><input type="radio" name="demographics_maritalStatus" value="family"/>with Family / Relatives</label><br/>
-<label><input type="radio" name="demographics_maritalStatus" value="friends"/>with Friends</label><br/>
-<label><input type="radio" name="demographics_maritalStatus" value="foster"/>Foster Care</label><br/>
-<label><input type="radio" name="demographics_maritalStatus" value="shelter"/>Shelter</label><br/>
-<label><input type="radio" name="demographics_maritalStatus" value="alone"/>Alone</label><br/>
+<label><input type="radio" name="demographics_livingArrangements" value="parents"/>with Parents</label><br/>
+<label><input type="radio" name="demographics_livingArrangements" value="family"/>with Family / Relatives</label><br/>
+<label><input type="radio" name="demographics_livingArrangements" value="friends"/>with Friends</label><br/>
+<label><input type="radio" name="demographics_livingArrangements" value="foster"/>Foster Care</label><br/>
+<label><input type="radio" name="demographics_livingArrangements" value="shelter"/>Shelter</label><br/>
+<label><input type="radio" name="demographics_livingArrangements" value="alone"/>Alone</label><br/>
 
 <br/><br/><hr/>
 

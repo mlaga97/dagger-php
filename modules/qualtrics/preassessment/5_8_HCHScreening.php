@@ -1,7 +1,7 @@
 <h3>HCH Screening</h3>
 
-<label><input type="radio" name="hchScreening_Check" value='true' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.hchScreening_selection').style.display = 'block';"/>Yes</label>
-<label><input type="radio" name="hchScreening_Check" value='false' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.hchScreening_selection').style.display = 'none';"/>No</label>
+<label><input type="radio" name="hchScreening_check" value='true' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.hchScreening_selection').style.display = 'block';"/>Yes</label>
+<label><input type="radio" name="hchScreening_check" value='false' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.hchScreening_selection').style.display = 'none';"/>No</label>
 
 <div id='edu.usm.dagger.module.qualtrics.hchScreening_selection' style='display: none; margin-left: 50px;'>
 	<br/>

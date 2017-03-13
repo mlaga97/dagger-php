@@ -1,3 +1,5 @@
+<!-- TODO: Make better -->
+
 <?php if ($_SESSION['grouping'] != 10) { ?>
 
 <script>
@@ -30,7 +32,7 @@ function checkboxShowHide(checkbox, id, uncheckedState) {
 <div id='edu.usm.dagger.module.qualtrics.outsideVisits_emergencyRoom_form' style='display: none; margin-left: 50px;'>
 	<br/>
 	<h3>Date of ER Visit</h3>
-	<input type="date" name="outsideVisits_emergencyRoom_dischargeDate"/>
+	<input type="date" name="outsideVisits_emergencyRoom_visitDate"/>
 
 	<br/>
 	<h3>Reason for Visit</h3>
@@ -70,7 +72,7 @@ function checkboxShowHide(checkbox, id, uncheckedState) {
 <div id='edu.usm.dagger.module.qualtrics.outsideVisits_other_form' style='display: none; margin-left: 50px;'>
 	<br/>
 	<h3>Date of office visit</h3>
-	<input type="date" name="outsideVisits_other_dischargeDate"/>
+	<input type="date" name="outsideVisits_other_visitDate"/>
 
 	<br/>
 	<h3>Reason for Visit</h3>
