@@ -74,7 +74,11 @@
 	 */
 	function getConfigKey($key) {
 		$config = getConfig();
-		return $config[$key];
+		if( array_key_exists($key, $config)) {
+			return $config[$key];
+		} else {
+			return array();
+		}
 	}
 
 ?>

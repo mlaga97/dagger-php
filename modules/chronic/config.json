@@ -1,9 +1,35 @@
 {
 	"edu.usm.dagger.main.insert.whitelist": [
-		"valueA1C", "A1CDate", "valueEAG", "eAGDate", "valueLDL", "valueHDL", "cholestoralDate", "valueSYS", "valueDIA", "bpDate", "valueHeight", "valueWeight", "physicalDate"
+		"valueA1C", "A1CDate", "valueEAG", "eAGDate", "valueLDL", "valueHDL", "cholestoralDate", "valueSYS", "valueDIA", "bpDate", "valueHeight", "valueWeight", "physicalDate",
+
+		"chronicHealth_A1C_check", "chronicHealth_eAG_check", "chronicHealth_cholestoral_check", "chronicHealth_bloodPressure_check", "chronicHealth_physical_check"
 	],
 
 	"edu.usm.dagger.main.insert.datefix_whitelist": [
 		"A1CDate", "eAGDate", "cholestoralDate", "bpDate", "physicalDate"
-	]
+	],
+
+
+	"edu.usm.dagger.main.insert.deprecate": [
+	],
+
+	"edu.usm.dagger.main.insert.transform": {
+		"chronicHealth_A1C_value": "valueA1C",
+		"chronicHealth_A1C_date": "A1CDate",
+
+		"chronicHealth_eAG_value": "valueEAG",
+		"chronicHealth_eAG_date": "eAGDate",
+
+		"chronicHealth_cholestoral_LDL": "valueLDL",
+		"chronicHealth_cholestoral_HDL": "valueHDL",
+		"chronicHealth_cholestoral_date": "cholestoralDate",
+
+		"chronicHealth_bloodPressure_systolic": "valueSYS",
+		"chronicHealth_bloodPressure_diastolic": "valueDIA",
+		"chronicHealth_bloodPressure_date": "bpDate",
+
+		"chronicHealth_physical_height": "valueHeight",
+		"chronicHealth_physical_weight": "valueWeight",
+		"chronicHealth_physical_date": "physicalDate"
+	}
 }

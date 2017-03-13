@@ -88,21 +88,21 @@
 
 <h3>New Height and Weight Record</h3>
 
-<label><input type="radio" name="chronicHealth_heightWeight_check" value='true' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_heightWeight').style.display = 'block';"/>Yes</label>
-<label><input type="radio" name="chronicHealth_heightWeight_check" value='false' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_heightWeight').style.display = 'none';"/>No</label>
+<label><input type="radio" name="chronicHealth_physical_check" value='true' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_physical').style.display = 'block';"/>Yes</label>
+<label><input type="radio" name="chronicHealth_physical_check" value='false' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_physical').style.display = 'none';"/>No</label>
 
-<div id='edu.usm.dagger.module.qualtrics.chronicHealth_heightWeight' style='display: none; margin-left: 50px;'>
+<div id='edu.usm.dagger.module.qualtrics.chronicHealth_physical' style='display: none; margin-left: 50px;'>
 	<br/>
 	<h3>Height</h3>
-	<input type="text" name="chronicHealth_height"/>
+	<input type="text" name="chronicHealth_physical_height"/>
 
 	<br/>
 	<h3>Weight</h3>
-	<input type="text" name="chronicHealth_weight"/>
+	<input type="text" name="chronicHealth_physical_weight"/>
 
 	<br/>
 	<h3>Height and Weight Test Date</h3>
-	<input type="date" name="chronicHealth_heightWeight_date" value="<?php echo date('Y-m-d')?>">
+	<input type="date" name="chronicHealth_physical_date" value="<?php echo date('Y-m-d')?>">
 </div>
 
 <br/><br/><hr/>

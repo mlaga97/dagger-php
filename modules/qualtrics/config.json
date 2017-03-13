@@ -1,0 +1,17 @@
+{
+	"edu.usm.dagger.main.insert.whitelist": [
+		"pt_id", "dob"
+	],
+
+	"edu.usm.dagger.main.insert.encryption_whitelist": [
+		"pt_id"
+	],
+
+
+	"edu.usm.dagger.main.insert.deprecate": [
+	],
+
+	"edu.usm.dagger.main.insert.transform": {
+		"patientID": "pt_id"
+	}
+}

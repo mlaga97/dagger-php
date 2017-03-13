@@ -17,6 +17,23 @@
 		array_push($dbFields, $row['column_name']);
 	}
 
+	// Spacing
+	echo '<br/><br/><br/>';
+
+	// Process mask and deprecation warnings first
+	$transform = getConfigKey("edu.usm.dagger.main.insert.transform");
+	$deprecate = getConfigKey("edu.usm.dagger.main.insert.deprecate");
+	foreach($_SESSION as $key=>$value) {
+		if(array_key_exists($key, $deprecate)) {
+			echo 'Use of $_SESSION["' . $key . '"] is deprecated! <br/>';
+		}
+
+		if(array_key_exists($key, $transform)) {
+			$_SESSION[$transform[$key]] = $_SESSION[$key];
+			unset($_SESSION[$key]);
+		}
+	}
+
 	// Pull the desired keys from $_SESSION and do some final post-processing
 	foreach($_SESSION as $key=>$value) {
 

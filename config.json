@@ -33,8 +33,14 @@
 	"edu.usm.dagger.main.insert.whitelist": [
 		"id", "user_id", "clinic_id", "date",
 
-		"assessment_time",
-
 		"q1", "q2", "q3", "q_26"
-	]
+	],
+
+
+	"edu.usm.dagger.main.insert.deprecate": [
+	],
+
+	"edu.usm.dagger.main.insert.transform": {
+		"assessmentDate": "date"
+	}
 }

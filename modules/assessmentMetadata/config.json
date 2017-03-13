@@ -5,5 +5,13 @@
 
 	"edu.usm.dagger.main.assessment.dontReset": [
 		"assessment_type", "contact_type", "visit_type"
-	]
+	],
+
+
+	"edu.usm.dagger.main.insert.deprecate": [
+	],
+
+	"edu.usm.dagger.main.insert.transform": {
+		"activityType": "contact_type"
+	}
 }
