@@ -2,7 +2,7 @@
 	"edu.usm.dagger.main.insert.whitelist": [
 		"valueA1C", "A1CDate", "valueEAG", "eAGDate", "valueLDL", "valueHDL", "cholestoralDate", "valueSYS", "valueDIA", "bpDate", "valueHeight", "valueWeight", "physicalDate",
 
-		"chronicHealth_A1C_check", "chronicHealth_eAG_check", "chronicHealth_cholestoral_check", "chronicHealth_bloodPressure_check", "chronicHealth_physical_check"
+		"chronicCare_check", "chronicHealth_A1C_check", "chronicHealth_eAG_check", "chronicHealth_cholesterol_check", "chronicHealth_bloodPressure_check", "chronicHealth_physical_check"
 	],
 
 	"edu.usm.dagger.main.insert.datefix_whitelist": [
