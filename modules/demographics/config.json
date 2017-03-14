@@ -8,7 +8,7 @@
 		"chronic_care", "hep_c", "ryan_white", "care_team", "clinic_care",
 		"bh_care", "system_involvement_singing_river",
 		"system_involvement_gulf_coast", "system_involvement_memorial",
-		"community_connections"
+		"community_connections", "zip"
 	],
 
 

@@ -20,9 +20,9 @@
 		"chronicHealth_eAG_value": "valueEAG",
 		"chronicHealth_eAG_date": "eAGDate",
 
-		"chronicHealth_cholestoral_LDL": "valueLDL",
-		"chronicHealth_cholestoral_HDL": "valueHDL",
-		"chronicHealth_cholestoral_date": "cholestoralDate",
+		"chronicHealth_cholesterol_LDL": "valueLDL",
+		"chronicHealth_cholesterol_HDL": "valueHDL",
+		"chronicHealth_cholesterol_date": "cholestoralDate",
 
 		"chronicHealth_bloodPressure_systolic": "valueSYS",
 		"chronicHealth_bloodPressure_diastolic": "valueDIA",

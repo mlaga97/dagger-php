@@ -7,5 +7,22 @@
 		"hospital_visit_date", "hospital_visit_reason", "hospital_visit_other",
 		"er_visit_date", "er_visit_reason", "er_visit_other",
 		"office_visit_date", "office_visit_reason", "office_visit_other"
-	]
+	],
+
+	"edu.usm.dagger.main.insert.deprecate": [
+		"hospital_visit_date", "hospital_visit_reason", "hospital_visit_other",
+		"er_visit_date", "er_visit_reason", "er_visit_other",
+		"office_visit_date", "office_visit_reason", "office_visit_other"
+	],
+
+	"edu.usm.dagger.main.insert.transform": {
+		"outsideVisits_emergencyRoom_visitDate": "er_visit_date",
+		"outsideVisits_emergencyRoom_otherReasonForVisit": "er_visit_other",
+		
+		"outsideVisits_hospital_nonER_dischargeDate": "hospital_visit_date",
+		"outsideVisits_hospital_nonER_otherReasonForVisit": "hospital_visit_other",
+		
+		"outsideVisits_other_visitDate": "office_visit_date",
+		"outsideVisits_other_otherReasonForVisit": "office_visit_other"
+	}
 }

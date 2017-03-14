@@ -75,6 +75,8 @@
 
 				}
 			}
+		} else {
+			echo '"' . $key . '" not whitelisted!<br/>';
 		}
 	}
 
