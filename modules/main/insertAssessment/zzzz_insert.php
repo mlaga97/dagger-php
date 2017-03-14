@@ -24,8 +24,11 @@
 	$transform = getConfigKey("edu.usm.dagger.main.insert.transform");
 	$deprecate = getConfigKey("edu.usm.dagger.main.insert.deprecate");
 	foreach($_SESSION as $key=>$value) {
+
+		// Error if key is deprecated
 		if(array_key_exists($key, $deprecate)) {
-			echo 'Use of $_SESSION["' . $key . '"] is deprecated! <br/>';
+			echo 'Use of $_SESSION["' . $key . '"] is deprecated!<br/>';
+			$log->error('Use of $_SESSION["' . $key . '"] is deprecated!');
 		}
 
 		if(array_key_exists($key, $transform)) {
@@ -74,9 +77,19 @@
 					$log->error('Could not insert key "'. $key .'" with value "' . $value . '"');
 
 				}
+			} else {
+
+				// Error if configuration makes no sense
+				echo '"' . $key . '" not whitelisted AND blacklisted!<br/>';
+				$log->error('"' . $key . '" not whitelisted AND blacklisted!');
 			}
 		} else {
-			echo '"' . $key . '" not whitelisted!<br/>';
+
+			// Error if configuration isn't ideal
+			if( !in_array($key, getConfigKey("edu.usm.dagger.main.insert.blacklist")) ) {
+				echo '"' . $key . '" not whitelisted OR blacklisted!<br/>';
+				$log->error('"' . $key . '" not whitelisted OR blacklisted!');
+			}
 		}
 	}
 
