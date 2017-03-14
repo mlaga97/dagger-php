@@ -1,10 +1,6 @@
 {
 	"module_name": "pediatric",
 
-	"edu.usm.dagger.main.assessment.dontReset": [
-		"pediatric_check"
-	],
-
 	"edu.usm.dagger.main.searchAssessment.tags": {
 		"pediatric_check": "Pediatric"
 	},

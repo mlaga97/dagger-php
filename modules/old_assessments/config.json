@@ -1,19 +1,6 @@
 {
 	"module_name": "old_assessments",
 
-	"edu.usm.dagger.main.assessment.dontReset": [
-		"stress_check", "health_check", "events_check",
-		"gad_check", "pcl_check", "audit_check",
-		"cage_check", "cd_check", "phq_check",
-		"ces_check", "psc_check","dast_check",
-		"duke_check", "symptom_check", "self_check",
-		"sdq_check", "crafft_check", "life_check",
-		"gad2_check", "pcl2_check", "diagnosis_check",
-		"diag_me_check", "grouping", "visit_type",
-		"adhd_check", "contact_type", "c_stress_check",
-		"pp_check"
-	],
-
 	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0": [
 		"/duke*/", "/cd_*/", "/self_*/" ,"/phq_*/"
 	],

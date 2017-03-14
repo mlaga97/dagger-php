@@ -3,11 +3,6 @@
 		"assessment_type", "contact_type", "visit_type"
 	],
 
-	"edu.usm.dagger.main.assessment.dontReset": [
-		"assessment_type", "contact_type", "visit_type"
-	],
-
-
 	"edu.usm.dagger.main.insert.deprecate": [
 	],
 

@@ -6,17 +6,6 @@
 	postToSession(array('status', 'previous'));
 
 	$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
-
-	foreach($_SESSION as $key=>$value) {
-		if(!in_array($key, getConfigKey("edu.usm.dagger.main.assessment.dontReset"))) {
-			$_SESSION[$key] = -1;
-
-			if(in_array($key, getConfigKey("edu.usm.dagger.main.assessment.setBlank"))) {
-				$_SESSION[$key] = '';
-			}
-		}
-	}
-
 ?>
 
 <html>
