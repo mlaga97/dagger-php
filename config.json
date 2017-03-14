@@ -24,9 +24,8 @@
 	],
 
 	"edu.usm.dagger.main.insert.whitelist": [
-		"id", "user_id", "clinic_id", "date", "q_26"
+		"id", "user_id", "date", "q_26"
 	],
-
 
 	"edu.usm.dagger.main.insert.deprecate": [
 	],

@@ -10,9 +10,9 @@
 	],
 
 	"edu.usm.dagger.main.insert.deprecate": [
-		"hospital_visit_date", "hospital_visit_reason", "hospital_visit_other",
-		"er_visit_date", "er_visit_reason", "er_visit_other",
-		"office_visit_date", "office_visit_reason", "office_visit_other"
+		"q1", "hospital_visit_date", "hospital_visit_reason", "hospital_visit_other",
+		"q2", "er_visit_date", "er_visit_reason", "er_visit_other",
+		"q3", "office_visit_date", "office_visit_reason", "office_visit_other"
 	],
 
 	"edu.usm.dagger.main.insert.transform": {
