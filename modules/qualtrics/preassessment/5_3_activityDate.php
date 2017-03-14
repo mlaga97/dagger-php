@@ -5,7 +5,7 @@
 
 <div id='edu.usm.dagger.module.qualtrics.activityDate_selection' style='display: none;'>
 	<br/>
-	<label>Activity Date<br/><input type="date" name="assessmentDate" value="<?php echo date('Y-m-d')?>"></label>
+	<label>Activity Date<br/><input type="date" name="activityDate" value="<?php echo date('Y-m-d')?>"></label>
 </div>
 
 <br/><br/><hr/>

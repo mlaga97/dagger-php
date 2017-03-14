@@ -1,6 +1,6 @@
 {
 	"edu.usm.dagger.main.insert.whitelist": [
-		"pt_id", "dob"
+		"pt_id", "dob", "assessment_date"
 	],
 
 	"edu.usm.dagger.main.insert.encryption_whitelist": [
@@ -12,6 +12,7 @@
 	],
 
 	"edu.usm.dagger.main.insert.transform": {
-		"patientID": "pt_id"
+		"patientID": "pt_id",
+		"activityDate": "assessment_date"
 	}
 }
