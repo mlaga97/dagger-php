@@ -4,8 +4,8 @@
 
 <h3>New Hemoglobin A1C Record</h3>
 
-<label><input type="radio" name="chronicHealth_A1C_check" value='true' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_A1C').style.display = 'block';"/>Yes</label>
-<label><input type="radio" name="chronicHealth_A1C_check" value='false' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_A1C').style.display = 'none';"/>No</label>
+<label><input type="radio" name="chronicHealth_A1C_check" value='1' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_A1C').style.display = 'block';"/>Yes</label>
+<label><input type="radio" name="chronicHealth_A1C_check" value='0' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_A1C').style.display = 'none';"/>No</label>
 
 <div id='edu.usm.dagger.module.qualtrics.chronicHealth_A1C' style='display: none; margin-left: 50px;'>
 	<br/>
@@ -23,8 +23,8 @@
 
 <h3>New Blood Sugar eAG Record</h3>
 
-<label><input type="radio" name="chronicHealth_eAG_check" value='true' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_eAG').style.display = 'block';"/>Yes</label>
-<label><input type="radio" name="chronicHealth_eAG_check" value='false' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_eAG').style.display = 'none';"/>No</label>
+<label><input type="radio" name="chronicHealth_eAG_check" value='1' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_eAG').style.display = 'block';"/>Yes</label>
+<label><input type="radio" name="chronicHealth_eAG_check" value='0' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_eAG').style.display = 'none';"/>No</label>
 
 <div id='edu.usm.dagger.module.qualtrics.chronicHealth_eAG' style='display: none; margin-left: 50px;'>
 	<br/>
@@ -42,8 +42,8 @@
 
 <h3>New Cholesterol Record</h3>
 
-<label><input type="radio" name="chronicHealth_cholesterol_check" value='true' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_cholesterol').style.display = 'block';"/>Yes</label>
-<label><input type="radio" name="chronicHealth_cholesterol_check" value='false' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_cholesterol').style.display = 'none';"/>No</label>
+<label><input type="radio" name="chronicHealth_cholesterol_check" value='1' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_cholesterol').style.display = 'block';"/>Yes</label>
+<label><input type="radio" name="chronicHealth_cholesterol_check" value='0' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_cholesterol').style.display = 'none';"/>No</label>
 
 <div id='edu.usm.dagger.module.qualtrics.chronicHealth_cholesterol' style='display: none; margin-left: 50px;'>
 	<br/>
@@ -65,8 +65,8 @@
 
 <h3>New Blood Pressure Record</h3>
 
-<label><input type="radio" name="chronicHealth_bloodPressure_check" value='true' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_bloodPressure').style.display = 'block';"/>Yes</label>
-<label><input type="radio" name="chronicHealth_bloodPressure_check" value='false' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_bloodPressure').style.display = 'none';"/>No</label>
+<label><input type="radio" name="chronicHealth_bloodPressure_check" value='1' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_bloodPressure').style.display = 'block';"/>Yes</label>
+<label><input type="radio" name="chronicHealth_bloodPressure_check" value='0' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_bloodPressure').style.display = 'none';"/>No</label>
 
 <div id='edu.usm.dagger.module.qualtrics.chronicHealth_bloodPressure' style='display: none; margin-left: 50px;'>
 	<br/>
@@ -88,8 +88,8 @@
 
 <h3>New Height and Weight Record</h3>
 
-<label><input type="radio" name="chronicHealth_physical_check" value='true' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_physical').style.display = 'block';"/>Yes</label>
-<label><input type="radio" name="chronicHealth_physical_check" value='false' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_physical').style.display = 'none';"/>No</label>
+<label><input type="radio" name="chronicHealth_physical_check" value='1' onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_physical').style.display = 'block';"/>Yes</label>
+<label><input type="radio" name="chronicHealth_physical_check" value='0' checked="checked" onclick="document.getElementById('edu.usm.dagger.module.qualtrics.chronicHealth_physical').style.display = 'none';"/>No</label>
 
 <div id='edu.usm.dagger.module.qualtrics.chronicHealth_physical' style='display: none; margin-left: 50px;'>
 	<br/>

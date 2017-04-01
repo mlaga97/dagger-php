@@ -4,11 +4,12 @@
 	],
 
 	"edu.usm.dagger.main.insert.whitelist": [
-		"sex", "m_status", "ed", "c_bo", "eth", "living", "homeless",
+		"sex", "m_status", "ed", "demographics_highestGradeCompleted",
+		"c_bo", "eth", "living", "homeless",
 		"chronic_care", "hep_c", "ryan_white", "care_team", "clinic_care",
 		"bh_care", "system_involvement_singing_river",
 		"system_involvement_gulf_coast", "system_involvement_memorial",
-		"community_connections", "zip", "carePath_other_data"
+		"community_connections", "zip", "carePath_other", "carePath_other_data"
 	],
 
 
@@ -29,7 +30,7 @@
 		"demographics_education": "ed",
 
 		"carePath_homeless": "homeless",
-		"carePath_hepatitus_c": "hep_c",
+		"carePath_hepatitis_c": "hep_c",
 		"carePath_careTeam": "care_team",
 		"carePath_chronicCare": "chronic_care",
 		"carePath_ryanWhite": "ryan_white"
