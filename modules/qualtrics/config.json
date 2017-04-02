@@ -1,6 +1,6 @@
 {
 	"edu.usm.dagger.main.insert.whitelist": [
-		"pt_id", "dob", "assessment_date", "behavioralHealth_check", "nutritionCounseling_check",
+		"pt_id", "dob", "assessment_type", "assessment_date", "behavioralHealth_check", "nutritionCounseling_check",
 		"hchScreening_check", "hchScreening_applicationType", "hchScreening_eligibility"
 	],
 
