@@ -42,37 +42,28 @@
 	<div class="container">
 		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
 		<center><h1>Assessment Evaluation</h1></center>
-		<center><?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today); ?></center>
-
-		<script type="text/javascript"> //Our function to print the webpage. 
-			function printpage() {
-				window.print();
-			}
-		</script>
 
 		<center>
+		<!-- Before moduleLoad('viewAssessment'); -->
 			<?php
 
 				// Show Modules
 				moduleLoad('viewAssessment');
 
 			?>
+		<!-- After moduleLoad('viewAssessment'); -->
 		</center>
 
 		<br/><br/>
 
-		<p style="color: red; text-align: center">
-			<b>Warning: once you click these links, you will not be able to return.</b>
-		</p>
 
 		<center>
 			<input type="submit" value="Assessment"
-				style="height: 25px; width: 100px"
-				onclick="window.location='/preassessment.php'" /> <input type="submit"
+				style="height: 25px; width: 100px; margin-right:100px;"
+				onclick="window.location='/preassessment.php'" />
+				<input type="submit"
 				value="Search" style="height: 25px; width: 100px"
-				onclick="window.location='/searchAssessments.php';" /> <input type="button"
-				style="height: 25px; width: 100px" value="Print this page"
-				onclick="printpage()" />
+				onclick="window.location='/searchAssessments.php';" />
 		</center>
 
 		<?php include 'modules/main/footer.php'?>

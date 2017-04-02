@@ -64,6 +64,8 @@
 		echo "<br>";
 		echo "<br></form>";
 
+		// Hide trends until resolved
+		echo '<div style="display:none;" >';
 		echo "<br><center><h1>Select trend options below.</h1></center>";
 		echo '<span class="class1">
 	        <ul>
@@ -77,15 +79,15 @@
 	        <li style = "display:inline;"><a href="/include/pChart/trend/trend_dast.php" target ="_blank">DAST-10</a></li>
 	        </ul>
 	        <p>
-	        Please note: <ol><li>If there are no scorable assessments, there will be no trend graphic presented.</li> 
-	        <li>Only scorable responses will be shown on the trend.</li><li> The trend graphic will 
+	        Please note: <ol><li>If there are no scorable assessments, there will be no trend graphic presented.</li>
+	        <li>Only scorable responses will be shown on the trend.</li><li> The trend graphic will
 	        be shown in a separate browser tab.</li><li>Trending requires at least two (2) scorable responses.</li>
 	        <li>Time progresses from left to right. In otherwords, scores to the left of the trend are OLDER than those on the right. This
 	        holds true even if multiple assessments were given on the same date.</li>
 	        <li>The date format is YYYY/MM/DD</li></ol>
 	        </p>';
 		echo "<br><center><h1>Select The Duke trend options below.</h1></center>";
-		echo '<ul>  
+		echo '<ul>
 	        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_bar.php" target ="_blank">Composite (Bar)</a></li>
 	        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_line.php" target ="_blank">Composite (Line)</a></li>
 	        <li style = "display:inline;"><a href="/include/pChart/trend/trend_duke_physical.php" target ="_blank">Physical</a></li>
@@ -105,10 +107,13 @@
 	        Please note: <ol><li>The notes in the above trending section are applicable to this section.</li>
 	        <li>The composite options will trend all the sub-scores on a single trend. This yields a very busy trend.</li>
 	        <li>On composite trends, a \'-1\' on the trend indicates that the sub-score could not be calculated. These dates are omitted
-	        when a single item is trended.</li> 
+	        when a single item is trended.</li>
 	        <li>The remaining choices yield the individual sub-score on a single trend.</li></ol>
-	        </p>';
+	        </p>
+					</div> <!-- End hide trends -->';
+					// End hide trends
 	} else {
-		echo '<p style = "color: red; text-align: left">Please enter a patient ID.</p><br><br>';
+		echo '<p style = "color: red; text-align: left;display:none;">Please enter a patient ID.</p><br><br>';
 	}
+
 ?>
