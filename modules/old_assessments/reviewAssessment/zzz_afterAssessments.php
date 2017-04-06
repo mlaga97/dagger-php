@@ -160,7 +160,7 @@
 		}
 	}
 	if ($_SESSION['grouping'] !== 10) {
-		score_chronic_health($_SESSION);
+		score_chronic_health_reviewAssessment($_SESSION);
 		score_questions($_SESSION);
 	}
 ?>
