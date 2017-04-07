@@ -27,14 +27,7 @@
 	<body onload="clearForm();">
 	<div class="container">
 		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
-		<center><h1>Assessment Evaluation</h1></center>
-		<center><?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today); ?></center>
-
-		<script type="text/javascript"> //Our function to print the webpage. 
-			function printpage() {
-				window.print();
-			}
-		</script>
+		<center><h1>Assessment Review</h1></center>
 
 		<center>
 			<?php
@@ -45,12 +38,32 @@
 			?>
 		</center>
 
+		<!-- Improve ME!!! -->
+		<!-- Confirm patientID -->
+		<script>
+			function enableSubmit(c_pt_id) {
+				var submitButton = document.getElementById('edu.usm.dagger.reviewAssessment.submitButton');
+				var pt_id = '<?php echo $_SESSION["patientID"]; ?>';
+				if (pt_id == c_pt_id)
+				{
+					submitButton.disabled = false;
+				}
+				else {
+					submitButton.disabled = true;
+				}
+			}
+		</script>
+
+		<div style="align:center;">
+			<label for="edu.usm.dagger.reviewAssessment.confirm_patientID" > Confirm Patient ID</label>
+			<input type="text" id="edu.usm.dagger.reviewAssessment.confirm_patientID" oninput="enableSubmit(this.value);"/>
+		</div>
+
 		<center>
-			<input type="button" value="Submit" style= "height: 25px; width: 100px" onclick="window.location='/insertAssessment.php';" />
+			<input type="button" value="Submit" id="edu.usm.dagger.reviewAssessment.submitButton" disabled style= "height: 25px; width: 100px" onclick="window.location='/insertAssessment.php';" />
 			<?php if ($_SESSION['grouping'] != 10) { ?>
-				<input type="button" value="Edit Personal Data" style="height: 25px; width: 125px" onclick="window.location='/updateAssessment.php'"/>
+				<!--<input type="button" value="Edit Personal Data" style="height: 25px; width: 125px" onclick="window.location='/updateAssessment.php'"/> -->
 			<?php } ?>
-			<input type="button" style= "height: 25px; width: 100px" value="Print this page" onclick="printpage()" />
 		</center>
 
 		<?php include 'modules/main/footer.php' ?>
