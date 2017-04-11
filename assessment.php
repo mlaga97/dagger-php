@@ -6,15 +6,14 @@
 	postToSession(array('status', 'previous'));
 
 	$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
-?>
-
+?><!DOCTYPE html>
 <html>
 	<head>
 		<title>Brief <?php print_r($_SESSION['assessment_type']); ?> Assessment</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="Brief Assessment">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
-		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
 
 	<body>
@@ -31,6 +30,7 @@
 				<div class='header'>
 					<div class='title'>
 						<?php
+						// TODO:Session var visit_type is no longer a thing.
 							if($_SESSION['visit_type'] === "Comprehensive") {
 								echo "<h1>Brief ";
 								print_r($_SESSION['assessment_type']);
@@ -47,7 +47,7 @@
 			<br/><br/><br/>
 
 			<!-- Body -->
-			<form class='assessment_form' action='/postassessment.php' method='post'>
+			<form class='assessment_form' action='/postassessment.php' method='post' autocomplete='off' >
 				<?php moduleLoad('assessment'); ?>
 			</form>
 

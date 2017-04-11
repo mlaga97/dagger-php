@@ -10,8 +10,7 @@
 
 	// Here we set our session previous variable. This variable is used to allow user access to the next web-page.
 	allowPrevious(true, '/login.php');
-?>
-
+?><!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -35,7 +34,7 @@
 							$logo_array = array (
 									'<a href="https://www.usm.edu/social-work"><img src="/include/images/usm.png" style="border:solid; border-color:black;" width="100" height="100" alt="University of Southern Mississippi, School of Social Work"></a>',
 									'<a href="https://www.southalabama.edu/gcbhrc/"><img src="/include/images/usa.png" style="border:solid; border-color:black;" width="100" height="100" alt="University of Southern Alabama,     School of Social Work"></a>',
-									'<a href="https://uwf.edu/socialwork/"><img src="/include/images/uwf.png" style="border:solid; border-color:black;" width="100" height="100" alt="University of West Florida,         School of Social Work"></a>' 
+									'<a href="https://uwf.edu/socialwork/"><img src="/include/images/uwf.png" style="border:solid; border-color:black;" width="100" height="100" alt="University of West Florida,         School of Social Work"></a>'
 							);
 
 							// Shuffle our logo array to allow random logo placement upon page refresh.
@@ -53,15 +52,15 @@
 
 			<!-- Login Form -->
 			<div class='login-form'>
-				<form method="post">
+				<form method="post" autocomplete="off" >
 					<h2>Login<br><small>Enter your credentials</small></h2>
-	
+
 					<label>Username: <input type="text" autofocus="autofocus" name="username" /></label>
 					<br/><br/>
-	
+
 					<label>Password: <input type="password" autofocus="autofocus" name="password" /></label>
 					<br/><br/>
-	
+
 					<input type="submit" class="submit" value="Login" name="submit" />
 				</form>
 			</div>

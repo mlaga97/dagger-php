@@ -4,8 +4,7 @@
 	allowPrevious('/assessment.php', '/postassessment.php');
 
 	postToSession();
-?>
-
+?><!DOCTYPE html>
 <html>
 	<head>
 		<title>Time Spent</title>
@@ -28,7 +27,7 @@
 					return false;
 				}
 				form.submit();
-			} 
+			}
 		</script>
 	</head>
 
@@ -50,7 +49,7 @@
 		<form id="form" name="form1" action="/reviewAssessment.php" method="post">
 			<center><h1>Time spent with the client.</h1></center>
 			<p><strong>Please record the time, in minutes, you spent associated with this assessment: </strong>
-			<input type="text" autofocus="autofocus" name="assessment_time" id="assessment_time"> 
+			<input type="text" autofocus="autofocus" name="assessment_time" id="assessment_time">
 			</p>
 		</form>
 

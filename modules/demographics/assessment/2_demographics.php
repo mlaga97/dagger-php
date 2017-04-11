@@ -50,7 +50,7 @@
 
 <!-- Zip Code -->
 <h3>Zip Code</h3>
-<label><input type="text" name="demographics_zipCode"/></label>
+<label><input type="text" name="demographics_zipCode" maxlength="5" placeholder="5-digit zip" /></label>
 
 <br/><br/><hr/>
 

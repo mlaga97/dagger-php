@@ -2,10 +2,7 @@
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
 	allowPrevious($_SESSION['admin'] == 1, '/moduleList.php');
-?>
-
-<!-- HTML start -->
-<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01//EN'>
+?><!DOCTYPE html>
 <html>
 	<head>
 		<title>Module List</title>

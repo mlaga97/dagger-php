@@ -1,6 +1,6 @@
 <label>
 	<h3>Patient ID</h3>
-	<input type="text" name="patientID">
+	<input type="text" name="patientID" required="true" >
 </label>
 
 <br/><br/>
@@ -27,11 +27,13 @@ function setAssessmentTypeVal(dateString)
 		hiddenField.value = "Adult";
 	}
 }
+
+
 </script>
 
 <label>
 	<h3>Patient DOB</h3>
-	<input type="date" name="dob" onblur="setAssessmentTypeVal(this.value);">
+	<input type="date" name="dob" onblur="formatDate(this);setAssessmentTypeVal(this.value);" min="1900-01-01" max="<?php echo date('Y-m-d'); ?>" placeholder="mm/dd/yyyy" required="true" >
 </label>
 
 <!-- Temp fix for old assessment display -->

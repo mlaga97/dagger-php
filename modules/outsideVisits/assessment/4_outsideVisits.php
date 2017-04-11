@@ -20,6 +20,16 @@ function checkboxShowHide(checkbox, id, uncheckedState) {
 	}
 }
 
+function toggleDisplayCheckbox (checkbox_obj, divID) {
+	var show = false;
+	var req = false;
+	if(checkbox_obj.checked == true) {
+		show = true;
+		req = true;
+	}
+	toggleDisplay(divID, show, req);
+}
+
 </script>
 
 <!-- ----------------------------------------------------------------------- -->
@@ -28,11 +38,13 @@ function checkboxShowHide(checkbox, id, uncheckedState) {
 
 <p>Since your last visit, have you been admitted to:</p>
 
-<label><input type="checkbox" name="outsideVisits_emergencyRoom" value='true' onclick="checkboxShowHide(this, 'edu.usm.dagger.module.qualtrics.outsideVisits_emergencyRoom_form', false);"/>Emergency Room (ER)</label>
+<!-- <label><input type="checkbox" name="outsideVisits_emergencyRoom" value='true'  />Emergency Room (ER)</label> -->
+
+<label><input type="checkbox" name="outsideVisits_emergencyRoom" value='true' onchange="toggleDisplayCheckbox(this, 'edu.usm.dagger.module.qualtrics.outsideVisits_emergencyRoom_form');" />Emergency Room (ER)</label>
 <div id='edu.usm.dagger.module.qualtrics.outsideVisits_emergencyRoom_form' style='display: none; margin-left: 50px;'>
 	<br/>
 	<h3>Date of ER Visit</h3>
-	<input type="date" name="outsideVisits_emergencyRoom_visitDate"/>
+	<input type="date" name="outsideVisits_emergencyRoom_visitDate" onblur="formatDate(this);" max="<?php echo date('Y-m-d'); ?>" placeholder="mm/dd/yyyy" />
 
 	<br/>
 	<h3>Reason for Visit</h3>
@@ -42,7 +54,7 @@ function checkboxShowHide(checkbox, id, uncheckedState) {
 
 	<div id='edu.usm.dagger.module.qualtrics.outsideVisits_emergencyRoom_form.otherReasonForVisit' style='display: none; margin-left: 50px;'>
 		<br/>
-		<label>Please specify: <input type="text" name="outsideVisits_emergencyRoom_otherReasonForVisit"/></label>
+		<label>Please specify: <input type="text" name="outsideVisits_emergencyRoom_otherReasonForVisit" class="noreq" /></label>
 	</div>
 </div>
 
@@ -52,7 +64,7 @@ function checkboxShowHide(checkbox, id, uncheckedState) {
 <div id='edu.usm.dagger.module.qualtrics.outsideVisits_hospital_nonER_form' style='display: none; margin-left: 50px;'>
 	<br/>
 	<h3>Date of Discharge</h3>
-	<input type="date" name="outsideVisits_hospital_nonER_dischargeDate"/>
+	<input type="date" name="outsideVisits_hospital_nonER_dischargeDate" onblur="formatDate(this);"  max="<?php echo date('Y-m-d'); ?>" placeholder="mm/dd/yyyy"/>
 
 	<br/>
 	<h3>Reason for Visit</h3>
@@ -72,7 +84,7 @@ function checkboxShowHide(checkbox, id, uncheckedState) {
 <div id='edu.usm.dagger.module.qualtrics.outsideVisits_other_form' style='display: none; margin-left: 50px;'>
 	<br/>
 	<h3>Date of office visit</h3>
-	<input type="date" name="outsideVisits_other_visitDate"/>
+	<input type="date" name="outsideVisits_other_visitDate" onblur="formatDate(this);" max="<?php echo date('Y-m-d'); ?>" placeholder="mm/dd/yyyy" />
 
 	<br/>
 	<h3>Reason for Visit</h3>

@@ -5,7 +5,7 @@
 
 <div id='edu.usm.dagger.module.qualtrics.activityDate_selection' style='display: none;'>
 	<br/>
-	<label>Activity Date<br/><input type="date" name="activityDate" value="<?php echo date('Y-m-d')?>"></label>
+	<label>Activity Date<br/><input type="date" name="activityDate" onblur="formatDate(this);" value="<?php echo date('Y-m-d')?>" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyy" required="true" ></label>
 </div>
 
 <br/><br/><hr/>

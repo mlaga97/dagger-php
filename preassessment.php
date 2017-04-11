@@ -6,15 +6,14 @@
 	$log->info("CLINICS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 
 	unsetAllButTheseKeys(getConfigKey("edu.usm.dagger.main.preassessment.keysToKeep"));
-?>
-
+?><!DOCTYPE html>
 <html>
 	<head>
 		<title>Assessment Options</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="Assessment Options">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
-		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
 
 	<body>
@@ -39,7 +38,7 @@
 			<br/><br/>
 
 			<!-- Body -->
-			<form id='preassessment_form' action='/assessment.php' method='post'>
+			<form id='preassessment_form' action='/assessment.php' method='post' autocomplete='off' >
 				<?php moduleLoad('preassessment'); ?>
 			</form>
 

@@ -4,9 +4,7 @@
 	allowPrevious('/reviewAssessment.php', '/insertAssessment.php');
 
 	postToSession(array('status', 'previous'));
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+?><!DOCTYPE html>
 <html>
 	<head>
 		<title>Assessment Evaluation</title>
