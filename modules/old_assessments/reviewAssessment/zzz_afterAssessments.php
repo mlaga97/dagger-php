@@ -28,7 +28,9 @@
 		$count_no = $count->fetch_assoc();
 		while($n <= $count_no['num']) {
 			if(isset($_SESSION['s_' .$n])) {
-				if(($_SESSION['s_' .$n] > -1) && ($n!=30)) { // Stressor 30 is a special case
+				// Exclude NULL values from stressors
+				// changed condition from > -1 to > 0
+				if(($_SESSION['s_' .$n] > 0) && ($n!=30)) { // Stressor 30 is a special case
 					$first++;
 					if($first == 1) {
 						echo "<b>The patient has stress due to:</b> ";
@@ -55,7 +57,9 @@
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'event'");
 		$count_no = $count->fetch_assoc();
 		while($n <= $count_no['num']) {
-			if($_SESSION['e_' .$n] > -1) {
+			// Exclude NULL values from events
+			// changed condition from > -1 to > 0
+			if($_SESSION['e_' .$n] > 0) {
 				$first++;
 				if($first == 1) {
 					echo "<b>The patient has been through the following events:</b> ";
@@ -77,7 +81,9 @@
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'symptom'");
 		$count_no = $count->fetch_assoc();
 		while($n <= $count_no['num']) {
-			if($_SESSION['symptom_' .$n] > -1) {
+			// Exclude NULL values from symptom
+			// changed condition from > -1 to > 0
+			if($_SESSION['symptom_' .$n] > 0) {
 				$first++;
 				if($first == 1) {
 					echo "<br/>";
@@ -160,7 +166,8 @@
 		}
 	}
 	if ($_SESSION['grouping'] !== 10) {
+		// fxns translate new input names to old DB fields -- fxn definitions in old_assessments/health.php
 		score_chronic_health_reviewAssessment($_SESSION);
-		score_questions($_SESSION);
+		score_questions_reviewAssessment($_SESSION);
 	}
 ?>

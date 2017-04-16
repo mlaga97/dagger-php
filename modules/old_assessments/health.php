@@ -8,10 +8,10 @@
     	exit();
 	}
 
-	if (($type == "Adult") || ($type == "Child") || ($type == "Adolescent")){
+	if (($type == "Adult") || ($type == "Child") || ($type == "Adolescent")) {
 			$query = 'SELECT * FROM questions WHERE classification="HEALTH" AND '.$type.'=1 ORDER BY ordering';
 		}
-	else{
+	else {
 		exit();
 		}
 
@@ -47,14 +47,14 @@
 					$_SESSION["h_" . $row['Sub_ID']] = "-1";
 					//$c++;
 				}
-				echo "</table><!-- end table_health -->\n</div><!-- end div health -->\n";
+				echo "</table><!-- end table_health -->\n</div><!-- end div health -->\n<br><br>\n";
 			}
 		}
 
 	}
 	};
 
-			 function score_chronic_health_reviewAssessment($a){
+			 function score_chronic_health_reviewAssessment($a) {
 				 	$a['valueA1C'] = $a['chronicHealth_A1C_value'];
 					$a['A1CDate'] = $a['chronicHealth_A1C_date'];
 					$a['valueEAG'] = $a['chronicHealth_eAG_value'];
@@ -73,36 +73,35 @@
 					// Testing
 
 			 }
-			 chronicHealth_eAG_value
-  ;
-	$a[''] = $a[''];     function score_chronic_health($a){
+
+			 $a[''] = $a[''];function score_chronic_health($a) {
 
            //if this function is called after via a search, we need to convert the -1 stored in the database to "NA" for scoring.
            //if this function is called by insert.php the values presented will be "NA" for no response.
 
 
-           if  ($a['valueA1C'] === "-1"){
+           if  ($a['valueA1C'] === "-1" || $a['valueA1C'] == 0){
                $a['valueA1C'] = "NA";
            }
-           if  ($a['valueEAG'] === "-1"){
+           if  ($a['valueEAG'] === "-1" || $a['valueEAG'] == 0){
                $a['valueEAG'] = "NA";
            }
-           if  ($a['valueLDL'] === "-1"){
+           if  ($a['valueLDL'] === "-1" || $a['valueLDL'] == 0){
                $a['valueLDL'] = "NA";
            }
-           if  ($a['valueHDL'] === "-1"){
+           if  ($a['valueHDL'] === "-1" || $a['valueHDL'] == 0){
                $a['valueHDL'] = "NA";
            }
-           if  ($a['valueSYS'] === "-1"){
+           if  ($a['valueSYS'] === "-1" || $a['valueSYS'] == 0){
                $a['valueSYS'] = "NA";
            }
-           if  ($a['valueDIA'] === "-1"){
+           if  ($a['valueDIA'] === "-1" || $a['valueDIA'] == 0){
                $a['valueDIA'] = "NA";
            }
-           if  ($a['valueWeight'] === "-1"){
+           if  ($a['valueWeight'] === "-1" || $a['valueWeight'] == 0){
                $a['valueWeight'] = "NA";
            }
-           if  ($a['valueHeight'] === "-1"){
+           if  ($a['valueHeight'] === "-1" || $a['valueHeight'] == 0){
                $a['valueHeight'] = "NA";
            }
 
@@ -130,109 +129,136 @@
            ||($a['valueSYS'] !== "NA")||($a['valueDIA'] !== "NA") ||($a['bpDate'] !== "")
            ||($a['valueHeight'] !== "NA")||($a['valueWeight'] !== "NA")||($a['physicalDate'] !== "")) {
 
-            echo "<br/>";
-            echo "<center><b>Chronic Care Responses</b></center>";
-            echo "<br?";
-            if (($a['valueA1C'] !== "NA")||($a['valueEAG'] !== "NA")){
-                echo "Diabetes Responses<br>";
-                     if ($a['valueA1C'] !== "NA"){
-                         echo "A1C value: ";
-                         echo $a['valueA1C'] . "%, Date of test: " . $a['A1CDate'] . "<br>";
+						echo "<div style='margin-bottom: 40px;'>";
+            echo "<h3>Chronic Care</h3>";
+						echo "<table border='1'>";
+						echo "<thead><tr>";
+						echo "<th>Category</th><th>Measures</th><th>Date</th>";
+						echo "</tr></thead>";
+						echo "<tbody>";
+            if (($a['valueA1C'] !== "NA")||($a['valueEAG'] !== "NA")) {
+                     if ($a['valueA1C'] !== "NA") {
+											 	 echo "<tr><td>Diabetes</td>";
+                         echo "<td>A1C: ";
+                         echo $a['valueA1C'] . "%</td><td style='text-align:center;'>" . $a['A1CDate'] . "</td></tr>";
                      }
-                    if ($a['valueEAG'] !== "NA"){
-                        echo "eAG value: ";
-                        echo $a['valueEAG'] . " mg/dl, Date of test: "  . $a['eAGDate'] . "<br>";
+                    if ($a['valueEAG'] !== "NA") {
+												echo "<tr><td>Diabetes</td>";
+                        echo "<td>eAG: ";
+                        echo $a['valueEAG'] . " mg/dl</td><td style='text-align:center;'>"  . $a['eAGDate'] . "</td></tr>";
                     }
-                echo "<br/>";
             }
 
-            if (($a['valueLDL'] !== "NA")||($a['valueHDL'] !== "NA")){
-                echo "Cholestoral Responses<br>";
+            if (($a['valueLDL'] !== "NA")||($a['valueHDL'] !== "NA")) {
+                echo "<tr><td>Cholestoral</td><td>";
 
-                     if ($a['valueLDL'] !== "NA"){
-                          echo "LDL value: ";
+                     if ($a['valueLDL'] !== "NA") {
+                          echo "LDL: ";
                          echo $a['valueLDL'] . " mg/dl, ";
                      }
 
-                    if ($a['valueHDL'] !== "NA"){
-                        echo "HDL value: ";
-                        echo $a['valueHDL'] . " mg/dl, ";
+                    if ($a['valueHDL'] !== "NA") {
+                        echo "HDL: ";
+                        echo $a['valueHDL'] . " mg/dl";
                     }
-                    echo " Date of test: "  . $a['cholestoralDate'] . "<br>";
-                    echo "<br/>";
+                    echo "</td><td style='text-align:center;'>"  . $a['cholestoralDate'] . "</td></tr>";
             }
 
             if (($a['valueSYS'] !== "NA")&&($a['valueDIA'] !== "NA")){
-                echo "Blood Pressure Responses<br>";
-                echo "Systolic value: ";
+                echo "<tr><td>Blood Pressure</td><td>";
+                echo "Systolic: ";
                 echo $a['valueSYS'] . ", ";
-                echo "Diastolic value: ";
+                echo "Diastolic: ";
                 echo $a['valueDIA'];
-                echo " (" . $a['valueSYS'] . "/" . $a['valueDIA'] . " mm/Hg), ";
-                echo " Date of test: " . $a['bpDate'] . "<br>";
-                echo "<br/>";
+                echo " (" . $a['valueSYS'] . "/" . $a['valueDIA'] . " mm/Hg)";
+                echo "</td><td style='text-align:center;'>" . $a['bpDate'] . "</td></tr>";
             }
 
-            if (($a['valueHeight'] != "NA")||($a['valueWeight'] != "NA")){
-                echo "Physical Responses<br>";
-                     if ($a['valueHeight'] !== "NA"){
-                          echo "Height value: ";
-                         echo $a['valueHeight'] . "\", ";
+            if (($a['valueHeight'] != "NA")||($a['valueWeight'] != "NA")) {
+                echo "<tr><td>Physical</td><td>";
+                     if ($a['valueHeight'] !== "NA") {
+                          echo "Height: ";
+                         echo $a['valueHeight'] . " in., ";
                      }
-                    if ($a['valueWeight'] !== "NA"){
-                        echo "Weight value: ";
-                        echo $a['valueWeight'] . " lbs., ";
+                    if ($a['valueWeight'] !== "NA") {
+                        echo "Weight: ";
+                        echo $a['valueWeight'] . " lbs.";
                     }
-                    echo " Date of test: "  . $a['physicalDate'] . "<br>";
-                    echo "<br>";
+                    echo "</td><td style='text-align:center;'>"  . $a['physicalDate'] . "</td></tr>";
+
             }
+
+						echo "</tbody></table></div>";
 
         }
-       }
+    }
+
+			 function score_questions_reviewAssessment($a){
+				 $a['q2'] = $a['outsideVisits_emergencyRoom'];
+				 $a['er_visit_date'] = $a['outsideVisits_emergencyRoom_visitDate'];
+				 $a['er_visit_reason'] = $a['outsideVisits_emergencyRoom_reasonForVisit'];
+				 $a['er_visit_other'] = $a['outsideVisits_emergencyRoom_otherReasonForVisit'];
+				 $a['q1'] = $a['outsideVisits_hospital_nonER'];
+				 $a['hospital_visit_date'] = $a['outsideVisits_hospital_nonER_dischargeDate'];
+				 $a['hospital_visit_reason'] = $a['outsideVisits_hospital_nonER_reasonForVisit'];
+				 $a['hospital_visit_other'] = $a['outsideVisits_hospital_nonER_otherReasonForVisit'];
+				 $a['q3'] = $a['outsideVisits_other'];
+				 $a['office_visit_date'] = $a['outsideVisits_other_visitDate'];
+				 $a['office_visit_reason'] = $a['outsideVisits_other_reasonForVisit'];
+				 $a['office_visit_other'] = $a['outsideVisits_other_otherReasonForVisit'];
+				score_questions($a);
+			 }
 
        function score_questions($a){
 
           // print_r($a);
            if (($a['q1'] == "yes")||($a['q2'] == "yes")||($a['q3'] == "yes")){
-
-            echo "<br/>";
-            echo "<center><b>Outside Visits Responses</b></center>";
-            echo "<br/>";
-               if ($a['q1'] == "yes"){
-                   echo "The client answered affirmative to: \"Since your last visit have you been in the hospital?\"<br>";
-                    echo "Date of hospital visit: " . $a['hospital_visit_date'] . "<br>";
-                    echo "Reason for the hospital visit: ";
+						 	echo "<div style='margin-bottom: 40px;'>";
+            	echo "<h3>Outside Visits</h3>";
+							echo "<p><i>Since last visit patient has been admitted to...</i></p>";
+							echo "<table border='1'>";
+							echo "<thead><tr><th>Provider</th><th>Reason</th><th>Date</th></thead>";
+							echo "<tbody>";
+              if ($a['q1'] == "yes"){
+									 echo "<tr>";
+                   echo "<td>Hospital (non-ER)</td>";
+                    echo "<td>";
                     if ($a['hospital_visit_reason'] === 'Other'){
-                        echo $a['hospital_visit_other'] . "<br>";
+                        echo $a['hospital_visit_other'] . "</td>";
                     } else if ($a['hospital_visit_reason'] != "Nothing Selected"){
-                        echo $a['hospital_visit_reason'] . "<br>";
+                        echo $a['hospital_visit_reason'] . "</td>";
                     }
-                    echo "<br>";
+										echo "<td style='text-align:center;'>" . $a['hospital_visit_date'] . "</td>";
+                    echo "</tr>";
                }
                if ($a['q2'] == "yes"){
-                   echo "The client answered affirmative to: \"Since your last visit have you been in the Emergency Room?\"<br>";
-                    echo "Date of emergency room visit: " . $a['er_visit_date'] . "<br>";
-                    echo "Reason for the emergency room visit: ";
+								 	 echo "<tr>";
+                   echo "<td>Emergency Room (ER)</td>";
+                    echo "<td>";
                     if ($a['er_visit_reason'] === 'Other'){
-                        echo $a['er_visit_other'] . "<br>";
+                        echo $a['er_visit_other'] . "</td>";
                     } else if ($a['er_visit_reason'] != "Nothing Selected"){
-                        echo $a['er_visit_reason'] . "<br>";
+                        echo $a['er_visit_reason'] . "</td>";
                     }
-                    echo "<br>";
+										echo "<td style='text-align:center;'>" . $a['er_visit_date'] . "</td>";
+                    echo "</tr>";
                }
                if ($a['q3'] == "yes"){
-                   echo "The client answered affirmative to: \"Since your last visit have you been to the another medical provider?\"<br>";
-                    echo "Date of provider visit: " . $a['office_visit_date'] . "<br>";
-                    echo "Reason for the provider visit: ";
+								 	 echo "<tr>";
+                   echo "<td>Another Medical Provider</td>";
+                    echo "<td>";
                     if ($a['office_visit_reason'] === 'Other'){
-                        echo $a['office_visit_other'] . "<br>";
+                        echo $a['office_visit_other'] . "</td>";
                     } else if ($a['office_visit_reason'] != "Nothing Selected"){
-                        echo $a['office_visit_reason'] . "<br>";
+                        echo $a['office_visit_reason'] . "</td>";
                     }
-                    echo "<br>";
+										echo "<td style='text-align:center;'>" . $a['office_visit_date'] . "</td>";
+                    echo "</tr></tbody>";
                }
+						 echo "</table></div>";
 
            }
 
        }
+
 ?>

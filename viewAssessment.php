@@ -30,7 +30,7 @@
 ?>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Past Result Data Sheet</title>
@@ -43,7 +43,6 @@
 		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
 		<center><h1>Assessment Evaluation</h1></center>
 
-		<center>
 		<!-- Before moduleLoad('viewAssessment'); -->
 			<?php
 
@@ -52,7 +51,6 @@
 
 			?>
 		<!-- After moduleLoad('viewAssessment'); -->
-		</center>
 
 		<br/><br/>
 

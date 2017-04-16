@@ -24,10 +24,10 @@
 	include __DIR__ . '/../life.php';
 	include __DIR__ . '/../adhd.php';
 
+	echo "<h3>Scoring for Assessments</h3>";
+
 	////////////////////////////////////////These are where we score our tests/////////////////////
-	echo "<table border=\"1\" width=\"800\">";
-	echo "<th><center><h2>Scoring for assessment</h2></center></th>";
-	echo "</table>";
+
 	if (($_SESSION['assessment_type'] == 'Child')&&($_SESSION['pp'] != "")) {
 		//we need to do presenting problem.
 		pp_scoring($_SESSION, $mysqli);

@@ -16,7 +16,7 @@
 ?>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Assessment Evaluation</title>
@@ -28,15 +28,18 @@
 	<div class="container">
 		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
 		<center><h1>Assessment Review</h1></center>
+		<div style="border:1px solid #999;background-color:lightyellow;padding:10px;text-align:center;">
+			You must confirm Patient ID and click Submit below to complete the review.
+		</div>
 
-		<center>
+			<!-- Before moduleLoad('reviewAssessment'); -->
 			<?php
 
 				// Show Modules
 				moduleLoad('reviewAssessment');
 
 			?>
-		</center>
+			<!-- After moduleLoad('reviewAssessment'); -->
 
 		<!-- Improve ME!!! -->
 		<!-- Confirm patientID -->
