@@ -1,6 +1,6 @@
 <label>
 	<h3>Patient ID</h3>
-	<input type="text" name="patientID" required="true" >
+	<input type="text" name="patientID" required autofocus />
 </label>
 
 <br/><br/>
@@ -33,10 +33,10 @@ function setAssessmentTypeVal(dateString)
 
 <label>
 	<h3>Patient DOB</h3>
-	<input type="date" name="dob" onblur="formatDate(this);setAssessmentTypeVal(this.value);" min="1900-01-01" max="<?php echo date('Y-m-d'); ?>" placeholder="mm/dd/yyyy" required="true" >
+	<input type="date" name="dob" onblur="formatDate(this);setAssessmentTypeVal(this.value);" min="1900-01-01" max="<?php echo date('Y-m-d'); ?>" placeholder="mm/dd/yyyy" required />
 </label>
 
 <!-- Temp fix for old assessment display -->
-<input type="hidden" id="assessment_type" name="assessment_type" value="Adult" >
+<input type="hidden" id="assessment_type" name="assessment_type" value="Adult" />
 
 <br/><br/><hr/>

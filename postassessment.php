@@ -7,31 +7,12 @@
 ?><!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Time Spent</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Brief Adult Assessment">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
-		<script type="text/javascript">
-			//clear the validation form.
-			function clearForm() {
-				document.getElementById("form").reset();
-			}
-
-			function formSubmit() {
-				var form = document.getElementById("form")
-				var assessment_time_input = document.getElementById("assessment_time");
-
-				// Need to check to make sure they entered a time.
-				if ((assessment_time_input.value === '') || (isNaN(assessment_time_input.value)) ){
-					alert("Please enter the time you spent associated with this assessment.");
-					return false;
-				}
-				form.submit();
-			}
-		</script>
 	</head>
 
-	<body onload="clearForm()">
+	<body>
 	<div class="container">
 		<div class="top">
 			<div class="logo">
@@ -46,17 +27,16 @@
 
 		?>
 
-		<form id="form" name="form1" action="/reviewAssessment.php" method="post">
-			<center><h1>Time spent with the client.</h1></center>
-			<p><strong>Please record the time, in minutes, you spent associated with this assessment: </strong>
-			<input type="text" autofocus="autofocus" name="assessment_time" id="assessment_time">
-			</p>
-		</form>
+		<form id="form" name="form1" action="/reviewAssessment.php" method="post" autocomplete="off">
+			<center><h1>Time on Assessment</h1></center>
+			<label>Time associated with this assessment</label>
+			<input type="number" min="0" max="600" step="1" id="assessment_time" name="assessment_time"  required autofocus > <label>minutes</label>
 
+		<br /><br />
 		<center>
-			<input class="submit"  type="submit" onclick="formSubmit();" value="Review Assessment" >
-			<input class="reset_button" type="reset" onclick="clearForm()" value="Reset" />
+			<input class="submit"  type="submit" value="Review Assessment" >
 		</center>
+		</form>
 
 		<br/><br/><br/>
 

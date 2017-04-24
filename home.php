@@ -8,13 +8,14 @@
 	$log->info("OPTIONS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ".  print_r($_SESSION, true));
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Welcome</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Dagger Home Page">
+		<meta name="description" content="Dagger Home">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
-		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
 
 	<body>

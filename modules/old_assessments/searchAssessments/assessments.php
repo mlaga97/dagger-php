@@ -22,14 +22,16 @@
 		$info = $mysqli->query ( $query_clinic );
 		$contact_info = $mysqli->query ( $query_contact );
 		echo "<table border = \"0\"><td>";
+		// TODO: Add column headings; Make records clickable, lose the radio button - view button bullshit
 		echo "<tr>";
 		$first = 0;
 
 		global $row;
 		while ( $row = $info->fetch_assoc () ) {
 			if (($first == 0) && ($_SESSION ['admin'] == 1)) {
+				echo "<span style='color:#b30000;'>";
 				echo $row ['pt_id'];
-				echo "</tr><tr>";
+				echo "</span></tr><tr>";
 				$first ++;
 			}
 			echo "<td>";
@@ -40,14 +42,15 @@
 			print_r ( $row ['name'] );
 			echo "</td>";
 
+			// TODO: pull assessment_date
 			echo "<td>";
-			echo "<p style = color:blue>";
+			echo "<p>";
 			echo $row ['date'];
 			echo "</p>";
 			echo "</td>";
 
 			echo "<td>";
-			echo "<p style = color:red>";
+			echo "<p>";
 
 			foreach(getConfigKey("edu.usm.dagger.main.searchAssessment.tags") as $key => $value) {
 				if($row[$key] == 1) {

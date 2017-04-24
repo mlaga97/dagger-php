@@ -4,108 +4,108 @@
 
 <h3>New Hemoglobin A1C Record</h3>
 
-<label><input type="radio" name="chronicHealth_A1C_check" value='1' onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_A1C', true, true);"/>Yes</label>
-<label><input type="radio" name="chronicHealth_A1C_check" value='0' checked="checked" onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_A1C', false, false);"/>No</label>
+<label><input type="radio" name="chronicHealth_A1C_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_A1C', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_A1C_value');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_A1C_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_A1C', false, false);clearFields('dagger.module.qualtrics.chronicHealth_A1C');" checked/>No</label>
 
-<div id='edu.usm.dagger.module.qualtrics.chronicHealth_A1C' style='display: none; margin-left: 50px;'>
+<div id='dagger.module.qualtrics.chronicHealth_A1C' style='display: none; margin-left: 50px;'>
 	<br/>
-	<h3>Hemoglobin A1C (%)</h3>
 	<?php // Valid ranges for chronicHealth provided by Dr. Lauren Zakaras, clinical director MIHDP ?>
-	<input type="number" name="chronicHealth_A1C_value" min="3" max="30" step="0.1" />
-
-	<br/>
-	<h3>A1C Test Date</h3>
-	<input type="date" name="chronicHealth_A1C_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
+	<label>Hemoglobin A1C</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_A1C_value" name="chronicHealth_A1C_value" min="3" max="30" step="0.1" /> <label>%</label>
+	<br />
+	<br />
+	<label>Date</label> <input type="date" name="chronicHealth_A1C_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" />
 </div>
 
-<br/><br/><hr/>
+<br/>
+<br/>
+<hr/>
 
 <!-- ----------------------------------------------------------------------- -->
 
 <h3>New Blood Sugar eAG Record</h3>
 
-<label><input type="radio" name="chronicHealth_eAG_check" value='1' onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_eAG', true, true);"/>Yes</label>
-<label><input type="radio" name="chronicHealth_eAG_check" value='0' checked="checked" onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_eAG', false, false);"/>No</label>
+<label><input type="radio" name="chronicHealth_eAG_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_eAG', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_eAG_value');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_eAG_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_eAG', false, false);clearFields('dagger.module.qualtrics.chronicHealth_eAG');" checked />No</label>
 
-<div id='edu.usm.dagger.module.qualtrics.chronicHealth_eAG' style='display: none; margin-left: 50px;'>
+<div id='dagger.module.qualtrics.chronicHealth_eAG' style='display: none; margin-left: 50px;'>
 	<br/>
-	<h3>Blood Sugar eAG (mg/dl)</h3>
-	<input type="number" name="chronicHealth_eAG_value" min="20" max="1500" />
-
+	<br />
+	<label>Blood Sugar eAG</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_eAG_value" name="chronicHealth_eAG_value" min="20" max="1500" /> <label>mg/dL</label>
 	<br/>
-	<h3>eAG Test Date</h3>
-	<input type="date" name="chronicHealth_eAG_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
+	<br />
+	<label>Date</label> <input type="date" name="chronicHealth_eAG_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
 </div>
 
-<br/><br/><hr/>
+<br/>
+<br/>
+<hr/>
 
 <!-- ----------------------------------------------------------------------- -->
 
 <h3>New Cholesterol Record</h3>
 
-<label><input type="radio" name="chronicHealth_cholesterol_check" value='1' onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_cholesterol', true, true);"/>Yes</label>
-<label><input type="radio" name="chronicHealth_cholesterol_check" value='0' checked="checked" onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_cholesterol', false, false);"/>No</label>
+<label><input type="radio" name="chronicHealth_cholesterol_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_cholesterol', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_cholesterol_LDL');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_cholesterol_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_cholesterol', false, false);clearFields('dagger.module.qualtrics.chronicHealth_cholesterol');" checked />No</label>
 
-<div id='edu.usm.dagger.module.qualtrics.chronicHealth_cholesterol' style='display: none; margin-left: 50px;'>
+<div id='dagger.module.qualtrics.chronicHealth_cholesterol' style='display: none; margin-left: 50px;'>
 	<br/>
-	<h3>LDL Cholesterol</h3>
-	<input type="number" name="chronicHealth_cholesterol_LDL" min="15" max="1300" />
-
+	<label>LDL Cholesterol</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_cholesterol_LDL" name="chronicHealth_cholesterol_LDL" min="15" max="1300" /> <label>mg/dL</label>
 	<br/>
-	<h3>HDL Cholesterol</h3>
-	<input type="number" name="chronicHealth_cholesterol_HDL" min="15" max="250" />
-
 	<br/>
-	<h3>Cholesterol Test Date</h3>
+	<label>HDL Cholesterol</label> <input type="number" name="chronicHealth_cholesterol_HDL" min="15" max="250" /> <label>mg/dL</label>
+	<br/>
+	<br/>
+	<label>Date</label>
 	<input type="date" name="chronicHealth_cholesterol_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
 </div>
 
-<br/><br/><hr/>
+<br/>
+<br/>
+<hr/>
 
 <!-- ----------------------------------------------------------------------- -->
 
 <h3>New Blood Pressure Record</h3>
 
-<label><input type="radio" name="chronicHealth_bloodPressure_check" value='1' onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_bloodPressure', true, true);"/>Yes</label>
-<label><input type="radio" name="chronicHealth_bloodPressure_check" value='0' checked="checked" onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_bloodPressure', false, false);"/>No</label>
+<label><input type="radio" name="chronicHealth_bloodPressure_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_bloodPressure', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_bloodPressure_systolic');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_bloodPressure_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_bloodPressure', false, false);clearFields('dagger.module.qualtrics.chronicHealth_bloodPressure');" checked />No</label>
 
-<div id='edu.usm.dagger.module.qualtrics.chronicHealth_bloodPressure' style='display: none; margin-left: 50px;'>
+<div id='dagger.module.qualtrics.chronicHealth_bloodPressure' style='display: none; margin-left: 50px;'>
 	<br/>
-	<h3>Systolic</h3>
-	<input type="number" name="chronicHealth_bloodPressure_systolic" min="30" max="380" />
-
+	<label>Systolic</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_bloodPressure_systolic" name="chronicHealth_bloodPressure_systolic" min="30" max="380" />
 	<br/>
-	<h3>Diastolic</h3>
-	<input type="number" name="chronicHealth_bloodPressure_diastolic" min="25" max="300" />
-
 	<br/>
-	<h3>Blood Pressure Test Date</h3>
+	<label>Diastolic</label> <input type="number" name="chronicHealth_bloodPressure_diastolic" min="25" max="300" />
+	<br/>
+	<br/>
+	<label>Date</label>
 	<input type="date" name="chronicHealth_bloodPressure_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
 </div>
 
-<br/><br/><hr/>
+<br/>
+<br/>
+<hr/>
 
 <!-- ----------------------------------------------------------------------- -->
 
 <h3>New Height and Weight Record</h3>
 
-<label><input type="radio" name="chronicHealth_physical_check" value='1' onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_physical', true, true);"/>Yes</label>
-<label><input type="radio" name="chronicHealth_physical_check" value='0' checked="checked" onclick="toggleDisplay('edu.usm.dagger.module.qualtrics.chronicHealth_physical', false, false);"/>No</label>
+<label><input type="radio" name="chronicHealth_physical_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_physical', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_physical_height');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_physical_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_physical', false, false);clearFields('dagger.module.qualtrics.chronicHealth_physical');" checked />No</label>
 
-<div id='edu.usm.dagger.module.qualtrics.chronicHealth_physical' style='display: none; margin-left: 50px;'>
+<div id='dagger.module.qualtrics.chronicHealth_physical' style='display: none; margin-left: 50px;'>
 	<br/>
-	<h3>Height</h3>
-	<input type="number" name="chronicHealth_physical_height" min="24" max="108" step="0.1" />
-
+	<label>Height</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_physical_height" name="chronicHealth_physical_height" min="24" max="108" step="0.1" /> <label>in.</label>
 	<br/>
-	<h3>Weight</h3>
-	<input type="number" name="chronicHealth_physical_weight" min="1" max="1999" step="0.1" />
-
 	<br/>
-	<h3>Height and Weight Test Date</h3>
-	<input type="date" name="chronicHealth_physical_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
+	<label>Weight</label> <input type="number" name="chronicHealth_physical_weight" min="1" max="1999" step="0.1" /> <label>lbs.</labe>
+	<br/>
+	<br/>
+	<label>Date</label> <input type="date" name="chronicHealth_physical_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
 </div>
 
-<br/><br/><hr/>
+<br/>
+<br/>
+<hr/>
 
 <?php } ?>

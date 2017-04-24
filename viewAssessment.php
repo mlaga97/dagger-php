@@ -33,12 +33,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Past Result Data Sheet</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Past Result Data Sheet">
+		<meta charset="utf-8">
+		<title>Patient Activity</title>
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 	</head>
-	<body onload="clearForm();">
+	<body>
 	<div class="container">
 		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
 		<center><h1>Assessment Evaluation</h1></center>

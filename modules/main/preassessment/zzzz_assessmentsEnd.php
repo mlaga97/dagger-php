@@ -6,5 +6,5 @@
 
                 <br><br>
                 <center>
-                    <input id="submit"  type="submit" onclick="return formSubmit(form1);" value="Submit" >
-                </center>	
+                    <input id="submit"  type="submit" value="Continue" >
+                </center>

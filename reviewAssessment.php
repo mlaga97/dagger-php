@@ -10,7 +10,7 @@
 	//we'll make a copy of the values saved in $_SESSION and set all '-1' values to 0 so we can do the cut-off calculations.
 	//except the duke and the cd-risc. They need to keep the -1 values for scoring.
 	$copy = $_SESSION;
-	if($value == '-1' && !multiPregMatch(getConfigKey("edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0"), $key)) {
+	if($value == '-1' && !multiPregMatch(getConfigKey("dagger.main.reviewAssessment.dontSet_-1_to_0"), $key)) {
 		$copy[$key] = 0;
 	}
 ?>
@@ -19,12 +19,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Assessment Evaluation</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Brief Assessment Evaluation">
+		<meta charset="utf-8">
+		<title>Activity Review</title>	
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 	</head>
-	<body onload="clearForm();">
+	<body>
 	<div class="container">
 		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
 		<center><h1>Assessment Review</h1></center>
@@ -45,7 +44,7 @@
 		<!-- Confirm patientID -->
 		<script>
 			function enableSubmit(c_pt_id) {
-				var submitButton = document.getElementById('edu.usm.dagger.reviewAssessment.submitButton');
+				var submitButton = document.getElementById('dagger.reviewAssessment.submitButton');
 				var pt_id = '<?php echo $_SESSION["patientID"]; ?>';
 				if (pt_id == c_pt_id)
 				{
@@ -58,12 +57,12 @@
 		</script>
 
 		<div style="align:center;">
-			<label for="edu.usm.dagger.reviewAssessment.confirm_patientID" > Confirm Patient ID</label>
-			<input type="text" id="edu.usm.dagger.reviewAssessment.confirm_patientID" oninput="enableSubmit(this.value);"/>
+			<label for="dagger.reviewAssessment.confirm_patientID" > Confirm Patient ID</label>
+			<input type="text" id="dagger.reviewAssessment.confirm_patientID" oninput="enableSubmit(this.value);"/>
 		</div>
 
 		<center>
-			<input type="button" value="Submit" id="edu.usm.dagger.reviewAssessment.submitButton" disabled style= "height: 25px; width: 100px" onclick="window.location='/insertAssessment.php';" />
+			<input type="button" value="Submit" id="dagger.reviewAssessment.submitButton" disabled style= "height: 25px; width: 100px" onclick="window.location='/insertAssessment.php';" />
 			<?php if ($_SESSION['grouping'] != 10) { ?>
 				<!--<input type="button" value="Edit Personal Data" style="height: 25px; width: 125px" onclick="window.location='/updateAssessment.php'"/> -->
 			<?php } ?>

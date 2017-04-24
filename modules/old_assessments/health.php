@@ -65,7 +65,7 @@
 					$a['valueSYS'] = $a['chronicHealth_bloodPressure_systolic'];
 					$a['valueDIA'] = $a['chronicHealth_bloodPressure_diastolic'];
 					$a['bpDate'] = $a['chronicHealth_bloodPressure_date'];
-					$a['valueHeight'] = $a['chronicHealth_physical_height '];
+					$a['valueHeight'] = $a['chronicHealth_physical_height'];
 					$a['valueWeight'] = $a['chronicHealth_physical_weight'];
 					$a['physicalDate'] = $a['chronicHealth_physical_date'];
 
@@ -145,7 +145,7 @@
                     if ($a['valueEAG'] !== "NA") {
 												echo "<tr><td>Diabetes</td>";
                         echo "<td>eAG: ";
-                        echo $a['valueEAG'] . " mg/dl</td><td style='text-align:center;'>"  . $a['eAGDate'] . "</td></tr>";
+                        echo $a['valueEAG'] . " mg/dL</td><td style='text-align:center;'>"  . $a['eAGDate'] . "</td></tr>";
                     }
             }
 
@@ -154,12 +154,12 @@
 
                      if ($a['valueLDL'] !== "NA") {
                           echo "LDL: ";
-                         echo $a['valueLDL'] . " mg/dl, ";
+                         echo $a['valueLDL'] . " mg/dL, ";
                      }
 
                     if ($a['valueHDL'] !== "NA") {
                         echo "HDL: ";
-                        echo $a['valueHDL'] . " mg/dl";
+                        echo $a['valueHDL'] . " mg/dL";
                     }
                     echo "</td><td style='text-align:center;'>"  . $a['cholestoralDate'] . "</td></tr>";
             }
@@ -224,7 +224,7 @@
                    echo "<td>Hospital (non-ER)</td>";
                     echo "<td>";
                     if ($a['hospital_visit_reason'] === 'Other'){
-                        echo $a['hospital_visit_other'] . "</td>";
+                        echo "Other: " . $a['hospital_visit_other'] . "</td>";
                     } else if ($a['hospital_visit_reason'] != "Nothing Selected"){
                         echo $a['hospital_visit_reason'] . "</td>";
                     }
@@ -236,7 +236,7 @@
                    echo "<td>Emergency Room (ER)</td>";
                     echo "<td>";
                     if ($a['er_visit_reason'] === 'Other'){
-                        echo $a['er_visit_other'] . "</td>";
+                        echo "Other: " . $a['er_visit_other'] . "</td>";
                     } else if ($a['er_visit_reason'] != "Nothing Selected"){
                         echo $a['er_visit_reason'] . "</td>";
                     }
@@ -248,7 +248,7 @@
                    echo "<td>Another Medical Provider</td>";
                     echo "<td>";
                     if ($a['office_visit_reason'] === 'Other'){
-                        echo $a['office_visit_other'] . "</td>";
+                        echo "Other: " . $a['office_visit_other'] . "</td>";
                     } else if ($a['office_visit_reason'] != "Nothing Selected"){
                         echo $a['office_visit_reason'] . "</td>";
                     }

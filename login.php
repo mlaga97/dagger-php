@@ -13,10 +13,10 @@
 ?><!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8">
 		<meta name="description" content="Login">
 		<link rel="stylesheet" href="include/mystyle.css" type="text/css">
-		<title>Login Page</title>
+		<title>Dagger Login</title>
 	</head>
 
 	<body>
@@ -25,7 +25,6 @@
 			<!-- Header -->
 			<div class='top'>
 				<div class='header login-header'>
-					<?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today);?>
 
 					<!-- Show Shuffled Logo Array -->
 					<table align='center'>
@@ -49,16 +48,18 @@
 			</div>
 
 			<br/><br/><br/>
-
+			<div style="border:1px solid #999;background-color:lightyellow;padding:10px;text-align:center;">
+				Access to and use of this website is restricted to authorized users only. 
+			</div>
 			<!-- Login Form -->
 			<div class='login-form'>
 				<form method="post" autocomplete="off" >
-					<h2>Login<br><small>Enter your credentials</small></h2>
+					<h2>Dagger Login</h2>
 
-					<label>Username: <input type="text" autofocus="autofocus" name="username" /></label>
+					<label>Username <input type="text" name="username" autofocus required /></label>
 					<br/><br/>
 
-					<label>Password: <input type="password" autofocus="autofocus" name="password" /></label>
+					<label>Password <input type="password" name="password" required /></label>
 					<br/><br/>
 
 					<input type="submit" class="submit" value="Login" name="submit" />
@@ -67,7 +68,7 @@
 
 			<!-- Error Message -->
 			<div class='login-error'>
-				<?php if (isset($response)) echo "<br><hf>" . $response. "</hf>"; ?>
+				<?php if (isset($response)) echo "<br><h3>" . $response. "</h3>"; ?>
 			</div>
 
 			<!-- Show Footer -->

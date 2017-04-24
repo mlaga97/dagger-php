@@ -9,9 +9,8 @@
 ?><!DOCTYPE html>
 <html>
 	<head>
-		<title>Brief <?php print_r($_SESSION['assessment_type']); ?> Assessment</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Brief Assessment">
+		<meta charset="utf-8">
+		<title><?php print_r($_SESSION['assessment_type']); ?> Assessment</title>
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
@@ -30,19 +29,18 @@
 				<div class='header'>
 					<div class='title'>
 						<?php
-						// TODO:Session var visit_type is no longer a thing.
+						// TODO: Session var visit_type is no longer a thing.
 							if($_SESSION['visit_type'] === "Comprehensive") {
 								echo "<h1>Brief ";
 								print_r($_SESSION['assessment_type']);
 								echo "Clinical Screening</h1>";
 							} else {
-								echo '<h1>Brief Patient Visit</h1>';
+								echo '<h1>Assessment</h1>';
 							}
 						?>
-					</div>
-					<?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today);?>
-				</div>
-			</div>
+					</div> <!-- End div class title -->
+				</div> <!-- End div class header -->
+			</div> <!-- End div class top -->
 
 			<br/><br/><br/>
 

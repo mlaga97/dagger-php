@@ -9,9 +9,8 @@
 ?><!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Assessment Options</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Assessment Options">
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>

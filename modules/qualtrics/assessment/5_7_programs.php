@@ -5,9 +5,7 @@
 
 <label><input type="checkbox" name="carePath_homeless" value="1"/>Homeless</label><br/>
 <label><input type="checkbox" name="carePath_hepatitis_c" value="1"/>Hepatitis C</label><br/>
-<label><input type="checkbox" name="carePath_careTeam" value="1"/>Care Team</label><br/>
-<label><input type="checkbox" name="carePath_chronicCare" value="1"/>Chronic Care</label><br/>
 <label><input type="checkbox" name="carePath_ryanWhite" value="1"/>Ryan White</label><br/>
-<label><input type="checkbox" name="carePath_other" value="1"/>Other</label><input type="text" name="carePath_other_data"/><br/>
+<label><input type="checkbox" name="carePath_other" value="1" onchange="cb_toggleField(this, 'edu.usm.dagger.modules.qualtrics.carePath_other_data')"/>Other</label> <input type="text" style="width:300px;" id="edu.usm.dagger.modules.qualtrics.carePath_other_data" name="carePath_other_data" disabled/><br/>
 
 <?php } ?>
