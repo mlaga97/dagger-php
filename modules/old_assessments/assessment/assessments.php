@@ -1,4 +1,5 @@
 <?php
+	echo "<!--oldassessments-assessments-assessments.php -->";
 	global $mysqli;
 
 	include __DIR__ . '/../stressors.php';
@@ -27,124 +28,199 @@
 	include __DIR__ . '/../adhd.php';
 	include __DIR__ . '/../presenting_problem.php';
 	include __DIR__ . '/../childStressors.php';
-	
+
 	if($_SESSION['pp_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Presenting Problem</h3>";
 		write_presenting_problem($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if ($_SESSION['c_stress_check'] == 1) {
-		write_current_stress("child");
+		echo "<div class='write'>";
+		echo "<h3>Current Stress (Child)</h3>";
+		write_current_stress("child");  // Hmm.. should it be "Child" with a capital C ?
+		echo "</div>";
+	}
+
+	if ($_SESSION['c_stress_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Stressors (Child)</h3>";
 		write_childStressors($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
-	
+
+
 	if($_SESSION['stress_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Stressors (Adult)</h3>";
 		write_stressors($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
+		echo "<div class='write'>";
+		echo "<h3>Current Stress (Adult)</h3>";
 		write_current_stress($_SESSION['assessment_type']);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['health_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Health</h3>";
 		write_health($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['events_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Events</h3>";
 		write_events($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
+// Retained if we want to present a heading before the real Assessments
+/*
 	if (($_SESSION['gad_check'] == 1)||($_SESSION['phq_check'] == 1)||($_SESSION['audit_check'] == 1)||($_SESSION['gad2_check']==1)||
 			($_SESSION['cage_check'] == 1)||($_SESSION['cd_check'] == 1)||($_SESSION['pcl_check'] == 1)||($_SESSION['ces_check'] == 1)||
 			($_SESSION['psc_check'] == 1)||	($_SESSION['dast_check'] == 1)||($_SESSION['duke_check'] == 1)) {
-		echo '
-			<hr/><br/>
-				
-			<div id="gen_header">
-				<h2>
-					Below is a list of questions regarding your problems, complaints, feelings and self-confidence.
-					Please read each question carefully and select the response that best represents your situation.
-				</h2>
-			</div><!--end div gen_header --><br>';
-	}
-	
+
+	} */
+
 	if( $_SESSION['sdq_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>SDQ</h3>";
 		write_sdq($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['gad_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>GAD-7</h3>";
 		write_gad($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 		echo "<div class=\"page-break\"></div><!--force page break here. good for 8.5X11 pages -->";//these are manual page breaks for printing. May need to move them if you print the instruments in different order!
 	}
-	
+
 	if($_SESSION['gad2_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>GAD-2</h3>";
 		write_gad2($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-		
+
 	if($_SESSION['phq_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>PHQ-9</h3>";
 		write_phq($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if( $_SESSION['symptom_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Symptoms</h3>";
 		write_symptoms($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['audit_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Audit-C</h3>";
 		write_audit($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 		echo "<div class=\"page-break\"></div><!--force page break here. good for 8.5X11 pages -->";//these are manual page breaks for printing. May need to move them if you print the instruments in different order!
 	}
-	
+
 	if($_SESSION['cage_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>CAGE</h3>";
 		write_cage($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['cd_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>CD/h3>";
 		write_cd($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['pcl_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>PCL-C</h3>";
 		write_pcl($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['pcl2_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>PCL-2</h3>";
 		write_pcl2($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['diagnosis_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Diagnosis</h3>";
 		write_diagnosis($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['diag_me_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Diagnosis ME</h3>";
 		write_diag_me($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['ces_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>CES-D</h3>";
 		write_ces_d($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['psc_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>PSC-17</h3>";
 		write_psc($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['dast_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>DAST-10</h3>";
 		write_dast($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['duke_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>The Duke</h3>";
 		write_duke($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['self_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Self-care</h3>";
 		write_self($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-	
+
 	if($_SESSION['life_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>Life Attitudes</h3>";
 		write_life($_SESSION['assessment_type'], $mysqli);
-	
+		echo "</div>";
+
 	}
-	
+
 	if($_SESSION['crafft_check'] == 1) {
 		write_crafft($_SESSION['assessment_type'], $mysqli);
 	}
-	
+
 	if($_SESSION['adhd_check'] == 1) {
+		echo "<div class='write'>";
+		echo "<h3>ADHD Self-Report Scale</h3>";
 		write_adhd($_SESSION['assessment_type'], $mysqli);
+		echo "</div>";
 	}
-?><br/>
+?>

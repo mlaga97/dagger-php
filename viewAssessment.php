@@ -39,31 +39,36 @@
 	</head>
 	<body>
 	<div class="container">
-		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
-		<center><h1>Assessment Evaluation</h1></center>
 
-		<!-- Before moduleLoad('viewAssessment'); -->
-			<?php
+		<!-- Menu -->
+		<?php showMenu(); ?>
 
-				// Show Modules
-				moduleLoad('viewAssessment');
+		<div class="top">
+				<center>
+					<h1>Patient Record</h1>
+				</center>
+		</div>
 
-			?>
-		<!-- After moduleLoad('viewAssessment'); -->
+		<div>
+			<!-- Before moduleLoad('viewAssessment'); -->
+				<?php
+					// Show Modules
+					moduleLoad('viewAssessment');
+				?>
+			<!-- After moduleLoad('viewAssessment'); -->
+		</div>
 
-		<br/><br/>
 
 
-		<center>
+		<div style="text-align:center;margin-top:50px;">
 			<input type="submit" value="Assessment"
-				style="height: 25px; width: 100px; margin-right:100px;"
 				onclick="window.location='/preassessment.php'" />
 				<input type="submit"
-				value="Search" style="height: 25px; width: 100px"
+				value="Search"
 				onclick="window.location='/searchAssessments.php';" />
-		</center>
+		</div>
 
 		<?php include 'modules/main/footer.php'?>
-	</div> <!-- Close DIV Class 'container' -->
+	</div>
 	</body>
 </html>

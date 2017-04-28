@@ -144,7 +144,7 @@
 		echo "</td></tr>";
 	} else {
 		echo "<tr bgcolor=\"#FAFAFA\"><td width = \"200\">";
-		echo "<b>Birth Order:</b> ";
+		echo "Birth Order";
 		echo "</td><td width = \"400\">";
 		echo " Data unspecified";
 		echo "</td></tr>";

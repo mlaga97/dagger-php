@@ -22,32 +22,24 @@
 			<?php showMenu(); ?>
 
 			<!-- Header -->
+
+			<!-- Header -->
 			<div class='top'>
-				<div class='logo'>
-					<?php echo $_SESSION['logo']?>
-				</div>
 				<div class='header'>
 					<div class='title'>
-						<?php
-						// TODO: Session var visit_type is no longer a thing.
-							if($_SESSION['visit_type'] === "Comprehensive") {
-								echo "<h1>Brief ";
-								print_r($_SESSION['assessment_type']);
-								echo "Clinical Screening</h1>";
-							} else {
-								echo '<h1>Assessment</h1>';
-							}
-						?>
+						<h1>Assessment</h1>
 					</div> <!-- End div class title -->
 				</div> <!-- End div class header -->
 			</div> <!-- End div class top -->
 
-			<br/><br/><br/>
 
 			<!-- Body -->
 			<form class='assessment_form' action='/postassessment.php' method='post' autocomplete='off' >
 				<?php moduleLoad('assessment'); ?>
 			</form>
+
+			<!-- Show Footer -->
+			<?php include 'modules/main/footer.php'; ?>
 
 		</div>
 	</body>

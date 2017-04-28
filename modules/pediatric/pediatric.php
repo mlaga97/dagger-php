@@ -26,8 +26,9 @@ function write_pediatric($type, $mysqli) {
 	);
 
 	// Begin Div
-	echo '<br><hr><center><h3>Pediatric Assessment</h3></center>';
-	
+	echo '<div>';
+	echo '<h3>Pediatric Assessment</h3>';
+
 	// Print Question Bank 1
 	echo '
 		<table border="1" width="100%">
@@ -82,18 +83,18 @@ function write_pediatric($type, $mysqli) {
 			'{$index}' => $index+1
 		));
 	}
-	
+
 	// Print Question Bank 2
 	global $last_options_line;
 	foreach($questions2 as $index=>$question_data) {
 		$id = $question_data[0];
 		$options = $question_data[1];
 		$question = $question_data[2];
-		
+
 		$options_line = '';
 		foreach($options as $value=>$answer)
 			$options_line = $options_line . strtr('<td class="pediatric_scale"><center>{$answer}</center></td>', array('{$answer}' => $answer));
-		
+
 		if($options_line != $last_options_line) {
 			echo strtr('
 				</table><br /><br />
@@ -107,7 +108,7 @@ function write_pediatric($type, $mysqli) {
 			));
 		}
 		$last_options_line = $options_line;
-		
+
 		$buttons = '';
 		$field_index = 0;
 		foreach($options as $value=>$answer) {
@@ -127,7 +128,7 @@ function write_pediatric($type, $mysqli) {
 			$_SESSION[$id] = 99;
 			$field_index++;
 		}
-		
+
 		echo strtr('
 					<tr class="pediatric_row">
 						<td class="pediatric_question"><ol start="{$index}"><li>{$question}</li></ol></td>
@@ -138,13 +139,13 @@ function write_pediatric($type, $mysqli) {
 			'{$buttons}' => $buttons,
 			'{$index}' => $index+5
 		));
-		
+
 	}
 	echo '</table><br /><br /></div>';
 }
 
 function pediatric_scoring($copy, $mysqli) {
-	
+
 	$questions1 = array(
 			array("HLS_FH_Diab", "Has anyone in your family ever been diagnosed with diabetes/gestational diabetes?"),
 			array("HLS_FH_HBP", "Has anyone in your family ever been diagnosed with high blood pressure?"),
@@ -152,7 +153,7 @@ function pediatric_scoring($copy, $mysqli) {
 			array("HLS_FH_Overwt", "Has anyone in your family every been diagnosed as overweight?"),
 	);
 	$familyMembers = array("Mother", "Father", "Sibling", "Grandparent", "Aunt/Uncle", "Other");
-	
+
 	$questions2 = array(
 			array("HLS_Servings",	array("0"=>"0 - 1 servings", "2"=>"2 - 3 servings", "4"=>"4 - 5 servings", "6"=>"More than 5 servings", "99"=>"No response"),	"How many servings per day (1 serving = 1/2 cup) of fruits and vegetables does your child eat?"),
 			array("HLS_Screentime",	array("1"=>"More than 4 hours", "2"=>"3 - 4 hours", "3"=>"1 - 2 hours", "4"=>"1 hour or less", "99"=>"No response"),			"In total, how many hours per day does your child watch TV or movies, play video or computer games?"),
@@ -168,25 +169,23 @@ function pediatric_scoring($copy, $mysqli) {
 			array("HLS_Weight",		array("1"=>"8 - 10 (Very)", "2"=>"5 - 7", "3"=>"2 - 4", "4"=>"0 - 1 (Low)", "99"=>"No response"),								"How worried are you about your child's weight?"),
 			array("HLS_Now",		array("1"=>"8 - 10 (Definitely)", "2"=>"5 - 7 (Yes)", "3"=>"2 - 4 (Maybe)", "4"=>"0 - 1 (No)", "99"=>"No response"),				"Is now a good time to work on family eating and activity habits?"),
 	);
-	
+
 	if ($mysqli->connect_errno) {
 		printf("Connect failed: %s\n", $mysqli->connect_error);
 		exit();
 	}
-	
+
 	echo '
 		<br/>
 		<div id="pediatric_results">
-		<center>
 			<h3>Pediatric Healthy Lifestyle Screening</h3>
-		</center>
 		<table border="1">
 			<tr>
 				<td><center>Question</center></td>
 				<td><center>Response</center></tb>
 			</tr>
 	';
-	
+
 	// Bank 1
 	include __DIR__ . '/../bitwise/bitwise.php';
 	$idx = 1;
@@ -202,7 +201,7 @@ function pediatric_scoring($copy, $mysqli) {
 			));
 			$idx++;
 	}
-	
+
 	// Bank 2
 	foreach($questions2 as $question) {
 		echo strtr('
@@ -216,8 +215,8 @@ function pediatric_scoring($copy, $mysqli) {
 			));
 			$idx++;
 	}
-	
-	
+
+
 	echo '</table></div><br /><br />';
 }
 

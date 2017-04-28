@@ -8,13 +8,14 @@
 <html>
 	<head>
 		<title>Assessment Evaluation</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Brief Assessment Evaluation">
+		<meta charset="utf-8">
+		<?php // User is not actually logged out until redirected -- enforce redirect in 30 sec ?>
+		<meta http-equiv="refresh" content="30; url=/index.php" />
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
+		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
 	<body>
-	<div class="container">
-		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
+	<div class="container" >
 
 		<?php
 
@@ -23,9 +24,23 @@
 
 		?>
 
-		<center><h1>Success!</h1></center>
+		<div style="text-align:center;">
+			<h1>Patient Record Saved</h1>
+		</div>
 
-		<center><input type="button" value="Return to Start" style= "height: 25px; width: 100px" onclick="window.location='/index.php';" /></center>
+
+		<div style="text-align:center;margin-bottom:70px;">
+			Reauthenticate your login credentials to continue.
+		</div>
+
+		<div style="text-align:center;margin-bottom:70px;">
+			<input type="button" value="Logout / Login" onclick="window.location='/index.php';" autofocus />
+			<br><br>
+		</div>
+
+		<div style="text-align:center;margin-bottom:162px;">
+			You will be automatically logged out in 30 seconds.
+		</div>
 
 		<?php include 'modules/main/footer.php' ?>
 	</div> <!-- Close DIV Class 'container' -->

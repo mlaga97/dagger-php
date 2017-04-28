@@ -20,12 +20,16 @@
 		echo "<br>";
 	}
 	/////////////////////////////////////Printing our stressors////////////////////////////////////////
-	if(($_SESSION['stress_check'] == 1)||($_SESSION['assessment_type'] == 'Child')) {
+	// Removed ||($_SESSION['assessment_type'] == 'Child') condition - displaying when assessment not selected
+	// Replaced with c_stress_check
+	if($_SESSION['stress_check'] == 1 || $_SESSION['c_stress_check'] == 1) {
 		$n = 1;
 		$first = 0;
-		echo "<br/>";
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'stressor'");
 		$count_no = $count->fetch_assoc();
+		echo "<!-- Begin div stress scoring -->";
+		echo "<div class='scoring'>";
+		echo "<h3>Stress</h3>";
 		while($n <= $count_no['num']) {
 			if(isset($_SESSION['s_' .$n])) {
 				// Exclude NULL values from stressors
@@ -33,8 +37,7 @@
 				if(($_SESSION['s_' .$n] > 0) && ($n!=30)) { // Stressor 30 is a special case
 					$first++;
 					if($first == 1) {
-						echo "<b>The patient has stress due to:</b> ";
-						echo "<br/>";
+						echo "<div>The patient has stress due to</div>";
 					}
 					$result = $mysqli->query("SELECT question from questions where classification = 'stressor' and Sub_ID =  $n");
 					$row = $result->fetch_assoc();
@@ -49,6 +52,7 @@
 		if(($_SESSION['assessment_type']=='Child')&&($_SESSION['s_30']!="")) {
 			echo "<b>The child noted the following stressful event:</b> ".$_SESSION['s_30']."<br>";
 		}
+		echo "</div><!-- End div stress scoring -->";
 	}
 	//////////////////////////////////Print our life events////////////////////////////////////////////////
 	if($_SESSION['events_check'] == 1) {
@@ -56,30 +60,67 @@
 		$first = 0;
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'event'");
 		$count_no = $count->fetch_assoc();
+		echo "<!-- Begin div events_scoring -->";
+		echo "<div class='scoring'>";
+		echo "<h3>Events</h3>";
 		while($n <= $count_no['num']) {
 			// Exclude NULL values from events
 			// changed condition from > -1 to > 0
 			if($_SESSION['e_' .$n] > 0) {
 				$first++;
 				if($first == 1) {
-					echo "<b>The patient has been through the following events:</b> ";
-					echo "<br/>";
+					echo "The patient has been through the following events. ";
+					echo "<ol>";
 				}
 				$result = $mysqli->query("SELECT question from questions where classification = 'event' and Sub_ID =  $n");
 				$row = $result->fetch_assoc();
-				echo $row['question'];
-				echo "<br/>";
+				echo "<li>" . $row['question'] . "</li>";
 			}
 			$n++;
 		}
-		echo "<br>";
+		echo "</ol>";
+		echo "</div>";
 	}
+
+
+	//////////////////////////////////Print our health////////////////////////////////////////////////
+	if($_SESSION['health_check'] == 1) {
+		$n = 1;
+		$first = 0;
+		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'Health'");
+		$count_no = $count->fetch_assoc();
+		echo "<div class='scoring'>";
+		echo "<h3>Health</h3>";
+		while($n <= $count_no['num']) {
+			// Exclude NULL values from health
+			// changed condition from > -1 to > 0
+			if($_SESSION['h_' .$n] > 0) {
+				$first++;
+				if($first == 1) {
+					echo "The patient responded <i>Yes</i> to the following questions on health.";
+					echo "<ol>";
+				}
+				$result = $mysqli->query("SELECT question from questions where classification = 'Health' and Sub_ID =  $n");
+				$row = $result->fetch_assoc();
+				echo "<li>" . $row['question'] . " <i>Yes</i> </li>";
+			}
+			$n++;
+		}
+		echo "</ol>";
+		echo "</div>";
+	}
+
+
 	//////////////////////////////////Print our symptoms////////////////////////////////////////////////
-	if($_SESSION['symptom_check'] == 1 || $_SESSION['assessment_type'] == 'Child') {
+	// Removed ||($_SESSION['assessment_type'] == 'Child') condition - displaying when assessment not selected
+	if($_SESSION['symptom_check'] == 1) {
 		$n = 1;
 		$first = 0;
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'symptom'");
 		$count_no = $count->fetch_assoc();
+		echo "<!-- Begin div symptom_scoring -->";
+		echo "<div class='scoring'>";
+		echo "<h3>Symptoms</h3>";
 		while($n <= $count_no['num']) {
 			// Exclude NULL values from symptom
 			// changed condition from > -1 to > 0
@@ -108,7 +149,7 @@
 			}
 			$n++;
 		}
-		echo "<br>";
+		echo "</div>";
 	}
 	//////////////////////////////////Print our symptoms////////////////////////////////////////////////
 	if($_SESSION['diagnosis_check'] == 1) {
@@ -116,11 +157,12 @@
 		$first = 0;
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'Diagnosis'");
 		$count_no = $count->fetch_assoc();
+		echo "<div class='scoring'>";
+		echo "<h3>Diagnosis</h3>";
 		while($n <= $count_no['num']) {
 			$first++;
 			if(($first == 1)&&(($_SESSION['diagnosis_1'] >0)||($_SESSION['diagnosis_2'] >0)||($_SESSION['diagnosis_3'] >0)||($_SESSION['diagnosis_4'] >0)||
 					($_SESSION['diagnosis_5'] >0)||($_SESSION['diagnosis_6'] >0)||($_SESSION['diagnosis_7'] >0)||($_SESSION['diagnosis_8'] >0)||($_SESSION['diagnosis_9'] >0)||($_SESSION['diagnosis_10'] >0))) {
-						echo "<br/>";
 						echo "<b>The patient noted the following diagnoses. If the diagnosis is red, the patient stated the diagnosis was a reason for the office visit today. Discomfort scale is 0-4 (none to overwhelming)</b> ";
 						echo "<br/>";
 					}
@@ -137,17 +179,19 @@
 					}
 					$n++;
 		}
+		echo "</div><!-- End div for Diagnosis -->";
 	}
 	if ($_SESSION['diag_me_check'] == 1) {
 		$n = 1;
 		$first = 0;
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'Diag_me'");
 		$count_no = $count->fetch_assoc();
+		echo "<div class='scoring'>";
+		echo "<h3>Mental Health Diagnosis</h3>";
 		while ($n <= $count_no['num']) {
 			$first++;
 			if (($first == 1)&&(($_SESSION['diag_me_1'] >0)||($_SESSION['diag_me_2'] >0)||($_SESSION['diag_me_3'] >0)||($_SESSION['diag_me_4'] >0)||
 					($_SESSION['diag_me_5'] >0)||($_SESSION['diag_me_6'] >0)||($_SESSION['diag_me_7'] >0)||($_SESSION['diag_me_8'] >0)||($_SESSION['diag_me_9'] >0)||($_SESSION['diag_me_10'] >0))) {
-						echo "<br/>";
 						echo "<b>The patient noted the following diagnoses. Discomfort scale is 0-4 (none to overwhelming)</b> ";
 						echo "<br/>";
 					}
@@ -164,6 +208,7 @@
 					}
 					$n++;
 		}
+		echo "</div><!-- End div for Mental Health Diagnosis -->";
 	}
 	if ($_SESSION['grouping'] !== 10) {
 		// fxns translate new input names to old DB fields -- fxn definitions in old_assessments/health.php

@@ -2,23 +2,23 @@
 
 	/**
 	 * Loads and displays menu from menu.json configuration files.
-	 * 
+	 *
 	 * This function uses the getConfig function from config.php in order to
 	 * load and merge the menu structure data from available modules.
-	 * 
-	 * 
+	 *
+	 *
 	 * Menu item keys:
-	 * 
+	 *
 	 * | Key                               | Type       |
 	 * |-----------------------------------|------------|
 	 * | name                              | string     |
 	 * | href                              | string     |
 	 * | displayOnlyIfThisSessionKeyIsTrue | string     |
 	 * | children                          | menuItem[] |
-	 * 
-	 * 
+	 *
+	 *
 	 * Example menu.json stanza:
-	 * 
+	 *
 	 * 		"edu.usm.dagger.menu.example_menu": {
 	 * 			"name": "Clinic Statistics",
 	 * 			"href": "/clinicStatistics.php",
@@ -52,7 +52,7 @@
 
 		$menuData = getConfig('menu.json');
 		$menuHtml = menu2html($menuData);
-		echo '<ul id="nav">' . $menuHtml . '</ul><br/><br/><br/><br/>';
+		echo '<ul id="nav">' . $menuHtml . '</ul><br/>';
 	}
 
 ?>

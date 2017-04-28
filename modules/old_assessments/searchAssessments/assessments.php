@@ -63,7 +63,8 @@
 			echo "</tr>";
 		}
 		echo "</table><br>";
-		echo "<button onclick =\"search_select(form2);\" type =\"submit\" style = \"height: 25px; width: 100px\">View</button>";
+		//echo "<button onclick =\"search_select(form2);\" type =\"submit\" >View</button>";
+		echo "<input type ='submit' value='View Selected' />";
 		echo "<br>";
 		echo "<br></form>";
 

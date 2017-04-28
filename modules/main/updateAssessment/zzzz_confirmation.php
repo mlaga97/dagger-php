@@ -6,6 +6,5 @@
 
 	<center>
 		<input id="submit" type="submit" value="Submit" />
-		<input id="reset_button" type="reset" value="Reset" />
 	</center>
 </form>

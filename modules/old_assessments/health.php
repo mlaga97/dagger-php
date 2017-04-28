@@ -23,17 +23,13 @@
 		{
 			if ($type==="Child")
 			{
-				echo "<br><hr>";
-				echo "<h1><center>Current Health</center></h1>\n
-				<p><center>Please indicate if any of these current health trends are true for your child. (Mark all that apply.)</center></p>\n
+				echo "<p><center>Please indicate if any of these current health trends are true for your child. (Mark all that apply.)</center></p>\n
 				<div id=\"health\">\n
 				<table border=\"1\" id=\"health\">\n";
 			}
 			else
 			{
-				echo "<br><hr>";
-				echo "<h1><center>Current Health.</center></h1>\n
-				<p><center>Please indicate if any of these current health trends are true. (Mark all that apply.)</center></p>\n
+				echo "<p><center>Please indicate if any of these current health trends are true. (Mark all that apply.)</center></p>\n
 				<div id=\"health\">\n
 				<table border=\"1\" id=\"health\">\n";
 			}

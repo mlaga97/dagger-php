@@ -8,14 +8,14 @@
 	// Removed first and last name
 
 	// Updated Session field names
-	if ($_SESSION['patientID']!= '') {
-		echo "<tr><td width = \"200\">";
+	if (($_SESSION['patientID']!= '') && ($_SESSION ['admin'] == 1)) {
+		echo "<tr style='color:#b30000;'><td width = \"200\">";
 		echo "Patient ID";
 		echo "</td><td width = \"400\">";
 		Print_r($_SESSION['patientID']);
 	echo "</td></tr>";
-	} else {
-		echo "<tr><td width = \"200\">";
+} else if ($_SESSION ['admin'] == 1) {
+		echo "<tr style='color:#b30000;'><td width = \"200\">";
 		echo "Patient ID";
 		echo "</td><td width = \"400\">";
 		echo " Data unspecified";

@@ -20,39 +20,15 @@
 	</head>
 
 	<body>
-		<div class='container'>
+		<div class='container' >
 
-			<!-- Header -->
-			<div class='top'>
-				<div class='header login-header'>
+			<div style="height:30px;" >&nbsp;</div>
 
-					<!-- Show Shuffled Logo Array -->
-					<table align='center'>
-						<?php
-
-							$logo_array = array (
-									'<a href="https://www.usm.edu/social-work"><img src="/include/images/usm.png" style="border:solid; border-color:black;" width="100" height="100" alt="University of Southern Mississippi, School of Social Work"></a>',
-									'<a href="https://www.southalabama.edu/gcbhrc/"><img src="/include/images/usa.png" style="border:solid; border-color:black;" width="100" height="100" alt="University of Southern Alabama,     School of Social Work"></a>',
-									'<a href="https://uwf.edu/socialwork/"><img src="/include/images/uwf.png" style="border:solid; border-color:black;" width="100" height="100" alt="University of West Florida,         School of Social Work"></a>'
-							);
-
-							// Shuffle our logo array to allow random logo placement upon page refresh.
-							shuffle($logo_array);
-							foreach($logo_array as $string) {
-								echo "<td> $string </td>";
-							}
-
-						?>
-					</table>
-				</div>
-			</div>
-
-			<br/><br/><br/>
-			<div style="border:1px solid #999;background-color:lightyellow;padding:10px;text-align:center;">
-				Access to and use of this website is restricted to authorized users only. 
+			<div style="border:1px solid #999;background-color:lightyellow;padding:10px;text-align:center;height:30px;margin-bottom:100px;">
+				Access to and use of this website is restricted to authorized users only.
 			</div>
 			<!-- Login Form -->
-			<div class='login-form'>
+			<div class='login-form' style="height:300px;">
 				<form method="post" autocomplete="off" >
 					<h2>Dagger Login</h2>
 
