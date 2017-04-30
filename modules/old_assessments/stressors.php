@@ -15,14 +15,14 @@
             {
             	if ($c=="Child")
             	{
-            		echo "<h1><center>Current Stressors</center></h1>\n
+            		echo "<h3>Current Stressors (Child)</h3>\n
             		<p><center>Has your child experienced any of the following stressors (Mark all that apply.)</center></p>\n
             		<div id=\"current_stressors\">\n
             		<table border=\"1\" id=\"table_stressors\">\n";
             	}
             	else
             	{
-            		echo "<h1><center>Current Stressors</center></h1>\n
+            		echo "<h3>Current Stressors (Adult)</h3>\n
             		<p><center>(Mark all that apply.)</center></p>\n
             		<div id=\"current_stressors\">\n
             		<table border=\"1\" id=\"table_stressors\">\n";
@@ -92,7 +92,7 @@ function stressors_scoring($copy, $mysqli)
 
 		echo "<tr>";
 		echo '<td><p style = "text-align: left">
-		The patient stress level is below cutoff value. 
+		The patient stress level is below cutoff value.
 		</p>';
 		echo "SCORE: " . $copy['stress'];
 		echo "/10. The cutoff is suggested to be at 6 for high stress.<br></td>";

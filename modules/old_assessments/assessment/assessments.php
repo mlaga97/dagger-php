@@ -38,14 +38,14 @@
 
 	if ($_SESSION['c_stress_check'] == 1) {
 		echo "<div class='write'>";
-		echo "<h3>Current Stress (Child)</h3>";
-		write_current_stress("child");  // Hmm.. should it be "Child" with a capital C ?
+		// Assessment header in fxn
+		write_current_stress("Child");
 		echo "</div>";
 	}
 
 	if ($_SESSION['c_stress_check'] == 1) {
 		echo "<div class='write'>";
-		echo "<h3>Stressors (Child)</h3>";
+		// Assessment header in fxn
 		write_childStressors($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
@@ -53,11 +53,11 @@
 
 	if($_SESSION['stress_check'] == 1) {
 		echo "<div class='write'>";
-		echo "<h3>Stressors (Adult)</h3>";
+		// Assessment header in fxn
 		write_stressors($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 		echo "<div class='write'>";
-		echo "<h3>Current Stress (Adult)</h3>";
+		// Assessment header in fxn
 		write_current_stress($_SESSION['assessment_type']);
 		echo "</div>";
 	}

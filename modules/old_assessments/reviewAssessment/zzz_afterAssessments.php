@@ -29,7 +29,7 @@
 		$count_no = $count->fetch_assoc();
 		echo "<!-- Begin div stress scoring -->";
 		echo "<div class='scoring'>";
-		echo "<h3>Stress</h3>";
+		echo "<h3>Stressors</h3>";
 		while($n <= $count_no['num']) {
 			if(isset($_SESSION['s_' .$n])) {
 				// Exclude NULL values from stressors

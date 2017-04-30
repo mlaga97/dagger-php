@@ -6,4 +6,3 @@
 <br/><br/>
 
 <div id="assessment_selection" style="display: none;">
-	<h3>Select Assessments</h3>

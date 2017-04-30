@@ -1,6 +1,5 @@
-<br>
-                	</div>
-                <br>
+                    
+                	</div><!-- End div id assessement_selection -->
 
                 <!--Check-Box end.-->
 
