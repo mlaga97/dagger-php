@@ -47,6 +47,7 @@
 <label><input type="radio" name="demographics_livingArrangements" value="with Friends"/>with Friends</label><br/>
 <label><input type="radio" name="demographics_livingArrangements" value="Foster Care"/>Foster Care</label><br/>
 <label><input type="radio" name="demographics_livingArrangements" value="Shelter"/>Shelter</label><br/>
+<label><input type="radio" name="demographics_livingArrangements" value="Street Homeless"/>Street Homeless</label><br/>
 <label><input type="radio" name="demographics_livingArrangements" value="Alone"/>Alone</label><br/>
 <label><input type="radio" name="demographics_livingArrangements" value="No Response"/><i>No Response</i></label><br/>
 
