@@ -4,7 +4,6 @@
 <label><input type="radio" name="activityType" value="Warm Hand Off"/>Warm Hand Off</label><br/>
 <label><input type="radio" name="activityType" value="Warm Hand Off and Consult"/>Warm Hand Off and Consult</label><br/>
 <label><input type="radio" name="activityType" value="Consult Only"/>Consult Only</label><br/>
-<label><input type="radio" name="activityType" value="Follow-up"/>Follow-up</label><br/>
 <label><input type="radio" name="activityType" value="Phone Call"/>Phone Call</label><br/>
 <label><input type="radio" name="activityType" value="No Show"/>No Show</label><br/>
 
