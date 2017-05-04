@@ -6,26 +6,13 @@
 	postToSession(array('status', 'previous'));
 
 	$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
-
-	foreach($_SESSION as $key=>$value) {
-		if(!in_array($key, getConfigKey("edu.usm.dagger.main.assessment.dontReset"))) {
-			$_SESSION[$key] = -1;
-
-			if(in_array($key, getConfigKey("edu.usm.dagger.main.assessment.setBlank"))) {
-				$_SESSION[$key] = '';
-			}
-		}
-	}
-
-?>
-
+?><!DOCTYPE html>
 <html>
 	<head>
-		<title>Brief <?php print_r($_SESSION['assessment_type']); ?> Assessment</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Brief Assessment">
+		<meta charset="utf-8">
+		<title><?php print_r($_SESSION['assessment_type']); ?> Assessment</title>
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
-		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
 
 	<body>
@@ -35,32 +22,24 @@
 			<?php showMenu(); ?>
 
 			<!-- Header -->
+
+			<!-- Header -->
 			<div class='top'>
-				<div class='logo'>
-					<?php echo $_SESSION['logo']?>
-				</div>
 				<div class='header'>
 					<div class='title'>
-						<?php
-							if($_SESSION['visit_type'] === "Comprehensive") {
-								echo "<h1>Brief ";
-								print_r($_SESSION['assessment_type']);
-								echo "Clinical Screening</h1>";
-							} else {
-								echo '<h1>Brief Patient Visit</h1>';
-							}
-						?>
-					</div>
-					<?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today);?>
-				</div>
-			</div>
+						<h1>Assessment</h1>
+					</div> <!-- End div class title -->
+				</div> <!-- End div class header -->
+			</div> <!-- End div class top -->
 
-			<br/><br/><br/>
 
 			<!-- Body -->
-			<form class='assessment_form' action='/postassessment.php' method='post'>
+			<form class='assessment_form' action='/postassessment.php' method='post' autocomplete='off' >
 				<?php moduleLoad('assessment'); ?>
 			</form>
+
+			<!-- Show Footer -->
+			<?php include 'modules/main/footer.php'; ?>
 
 		</div>
 	</body>

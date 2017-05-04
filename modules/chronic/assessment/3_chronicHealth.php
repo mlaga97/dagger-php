@@ -1,61 +1,111 @@
-<?php echo '<div id="chronic_data"';
-                   if ($_SESSION['grouping']== 10){ echo ' style="display: none;">';} else {echo '>';}
-                    echo '
-                        <br>
-                        <br>
-                        <center><h1>Chronic Health Monitoring</h1><p>Please enter the following health information.</p><p>Date format: YYYY/MM/DD</p><p>If you do not have test results to enter, enter "NA" in the results.</p></center>
-                        <table id="chronic">
-                            <tr><td>
-                                    <table border="1" align="center" id="table_sugar">
-                                        <tr><th class="tdtopic" colspan="6">Diabetes</th></tr>
-                                        <tr><td class="t_name"><label for="a1c">Hemoglobin A1C (%):</label></td>
-                                            <td class="t_input"><input type="text" autofocus="autofocus" name="valueA1C" id="valueA1C"></td>
-                                            <td class="date_label"><label for="a1c">Test Date:</label></td>
-                                            <td class="t_date"><input name="A1CDate" id="A1CDate" type="date" placeholder=""></td>
-                                        </tr>
-                                        <tr><td class="t_name"><label for="eAG">Blood Sugar (eAG) (mg/dl):</label></td>
-                                            <td class="t_input"><input type="text" name="valueEAG" id="valueEAG" ></td>
-                                            <td class="date_label"><label for="a1c">Test Date:</label></td>
-                                            <td class="t_date"><input name="eAGDate" id="eAGDate" type="date" placeholder=""></td>
-                                        </tr>
-                                    </table><!-- close table_sugar -->
-                                </td></tr> 
-                            <tr><td>
-                                    <table border="1" align="center" id="table_colestoral">
-                                        <tr><th class="tdtopic" colspan="6">Cholesterol (mg/dL)</th></tr>
-                                        <tr><td class="t_name"><label for="a1c">Low-Density Lipoproteins (LDL):</label></td>
-                                            <td class="t_input"><input type="text"  name="valueLDL" id="valueLDL"></td>
-                                            <td class="t_name"><label for="eAG">High-Density Lipoproteins (HDL):</label></td>
-                                            <td class="t_input"><input type="text" name="valueHDL" id="valueHDL"></td>
-                                            <td class="date_label"><label for="col_date">Test Date:</label></td>
-                                            <td class="t_date"><input name="cholestoralDate" id="cholestoralDate" type="date" placeholder=""></td>
-                                        </tr>
-                                    </table><!-- close table_a1c -->
-                                </td></tr> 
-                            <tr><td>
-                                    <table border="1" align="center" id="table_blood">
-                                        <tr><th class="tdtopic" colspan="6">Blood Pressure (mm/Hg)</th></tr>
-                                        <tr><td class="t_name"><label for="a1c">Systolic:</label></td>
-                                            <td class="t_input"><input type="text"  name="valueSYS" id="valueSYS"></td>
-                                            <td class="t_name"><label for="eAG">Diastolic:</label></td>
-                                            <td class="t_input"><input type="text" name="valueDIA" id="valueDIA"></td>
-                                            <td class="date_label"><label for="bp_date">Test Date:</label></td>
-                                            <td class="t_date"><input name="bpDate" id="bpDate" type="date" placeholder=""></td>
-                                        </tr>
-                                    </table><!-- close table_a1c -->
-                                </td></tr>
-                            <tr><td>
-                                    <table border="1" align="center" id="table_physical">
-                                        <tr><th class="tdtopic" colspan="6">Physical</th></tr>
-                                        <tr><td class="t_name"><label for="height">Height (inches):</label></td>
-                                            <td class="t_input"><input type="text" autofocus="autofocus" name="valueHeight" id="valueHeight"></td>
-                                            <td class="t_name"><label for="weight">Weight (lbs.):</label></td>
-                                            <td class="t_input"><input type="text" name="valueWeight" id="valueWeight"></td>
-                                            <td class="date_label"><label for="weight">Test Date:</label></td>
-                                            <td class="t_date"><input name="physicalDate" id="physicalDate" type="date" placeholder=""></td>
-                                        </tr>
-                                    </table><!-- close table_a1c -->
-                                </td></tr>
-                        </table><!-- end table chronic -->
-                    </div>';
-?><br/>
+<!-- TODO: Split into own module. -->
+
+<?php if ($_SESSION['grouping'] != 10) { ?>
+
+<h3>New Hemoglobin A1C Record</h3>
+
+<label><input type="radio" name="chronicHealth_A1C_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_A1C', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_A1C_value');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_A1C_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_A1C', false, false);clearFields('dagger.module.qualtrics.chronicHealth_A1C');" checked/>No</label>
+
+<div id='dagger.module.qualtrics.chronicHealth_A1C' style='display: none; margin-left: 50px;'>
+	<br/>
+	<?php // Valid ranges for chronicHealth provided by Dr. Lauren Zakaras, clinical director MIHDP ?>
+	<label>Hemoglobin A1C</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_A1C_value" name="chronicHealth_A1C_value" min="3" max="30" step="0.1" /> <label>%</label>
+	<br />
+	<br />
+	<label>Date</label> <input type="date" name="chronicHealth_A1C_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" />
+</div>
+
+<br/>
+<br/>
+<hr/>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<h3>New Blood Sugar eAG Record</h3>
+
+<label><input type="radio" name="chronicHealth_eAG_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_eAG', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_eAG_value');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_eAG_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_eAG', false, false);clearFields('dagger.module.qualtrics.chronicHealth_eAG');" checked />No</label>
+
+<div id='dagger.module.qualtrics.chronicHealth_eAG' style='display: none; margin-left: 50px;'>
+	<br/>
+	<br />
+	<label>Blood Sugar eAG</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_eAG_value" name="chronicHealth_eAG_value" min="20" max="1500" /> <label>mg/dL</label>
+	<br/>
+	<br />
+	<label>Date</label> <input type="date" name="chronicHealth_eAG_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
+</div>
+
+<br/>
+<br/>
+<hr/>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<h3>New Cholesterol Record</h3>
+
+<label><input type="radio" name="chronicHealth_cholesterol_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_cholesterol', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_cholesterol_LDL');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_cholesterol_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_cholesterol', false, false);clearFields('dagger.module.qualtrics.chronicHealth_cholesterol');" checked />No</label>
+
+<div id='dagger.module.qualtrics.chronicHealth_cholesterol' style='display: none; margin-left: 50px;'>
+	<br/>
+	<label>LDL Cholesterol</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_cholesterol_LDL" name="chronicHealth_cholesterol_LDL" min="15" max="1300" /> <label>mg/dL</label>
+	<br/>
+	<br/>
+	<label>HDL Cholesterol</label> <input type="number" name="chronicHealth_cholesterol_HDL" min="15" max="250" /> <label>mg/dL</label>
+	<br/>
+	<br/>
+	<label>Date</label>
+	<input type="date" name="chronicHealth_cholesterol_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
+</div>
+
+<br/>
+<br/>
+<hr/>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<h3>New Blood Pressure Record</h3>
+
+<label><input type="radio" name="chronicHealth_bloodPressure_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_bloodPressure', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_bloodPressure_systolic');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_bloodPressure_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_bloodPressure', false, false);clearFields('dagger.module.qualtrics.chronicHealth_bloodPressure');" checked />No</label>
+
+<div id='dagger.module.qualtrics.chronicHealth_bloodPressure' style='display: none; margin-left: 50px;'>
+	<br/>
+	<label>Systolic</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_bloodPressure_systolic" name="chronicHealth_bloodPressure_systolic" min="30" max="380" />
+	<br/>
+	<br/>
+	<label>Diastolic</label> <input type="number" name="chronicHealth_bloodPressure_diastolic" min="25" max="300" />
+	<br/>
+	<br/>
+	<label>Date</label>
+	<input type="date" name="chronicHealth_bloodPressure_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
+</div>
+
+<br/>
+<br/>
+<hr/>
+
+<!-- ----------------------------------------------------------------------- -->
+
+<h3>New Height and Weight Record</h3>
+
+<label><input type="radio" name="chronicHealth_physical_check" value='1' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_physical', true, true);sendFocus('dagger.module.qualtrics.chronicHealth_physical_height');" required />Yes</label>
+<label><input type="radio" name="chronicHealth_physical_check" value='0' onclick="toggleDisplay('dagger.module.qualtrics.chronicHealth_physical', false, false);clearFields('dagger.module.qualtrics.chronicHealth_physical');" checked />No</label>
+
+<div id='dagger.module.qualtrics.chronicHealth_physical' style='display: none; margin-left: 50px;'>
+	<br/>
+	<label>Height</label> <input type="number" id="dagger.module.qualtrics.chronicHealth_physical_height" name="chronicHealth_physical_height" min="24" max="108" step="0.1" /> <label>in.</label>
+	<br/>
+	<br/>
+	<label>Weight</label> <input type="number" name="chronicHealth_physical_weight" min="1" max="1999" step="0.1" /> <label>lbs.</labe>
+	<br/>
+	<br/>
+	<label>Date</label> <input type="date" name="chronicHealth_physical_date" onblur="formatDate(this);" max="<?php echo date('Y-m-d')?>" placeholder="mm/dd/yyyy" >
+</div>
+
+<br/>
+<br/>
+<hr/>
+
+<?php } ?>

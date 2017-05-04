@@ -1,9 +1,14 @@
 {
 	"edu.usm.dagger.main.insert.whitelist": [
-		"assessment_type", "contact_type", "visit_type"
+		"assessment_type", "contact_type", "visit_type", "clinic_id"
 	],
 
-	"edu.usm.dagger.main.assessment.dontReset": [
-		"assessment_type", "contact_type", "visit_type"
-	]
+	"edu.usm.dagger.main.insert.deprecate": [
+		"assessment_type", "contact_type", "visit_type", "clinic_id"
+	],
+
+	"edu.usm.dagger.main.insert.transform": {
+		"activityType": "contact_type",
+		"clinicID": "clinic_id"
+	}
 }

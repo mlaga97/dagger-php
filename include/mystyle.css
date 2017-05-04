@@ -1,105 +1,25 @@
 
-
-/* Header Classes */
-.top {
-	height: 150px;
-}
-.logo {
-	width: 150px;
-	float: left;	
-}
-.header {
-	float: right;
-	padding-top: 52px;
-	height: 122px;
-	width: 650px;
-	text-align: center;
-	margin: auto;
-}
-
-
-/* Other Classes */
-.confirmation {
-	background-color: #F5A9A9;
-}
-
-
-.welcome-message {
-	text-align: center;
-	margin: auto;
-}
-
-
-
-/* Base ID's */
-#personal {
-	background-color: #F2E0F7;
-}
-
-/* Login Page Classes */
-.login-header {
-	float: none;
-}
-.login-form {
-	text-align: center;
-	margin: auto;
-}
-.login-error {
-	text-align: center;
-	margin: auto;
-	color: red;
-}
-
-
 /*******************************************************************************
 *****            Other stuff that hasn't been dealt with yet...            *****
 *******************************************************************************/
 
-table#major_events{
+table#major_events, table#symptoms_questions,
+table#chronic, table#table_sugar, table#table_chol, table#table_blood, table#phq_scoring_guide,
+table#health, table#c_stress, table#bio_mark, table#table_stressors, table#table_pp_steps,
+table#table_pp_area, table#life_questions, table#gad_questions, table#phq_questions,
+table#cd_questions, table#dast_questions, table#duke_questions, table#duke_physical_questions,
+table#duke_week_questions, table#duke_social_questions, table#duke_living_questions,
+table#psc_questions, table#psc_fu_questions, table#audit_questions, table#cage_questions,
+table#crafft_questions, table#self_questions, table#self_questions_smoking {
 	width: 800px;
 }
 
-table#symptoms_questions{
-	width: 800px;
-}
-
-table#chronic{
-	width: 800px;
-}
-
-table#table_sugar{
-	width: 800px;
-}
-
-table#table_chol{
-	width: 800px;
-}
-               
 table#table_physical{
 	width: 400px;
 }
 
-
-table#table_blood{
+#symptom_section {
 	width: 800px;
-}
-
-table#phq_scoring_guide{
-	width: 800px;
-}
-
-#symptom_section{
-	width: 800px;
-}
-
-table#health{
-	width: 800px;
-}
-
-#gen_header{
-	border-style: solid;
-	width: 800px;
-	color: blue;
 }
 
 td.date_label{
@@ -108,7 +28,7 @@ td.date_label{
 
 td.gad_scale{
 	width: 50px;
-} 
+}
 
 td.c_ed{
 	width: 20px;
@@ -117,7 +37,7 @@ td.c_ed{
 
 td.crafft_scale{
 	width: 100px;
-} 
+}
 
 td.clinic_select
 {
@@ -148,11 +68,7 @@ td.pcl_scale{
 	width: 75px;
 }
 
-td.personal{
-	width: 150px;
-	text-align:right;
-	
-}
+
 td.audit_scale{
 	width: 75px;
 }
@@ -172,16 +88,8 @@ td.crafft_scale{
 .tdtopic{
 	background-color: #F2E0F7;
 }
-table#c_stress
-{
-	width: 800px;
-        
-}
-table#bio_mark
-{
-	width: 800px;
-        
-}
+
+
 .t_name{
 	width: 75px;
 }
@@ -189,103 +97,27 @@ table#bio_mark
 	width: 100px;
 }
 
-table#table_stressors{
-	width: 800px;	
-}
-
-
 
 td.bo{
 	width: 50px;
         text-align: right;
-        
+
 }
 td.interfere_input{
-	width: 75px;       
+	width: 75px;
 }
-table#table_pp_steps_subtable
-{
-	width: 300px;	
+
+table#table_pp_steps_subtable {
+	width: 300px;
 }
-table#table_pp_steps
-{
-	width: 800px;	
-}
-table#table_pp_area
-{
-	width: 800px;	
-}
+
 td.c_liv{
 	width: 100px;
-        text-align: right;
-        
-}
-
-table#life_questions{
-	width: 800px;	
-}
-
-table#gad_questions{
-	width: 800px;	
-}
-
-table#phq_questions{
-	width: 800px;
-}
-
-table#cd_questions{
-	width: 800px;
-}
-table#dast_questions{
-	width: 800px;
+  text-align: right;
 }
 
 td.dast_scale{
 	width: 100px;
-}
-
-table#duke_questions{
-	width: 800px;
-}
-table#duke_physical_questions{
-	width: 800px;
-}
-table#duke_week_questions{
-	width: 800px;
-}
-table#duke_social_questions{
-	width: 800px;
-}
-table#duke_living_questions{
-	width: 800px;
-}
-
-table#psc_questions{
-	width: 800px;
-}
-
-table#psc_fu_questions{
-	width: 800px;
-}
-
-table#audit_questions{
-	width: 800px;
-}
-
-table#cage_questions{
-	width: 800px;
-}
-
-table#crafft_questions{
-	width: 800px;
-}
-
-table#self_questions{
-	width: 800px;
-}
-
-table#self_questions_smoking{
-	width: 800px;
 }
 
 
@@ -295,7 +127,7 @@ table#self_questions_smoking{
 }
 .liv{
 	text-align:left;
-	
+
 }
 .st{
 	text-align:center;
@@ -306,7 +138,7 @@ table#self_questions_smoking{
 }
 .ms{
 	text-align:left;
-	width: 100px;	
+	width: 100px;
 }
 .ed{
 	text-align: left;
@@ -320,14 +152,14 @@ table#self_questions_smoking{
 .demo_input{
 	width: 10px;
 }
-.stressor_input{	
+.stressor_input{
 	width: 10px;
 }
 td.demo{
 	width: 100px;
 }
 table#demo{
-	width: 790px;	
+	width: 790px;
 }
 table#table_sex{
 	width: 200px;
@@ -420,17 +252,20 @@ list-style-type:none;
  border: 1px solid white;
  border-bottom: none;
  width: 800px;
+ margin-bottom: 40px; /* Removed <br> from /include/menu.php */
 }
 
 #nav li a, #nav li {
  float: left;
- 
+
 }
 
 #nav li {
  list-style: none;
  position: relative;
  width: 200px;
+
+ z-index: 1; /* fix for scaled radio buttons displaying above menu dropdown */
 }
 
 #nav li a {
@@ -444,14 +279,14 @@ list-style-type:none;
  border-left: 1px solid #292929;
  border-bottom: 1px solid #232323;
  border-top: 1px solid #545454;
-  
+
 }
 
 #nav li a:hover {
  background: #2a0d65;
  background: -moz-linear-gradient(top, #11032e, #2a0d65);
  background: -webkit-gradient(linear, left top, left bottom, from(#11032e), to(#2a0d65));
-  
+
 }
 
 
@@ -471,8 +306,8 @@ list-style-type:none;
  left: 0;
  top: 100%;
  padding: 0; margin: 0;
-  
- 
+
+
 }
 
 #nav li:hover > ul {
@@ -495,13 +330,13 @@ list-style-type:none;
 
 #nav li ul li ul {
  display: none;
-  
+
 }
 
 #nav li ul li:hover ul {
  left: 100%;
  top: 0;
-  
+
 }
 
 input.date {
@@ -526,7 +361,7 @@ background: url(images/calendar.png);
 #hypertension_section, #hypertension_results, #pediatric_section, #pediatric_results{
 	font-family: arial, helvetica;
 	font-size: 120%;
-	
+
 }
 
 #hypertension_section h3, #hypertension_results h3{
@@ -535,10 +370,10 @@ background: url(images/calendar.png);
 
 #hypertension_section table, #hypertension_results table, #pediatric_section table, #pediatric_results table {
     border-collapse: collapse;
-	
+
 }
 
-#hypertension_section table, #pediatric_section table, 
+#hypertension_section table, #pediatric_section table,
 #hypertension_results table,  #hypertension_results td,
 #pediatric_results table, #pediatric_results td {
     border: 1px solid black;
@@ -548,7 +383,7 @@ background: url(images/calendar.png);
     padding: 5px 10px 5px 10px;
     text-align: left;
 	vertical-align: middle;
-	
+
 
 }
 
@@ -567,11 +402,46 @@ background: url(images/calendar.png);
 }
 
 #hypertension_section .hypertension_row, #hypertension_results td, #pediatric_section .pediatric_row, #pediatric_results td{
-	
+
 	background-color: #EFFBFB;
 }
 
 */
+
+
+/* Header Classes */
+.top {
+	height: 100px;
+}
+.logo {
+	width: 100px;
+	float: left;
+}
+.header {
+	height: 12px;
+	text-align: center;
+	margin: auto;
+}
+
+
+/* Other Classes */
+.confirmation {
+	background-color: #F5A9A9;
+}
+
+/* Login Page Classes */
+.login-header {
+	float: none;
+}
+.login-form {
+	text-align: center;
+	margin: auto;
+}
+.login-error {
+	text-align: center;
+	margin: auto;
+	color: red;
+}
 
 
 /* .radio_caption class is used with <label> tags wrapped around radio button inputs */
@@ -588,18 +458,10 @@ background: url(images/calendar.png);
 .question_criteria {
 	font-size: 120%;
 	font-weight:bold;
-	
+
 }
 
-
-
-
-/* New testing 2/26/17 - MG */
-
 /* Font stack adapted from http://www.cssfontstack.com/Tahoma set to Golden Mean proportion */
-
-
-
 body{
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	font-size: 16px;
@@ -608,16 +470,23 @@ body{
 	font-weight: 400;
 	line-height: 26px;
 	color: #333;
-	
+
 	background-color: #dcdcdc;
 	margin:auto;
 	width:1040px;
+	height: 100%;
 }
 
 .container {
 	width: 800px;
 	background-color: #FBFBFB;
-	padding:0px 120px 60px 120px
+	padding:0px 120px 0px 120px;
+}
+
+.footer {
+	margin-top: 80px;
+	height: 100px;
+	width: 800px;
 
 }
 
@@ -653,21 +522,117 @@ pre {
 
 /* End font stack */
 
-
+/*
 input[type='radio'], input[type='checkbox']{
 	transform:scale(1.6);
 	margin:10px;
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#ccc; 
+    padding:5px 15px;
+    background:#ccc;
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
 	transform:scale(1.6);
 }
+
+*/
+
+/* -----------------------------------------------------------------   */
+
+input,
+select,
+option {
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 26px;
+    color: #333;
+    /* Review other color options for inputs */
+
+    margin-left: 10px;
+
+}
+/* special sizing for input type radio -- love special things */
+
+input[type=radio],
+input[type=checkbox] {
+    min-height: initial;
+    min-width: initial;
+    transform: scale(1.65);
+
+	margin-top: 10px;   /* replace with some vertical alignment to input-container to center all inputs?? */
+}
+
+input[type=radio] {
+	margin-left:25px;
+}
+
+input[type=radio],
+input[type=checkbox] {
+	margin-right:10px;
+}
+
+
+input[type=submit],
+input[type=button],
+button {
+    min-height: initial;
+    min-width: initial;
+    padding: 8px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: #eeeeee;
+
+		font-size: 18px; /* Overwrite default font-size for inputs */
+		margin:0px 15px 0px 15px;
+
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover,
+input[type=button]:hover,
+button:hover {
+	border-color: #bbbbbb;
+    box-shadow: 2px 2px 4px rgba(105, 105, 105, 0.1);
+}
+input[type=submit]:focus,
+input[type=button]:focus,
+button:focus {
+    border-color: #bbbbbb;
+    background: aliceblue;
+    box-shadow: 2px 2px 4px rgba(105, 105, 105, 0.1);
+}
+
+input[type=submit]:disabled,
+input[type=button]:disabled,
+button:disabled {
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+}
+
+
+/* space for cursor away from input border */
+input[type=text],
+input[type=password],
+input[type=date],
+input[type=number],
+select {
+    padding-left: 10px;
+		/* min-width: 150px; */
+    min-height: 32px;
+}
+
+
+/* ------------------------------------------------------   */
+
 
 input[type=reset] {
 	display:none;
@@ -684,12 +649,10 @@ td{
 }
 
 hr{
-	border-top: 1px solid #8c8b8b;
-	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #efefef;
 }
 
-
-
-
-
-
+.scoring, .write {
+	margin-bottom:40px;
+}

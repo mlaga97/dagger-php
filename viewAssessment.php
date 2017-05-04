@@ -30,52 +30,45 @@
 ?>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>Past Result Data Sheet</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="Past Result Data Sheet">
+		<meta charset="utf-8">
+		<title>Patient Activity</title>
 		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
 	</head>
-	<body onload="clearForm();">
+	<body>
 	<div class="container">
-		<?php echo $_SESSION['logo'] ?><!--Pulling string from the database-->
-		<center><h1>Assessment Evaluation</h1></center>
-		<center><?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today); ?></center>
 
-		<script type="text/javascript"> //Our function to print the webpage. 
-			function printpage() {
-				window.print();
-			}
-		</script>
+		<!-- Menu -->
+		<?php showMenu(); ?>
 
-		<center>
-			<?php
+		<div class="top">
+				<center>
+					<h1>Patient Record</h1>
+				</center>
+		</div>
 
-				// Show Modules
-				moduleLoad('viewAssessment');
+		<div>
+			<!-- Before moduleLoad('viewAssessment'); -->
+				<?php
+					// Show Modules
+					moduleLoad('viewAssessment');
+				?>
+			<!-- After moduleLoad('viewAssessment'); -->
+		</div>
 
-			?>
-		</center>
 
-		<br/><br/>
 
-		<p style="color: red; text-align: center">
-			<b>Warning: once you click these links, you will not be able to return.</b>
-		</p>
-
-		<center>
+		<div style="text-align:center;margin-top:50px;">
 			<input type="submit" value="Assessment"
-				style="height: 25px; width: 100px"
-				onclick="window.location='/preassessment.php'" /> <input type="submit"
-				value="Search" style="height: 25px; width: 100px"
-				onclick="window.location='/searchAssessments.php';" /> <input type="button"
-				style="height: 25px; width: 100px" value="Print this page"
-				onclick="printpage()" />
-		</center>
+				onclick="window.location='/preassessment.php'" />
+				<input type="submit"
+				value="Search"
+				onclick="window.location='/searchAssessments.php';" />
+		</div>
 
 		<?php include 'modules/main/footer.php'?>
-	</div> <!-- Close DIV Class 'container' -->
+	</div>
 	</body>
 </html>

@@ -19,22 +19,17 @@
 		"grouping", "logo", "status", "previous", "test_acc"
 	],
 
-	"edu.usm.dagger.main.assessment.dontReset": [
-		"id", "uname", "pswd", "university_id",
-		"clinic_id", "status", "logo", "user_id",
-		"first_name", "last_name", "GRHOP_standard",
-		"previous", "admin", "grouping"
-	],
-
 	"edu.usm.dagger.main.login.user.keys": [
 		"university_id", "clinic_id", "admin", "grouping", "test_acc", "logo"
 	],
 
 	"edu.usm.dagger.main.insert.whitelist": [
-		"id", "user_id", "clinic_id", "date",
+		"id", "user_id", "date", "q_26", "assessment_time"
+	],
 
-		"assessment_time",
+	"edu.usm.dagger.main.insert.deprecate": [
+	],
 
-		"q1", "q2", "q3", "q_26"
-	]
+	"edu.usm.dagger.main.insert.transform": {
+	}
 }
