@@ -1,0 +1,14 @@
+{
+	"module_name": "gse",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"gse_check": "GSE"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"gse_check",
+
+		"GSE_1", "GSE_2", "GSE_3", "GSE_4", "GSE_5",
+		"GSE_6", "GSE_7", "GSE_8", "GSE_9", "GSE_10"
+	]
+}
