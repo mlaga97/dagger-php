@@ -1,0 +1,347 @@
+{
+	"metadata": {
+		"class": "",
+		"title": "RAND 36-Item Health Survey",
+		"text": "SF-36",
+		"id": "sf36_check"
+	},
+	"types": {
+		"SF36_Scale_1": {
+			"type": "radioOptions",
+			"options": {
+				"Excellent": 100,
+				"Very Good": 75,
+				"Good": 50,
+				"Fair": 25,
+				"Poor": 0
+			}
+		},
+		"SF36_Scale_2": {
+			"type": "radioOptions",
+			"options": {
+				"Much Better": 100,
+				"Somewhat Better": 75,
+				"About the Same": 50,
+				"Somewhat Worse": 25,
+				"Much Worse": 0
+			}
+		},
+		"SF36_Scale_3": {
+			"type": "scale",
+			"options": {
+				"A Lot": 0,
+				"A Little": 50,
+				"Not at All": 100
+			}
+		},
+		"SF36_Scale_4": {
+			"type": "scale",
+			"options": {
+				"Yes": 0,
+				"No": 100
+			}
+		},
+		"SF36_Scale_5": {
+			"type": "radioOptions",
+			"options": {
+				"Not at All": 100,
+				"Slightly": 75,
+				"Moderately": 50,
+				"Quite a Bit": 25,
+				"Extremely": 0
+			}
+		},
+		"SF36_Scale_6": {
+			"type": "radioOptions",
+			"options": {
+				"None": 100,
+				"Very Mild": 80,
+				"Mild": 60,
+				"Moderate": 40,
+				"Severe": 20,
+				"Very Severe": 0
+			}
+		},
+		"SF36_Scale_7": {
+			"type": "radioOptions",
+			"options": {
+				"Not at All": 100,
+				"A little": 75,
+				"Moderately": 50,
+				"Quite a bit": 25,
+				"Extremely": 0
+			}
+		},
+		"SF36_Scale_8": {
+			"type": "scale",
+			"options": {
+				"All": 100,
+				"Most": 80,
+				"A good bit": 60,
+				"Some": 40,
+				"A little": 20,
+				"None": 0
+			}
+		},
+		"SF36_Scale_9": {
+			"type": "scale",
+			"options": {
+				"All": 0,
+				"Most": 20,
+				"A good bit": 40,
+				"Some": 60,
+				"A little": 80,
+				"None": 100
+			}
+		},
+		"SF36_Scale_10": {
+			"type": "radioOptions",
+			"options": {
+				"All": 0,
+				"Most": 25,
+				"Some": 50,
+				"A little": 75,
+				"None": 100
+			}
+		},
+		"SF36_Scale_11": {
+			"type": "scale",
+			"options": {
+				"Defininitely True": 0,
+				"Mostly True": 25,
+				"Don't Know": 50,
+				"Mostly False": 75,
+				"Definitely False": 100
+			}
+		},
+		"SF36_Scale_12": {
+			"type": "scale",
+			"options": {
+				"Defininitely True": 100,
+				"Mostly True": 75,
+				"Don't Know": 50,
+				"Mostly False": 25,
+				"Definitely False": 0
+			}
+		}
+	},
+	"sections": [
+		{
+			"questions": [
+				{
+					"id": "SF36_1",
+					"text": "In general, would you say your health is:",
+					"type": "SF36_Scale_1"
+				},
+				{
+					"id": "SF36_2",
+					"text": "Compared to one year ago, how would you rate your health in general now?",
+					"type": "SF36_Scale_2"
+				}
+			]
+		},
+		{
+			"description": "The following items are about activities you might do during a typical day. Does your health now limit you in these activities. If so, how much?",
+			"questions": [
+				{
+					"id": "SF36_3",
+					"text": "Vigorous activities, such as running, lifting heavy objects, participating in strenuous sports",
+					"type": "SF36_Scale_3"
+				},
+				{
+					"id": "SF36_4",
+					"text": "Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf",
+					"type": "SF36_Scale_3"
+				},
+				{
+					"id": "SF36_5",
+					"text": "Lifting or carrying groceries",
+					"type": "SF36_Scale_3"
+				},
+				{
+					"id": "SF36_6",
+					"text": "Climbing several flights of stairs",
+					"type": "SF36_Scale_3"
+				},
+				{
+					"id": "SF36_7",
+					"text": "Climbing one flight of stairs",
+					"type": "SF36_Scale_3"
+				},
+				{
+					"id": "SF36_8",
+					"text": "Bending, kneeling, or stooping",
+					"type": "SF36_Scale_3"
+				},
+				{
+					"id": "SF36_9",
+					"text": "Walking more than a mile",
+					"type": "SF36_Scale_3"
+				},
+				{
+					"id": "SF36_10",
+					"text": "Walking several blocks",
+					"type": "SF36_Scale_3"
+				},
+				{
+					"id": "SF36_11",
+					"text": "Walking one block",
+					"type": "SF36_Scale_3"
+				},
+				{
+					"id": "SF36_12",
+					"text": "Bathing or dressing yourself",
+					"type": "SF36_Scale_3"
+				}
+			]
+		},
+		{
+			"description": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health?",
+			"questions": [
+				{
+					"id": "SF36_13",
+					"text": "Cut down the amount of time you spent on work or other activities",
+					"type": "SF36_Scale_4"
+				},
+				{
+					"id": "SF36_14",
+					"text": "Accomplished less than you would like",
+					"type": "SF36_Scale_4"
+				},
+				{
+					"id": "SF36_15",
+					"text": "Were limited in the kind of work or other activities",
+					"type": "SF36_Scale_4"
+				},
+				{
+					"id": "SF36_16",
+					"text": "Had difficulty performing the work or other activities (for example, it took extra effort)",
+					"type": "SF36_Scale_4"
+				}
+			]
+		},
+		{
+			"description": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious)?",
+			"questions": [
+				{
+					"id": "SF36_17",
+					"text": "Cut down the amount of time you spent on work or other activities",
+					"type": "SF36_Scale_4"
+				},
+				{
+					"id": "SF36_18",
+					"text": "Accomplished less than you would like",
+					"type": "SF36_Scale_4"
+				},
+				{
+					"id": "SF36_19",
+					"text": "Didn't do work or other activities as carefully as usual",
+					"type": "SF36_Scale_4"
+				}
+			]
+		},
+		{
+			"questions": [
+				{
+					"id": "SF36_20",
+					"text": "During the past 4 weeks, to what extent has your physical health or emotional problems interfered with your normal social activities with family, friends, neighbors, or groups?",
+					"type": "SF36_Scale_5"
+				},
+				{
+					"id": "SF36_21",
+					"text": "How much bodily pain have you had during the past 4 weeks?",
+					"type": "SF36_Scale_6"
+				},
+				{
+					"id": "SF36_22",
+					"text": "During the past 4 weeks, how much did pain interfere with your normal work (including both work outside the home and housework)?",
+					"type": "SF36_Scale_7"
+				}
+			]
+		},
+		{
+			"description": "These questions are about how you feel and how things have been with you during the past 4 weeks. For each question, please give the one answer that comes closest to the way you have been feeling. How much of the time during the past 4 weeks...",
+			"questions": [
+				{
+					"id": "SF36_23",
+					"text": "Did you feel full of pep?",
+					"type": "SF36_Scale_8"
+				},
+				{
+					"id": "SF36_24",
+					"text": "Have you been a very nervous person?",
+					"type": "SF36_Scale_9"
+				},
+				{
+					"id": "SF36_25",
+					"text": "Have you felt so down in the dumps that nothing could cheer you up?",
+					"type": "SF36_Scale_9"
+				},
+				{
+					"id": "SF36_26",
+					"text": "Have you felt calm and peaceful?",
+					"type": "SF36_Scale_8"
+				},
+				{
+					"id": "SF36_27",
+					"text": "Did you have a lot of energy?",
+					"type": "SF36_Scale_8"
+				},
+				{
+					"id": "SF36_28",
+					"text": "Have you felt downhearted and blue?",
+					"type": "SF36_Scale_9"
+				},
+				{
+					"id": "SF36_29",
+					"text": "Did you feel worn out?",
+					"type": "SF36_Scale_9"
+				},
+				{
+					"id": "SF36_30",
+					"text": "Have you been a happy person?",
+					"type": "SF36_Scale_8"
+				},
+				{
+					"id": "SF36_31",
+					"text": "Did you feel tired?",
+					"type": "SF36_Scale_9"
+				}
+			]
+		},
+		{
+			"questions": [
+				{
+					"id": "SF36_32",
+					"text": "During the past 4 weeks, how much of the time has your physical health or emotional problems interfered with your social activities (like visiting with friends, relatives, etc.)?",
+					"type": "SF36_Scale_10"
+				}
+			]
+		},
+		{
+			"description": "How TRUE or FALSE is each of the following statements for you.",
+			"questions": [
+				{
+					"id": "SF36_33",
+					"text": "I seem to get sick a little easier than other people",
+					"type": "SF36_Scale_11"
+				},
+				{
+					"id": "SF36_34",
+					"text": "I am as healthy as anybody I know",
+					"type": "SF36_Scale_12"
+				},
+				{
+					"id": "SF36_35",
+					"text": "I expect my health to get worse",
+					"type": "SF36_Scale_11"
+				},
+				{
+					"id": "SF36_36",
+					"text": "My health is excellent",
+					"type": "SF36_Scale_12"
+				}
+			]
+		}
+	]
+}
