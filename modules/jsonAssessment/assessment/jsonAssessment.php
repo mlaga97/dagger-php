@@ -1,46 +1,66 @@
 <?php
+function renderQuestionSection($questions, $types) {
+	foreach($questions as $questionNumber=>$question) {
+		// NOTE: This takes advantage of Short-Circuit evaluation and will break otherwise
+		if($questionNumber == 0 || $question["type"] != $questions[$questionNumber-1]["type"]) {
 
-$path = $_SERVER['DOCUMENT_ROOT'] . '/modules/gse/assessment.json';
-$contents = file_get_contents($path);
-$assessment = json_decode($contents, true);
+			$typeData = $types[$question["type"]];
+			switch($typeData["type"]) {
+				case "radioScale":
+					echo "<table><tr><th>Question</th>";
+					foreach($typeData["options"] as $optionText => $value) {
+						echo "<th>" . $optionText . "</th>";
+					}
+					echo "</tr>";
+					break;
+			}
 
-?>
+		}
 
-<h3><?php echo $assessment["metadata"]["title"]?></h3>
+		echo "<tr><td>" . $question["text"] . "</td>";
 
-
-<?php
-
-foreach($assessment["questions"] as $questionNumber=>$question) {
-	// NOTE: This takes advantage of Short-Circuit evaluation and will break otherwise
-	if($questionNumber == 0 || $question["type"] != $assessment["questions"][$questionNumber-1]["type"]) {
-		echo "<table><tr><th>ID</th><th>Question</th>";
-
-		$typeData = $assessment["types"][$question["type"]];
+		$typeData = $types[$question["type"]];
 		switch($typeData["type"]) {
 			case "radioScale":
 				foreach($typeData["options"] as $optionText => $value) {
-					echo "<th>" . $optionText . "</th>";
+					echo "<td><center><input type='checkbox' name='" . $question["id"] . "' value='" . $value . "' /></center></td>";
 				}
 				break;
+			case "radioOptions":
+				echo "<br/>";
+				foreach($typeData["options"] as $optionText => $value) {
+					echo "<label><input type='checkbox' name='" . $question["id"] . "' value='" . $value . "' />" . $optionText . "</label><br/>";
+				}
+				echo "<hr/>";
+				break;
 		}
-
 		echo "</tr>";
 	}
-
-	echo "<tr><td>" . ($questionNumber+1) . "</td><td>" . $question["text"] . "</td>";
-
-	$typeData = $assessment["types"][$question["type"]];
-	switch($typeData["type"]) {
-		case "radioScale":
-			foreach($typeData["options"] as $optionText => $value) {
-				echo "<td><center><input type='checkbox' name='" . $question["id"] . "' value='" . $value . "' /></center></td>";
-			}
-			break;
-	}
-	echo "</tr>";
+	echo "</table>";
 }
-echo "</table>";
 
+$assessments = getUnmergedConfig($filename = "assessment.json");
 
+foreach($assessments as $assessment) {
+	echo "<h3>" . $assessment["metadata"]["title"] . "</h3>";
+
+	// TODO: Determine precedence of "questions" vs "sections"
+	if(array_key_exists("questions", $assessment) && array_key_exists("sections", $assessment)) {
+		echo "Error: an assessment.json file has both 'questions' and 'sections'";
+	}
+
+	if(array_key_exists("questions", $assessment)) {
+		renderQuestionSection($assessment["questions"], $assessment["types"]);
+	}
+
+	if(array_key_exists("sections", $assessment)) {
+		foreach($assessment["sections"] as $section) {
+			if(array_key_exists("description", $section))
+				echo $section["description"] . "<br/>";
+			renderQuestionSection($section["questions"], $assessment["types"]);
+		}
+	}
+
+	echo "<hr/>";
+}
 ?>
