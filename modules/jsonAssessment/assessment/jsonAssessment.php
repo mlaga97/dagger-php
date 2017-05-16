@@ -18,7 +18,7 @@ foreach($assessment["questions"] as $questionNumber=>$question) {
 
 		$typeData = $assessment["types"][$question["type"]];
 		switch($typeData["type"]) {
-			case "scale":
+			case "radioScale":
 				foreach($typeData["options"] as $optionText => $value) {
 					echo "<th>" . $optionText . "</th>";
 				}
