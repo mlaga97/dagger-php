@@ -49,9 +49,13 @@
 	 * @return array Array of individual configuration data loaded.
 	 */
 	function getUnmergedConfig($filename = 'config.json') {
-		$path = $_SERVER['DOCUMENT_ROOT'] . '/' . $filename;
-		$contents = file_get_contents($path);
-		$config = json_decode($contents, true);
+		$config = array();
+
+		if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $filename)) {
+			$path = $_SERVER['DOCUMENT_ROOT'] . '/' . $filename;
+			$contents = file_get_contents($path);
+			$config = json_decode($contents, true);
+		}
 
 		foreach(moduleList() as $module) {
 			if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename)) {
@@ -77,9 +81,14 @@
 	 * @return array Array of all configuration data loaded.
 	 */
 	function getConfig($filename = 'config.json') {
-		$path = $_SERVER['DOCUMENT_ROOT'] . '/' . $filename;
-		$contents = file_get_contents($path);
-		$config = json_decode($contents, true);
+		$config = array();
+
+		// TODO: SHOULD we error if /config.json is missing? If so, where is appropriate?
+		if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $filename)) {
+			$path = $_SERVER['DOCUMENT_ROOT'] . '/' . $filename;
+			$contents = file_get_contents($path);
+			$config = json_decode($contents, true);
+		}
 
 		foreach(moduleList() as $module) {
 			if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename)) {
