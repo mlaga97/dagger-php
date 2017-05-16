@@ -41,6 +41,34 @@
 	 * Loads all json configuration files with a particular filename.
 	 * 
 	 * Takes a filename and loads ./[filename] and
+	 * ./modules/[module]/[filename] for every available module, and returns
+	 * them as individual elements of the resulting array.
+	 * 
+	 * @param string $filename [optional] Filename to search for and load.
+	 * 
+	 * @return array Array of individual configuration data loaded.
+	 */
+	function getUnmergedConfig($filename = 'config.json') {
+		$path = $_SERVER['DOCUMENT_ROOT'] . '/' . $filename;
+		$contents = file_get_contents($path);
+		$config = json_decode($contents, true);
+
+		foreach(moduleList() as $module) {
+			if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename)) {
+				$path = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename;
+				$contents = file_get_contents($path);
+				array_push($config, json_decode($contents, true));
+			}
+		}
+
+		return $config;
+	}
+
+
+	/**
+	 * Loads all json configuration files with a particular filename.
+	 * 
+	 * Takes a filename and loads ./[filename] and
 	 * ./modules/[module]/[filename] for every available module, then
 	 * recursively merges them together.
 	 * 
