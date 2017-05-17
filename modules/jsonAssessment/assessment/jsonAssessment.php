@@ -44,7 +44,7 @@ function renderQuestionSection($questions, $types) {
 				}
 				echo "<tr><td>" . $question["text"] . "</td>";
 				foreach($typeData["options"] as $optionText => $value) {
-					echo "<td><center><input type='checkbox' name='" . $question["id"] . "' value='" . $value . "' /></center></td>";
+					echo "<td><center><input type='radio' name='" . $question["id"] . "' value='" . $value . "' /></center></td>";
 				}
 				break;
 			case "radioOptions":
@@ -53,7 +53,7 @@ function renderQuestionSection($questions, $types) {
 				}
 				echo "<br/>" . $question["text"] . "<br/><br/>";
 				foreach($typeData["options"] as $optionText => $value) {
-					echo "<label><input type='checkbox' name='" . $question["id"] . "' value='" . $value . "' />" . $optionText . "</label><br/>";
+					echo "<label><input type='radio' name='" . $question["id"] . "' value='" . $value . "' />" . $optionText . "</label><br/>";
 				}
 				echo "<br/>";
 				break;
