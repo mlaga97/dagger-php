@@ -81,7 +81,8 @@
 				"Some": 40,
 				"A little": 20,
 				"None": 0
-			}
+			},
+			"friends": ["SF36_Scale_9"]
 		},
 		"SF36_Scale_9": {
 			"type": "radioScale",
@@ -92,7 +93,8 @@
 				"Some": 60,
 				"A little": 80,
 				"None": 100
-			}
+			},
+			"friends": ["SF36_Scale_8"]
 		},
 		"SF36_Scale_10": {
 			"type": "radioOptions",
@@ -112,7 +114,8 @@
 				"Don't Know": 50,
 				"Mostly False": 75,
 				"Definitely False": 100
-			}
+			},
+			"friends": ["SF36_Scale_12"]
 		},
 		"SF36_Scale_12": {
 			"type": "radioScale",
@@ -122,7 +125,8 @@
 				"Don't Know": 50,
 				"Mostly False": 25,
 				"Definitely False": 0
-			}
+			},
+			"friends": ["SF36_Scale_11"]
 		}
 	},
 	"sections": [
