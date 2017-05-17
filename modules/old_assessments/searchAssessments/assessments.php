@@ -27,7 +27,10 @@
 		$first = 0;
 
 		global $row;
-		while ( $row = $info->fetch_assoc () ) {
+
+		// NOTE: If search isn't working after you just added a new assessment, try actually adding the *_check fields to the database.
+		// TODO: Fix this.
+		while ( $row = $info->fetch_assoc () ) { // See above
 			if (($first == 0) && ($_SESSION ['admin'] == 1)) {
 				echo "<span style='color:#b30000;'>";
 				echo $row ['pt_id'];
