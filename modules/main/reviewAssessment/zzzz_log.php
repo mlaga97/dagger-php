@@ -53,8 +53,8 @@
 				} else {
 
 					// Log any time that we can't insert a key
-					echo 'Error! Could not insert key "' . $key . '" into database.<br/>';
-					$log->error('Could not insert key "'. $key .'" with value "' . $value . '"');
+					echo 'Error! Won\'t be able to insert key "' . $key . '" into database.<br/>';
+					$log->error('Won\'t be able to insert key "'. $key .'" with value "' . $value . '"');
 
 				}
 			}
