@@ -89,7 +89,7 @@ echo '<!-- HTML start -->
 		</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="No Data">
-		<link rel="stylesheet" href="mystyle.css" type="text/css">
+		<link rel="stylesheet" href="dagger.css" type="text/css">
 	</head>
 	<body>
 		<center><h1>Sorry, insufficient data to trend!</h1></center>

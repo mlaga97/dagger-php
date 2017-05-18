@@ -15,7 +15,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="description" content="Login">
-		<link rel="stylesheet" href="include/mystyle.css" type="text/css">
+		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
 		<title>Dagger Login</title>
 	</head>
 

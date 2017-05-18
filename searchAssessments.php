@@ -9,7 +9,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Search Assessments</title>
-		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
+		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
 		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
 

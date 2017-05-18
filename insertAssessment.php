@@ -11,7 +11,7 @@
 		<meta charset="utf-8">
 		<?php // User is not actually logged out until redirected -- enforce redirect in 30 sec ?>
 		<meta http-equiv="refresh" content="30; url=/index.php" />
-		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
+		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
 		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
 	<body>

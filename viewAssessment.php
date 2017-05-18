@@ -35,7 +35,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Patient Activity</title>
-		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
+		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
 	</head>
 	<body>
 	<div class="container">

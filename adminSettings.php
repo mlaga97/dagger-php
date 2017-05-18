@@ -9,7 +9,7 @@
 		<title>Options</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="Admin Settings">
-		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
+		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
 		<script type="text/javascript" src="js/scripts.js"></script>
 	</head>
 

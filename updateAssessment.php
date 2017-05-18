@@ -11,7 +11,7 @@
 		<title>Brief <?php print_r($_SESSION['assessment_type']); ?> Assessment</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="Brief Assessment">
-		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
+		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
 	</head>
 
 	<body>

@@ -9,7 +9,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Time Spent</title>
-		<link rel="stylesheet" href="/include/mystyle.css" type="text/css">
+		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
 
 	</head>
 
