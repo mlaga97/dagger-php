@@ -14,7 +14,6 @@
 	$_SESSION['psc_check'] = 0;
 	$_SESSION['ces_check'] = 0;
 	$_SESSION['dast_check'] = 0;
-	$_SESSION['GRHOP_standard'] = 0;
 	$_SESSION['duke_check'] = 0;
 	$_SESSION['self_check'] = 0;
 	$_SESSION['gad2_check'] = 0;

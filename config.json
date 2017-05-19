@@ -5,13 +5,9 @@
 	"edu.usm.dagger.main.db.name": "msihdp",
 
 	"edu.usm.dagger.main.insert.blacklist": [
-		"id", "university_id", "admin", "grouping", "test_acc", "logo",
-		"status", "previous",
-		"n1", "n2", "n3", "n4",
-		"st", "GRHOP_standard", "c_p_id",
-		"search_select", "contact_date", "entry_date",
-		"contact_outcome", "outcome_other",
-		"contact_reason", "reason_other", "date"
+		"id", "university_id", "admin", "grouping", "test_acc", "logo", "status", "previous", "date",
+
+		"search_select", "contact_date", "entry_date", "contact_outcome", "outcome_other", "contact_reason", "reason_other"
 	],
 
 	"edu.usm.dagger.main.preassessment.keysToKeep": [
@@ -24,7 +20,7 @@
 	],
 
 	"edu.usm.dagger.main.insert.whitelist": [
-		"id", "user_id", "date", "q_26", "assessment_time"
+		"id", "user_id", "date", "assessment_time"
 	],
 
 	"edu.usm.dagger.main.insert.deprecate": [
