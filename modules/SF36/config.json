@@ -16,5 +16,49 @@
 		"SF36_26", "SF36_27", "SF36_28", "SF36_29", "SF36_30",
 		"SF36_31", "SF36_32", "SF36_33", "SF36_34", "SF36_35",
 		"SF36_36"
-	]
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"sf36_check": "tinyint",
+				"SF36_1": "tinyint",
+				"SF36_2": "tinyint",
+				"SF36_3": "tinyint",
+				"SF36_4": "tinyint",
+				"SF36_5": "tinyint",
+				"SF36_6": "tinyint",
+				"SF36_7": "tinyint",
+				"SF36_8": "tinyint",
+				"SF36_9": "tinyint",
+				"SF36_10": "tinyint",
+				"SF36_11": "tinyint",
+				"SF36_12": "tinyint",
+				"SF36_13": "tinyint",
+				"SF36_14": "tinyint",
+				"SF36_15": "tinyint",
+				"SF36_16": "tinyint",
+				"SF36_17": "tinyint",
+				"SF36_18": "tinyint",
+				"SF36_19": "tinyint",
+				"SF36_20": "tinyint",
+				"SF36_21": "tinyint",
+				"SF36_22": "tinyint",
+				"SF36_23": "tinyint",
+				"SF36_24": "tinyint",
+				"SF36_25": "tinyint",
+				"SF36_26": "tinyint",
+				"SF36_27": "tinyint",
+				"SF36_28": "tinyint",
+				"SF36_29": "tinyint",
+				"SF36_30": "tinyint",
+				"SF36_31": "tinyint",
+				"SF36_32": "tinyint",
+				"SF36_33": "tinyint",
+				"SF36_34": "tinyint",
+				"SF36_35": "tinyint",
+				"SF36_36": "tinyint"
+			}
+		}
+	}
 }

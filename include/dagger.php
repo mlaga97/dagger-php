@@ -26,11 +26,12 @@
 
 	// MySQL Setup
 	$mysqli = new mysqli(
-			getConfigKey("edu.usm.dagger.main.db.server"),
-			getConfigKey("edu.usm.dagger.main.db.user"),
-			getConfigKey("edu.usm.dagger.main.db.password"),
-			getConfigKey("edu.usm.dagger.main.db.name")
+		getConfigKey("edu.usm.dagger.main.db.server"),
+		getConfigKey("edu.usm.dagger.main.db.user"),
+		getConfigKey("edu.usm.dagger.main.db.password")
 	);
+
+	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/setupCheck.php');
 
 	// Import the dependencies for user access
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/access.php');

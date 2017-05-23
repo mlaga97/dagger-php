@@ -10,5 +10,23 @@
 
 		"GSE_1", "GSE_2", "GSE_3", "GSE_4", "GSE_5",
 		"GSE_6", "GSE_7", "GSE_8", "GSE_9", "GSE_10"
-	]
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"gse_check": "tinyint",
+				"GSE_1": "tinyint",
+				"GSE_2": "tinyint",
+				"GSE_3": "tinyint",
+				"GSE_4": "tinyint",
+				"GSE_5": "tinyint",
+				"GSE_6": "tinyint",
+				"GSE_7": "tinyint",
+				"GSE_8": "tinyint",
+				"GSE_9": "tinyint",
+				"GSE_10": "tinyint"
+			}
+		}
+	}
 }
