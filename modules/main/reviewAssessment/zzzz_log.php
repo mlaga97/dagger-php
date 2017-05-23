@@ -9,7 +9,7 @@
 	$values = "(0, ";
 
 	// Get list of fields in the database
-	$dbFieldQuery = 'SELECT column_name FROM information_schema.columns WHERE table_schema = "' . getConfigKey("edu.usm.dagger.main.db.name") . '" AND table_name = "response";';
+	$dbFieldQuery = 'SELECT column_name FROM information_schema.columns WHERE table_schema = "' . getConfigKey("edu.usm.dagger.main.db.database") . '" AND table_name = "response";';
 	$dbFieldResult = $mysqli->query($dbFieldQuery);
 
 	$dbFields = array();
