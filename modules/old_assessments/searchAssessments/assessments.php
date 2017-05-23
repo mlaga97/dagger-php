@@ -16,11 +16,7 @@
     	}
     	$query_clinic = $query_clinic . " FROM response, clinic where pt_id = '$info_store' AND clinic.id = response.clinic_id AND clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by response.id  DESC";
 
-		// We're going to make the above query into the one below.
-		$query_contact = "SELECT contact_activity.pt_id, (select users.name from users where users.id = contact_activity.user_id) as name, contact_activity.id, contact_activity.contact_date, contact_activity.entry_date, contact_activity.contact_type, contact_activity.contact_outcome, contact_activity.outcome_other, contact_activity.contact_reason, contact_activity.reason_other, contact_activity.clinic_id, contact_activity.contact_time, contact_activity.group_other FROM contact_activity where pt_id = '$info_store' AND contact_activity.clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by contact_activity.contact_date  DESC";
-
 		$info = $mysqli->query ( $query_clinic );
-		$contact_info = $mysqli->query ( $query_contact );
 		echo "<table border = \"0\"><td>";
 		// TODO: Add column headings; Make records clickable, lose the radio button - view button bullshit
 		echo "<tr>";
