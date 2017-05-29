@@ -3,7 +3,20 @@
 		"class": "",
 		"title": "RAND 36-Item Health Survey",
 		"text": "SF-36",
-		"id": "sf36_check"
+		"id": "sf36_check",
+		"scoring": {
+			"reviewAssessment": {
+				"showResponses": true,
+				"responseFormat": "human_readable",
+				"showScore": true,
+				"scoreType": "averageValue_excludingBlank"
+			},
+			"viewAssessment": {
+				"showResponses": false,
+				"showScore": true,
+				"scoreType": "averageValue_excludingBlank"
+			}
+		}
 	},
 	"types": {
 		"SF36_Scale_1": {

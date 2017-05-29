@@ -3,7 +3,20 @@
 		"class": "",
 		"title": "General Self-Efficacy Scale (GSE)",
 		"text": "General Self-Efficacy Scale",
-		"id": "gse_check"
+		"id": "gse_check",
+		"scoring": {
+			"reviewAssessment": {
+				"showResponses": true,
+				"responseFormat": "human_readable",
+				"showScore": true,
+				"scoreType": "sumOfValues"
+			},
+			"viewAssessment": {
+				"showResponses": false,
+				"showScore": true,
+				"scoreType": "sumOfValues"
+			}
+		}
 	},
 	"types": {
 		"GSE_question": {
