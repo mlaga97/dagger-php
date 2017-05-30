@@ -71,7 +71,7 @@
 		foreach(getConfigKey("edu.usm.dagger.main.login.user.keys") as $key) {
 			$query .= $key . ', ';
 		}
-		$query .= 'users.id AS user_id FROM users INNER JOIN university ON users.university_id = university.id WHERE uname = "' . $mysqli->real_escape_string($username) . '" AND pswd = "' . $mysqli->real_escape_string($password) . '" AND active = 1 LIMIT 1';
+		$query .= 'users.id AS user_id FROM users WHERE uname = "' . $mysqli->real_escape_string($username) . '" AND pswd = "' . $mysqli->real_escape_string($password) . '" AND active = 1 LIMIT 1';
 
 		$results = $mysqli->query($query);
 
@@ -99,7 +99,7 @@
 		foreach(getConfigKey("edu.usm.dagger.main.login.user.keys") as $key) {
 			$query .= $key . ', ';
 		}
-		$query .= 'users.id AS user_id FROM users INNER JOIN university ON users.university_id = university.id WHERE users.id = "' . $_SESSION['user_id'] . '" AND active = 1 LIMIT 1';
+		$query .= 'users.id AS user_id FROM users WHERE users.id = "' . $_SESSION['user_id'] . '" AND active = 1 LIMIT 1';
 
 		$results = $mysqli->query($query);
 
