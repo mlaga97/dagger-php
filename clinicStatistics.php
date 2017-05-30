@@ -26,9 +26,6 @@
 		<div class='container'>
 		<?php showMenu(); ?>
 			<div class='top'>
-				<div class='logo'>
-					<?php echo $_SESSION['logo']?>
-				</div>
 				<div class='header'>
 					<div class='title'>
 						<center>
