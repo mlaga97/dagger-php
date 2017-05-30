@@ -63,7 +63,7 @@
 				"id": "int",
 				"name": "varchar(2000)",
 				"uname": "varchar(45)",
-				"paswd": "varchar(45)",
+				"pswd": "varchar(45)",
 				"admin": "tinyint",
 				"employee_id": "varchar(30)",
 				"active": "tinyint",
