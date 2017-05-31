@@ -6,7 +6,6 @@
 
 	"edu.usm.dagger.main.db.tables": [
 		"users", "groups", "clinic", "response",
-		"university",
 		"scoring", "questions"
 	],
 
