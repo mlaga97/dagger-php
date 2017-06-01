@@ -68,7 +68,26 @@
 	// Encrypt unencrypted passwords
 	$users = $mysqli->query('SELECT id, pswd FROM ' . $tableName . ' WHERE NOT secured_password <=> 1;');
 	while($user = $users->fetch_assoc()) {
-		$update_query = 'UPDATE users SET secured_password = 1, pswd = "' . password_hash($user['pswd'], PASSWORD_DEFAULT) . '" WHERE id=' . $user['id'] . ';';
-		$null = $mysqli->query($update_query);
+
+		// Variables and things
+		$original_password = $user['pswd'];
+		$id = $user['id'];
+		$hashed = password_hash($original_password, PASSWORD_DEFAULT);
+
+		// Update DB
+		$null = $mysqli->query('UPDATE users SET secured_password = 1, pswd = "' . $hashed . '" WHERE id=' . $user['id'] . ';');
+
+		// Pull back from DB
+		$results = $mysqli->query('SELECT pswd FROM users WHERE id = "' . $user['id'] . '" AND active = 1 LIMIT 1');
+		$user = $results->fetch_assoc();
+
+		// Verify that the DB is correct
+		if(password_verify($original_password, $user['pswd'])) {
+			echo "Updated successfully!";
+		} else {
+			// Revert Back Otherwise
+			echo "Error!";
+			$null = $mysqli->query('UPDATE users SET secured_password = 0, pswd = "' . $original_password . '" WHERE id=' . $user['id'] . ';');
+		}
 	}
 ?>

@@ -72,9 +72,7 @@
 		if($results && $results->num_rows === 1) {
 			$user = $results->fetch_assoc();
 
-			echo strlen($user["pswd"]);
-
-			if(password_verify($password, $user["pswd"])) {
+			if(password_verify($password, $user['pswd'])) {
 				$query = 'SELECT ';
 				foreach(getConfigKey("edu.usm.dagger.main.login.user.keys") as $key) {
 					$query .= $key . ', ';
