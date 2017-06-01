@@ -67,38 +67,24 @@
 	function login($username, $password) {
 		global $log, $mysqli;
 
-		// Check login info first
-		$results = $mysqli->query('SELECT pswd, id FROM users WHERE uname = "' . $mysqli->real_escape_string($username) . '" AND active = 1 LIMIT 1');
-		if($results && $results->num_rows === 1) {
-			$user = $results->fetch_assoc();
-
-			echo strlen($user["pswd"]);
-
-			if(password_verify($password, $user["pswd"])) {
-				$query = 'SELECT ';
-				foreach(getConfigKey("edu.usm.dagger.main.login.user.keys") as $key) {
-					$query .= $key . ', ';
-				}
-				$query .= 'users.id AS user_id FROM users WHERE id = ' . $user['id'];
-
-				$results = $mysqli->query($query);
-
-				if($results && $results->num_rows === 1) {
-					foreach($results->fetch_assoc() as $key => $value) {
-						$_SESSION[$key] = $value;
-					}
-
-					$_SESSION['status'] = 'authorized';
-					header("location: /home.php");
-				}
-			} else {
-				return "Could not validate password!";
-			}
-		} else {
-			return "Not a valid user!";
+		$query = 'SELECT ';
+		foreach(getConfigKey("edu.usm.dagger.main.login.user.keys") as $key) {
+			$query .= $key . ', ';
 		}
+		$query .= 'users.id AS user_id FROM users WHERE uname = "' . $mysqli->real_escape_string($username) . '" AND pswd = "' . $mysqli->real_escape_string($password) . '" AND active = 1 LIMIT 1';
 
-		return "Please enter a correct username and password.";
+		$results = $mysqli->query($query);
+
+		if($results && $results->num_rows === 1) {
+			foreach($results->fetch_assoc() as $key => $value) {
+				$_SESSION[$key] = $value;
+			}
+
+			$_SESSION['status'] = 'authorized';
+			header("location: /home.php");
+		} else {
+			return "Please enter a correct username and password.";
+		}
 	}
 
 
