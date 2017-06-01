@@ -53,4 +53,22 @@
 			}
 		}
 	}
+
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	// TODO: Probably belongs somewhere else.
+
+	// Password Encyption Library
+	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/password.php');
+
+	// Ensure column can store hashed passwords
+	$null = $mysqli->query("ALTER TABLE users CHANGE COLUMN pswd pswd VARCHAR(255) NOT NULL;");
+
+	// Encrypt unencrypted passwords
+	$users = $mysqli->query('SELECT id, pswd FROM ' . $tableName . ' WHERE NOT secured_password <=> 1;');
+	while($user = $users->fetch_assoc()) {
+		$update_query = 'UPDATE users SET secured_password = 1, pswd = "' . password_hash($user['pswd'], PASSWORD_DEFAULT) . '" WHERE id=' . $user['id'] . ';';
+		$null = $mysqli->query($update_query);
+	}
 ?>

@@ -67,7 +67,8 @@
 				"employee_id": "varchar(30)",
 				"active": "tinyint",
 				"grouping": "tinyint",
-				"test_acc": "tinyint"
+				"test_acc": "tinyint",
+				"secured_password": "tinyint"
 			}
 		}
 	}
