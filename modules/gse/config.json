@@ -1,5 +1,5 @@
 {
-	"module_name": "gse",
+	"moduleName": "gse",
 
 	"edu.usm.dagger.main.searchAssessment.tags": {
 		"gse_check": "GSE"

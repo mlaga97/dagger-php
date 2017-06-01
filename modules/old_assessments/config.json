@@ -1,5 +1,5 @@
 {
-	"module_name": "old_assessments",
+	"moduleName": "old_assessments",
 
 	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0": [
 		"/duke*/", "/cd_*/", "/self_*/" ,"/phq_*/"

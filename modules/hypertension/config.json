@@ -1,5 +1,5 @@
 {
-	"module_name": "hypertension",
+	"moduleName": "hypertension",
 
 	"edu.usm.dagger.main.searchAssessment.tags": {
 		"hypertension_check": "Hypertension"

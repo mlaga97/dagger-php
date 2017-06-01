@@ -1,5 +1,5 @@
 {
-	"module_name": "pediatric",
+	"moduleName": "pediatric",
 
 	"edu.usm.dagger.main.searchAssessment.tags": {
 		"pediatric_check": "Pediatric"
