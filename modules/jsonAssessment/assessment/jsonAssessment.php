@@ -66,26 +66,27 @@ function renderQuestionSection($questions, $types) {
 $assessments = getUnmergedConfig($filename = "assessment.json");
 
 foreach($assessments as $assessment) {
-	echo "<h3>" . $assessment["metadata"]["title"] . "</h3>";
+	if($_SESSION[$assessment["metadata"]["id"]]) {
+		echo "<h3>" . $assessment["metadata"]["title"] . "</h3>";
 
-	// TODO: Determine precedence of "questions" vs "sections"
-	if(array_key_exists("questions", $assessment) && array_key_exists("sections", $assessment)) {
-		echo "Error: an assessment.json file has both 'questions' and 'sections'";
-	}
+		// TODO: Determine precedence of "questions" vs "sections"
+		if(array_key_exists("questions", $assessment) && array_key_exists("sections", $assessment)) {
+			echo "Error: an assessment.json file has both 'questions' and 'sections'";
+		}
 
-	if(array_key_exists("questions", $assessment)) {
-		renderQuestionSection($assessment["questions"], $assessment["types"]);
-		echo "<hr/>";
-	}
-
-	if(array_key_exists("sections", $assessment)) {
-		foreach($assessment["sections"] as $section) {
-			if(array_key_exists("description", $section))
-				echo "<br/>" . $section["description"] . "<br/>";
-			renderQuestionSection($section["questions"], $assessment["types"]);
+		if(array_key_exists("questions", $assessment)) {
+			renderQuestionSection($assessment["questions"], $assessment["types"]);
 			echo "<hr/>";
 		}
+
+		if(array_key_exists("sections", $assessment)) {
+			foreach($assessment["sections"] as $section) {
+				if(array_key_exists("description", $section))
+					echo "<br/>" . $section["description"] . "<br/>";
+				renderQuestionSection($section["questions"], $assessment["types"]);
+				echo "<hr/>";
+			}
+		}
 	}
-	
 }
 ?>
