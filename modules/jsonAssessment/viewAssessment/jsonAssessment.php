@@ -19,7 +19,11 @@ foreach($assessments as $assessment) {
 					if(array_key_exists("questions", $assessment)) {
 						echo "<table><tr><th>Question</th><th>Response</th></tr>";
 						foreach($assessment["questions"] as $question) {
-							echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+							if(array_key_exists($_SESSION, $question["id"])) {
+								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+							} else {
+								echo "<tr><td>" . $question["text"] . "</td><td>No Response</td></tr>";
+							}
 						}
 						echo "</table><hr/>";
 					}
@@ -28,7 +32,11 @@ foreach($assessments as $assessment) {
 						echo "<table><tr><th>Question</th><th>Response</th></tr>";
 						foreach($assessment["sections"] as $section) {
 							foreach($section["questions"] as $question) {
-								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+								if(array_key_exists($_SESSION, $question["id"])) {
+									echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+								} else {
+									echo "<tr><td>" . $question["text"] . "</td><td>No Response</td></tr>";
+								}
 							}
 						}
 						echo "</table><hr/>";
@@ -45,14 +53,18 @@ foreach($assessments as $assessment) {
 
 					if(array_key_exists("questions", $assessment)) {
 						foreach($assessment["questions"] as $question) {
-							$total = $total + $_SESSION[$question["id"]];
+							if(array_key_exists($_SESSION, $question["id"])) {
+								$total = $total + $_SESSION[$question["id"]];
+							}
 						}
 					}
 
 					if(array_key_exists("sections", $assessment)) {
 						foreach($assessment["sections"] as $section) {
 							foreach($section["questions"] as $question) {
-								$total = $total + $_SESSION[$question["id"]];
+								if(array_key_exists($_SESSION, $question["id"])) {
+									$total = $total + $_SESSION[$question["id"]];
+								}
 							}
 						}
 					}
@@ -68,16 +80,20 @@ foreach($assessments as $assessment) {
 
 					if(array_key_exists("questions", $assessment)) {
 						foreach($assessment["questions"] as $question) {
-							$total = $total + $_SESSION[$question["id"]];
-							$count = $count + 1;
+							if(array_key_exists($_SESSION, $question["id"])) {
+								$total = $total + $_SESSION[$question["id"]];
+								$count = $count + 1;
+							}
 						}
 					}
 
 					if(array_key_exists("sections", $assessment)) {
 						foreach($assessment["sections"] as $section) {
 							foreach($section["questions"] as $question) {
-								$total = $total + $_SESSION[$question["id"]];
-								$count = $count + 1;
+								if(array_key_exists($_SESSION, $question["id"])) {
+									$total = $total + $_SESSION[$question["id"]];
+									$count = $count + 1;
+								}
 							}
 						}
 					}
