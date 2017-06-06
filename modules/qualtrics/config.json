@@ -1,7 +1,7 @@
 {
 	"edu.usm.dagger.main.insert.whitelist": [
 		"pt_id", "dob", "assessment_type", "assessment_date", "behavioralHealth_check", "nutritionCounseling_check",
-		"hchScreening_check", "hchScreening_applicationType", "hchScreening_eligibility"
+		"hchScreening_check", "hchScreening_applicationType", "hchScreening_eligibility", "insurance"
 	],
 
 	"edu.usm.dagger.main.insert.blacklist": [
@@ -19,5 +19,13 @@
 	"edu.usm.dagger.main.insert.transform": {
 		"patientID": "pt_id",
 		"activityDate": "assessment_date"
+	},
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"insurance": "tinyint(1)"
+			}
+		}
 	}
 }
