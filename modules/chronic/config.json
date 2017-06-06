@@ -31,5 +31,18 @@
 		"chronicHealth_physical_height": "valueHeight",
 		"chronicHealth_physical_weight": "valueWeight",
 		"chronicHealth_physical_date": "physicalDate"
+	},
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"chronicCare_check": "tinyint(1)",
+				"chronicHealth_A1C_check": "tinyint(1)",
+				"chronicHealth_eAG_check": "tinyint(1)",
+				"chronicHealth_cholesterol_check": "tinyint(1)",
+				"chronicHealth_bloodPressure_check": "tinyint(1)",
+				"chronicHealth_physical_check": "tinyint(1)"
+			}
+		}
 	}
 }

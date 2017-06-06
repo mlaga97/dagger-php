@@ -24,6 +24,15 @@
 	"edu.usm.dagger.dbConfig.tables": {
 		"response": {
 			"keys": {
+				"pt_id": "varchar(500)",
+				"dob": "varchar(45)",
+				"assessment_type": "varchar(15)",
+				"assessment_date": "date",
+				"behavioralHealth_check": "tinyint(1)",
+				"nutritionCounseling_check": "tinyint(1)",
+				"hchScreening_check": "tinyint(1)",
+				"hchScreening_applicationType": "varchar(45)",
+				"hchScreening_eligibility": "varchar(45)",
 				"insurance": "tinyint(1)"
 			}
 		}

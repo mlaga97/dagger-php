@@ -189,6 +189,7 @@
         }
     }
 
+			// TODO: Update to new key names
 			 function score_questions_reviewAssessment($a){
 				 $a['q2'] = $a['outsideVisits_emergencyRoom'];
 				 $a['er_visit_date'] = $a['outsideVisits_emergencyRoom_visitDate'];
