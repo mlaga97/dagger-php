@@ -1,5 +1,7 @@
 <?php
 
+$pageName = "viewAssessment";
+
 $assessments = getUnmergedConfig($filename = "assessment.json");
 
 // TODO: Make this look less like spaghetti and more like code.
@@ -13,8 +15,8 @@ foreach($assessments as $assessment) {
 		}
 
 		// Show Responses
-		if($assessment["metadata"]["scoring"]["viewAssessment"]["showResponses"]) {
-			switch($assessment["metadata"]["scoring"]["reviewAssessment"]["responseFormat"]) {
+		if($assessment["scoring"][$pageName]["showResponses"]) {
+			switch($assessment["scoring"][$pageName]["responseFormat"]) {
 				case "human_readable":
 					if(array_key_exists("questions", $assessment)) {
 						echo "<table><tr><th>Question</th><th>Response</th></tr>";
@@ -22,7 +24,7 @@ foreach($assessments as $assessment) {
 							if(array_key_exists($_SESSION, $question["id"])) {
 								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
 							} else {
-								echo "<tr><td>" . $question["text"] . "</td><td>No Response</td></tr>";
+								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
 							}
 						}
 						echo "</table><hr/>";
@@ -32,11 +34,7 @@ foreach($assessments as $assessment) {
 						echo "<table><tr><th>Question</th><th>Response</th></tr>";
 						foreach($assessment["sections"] as $section) {
 							foreach($section["questions"] as $question) {
-								if(array_key_exists($_SESSION, $question["id"])) {
-									echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
-								} else {
-									echo "<tr><td>" . $question["text"] . "</td><td>No Response</td></tr>";
-								}
+								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
 							}
 						}
 						echo "</table><hr/>";
@@ -46,8 +44,8 @@ foreach($assessments as $assessment) {
 		}
 
 		// Show Score
-		if($assessment["metadata"]["scoring"]["viewAssessment"]["showScore"]) {
-			switch($assessment["metadata"]["scoring"]["reviewAssessment"]["scoreType"]) {
+		if($assessment["scoring"][$pageName]["showScore"]) {
+			switch($assessment["scoring"][$pageName]["scoreType"]) {
 				case "sumOfValues":
 					$total = 0;
 

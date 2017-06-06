@@ -1,5 +1,7 @@
 <?php
 
+$pageName = "reviewAssessment";
+
 $assessments = getUnmergedConfig($filename = "assessment.json");
 
 // TODO: Make this look less like spaghetti and more like code.
@@ -13,8 +15,8 @@ foreach($assessments as $assessment) {
 		}
 
 		// Show Responses
-		if($assessment["metadata"]["scoring"]["reviewAssessment"]["showResponses"]) {
-			switch($assessment["metadata"]["scoring"]["reviewAssessment"]["responseFormat"]) {
+		if($assessment["scoring"][$pageName]["showResponses"]) {
+			switch($assessment["scoring"][$pageName]["responseFormat"]) {
 				case "human_readable":
 					if(array_key_exists("questions", $assessment)) {
 						echo "<table><tr><th>Question</th><th>Response</th></tr>";
@@ -42,8 +44,8 @@ foreach($assessments as $assessment) {
 		}
 
 		// Show Score
-		if($assessment["metadata"]["scoring"]["reviewAssessment"]["showScore"]) {
-			switch($assessment["metadata"]["scoring"]["reviewAssessment"]["scoreType"]) {
+		if($assessment["scoring"][$pageName]["showScore"]) {
+			switch($assessment["scoring"][$pageName]["scoreType"]) {
 				case "sumOfValues":
 					$total = 0;
 
