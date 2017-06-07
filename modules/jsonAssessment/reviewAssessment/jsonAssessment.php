@@ -4,6 +4,64 @@ $pageName = "reviewAssessment";
 
 $assessments = getUnmergedConfig($filename = "assessment.json");
 
+function showScore($assessment, $scoreType) {
+	switch($scoreType) {
+		case "sumOfValues":
+			$total = 0;
+
+			if(array_key_exists("questions", $assessment)) {
+				foreach($assessment["questions"] as $question) {
+					if(array_key_exists($question["id"], $_SESSION)) {
+						$total = $total + $_SESSION[$question["id"]];
+					}
+				}
+			}
+
+			if(array_key_exists("sections", $assessment)) {
+				foreach($assessment["sections"] as $section) {
+					foreach($section["questions"] as $question) {
+						if(array_key_exists($question["id"], $_SESSION)) {
+							$total = $total + $_SESSION[$question["id"]];
+						}
+					}
+				}
+			}
+
+			echo "Score: " . $total . "<hr/>";
+
+			break;
+		case "averageValue_excludingBlank":
+			$total = 0;
+			$count = 0;
+
+			if(array_key_exists("questions", $assessment)) {
+				foreach($assessment["questions"] as $question) {
+					if(array_key_exists($question["id"], $_SESSION)) {
+						$total = $total + $_SESSION[$question["id"]];
+						$count = $count + 1;
+					}
+				}
+			}
+
+			if(array_key_exists("sections", $assessment)) {
+				foreach($assessment["sections"] as $section) {
+					foreach($section["questions"] as $question) {
+						if(array_key_exists($question["id"], $_SESSION)) {
+							$total = $total + $_SESSION[$question["id"]];
+							$count = $count + 1;
+						}
+					}
+				}
+			}
+
+			echo "Score: " . $total/$count . "<hr/>";
+			break;
+		case "categoricalAverages_excludingBlank":
+			echo "Placeholder for Categorical Averages<hr/>";
+			break;
+	}
+}
+
 // TODO: Make this look less like spaghetti and more like code.
 foreach($assessments as $assessment) {
 	if($_SESSION[$assessment["metadata"]["id"]]) {
@@ -21,7 +79,7 @@ foreach($assessments as $assessment) {
 					if(array_key_exists("questions", $assessment)) {
 						echo "<table><tr><th>Question</th><th>Response</th></tr>";
 						foreach($assessment["questions"] as $question) {
-							if(array_key_exists($_SESSION, $question["id"])) {
+							if(array_key_exists($question["id"], $_SESSION)) {
 								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
 							} else {
 								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
@@ -45,59 +103,12 @@ foreach($assessments as $assessment) {
 
 		// Show Score
 		if($assessment["scoring"][$pageName]["showScore"]) {
-			switch($assessment["scoring"][$pageName]["scoreType"]) {
-				case "sumOfValues":
-					$total = 0;
-
-					if(array_key_exists("questions", $assessment)) {
-						foreach($assessment["questions"] as $question) {
-							if(array_key_exists($_SESSION, $question["id"])) {
-								$total = $total + $_SESSION[$question["id"]];
-							}
-						}
-					}
-
-					if(array_key_exists("sections", $assessment)) {
-						foreach($assessment["sections"] as $section) {
-							foreach($section["questions"] as $question) {
-								if(array_key_exists($_SESSION, $question["id"])) {
-									$total = $total + $_SESSION[$question["id"]];
-								}
-							}
-						}
-					}
-
-					echo "Score: " . $total . "<hr/>";
-
-					break;
-				case "averageValue_excludingBlank":
-					// TODO: Actually check if value is blank
-
-					$total = 0;
-					$count = 0;
-
-					if(array_key_exists("questions", $assessment)) {
-						foreach($assessment["questions"] as $question) {
-							if(array_key_exists($_SESSION, $question["id"])) {
-								$total = $total + $_SESSION[$question["id"]];
-								$count = $count + 1;
-							}
-						}
-					}
-
-					if(array_key_exists("sections", $assessment)) {
-						foreach($assessment["sections"] as $section) {
-							foreach($section["questions"] as $question) {
-								if(array_key_exists($_SESSION, $question["id"])) {
-									$total = $total + $_SESSION[$question["id"]];
-									$count = $count + 1;
-								}
-							}
-						}
-					}
-
-					echo "Score: " . $total/$count . "<hr/>";
-					break;
+			if(gettype($assessment["scoring"][$pageName]["scoreType"]) == "array") {
+				foreach($assessment["scoring"][$pageName]["scoreType"] as $scoreType) {
+					showScore($assessment, $scoreType);
+				}
+			} else {
+				showScore($assessment, $assessment["scoring"][$pageName]["scoreType"]);
 			}
 		}
 	}

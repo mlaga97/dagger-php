@@ -10,12 +10,12 @@
 			"showResponses": true,
 			"responseFormat": "human_readable",
 			"showScore": true,
-			"scoreType": "averageValue_excludingBlank"
+			"scoreType": ["averageValue_excludingBlank", "categoricalAverages_excludingBlank"]
 		},
 		"viewAssessment": {
 			"showResponses": false,
 			"showScore": true,
-			"scoreType": "averageValue_excludingBlank"
+			"scoreType": ["averageValue_excludingBlank", "categoricalAverages_excludingBlank"]
 		}
 	},
 	"types": {
