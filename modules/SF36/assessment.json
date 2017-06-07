@@ -16,6 +16,16 @@
 			"showResponses": false,
 			"showScore": true,
 			"scoreType": ["averageValue_excludingBlank", "categoricalAverages_excludingBlank"]
+		},
+		"categoricalAverages": {
+			"Physical functioning": ["SF36_10", "SF36_3", "SF36_4", "SF36_5", "SF36_6", "SF36_7", "SF36_8", "SF36_9", "SF36_10", "SF36_11", "SF36_12"],
+			"Role limitations due to physical health": ["SF36_4", "SF36_13", "SF36_14", "SF36_15", "SF36_16"],
+			"Role limitations due to emotional problems": ["SF36_3", "SF36_17", "SF36_18", "SF36_19"],
+			"Energy/fatigue": ["SF36_4", "SF36_23", "SF36_27", "SF36_29", "SF36_31"],
+			"Emotional well-being": ["SF36_5", "SF36_24", "SF36_25", "SF36_26", "SF36_28", "SF36_30"],
+			"Social functioning": ["SF36_2", "SF36_20", "SF36_32"],
+			"Pain": ["SF36_2", "SF36_21", "SF36_22"],
+			"General health": ["SF36_5", "SF36_1", "SF36_33", "SF36_34", "SF36_35", "SF36_36"]
 		}
 	},
 	"types": {

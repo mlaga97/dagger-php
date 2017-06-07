@@ -57,7 +57,20 @@ function showScore($assessment, $scoreType) {
 			echo "Score: " . $total/$count . "<hr/>";
 			break;
 		case "categoricalAverages_excludingBlank":
-			echo "Placeholder for Categorical Averages<hr/>";
+			foreach($assessment["scoring"]["categoricalAverages"] as $category => $keys) {
+				$total = 0;
+				$count = 0;
+
+				foreach($keys as $key) {
+					if(array_key_exists($key, $_SESSION)) {
+						$total = $total + $_SESSION[$key];
+						$count = $count + 1;
+					}
+				}
+
+				echo $category . " subscore: " . $total/$count . "<br/>";
+			}
+			echo "<hr/>";
 			break;
 	}
 }
