@@ -20,7 +20,8 @@
 	$copy = $query_search_results->fetch_assoc ();
 
 	foreach ( $copy as $key => $value ) {
-		if($value == '-1' && !multiPregMatch(getConfigKey("edu.usm.dagger.main.viewAssessment.dontSet_-1_to_0"), $key)) {
+		// TODO: This DOES NOT work properly. And it wouldn't work even if it did. Make it stop.
+		if($value == '-1' && multiPregMatch(getConfigKey("edu.usm.dagger.main.viewAssessment.dontSet_-1_to_0"), $key)) {
 			$copy[$key] = 0;
 		}
 

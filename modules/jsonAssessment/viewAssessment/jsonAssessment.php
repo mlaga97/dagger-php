@@ -11,6 +11,7 @@ function showScore($assessment, $scoreType) {
 
 			if(array_key_exists("questions", $assessment)) {
 				foreach($assessment["questions"] as $question) {
+					// TODO: Check -1 instead?
 					if(array_key_exists($question["id"], $_SESSION)) {
 						$total = $total + $_SESSION[$question["id"]];
 					}
@@ -20,6 +21,7 @@ function showScore($assessment, $scoreType) {
 			if(array_key_exists("sections", $assessment)) {
 				foreach($assessment["sections"] as $section) {
 					foreach($section["questions"] as $question) {
+						// TODO: Check -1 instead?
 						if(array_key_exists($question["id"], $_SESSION)) {
 							$total = $total + $_SESSION[$question["id"]];
 						}
@@ -36,7 +38,8 @@ function showScore($assessment, $scoreType) {
 
 			if(array_key_exists("questions", $assessment)) {
 				foreach($assessment["questions"] as $question) {
-					if(array_key_exists($question["id"], $_SESSION)) {
+					if($_SESSION[$question["id"]] != -1) {
+						echo $question["id"] . ": " . $_SESSION[$question["id"]] . "<br/>";
 						$total = $total + $_SESSION[$question["id"]];
 						$count = $count + 1;
 					}
@@ -46,7 +49,7 @@ function showScore($assessment, $scoreType) {
 			if(array_key_exists("sections", $assessment)) {
 				foreach($assessment["sections"] as $section) {
 					foreach($section["questions"] as $question) {
-						if(array_key_exists($question["id"], $_SESSION)) {
+						if($_SESSION[$question["id"]] != -1) {
 							$total = $total + $_SESSION[$question["id"]];
 							$count = $count + 1;
 						}
@@ -62,7 +65,7 @@ function showScore($assessment, $scoreType) {
 				$count = 0;
 
 				foreach($keys as $key) {
-					if(array_key_exists($key, $_SESSION)) {
+					if($_SESSION[$key] != -1) {
 						$total = $total + $_SESSION[$key];
 						$count = $count + 1;
 					}
@@ -92,8 +95,8 @@ foreach($assessments as $assessment) {
 					if(array_key_exists("questions", $assessment)) {
 						echo "<table><tr><th>Question</th><th>Response</th></tr>";
 						foreach($assessment["questions"] as $question) {
-							if(array_key_exists($question["id"], $_SESSION)) {
-								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+							if($_SESSION[$question["id"]] == -1) {
+								echo "<tr><td>" . $question["text"] . "</td><td>" . "No Response" . "</td></tr>";
 							} else {
 								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
 							}
@@ -105,7 +108,11 @@ foreach($assessments as $assessment) {
 						echo "<table><tr><th>Question</th><th>Response</th></tr>";
 						foreach($assessment["sections"] as $section) {
 							foreach($section["questions"] as $question) {
-								echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+								if($_SESSION[$question["id"]] == -1) {
+									echo "<tr><td>" . $question["text"] . "</td><td>" . "No Response" . "</td></tr>";
+								} else {
+									echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+								}
 							}
 						}
 						echo "</table><hr/>";

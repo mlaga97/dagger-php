@@ -1,6 +1,8 @@
 {
 	"moduleName": "gse",
 
+	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0": ["/GSE_*/"],
+
 	"edu.usm.dagger.main.searchAssessment.tags": {
 		"gse_check": "GSE"
 	},

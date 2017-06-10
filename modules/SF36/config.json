@@ -1,6 +1,8 @@
 {
 	"moduleName": "sf36",
 
+	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0": ["/SF36_*/"],
+
 	"edu.usm.dagger.main.searchAssessment.tags": {
 		"sf36_check": "SF-36"
 	},
