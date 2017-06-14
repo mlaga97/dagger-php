@@ -109,9 +109,9 @@ foreach($assessments as $assessment) {
 						foreach($assessment["sections"] as $section) {
 							foreach($section["questions"] as $question) {
 								if($_SESSION[$question["id"]] == -1) {
-									echo "<tr><td>" . $question["text"] . "</td><td>" . "No Response" . "</td></tr>";
+									echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td><td>" . "No Response" . "</td></tr>";
 								} else {
-									echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+									echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
 								}
 							}
 						}
