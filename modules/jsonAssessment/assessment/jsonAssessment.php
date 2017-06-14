@@ -26,7 +26,7 @@ function renderQuestionSection($questions, $types) {
 			$typeData = $types[$question["type"]];
 			switch($typeData["type"]) {
 				case "radioScale":
-					echo "<table><tr><th>Question</th>";
+					echo "<table border='1'><tr><th>Question</th>";
 					foreach($typeData["options"] as $optionText => $value) {
 						echo "<th>" . $optionText . "</th>";
 					}
@@ -43,21 +43,22 @@ function renderQuestionSection($questions, $types) {
 				if($questionNumber == 0) {
 					echo "<br/>";
 				}
-				echo "<tr><td>" . $question["text"] . "</td>";
+				echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td>";
 				foreach($typeData["options"] as $optionText => $value) {
-					echo "<td><center><input type='radio' name='" . $question["id"] . "' value='" . $value . "' /></center></td>";
+					echo "<td><center><label class='radio_caption'><br/><input type='radio' name='" . $question["id"] . "' value='" . $value . "' /><br/>" . $optionText . "</label></center></td>";
 				}
-				echo "<td class='hidden'><center><input type='radio' name='" . $question["id"] . "' value='-1' checked/></center></td>";
+				// Loading with default checked on hidden field breaks tab index -- needs to be set at submit if field undefined
+				echo "<td class='hidden'><center><input type='radio' name='" . $question["id"] . "' value='-1' /></center></td>";
 				break;
 			case "radioOptions":
 				if($questionNumber != 0) {
-					echo "<hr/>";
+					echo "<hr/><!--if questionNumber not 0 -->";
 				}
-				echo "<br/>" . $question["text"] . "<br/><br/>";
+				echo "<br/><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol>";
 				foreach($typeData["options"] as $optionText => $value) {
 					echo "<label><input type='radio' name='" . $question["id"] . "' value='" . $value . "' />" . $optionText . "</label><br/>";
 				}
-				echo "<label class='hidden'><input type='radio' name='" . $question["id"] . "' value='-1' checked/>Default</label><br/>";
+				echo "<label class='hidden'><input type='radio' name='" . $question["id"] . "' value='-1' />Default</label><br/>";
 				echo "<br/>";
 				break;
 		}
@@ -70,6 +71,8 @@ $assessments = getUnmergedConfig($filename = "assessment.json");
 
 foreach($assessments as $assessment) {
 	if($_SESSION[$assessment["metadata"]["id"]]) {
+		echo "<div id='" . $assessment["metadata"]["id"] . "_container'>";
+		echo "<hr style='margin-top:80px;margin-bottom:80px;'><!-- hr before jsonAssessment -->";
 		echo "<h3>" . $assessment["metadata"]["title"] . "</h3>";
 
 		// TODO: Determine precedence of "questions" vs "sections"
@@ -79,7 +82,6 @@ foreach($assessments as $assessment) {
 
 		if(array_key_exists("questions", $assessment)) {
 			renderQuestionSection($assessment["questions"], $assessment["types"]);
-			echo "<hr/>";
 		}
 
 		if(array_key_exists("sections", $assessment)) {
@@ -87,9 +89,9 @@ foreach($assessments as $assessment) {
 				if(array_key_exists("description", $section))
 					echo "<br/>" . $section["description"] . "<br/>";
 				renderQuestionSection($section["questions"], $assessment["types"]);
-				echo "<hr/>";
 			}
 		}
+		echo "</div>";
 	}
 }
 ?>

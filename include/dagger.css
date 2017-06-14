@@ -356,29 +356,8 @@ background: url(images/calendar.png);
 
 
 
-/* Hypertension - MG 10/13/2016 */
+/* Hypertension - MG 10/13/2016 - edit 6/12/2017 */
 
-/*
-#hypertension_section, #hypertension_results, #pediatric_section, #pediatric_results{
-	font-family: arial, helvetica;
-	font-size: 120%;
-
-}
-
-#hypertension_section h3, #hypertension_results h3{
-	text-align:center;
-}
-
-#hypertension_section table, #hypertension_results table, #pediatric_section table, #pediatric_results table {
-    border-collapse: collapse;
-
-}
-
-#hypertension_section table, #pediatric_section table,
-#hypertension_results table,  #hypertension_results td,
-#pediatric_results table, #pediatric_results td {
-    border: 1px solid black;
-}
 
 #hypertension_section th, td.hypertension_response, td.hypertension_scale, #hypertension_results td, td.pediatric_scale, #pediatric_results td{
     padding: 5px 10px 5px 10px;
@@ -388,26 +367,13 @@ background: url(images/calendar.png);
 
 }
 
-#hypertension_section input[type='radio'], #pediatric_section input[type='radio'], #pediatric_section input[type='checkbox'] {
-    transform: scale(1.7);
-}
-
-#hypertension_section td.hypertension_question, #pediatric_section td.pediatric_question  {
-	width: 60%;
-	padding:0px;
-}
-
 
 #hypertension_questions3 td.hypertension_scale, .nowrap {
 	white-space: nowrap;
 }
 
-#hypertension_section .hypertension_row, #hypertension_results td, #pediatric_section .pediatric_row, #pediatric_results td{
 
-	background-color: #EFFBFB;
-}
 
-*/
 
 
 /* Header Classes */
@@ -498,7 +464,7 @@ h1, h2 {
 	font-weight: 500;
 	line-height: 26px;
 }
-h3, h4, h5, th {
+h3, h4, h5{
 	font-size: 20px;
 	font-style: normal;
 	font-variant: normal;
@@ -568,14 +534,14 @@ input[type=checkbox] {
 
 	margin-top: 10px;   /* replace with some vertical alignment to input-container to center all inputs?? */
 }
-
+/*
 input[type=radio] {
 	margin-left:25px;
 }
-
+*/
 input[type=radio],
 input[type=checkbox] {
-	margin-right:10px;
+	margin:10px 10px 10px 10px;
 }
 
 
