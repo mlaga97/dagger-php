@@ -10,12 +10,12 @@
 			"showResponses": true,
 			"responseFormat": "human_readable",
 			"showScore": true,
-			"scoreType": ["averageValue_excludingBlank", "categoricalAverages_excludingBlank"]
+			"scoreType": "categoricalAverages_excludingBlank"
 		},
 		"viewAssessment": {
 			"showResponses": false,
 			"showScore": true,
-			"scoreType": ["averageValue_excludingBlank", "categoricalAverages_excludingBlank"]
+			"scoreType": "categoricalAverages_excludingBlank"
 		},
 		"categoricalAverages": {
 			"Physical functioning": ["SF36_3", "SF36_4", "SF36_5", "SF36_6", "SF36_7", "SF36_8", "SF36_9", "SF36_10", "SF36_11", "SF36_12"],
