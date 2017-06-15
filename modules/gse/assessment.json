@@ -6,6 +6,12 @@
 		"id": "gse_check"
 	},
 	"scoring": {
+		"unscorableTriggers": [
+			{
+				"trigger": "maxUnanswered",
+				"value": 3
+			}
+		],
 		"reviewAssessment": {
 			"showResponses": true,
 			"responseFormat": "human_readable",
