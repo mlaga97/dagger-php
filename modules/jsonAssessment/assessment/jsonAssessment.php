@@ -26,7 +26,7 @@ function renderQuestionSection($questions, $types) {
 			$typeData = $types[$question["type"]];
 			switch($typeData["type"]) {
 				case "radioScale":
-					echo "<table border='1'><tr><th>Question</th>";
+					echo "<table><tr><th>Question</th>";
 					foreach($typeData["options"] as $optionText => $value) {
 						echo "<th>" . $optionText . "</th>";
 					}
@@ -71,7 +71,7 @@ $assessments = getUnmergedConfig($filename = "assessment.json");
 
 foreach($assessments as $assessment) {
 	if($_SESSION[$assessment["metadata"]["id"]]) {
-		echo "<div id='" . $assessment["metadata"]["id"] . "_container'>";
+		echo "<div id='" . $assessment["metadata"]["id"] . "_assessment_container' class='jsonAssessment'>";
 		echo "<hr style='margin-top:80px;margin-bottom:80px;'><!-- hr before jsonAssessment -->";
 		echo "<h3>" . $assessment["metadata"]["title"] . "</h3>";
 
@@ -91,7 +91,7 @@ foreach($assessments as $assessment) {
 				renderQuestionSection($section["questions"], $assessment["types"]);
 			}
 		}
-		echo "</div>";
+		echo "</div><!-- END " . $assessment["metadata"]["id"] . "_assessment_container-->";
 	}
 }
 ?>

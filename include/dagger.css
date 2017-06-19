@@ -611,7 +611,17 @@ table{
 	width:100%;
 }
 
-td{
+.jsonAssessment table, .jsonAssessment th, .jsonAssessment td
+.hypertension_results table, .hypertension_results th, .hypertension_results td {
+	border:1px solid #999;
+}
+
+.jsonAssessment th, hypertension_results th {
+	font-weight: normal;
+}
+
+
+td, th{
 	padding:10px;
 }
 
@@ -622,4 +632,8 @@ hr{
 
 .scoring, .write {
 	margin-bottom:40px;
+}
+
+.jsonAssessment {
+	margin-bottom: 80px;
 }

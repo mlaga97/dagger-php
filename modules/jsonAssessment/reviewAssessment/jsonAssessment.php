@@ -5,6 +5,7 @@ $pageName = "reviewAssessment";
 $assessments = getUnmergedConfig($filename = "assessment.json");
 
 function showScore($assessment, $scoreType) {
+	$rnd_precision = 2; // Rounding precision for calculated values; Make a function parameter or json value for different AX?
 	switch($scoreType) {
 		case "sumOfValues":
 			$scorable = true;
@@ -61,9 +62,9 @@ function showScore($assessment, $scoreType) {
 			}
 
 			if($scorable) {
-				echo "Score: " . $total . "<hr/>";
+				echo "Score: " . $total;
 			} else {
-				echo "Could not score assessment!<hr/>";
+				echo "This assessment cannot be scored due to an insufficient number of responses.";
 			}
 
 			break;
@@ -92,9 +93,11 @@ function showScore($assessment, $scoreType) {
 				}
 			}
 
-			echo "Score: " . $total/$count . "<hr/>";
+			echo "Score: " . round(($total/$count), $rnd_precision);
 			break;
 		case "categoricalAverages_excludingBlank":
+			echo "<table>";
+			echo "<tr><th>Category</th><th>Score</th></tr>";
 			foreach($assessment["scoring"]["categoricalAverages"] as $category => $keys) {
 				$total = 0;
 				$count = 0;
@@ -106,9 +109,9 @@ function showScore($assessment, $scoreType) {
 					}
 				}
 
-				echo $category . " subscore: " . $total/$count . "<br/>";
+				echo "<tr><td>" . $category . "</td><td>" . round(($total/$count), $rnd_precision) . "</td></tr>";
 			}
-			echo "<hr/>";
+			echo "</table>";
 			break;
 	}
 }
@@ -116,6 +119,7 @@ function showScore($assessment, $scoreType) {
 // TODO: Make this look less like spaghetti and more like code.
 foreach($assessments as $assessment) {
 	if($_SESSION[$assessment["metadata"]["id"]]) {
+		echo "<div id='" . $assessment["metadata"]["id"] . "_reviewAssessment_container' class='jsonAssessment'>";
 		echo "<h3>" . $assessment["metadata"]["title"] . "</h3>";
 
 		// TODO: Determine precedence of "questions" vs "sections"
@@ -141,7 +145,7 @@ foreach($assessments as $assessment) {
 								echo "<tr><td>" . $question["text"] . "</td><td>" . "No Response" . "</td></tr>";
 							}
 						}
-						echo "</table><hr/>";
+						echo "</table>";
 					}
 
 					if(array_key_exists("sections", $assessment)) {
@@ -160,7 +164,7 @@ foreach($assessments as $assessment) {
 								}
 							}
 						}
-						echo "</table><hr/>";
+						echo "</table>";
 					}
 					break;
 			}
@@ -176,6 +180,7 @@ foreach($assessments as $assessment) {
 				showScore($assessment, $assessment["scoring"][$pageName]["scoreType"]);
 			}
 		}
+		echo "</div><!-- END " . $assessment["metadata"]["id"] . "_reviewAssessment_container-->";
 	}
 }
 ?>
