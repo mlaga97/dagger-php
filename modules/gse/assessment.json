@@ -27,6 +27,7 @@
 	"types": {
 		"GSE_question": {
 			"type": "radioScale",
+			"emptyValue": -1,
 			"options": {
 				"Not at all True": 1,
 				"Hardly True": 2,

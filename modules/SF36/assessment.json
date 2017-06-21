@@ -31,6 +31,7 @@
 	"types": {
 		"SF36_Scale_1": {
 			"type": "radioOptions",
+			"emptyValue": -1,
 			"options": {
 				"Excellent": 100,
 				"Very Good": 75,
@@ -41,6 +42,7 @@
 		},
 		"SF36_Scale_2": {
 			"type": "radioOptions",
+			"emptyValue": -1,
 			"options": {
 				"Much Better": 100,
 				"Somewhat Better": 75,
@@ -51,6 +53,7 @@
 		},
 		"SF36_Scale_3": {
 			"type": "radioScale",
+			"emptyValue": -1,
 			"options": {
 				"A Lot": 0,
 				"A Little": 50,
@@ -59,6 +62,7 @@
 		},
 		"SF36_Scale_4": {
 			"type": "radioScale",
+			"emptyValue": -1,
 			"options": {
 				"Yes": 0,
 				"No": 100
@@ -66,6 +70,7 @@
 		},
 		"SF36_Scale_5": {
 			"type": "radioOptions",
+			"emptyValue": -1,
 			"options": {
 				"Not at All": 100,
 				"Slightly": 75,
@@ -76,6 +81,7 @@
 		},
 		"SF36_Scale_6": {
 			"type": "radioOptions",
+			"emptyValue": -1,
 			"options": {
 				"None": 100,
 				"Very Mild": 80,
@@ -87,6 +93,7 @@
 		},
 		"SF36_Scale_7": {
 			"type": "radioOptions",
+			"emptyValue": -1,
 			"options": {
 				"Not at All": 100,
 				"A little": 75,
@@ -97,6 +104,7 @@
 		},
 		"SF36_Scale_8": {
 			"type": "radioScale",
+			"emptyValue": -1,
 			"options": {
 				"All": 100,
 				"Most": 80,
@@ -109,6 +117,7 @@
 		},
 		"SF36_Scale_9": {
 			"type": "radioScale",
+			"emptyValue": -1,
 			"options": {
 				"All": 0,
 				"Most": 20,
@@ -121,6 +130,7 @@
 		},
 		"SF36_Scale_10": {
 			"type": "radioOptions",
+			"emptyValue": -1,
 			"options": {
 				"All": 0,
 				"Most": 25,
@@ -131,6 +141,7 @@
 		},
 		"SF36_Scale_11": {
 			"type": "radioScale",
+			"emptyValue": -1,
 			"options": {
 				"Defininitely True": 0,
 				"Mostly True": 25,
@@ -142,6 +153,7 @@
 		},
 		"SF36_Scale_12": {
 			"type": "radioScale",
+			"emptyValue": -1,
 			"options": {
 				"Defininitely True": 100,
 				"Mostly True": 75,

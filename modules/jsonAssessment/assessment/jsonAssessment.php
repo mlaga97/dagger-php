@@ -20,7 +20,7 @@ function areFriends($types, $question1, $question2) {
 
 function renderQuestionSection($questions, $types) {
 	foreach($questions as $questionNumber=>$question) {
-		// NOTE: This takes advantage of Short-Circuit evaluation and will break otherwise
+		// NOTE: This takes advantage of short-circuit evaluation and will break otherwise
 		if($questionNumber == 0 || !areFriends($types, $question, $questions[$questionNumber-1])) {
 
 			$typeData = $types[$question["type"]];
@@ -37,7 +37,15 @@ function renderQuestionSection($questions, $types) {
 
 		}
 
+		// Get question type data
 		$typeData = $types[$question["type"]];
+
+		// Automatically set empty value, if appropriate
+		if(array_key_exists("emptyValue", $typeData)) {
+			$_SESSION[$question["id"]] = $typeData["emptyValue"];
+		}
+
+		// Render question
 		switch($typeData["type"]) {
 			case "radioScale":
 				if($questionNumber == 0) {
@@ -47,8 +55,6 @@ function renderQuestionSection($questions, $types) {
 				foreach($typeData["options"] as $optionText => $value) {
 					echo "<td><center><label class='radio_caption'><br/><input type='radio' name='" . $question["id"] . "' value='" . $value . "' /><br/>" . $optionText . "</label></center></td>";
 				}
-				// Loading with default checked on hidden field breaks tab index -- needs to be set at submit if field undefined
-				echo "<td class='hidden'><center><input type='radio' name='" . $question["id"] . "' value='-1' /></center></td>";
 				break;
 			case "radioOptions":
 				if($questionNumber != 0) {
@@ -58,7 +64,6 @@ function renderQuestionSection($questions, $types) {
 				foreach($typeData["options"] as $optionText => $value) {
 					echo "<label><input type='radio' name='" . $question["id"] . "' value='" . $value . "' />" . $optionText . "</label><br/>";
 				}
-				echo "<label class='hidden'><input type='radio' name='" . $question["id"] . "' value='-1' />Default</label><br/>";
 				echo "<br/>";
 				break;
 		}
