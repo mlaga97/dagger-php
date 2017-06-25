@@ -3,7 +3,8 @@
 		"class": "",
 		"title": "General Self-Efficacy Scale (GSE)",
 		"text": "General Self-Efficacy Scale",
-		"id": "gse_check"
+		"id": "gse_check",
+		"notes": "The GSE score range is 10 - 40.  Higher scores indicate greater self-efficacy. GSE requires a minimum of 7 responses to score."
 	},
 	"scoring": {
 		"unscorableTriggers": [

@@ -58,13 +58,14 @@ function renderQuestionSection($questions, $types) {
 				break;
 			case "radioOptions":
 				if($questionNumber != 0) {
-					echo "<hr/><!--if questionNumber not 0 -->";
+					//echo "<hr/><!--if questionNumber not 0 -->";
+					// don't know that we need to keep this condition if it's just a separator - formatting will end up being some sort of css box 
 				}
-				echo "<br/><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol>";
+				echo "<table><tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol>";
 				foreach($typeData["options"] as $optionText => $value) {
 					echo "<label><input type='radio' name='" . $question["id"] . "' value='" . $value . "' />" . $optionText . "</label><br/>";
 				}
-				echo "<br/>";
+				echo "</td></tr></table>";
 				break;
 		}
 		echo "</tr>";
@@ -77,7 +78,6 @@ $assessments = getUnmergedConfig($filename = "assessment.json");
 foreach($assessments as $assessment) {
 	if($_SESSION[$assessment["metadata"]["id"]]) {
 		echo "<div id='" . $assessment["metadata"]["id"] . "_assessment_container' class='jsonAssessment'>";
-		echo "<hr style='margin-top:80px;margin-bottom:80px;'><!-- hr before jsonAssessment -->";
 		echo "<h3>" . $assessment["metadata"]["title"] . "</h3>";
 
 		// TODO: Determine precedence of "questions" vs "sections"

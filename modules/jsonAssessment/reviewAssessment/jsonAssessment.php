@@ -61,11 +61,17 @@ function showScore($assessment, $scoreType) {
 				$scorable = false;
 			}
 
+			echo "<table><tr>";
 			if($scorable) {
-				echo "Score: " . $total;
+				echo "<td>" . $assessment["metadata"]["title"] . " Score </td><td class='score'>" . $total . "</td>";
 			} else {
-				echo "This assessment cannot be scored due to an insufficient number of responses.";
+				echo "<td colspan='2'>" . $assessment["metadata"]["title"]  . " cannot be scored due to an insufficient number of responses.</td>";
 			}
+			echo "</tr>";
+			if(array_key_exists("notes", $assessment["metadata"])) {
+				echo "<tr><td colspan='2' class='notes'>" . $assessment["metadata"]["notes"] . "</td></tr>";
+			}
+			echo "</table>";
 
 			break;
 		case "averageValue_excludingBlank":
@@ -93,7 +99,7 @@ function showScore($assessment, $scoreType) {
 				}
 			}
 
-			echo "Score: " . round(($total/$count), $rnd_precision);
+			echo "<table><tr><td>" . $assessment["metadata"]["title"] . " Score </td><td class='score'>" . $total . "</td></tr></table>";
 			break;
 		case "categoricalAverages_excludingBlank":
 			echo "<table>";
@@ -109,7 +115,10 @@ function showScore($assessment, $scoreType) {
 					}
 				}
 
-				echo "<tr><td>" . $category . "</td><td>" . round(($total/$count), $rnd_precision) . "</td></tr>";
+				echo "<tr><td>" . $category . "</td><td class='score'>" . round(($total/$count), $rnd_precision) . "</td></tr>";
+			}
+			if(array_key_exists("notes", $assessment["metadata"])) {
+				echo "<tr><td colspan='2' class='notes'>" . $assessment["metadata"]["notes"] . "</td></tr>";
 			}
 			echo "</table>";
 			break;
@@ -137,12 +146,15 @@ foreach($assessments as $assessment) {
 							// TODO: Is array_key_exists and check -1 redundant?
 							if(array_key_exists($question["id"], $_SESSION)) {
 								if($_SESSION[$question["id"]] == -1) {
-									echo "<tr><td>" . $question["text"] . "</td><td>" . "No Response" . "</td></tr>";
+									echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td>";
+									echo "<td class='score'>" . "No Response" . "</td></tr>";
 								} else {
-									echo "<tr><td>" . $question["text"] . "</td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+									echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td>";
+									echo "<td class='score'>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
 								}
 							} else {
-								echo "<tr><td>" . $question["text"] . "</td><td>" . "No Response" . "</td></tr>";
+								echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td>";
+								echo "<td class='score'>" . "No Response" . "</td></tr>";
 							}
 						}
 						echo "</table>";
@@ -155,12 +167,12 @@ foreach($assessments as $assessment) {
 								// TODO: Is array_key_exists and check -1 redundant?
 								if(array_key_exists($question["id"], $_SESSION)) {
 									if($_SESSION[$question["id"]] == -1) {
-										echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td><td>" . "No Response" . "</td></tr>";
+										echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td><td class='response'>" . "No Response" . "</td></tr>";
 									} else {
-										echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td><td>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
+										echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td><td class='response'>" . array_search($_SESSION[$question["id"]], $assessment["types"][$question["type"]]["options"]) . "</td></tr>";
 									}
 								} else {
-									echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td><td>" . "No Response" . "</td></tr>";
+									echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td><td class='response'>" . "No Response" . "</td></tr>";
 								}
 							}
 						}

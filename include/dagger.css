@@ -534,11 +534,7 @@ input[type=checkbox] {
 
 	margin-top: 10px;   /* replace with some vertical alignment to input-container to center all inputs?? */
 }
-/*
-input[type=radio] {
-	margin-left:25px;
-}
-*/
+
 input[type=radio],
 input[type=checkbox] {
 	margin:10px 10px 10px 10px;
@@ -593,7 +589,6 @@ input[type=date],
 input[type=number],
 select {
     padding-left: 10px;
-		/* min-width: 150px; */
     min-height: 32px;
 }
 
@@ -611,29 +606,45 @@ table{
 	width:100%;
 }
 
-.jsonAssessment table, .jsonAssessment th, .jsonAssessment td
-.hypertension_results table, .hypertension_results th, .hypertension_results td {
+td, th{
+	padding: 5px;
+}
+
+.jsonAssessment td.score, .jsonAssessment td.response {
+	text-align: center;
+}
+
+.jsonAssessment td.notes {
+	color: #666666;
+}
+
+.jsonAssessment {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.jsonAssessment table, #hypertension_results table {
+	margin-bottom: 40px;
+}
+
+.jsonAssessment table, .jsonAssessment th, .jsonAssessment td,
+#hypertension_results table, #hypertension_results th, #hypertension_results td {
 	border:1px solid #999;
 }
 
-.jsonAssessment th, hypertension_results th {
+.jsonAssessment th, #hypertension_results th {
 	font-weight: normal;
 }
 
-
-td, th{
-	padding:10px;
-}
-
-hr{
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #efefef;
+.jsonAssessment center {
+	line-height: 60%; /* center element in td cell adding to height  */
 }
 
 .scoring, .write {
 	margin-bottom:40px;
 }
 
-.jsonAssessment {
-	margin-bottom: 80px;
+hr{
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #efefef;
 }
