@@ -2,6 +2,7 @@
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
 	allowPrevious($_SESSION['admin'] == 1, '/clinicStatistics.php');
+	$pageTitle = "Search Clinic Records";
 
 	// TODO: Move elsewhere
 	function validateDate($date) {
@@ -10,8 +11,6 @@
 	}
 ?>
 
-<!-- HTML start -->
-<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01//EN'>
 <html>
 	<head>
 		<title>Clinic Stats</title>
@@ -24,22 +23,14 @@
 	</head>
 	<body>
 		<div class='container'>
-		<?php showMenu(); ?>
-			<div class='top'>
-				<div class='header'>
-					<div class='title'>
-						<center>
-							<h1>Search Clinic Records</h1>
-						</center>
-					</div>
-					<center>
-						<?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today);?>
-					</center>
-				</div>
-			</div>
 
-			<br/><br/><br/>
+			<!-- Menu -->
+			<?php showMenu(); ?>
 
+			<!-- Header -->
+			<?php include 'modules/main/header.php'; ?>
+
+			<!-- Body -->
 			<div style='text-align: center;'>
 				<?php
 					// We can go ahead and get the user and clinic list with
@@ -112,7 +103,9 @@
 
 			<br/><br/><br/>
 
+			<!-- Footer -->
 			<?php include 'modules/main/footer.php' ?>
+
 		</div>
 	</body>
 </html>

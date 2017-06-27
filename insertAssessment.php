@@ -4,7 +4,8 @@
 	allowPrevious('/reviewAssessment.php', '/insertAssessment.php');
 
 	postToSession(array('status', 'previous'));
-?><!DOCTYPE html>
+?>
+
 <html>
 	<head>
 		<title>Assessment Evaluation</title>
@@ -15,34 +16,33 @@
 		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
 	<body>
-	<div class="container" >
+		<div class="container" >
 
-		<?php
+			<!-- Body -->
+			<div>
+				<?php moduleLoad('insertAssessment'); ?>
 
-			// Show Modules
-			moduleLoad('insertAssessment');
+				<div style="text-align:center;">
+					<h1>Patient Record Saved</h1>
+				</div>
 
-		?>
+				<div style="text-align:center;margin-bottom:70px;">
+					Reauthenticate your login credentials to continue.
+				</div>
 
-		<div style="text-align:center;">
-			<h1>Patient Record Saved</h1>
+				<div style="text-align:center;margin-bottom:70px;">
+					<input type="button" value="Logout / Login" onclick="window.location='/index.php';" autofocus />
+					<br><br>
+				</div>
+
+				<div style="text-align:center;margin-bottom:162px;">
+					You will be automatically logged out in 30 seconds.
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<?php include 'modules/main/footer.php' ?>
+
 		</div>
-
-
-		<div style="text-align:center;margin-bottom:70px;">
-			Reauthenticate your login credentials to continue.
-		</div>
-
-		<div style="text-align:center;margin-bottom:70px;">
-			<input type="button" value="Logout / Login" onclick="window.location='/index.php';" autofocus />
-			<br><br>
-		</div>
-
-		<div style="text-align:center;margin-bottom:162px;">
-			You will be automatically logged out in 30 seconds.
-		</div>
-
-		<?php include 'modules/main/footer.php' ?>
-	</div> <!-- Close DIV Class 'container' -->
 	</body>
 </html>

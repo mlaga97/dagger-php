@@ -1,7 +1,8 @@
 <?php
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
-	allowPrevious(true, '/updateAssessment.php');
+	allowPrevious(true, '/userSettings.php');
+	$pageTitle = "User Settings";
 
 	// Get Current User Record
 	$query = 'SELECT id, name, uname, pswd, university_id, clinic_id, admin, employee_id, grouping, test_acc FROM users WHERE id = ' . $_SESSION['user_id'] . ' LIMIT 1';
@@ -19,25 +20,16 @@
 		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
 	</head>
-
 	<body>
 		<div class='container'>
-		<?php showMenu(); ?>
-			<div class='top'>
-				<div class='header'>
-					<div class='title'>
-						<center>
-							<h1>User Settings</h1>
-						</center>
-					</div>
-					<center>
-						<?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today);?>
-					</center>
-				</div>
-			</div>
 
-			<br/><br/><br/>
+			<!-- Menu -->
+			<?php showMenu(); ?>
 
+			<!-- Header -->
+			<?php include 'modules/main/header.php'; ?>
+
+			<!-- Body -->
 			<div style='text-align: center;'>
 		        <form action="userSettings.php" method="post">
 					Current Password:<br/><input type="password" name="oldPassword"><br><br>
@@ -68,7 +60,9 @@
 
 	        <br/><br/><br/>
 
+			<!-- Footer -->
 			<?php include 'modules/main/footer.php' ?>
+
 		</div>
 	</body>
 </html>

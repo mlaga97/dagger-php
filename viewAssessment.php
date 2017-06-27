@@ -2,6 +2,7 @@
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
 	allowPrevious('/searchAssessments.php', '/viewAssessment.php');
+	$pageTitle = "Patient Record";
 
 	postToSession(array('status', 'previous'));
 
@@ -30,8 +31,6 @@
 	}
 ?>
 
-
-<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -39,37 +38,28 @@
 		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
 	</head>
 	<body>
-	<div class="container">
+		<div class="container">
 
-		<!-- Menu -->
-		<?php showMenu(); ?>
+			<!-- Menu -->
+			<?php showMenu(); ?>
 
-		<div class="top">
-				<center>
-					<h1>Patient Record</h1>
-				</center>
+			<!-- Header -->
+			<?php include 'modules/main/header.php'; ?>
+
+			<!-- Body -->
+			<div>
+				<?php moduleLoad('viewAssessment'); ?>
+			</div>
+
+			<!-- Form Options -->
+			<div style="text-align:center;margin-top:50px;">
+				<input type="submit" value="Assessment" onclick="window.location='/preassessment.php'" />
+				<input type="submit" value="Search" onclick="window.location='/searchAssessments.php';" />
+			</div>
+
+			<!-- Footer -->
+			<?php include 'modules/main/footer.php'?>
+
 		</div>
-
-		<div>
-			<!-- Before moduleLoad('viewAssessment'); -->
-				<?php
-					// Show Modules
-					moduleLoad('viewAssessment');
-				?>
-			<!-- After moduleLoad('viewAssessment'); -->
-		</div>
-
-
-
-		<div style="text-align:center;margin-top:50px;">
-			<input type="submit" value="Assessment"
-				onclick="window.location='/preassessment.php'" />
-				<input type="submit"
-				value="Search"
-				onclick="window.location='/searchAssessments.php';" />
-		</div>
-
-		<?php include 'modules/main/footer.php'?>
-	</div>
 	</body>
 </html>

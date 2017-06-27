@@ -1,4 +1,6 @@
 <?php
+	// TODO: Documentation, refactor
+
 	// Check that we could connect
 	if (mysqli_connect_error()) {
 		die('Error: Connection Failed (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());

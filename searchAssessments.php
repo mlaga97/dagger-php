@@ -2,9 +2,11 @@
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
 	allowPrevious(true, '/searchAssessments.php');
+	$pageTitle = "Search Client Records";
 
 	unset($_SESSION ['search_select']);
-?><!DOCTYPE html>
+?>
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -12,7 +14,6 @@
 		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
 		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
-
 	<body>
 		<div class='container'>
 
@@ -20,17 +21,12 @@
 			<?php showMenu(); ?>
 
 			<!-- Header -->
-			<div class='top'>
-				<div class='header'>
-					<h1>Search Client Records</h1>
-				</div>
-			</div>
+			<?php include 'modules/main/header.php'; ?>
 
 			<!-- Body -->
-			<div id="dagger.module.searchAssessments" >
+			<div style='text-align: center;'>
 				<?php moduleLoad('searchAssessments'); ?>
 			</div>
-
 
 			<!-- Footer -->
 			<?php include 'modules/main/footer.php' ?>

@@ -2,7 +2,9 @@
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
 	allowPrevious($_SESSION['admin'] == 1, '/moduleList.php');
-?><!DOCTYPE html>
+	$pageTitle = "Module List";
+?>
+
 <html>
 	<head>
 		<title>Module List</title>
@@ -15,23 +17,15 @@
 	</head>
 	<body>
 		<div class='container'>
-		<?php showMenu(); ?>
-			<div class='top'>
-				<div class='header'>
-					<div class='title'>
-						<center>
-							<h1>Search Clinic Records</h1>
-						</center>
-					</div>
-					<center>
-						<?php date_default_timezone_set('America/Chicago');$today = date('l jS \of F Y h:i:s A');print_r($today);?>
-					</center>
-				</div>
-			</div>
 
-			<br/><br/><br/>
+			<!-- Menu -->
+			<?php showMenu(); ?>
 
-			<div style='text-align: center;'>
+			<!-- Header -->
+			<?php include 'modules/main/header.php'; ?>
+
+			<!-- Body -->
+			<div>
 				<table style='width: 100%'>
 					<tr>
 						<td>
@@ -72,7 +66,9 @@
 
 			<br/><br/><br/>
 
+			<!-- Footer -->
 			<?php include 'modules/main/footer.php' ?>
+
 		</div>
 	</body>
 </html>

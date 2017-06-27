@@ -1,4 +1,8 @@
 <?php
+	////////////////////////////////////////////////////////////////////////////
+	//          DO NOT USE THIS PAGE AS A TEMPLATE FOR ANOTHER PAGE           //
+	////////////////////////////////////////////////////////////////////////////
+
 	$noRedirect = true;
 	require_once 'include/dagger.php';
 	session_unset();
@@ -10,7 +14,8 @@
 
 	// Here we set our session previous variable. This variable is used to allow user access to the next web-page.
 	allowPrevious(true, '/login.php');
-?><!DOCTYPE html>
+?>
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -27,6 +32,7 @@
 			<div style="border:1px solid #999;background-color:lightyellow;padding:10px;text-align:center;height:30px;margin-bottom:100px;">
 				Access to and use of this website is restricted to authorized users only.
 			</div>
+
 			<!-- Login Form -->
 			<div class='login-form' style="height:300px;">
 				<form method="post" autocomplete="off" >
@@ -49,6 +55,7 @@
 
 			<!-- Show Footer -->
 			<?php include 'modules/main/footer.php'; ?>
+
 		</div>
 	</body>
 </html>
