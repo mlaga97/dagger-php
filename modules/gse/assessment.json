@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"class": "",
+		"class": "gse",
 		"title": "General Self-Efficacy Scale (GSE)",
 		"text": "General Self-Efficacy Scale",
 		"id": "gse_check",
@@ -27,7 +27,7 @@
 	},
 	"types": {
 		"GSE_question": {
-			"type": "radioScale",
+			"class": "radioScale",
 			"emptyValue": -1,
 			"options": {
 				"Not at all True": 1,

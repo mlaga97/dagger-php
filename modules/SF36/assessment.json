@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"class": "",
+		"class": "sf36",
 		"title": "RAND 36-Item Health Survey",
 		"text": "SF-36",
 		"id": "sf36_check",
@@ -31,7 +31,7 @@
 	},
 	"types": {
 		"SF36_Scale_1": {
-			"type": "radioOptions",
+			"class": "radioOptions",
 			"emptyValue": -1,
 			"options": {
 				"Excellent": 100,
@@ -42,7 +42,7 @@
 			}
 		},
 		"SF36_Scale_2": {
-			"type": "radioOptions",
+			"class": "radioOptions",
 			"emptyValue": -1,
 			"options": {
 				"Much Better": 100,
@@ -53,7 +53,7 @@
 			}
 		},
 		"SF36_Scale_3": {
-			"type": "radioScale",
+			"class": "radioScale",
 			"emptyValue": -1,
 			"options": {
 				"A Lot": 0,
@@ -62,7 +62,7 @@
 			}
 		},
 		"SF36_Scale_4": {
-			"type": "radioScale",
+			"class": "radioScale",
 			"emptyValue": -1,
 			"options": {
 				"Yes": 0,
@@ -70,7 +70,7 @@
 			}
 		},
 		"SF36_Scale_5": {
-			"type": "radioOptions",
+			"class": "radioOptions",
 			"emptyValue": -1,
 			"options": {
 				"Not at All": 100,
@@ -81,7 +81,7 @@
 			}
 		},
 		"SF36_Scale_6": {
-			"type": "radioOptions",
+			"class": "radioOptions",
 			"emptyValue": -1,
 			"options": {
 				"None": 100,
@@ -93,7 +93,7 @@
 			}
 		},
 		"SF36_Scale_7": {
-			"type": "radioOptions",
+			"class": "radioOptions",
 			"emptyValue": -1,
 			"options": {
 				"Not at All": 100,
@@ -104,7 +104,7 @@
 			}
 		},
 		"SF36_Scale_8": {
-			"type": "radioScale",
+			"class": "radioScale",
 			"emptyValue": -1,
 			"options": {
 				"All": 100,
@@ -117,7 +117,7 @@
 			"friends": ["SF36_Scale_9"]
 		},
 		"SF36_Scale_9": {
-			"type": "radioScale",
+			"class": "radioScale",
 			"emptyValue": -1,
 			"options": {
 				"All": 0,
@@ -130,7 +130,7 @@
 			"friends": ["SF36_Scale_8"]
 		},
 		"SF36_Scale_10": {
-			"type": "radioOptions",
+			"class": "radioOptions",
 			"emptyValue": -1,
 			"options": {
 				"All": 0,
@@ -141,7 +141,7 @@
 			}
 		},
 		"SF36_Scale_11": {
-			"type": "radioScale",
+			"class": "radioScale",
 			"emptyValue": -1,
 			"options": {
 				"Defininitely True": 0,
@@ -153,7 +153,7 @@
 			"friends": ["SF36_Scale_12"]
 		},
 		"SF36_Scale_12": {
-			"type": "radioScale",
+			"class": "radioScale",
 			"emptyValue": -1,
 			"options": {
 				"Defininitely True": 100,
