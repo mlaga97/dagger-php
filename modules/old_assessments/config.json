@@ -2,22 +2,18 @@
 	"moduleName": "old_assessments",
 
 	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0": [
-		"/duke*/", "/cd_*/", "/self_*/" ,"/phq_*/"
+		"/duke*/", "/self_*/" ,"/phq_*/"
 	],
 
 	"edu.usm.dagger.main.searchAssessment.tags": {
 		"stress_check": "Stress",
 		"events_check":	"Event",
 		"health_check":	"Health",
-		"symptom_check": "Symptom",
 		"gad_check": "GAD-7",
-		"gad2_check": "GAD-2",
 		"phq_check": "PHQ-9",
 		"audit_check": "Audit",
 		"cage_check": "Cage",
-		"cd_check": "CD",
 		"pcl_check": "PCL-C",
-		"pcl2_check": "PCL-A",
 		"psc_check": "PSC",
 		"ces_check": "CES-D",
 		"dast_check": "DAST",
@@ -27,7 +23,7 @@
 	},
 
 	"edu.usm.dagger.main.viewAssessment.dontSet_-1_to_0": [
-		"/duke*/", "/cd_*/", "/self_*/", "/phq_*/", "/value*/", "/adhd_*/"
+		"/duke*/", "/self_*/", "/phq_*/", "/value*/", "/adhd_*/"
 	],
 
 	"edu.usm.dagger.main.insert.whitelist": [
@@ -38,14 +34,10 @@
 
 		"cage_check", "cage_1", "cage_2", "cage_3", "cage_4",
 
-		"cd_check", "cd_1", "cd_2", "cd_3", "cd_4",
-
 		"ces_check", "ces_d_1", "ces_d_2", "ces_d_3", "ces_d_4", "ces_d_5", "ces_d_6", "ces_d_7", "ces_d_8", "ces_d_9", "ces_d_10",
 		"ces_d_11", "ces_d_12", "ces_d_13", "ces_d_14", "ces_d_15", "ces_d_16", "ces_d_17", "ces_d_18", "ces_d_19", "ces_d_20",
 
 		"c_stress_check",
-
-		"crafft_check", "crafft_1", "crafft_2", "crafft_3", "crafft_4", "crafft_5", "crafft_6", "crafft_7", "crafft_8", "crafft_9",
 
 		"dast_check", "dast_1", "dast_2", "dast_3", "dast_4", "dast_5", "dast_6", "dast_7", "dast_8", "dast_9", "dast_10",
 
@@ -64,16 +56,12 @@
 
 		"events_check", "e_1", "e_2", "e_3", "e_4", "e_5", "e_6", "e_7", "e_8", "e_9", "e_10",
 
-		"gad2_check", "gad2_1", "gad2_2",
-
 		"gad_check", "gad_1", "gad_2", "gad_3", "gad_4", "gad_5", "gad_6", "gad_7",
 
 		"health_check", "h_1", "h_2", "h_3", "h_4", "h_5", "h_6", "h_7", "h_8", "h_9", "h_10",
 		"h_11", "h_12", "h_13", "h_14", "h_15", "h_16", "h_17", "h_18", "h_19",
 
 		"life_check", "life_1", "life_2", "life_3", "life_4", "life_5",
-
-		"pcl2_check", "pcl2_1", "pcl2_2",
 
 		"pcl_check", "pcl_1", "pcl_2", "pcl_3", "pcl_4", "pcl_5", "pcl_6", "pcl_7", "pcl_8", "pcl_9", "pcl_10",
 		"pcl_11", "pcl_12", "pcl_13", "pcl_14", "pcl_15", "pcl_16", "pcl_17",
@@ -106,9 +94,6 @@
 		"s_21", "s_22", "s_23", "s_24", "s_25", "s_26", "s_27", "s_28", "s_29", "s_30",
 		"s_31", "s_32", "s_33", "s_34", "s_35", "s_36", "s_37", "s_38", "s_39", "s_40",
 		"s_41", "s_42", "s_43", "s_44", "s_45", "s_46", "s_47", "s_48", "s_49", "s_50",
-		"s_51", "s_53", "s_52",
-
-		"symptom_check", "symptom_1", "symptom_2", "symptom_3", "symptom_4", "symptom_5", "symptom_6", "symptom_7", "symptom_8", "symptom_9", "symptom_10",
-		"symptom_11", "symptom_12", "symptom_13", "symptom_14", "symptom_15"
+		"s_51", "s_53", "s_52"
 	]
 }

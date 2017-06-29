@@ -67,20 +67,6 @@
 					}
 				}
 			},
-			"edu.usm.dagger.menu.help.cd": {
-				"name": "Connor-Davidson",
-				"href": "#",
-				"children": {
-					"edu.usm.dagger.menu.help.cd.instrument": {
-						"name": "Instrument",
-						"href": "/modules/old_assessments/help/cd/CD-RISC_modified.pdf"
-					},
-					"edu.usm.dagger.menu.help.cd.library": {
-						"name": "Library",
-						"href": "/modules/old_assessments/help/cd/library.html"
-					}
-				}
-			},
 			"edu.usm.dagger.menu.help.pcl": {
 				"name": "PCL-C",
 				"href": "#",

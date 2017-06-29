@@ -110,48 +110,6 @@
 		echo "</div>";
 	}
 
-
-	//////////////////////////////////Print our symptoms////////////////////////////////////////////////
-	// Removed ||($_SESSION['assessment_type'] == 'Child') condition - displaying when assessment not selected
-	if($_SESSION['symptom_check'] == 1) {
-		$n = 1;
-		$first = 0;
-		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'symptom'");
-		$count_no = $count->fetch_assoc();
-		echo "<!-- Begin div symptom_scoring -->";
-		echo "<div class='scoring'>";
-		echo "<h3>Symptoms</h3>";
-		while($n <= $count_no['num']) {
-			// Exclude NULL values from symptom
-			// changed condition from > -1 to > 0
-			if($_SESSION['symptom_' .$n] > 0) {
-				$first++;
-				if($first == 1) {
-					echo "<br/>";
-					echo "<b>The patient lists experiencing the following symptoms:</b> ";
-					echo "<br/>";
-				}
-				$result = $mysqli->query("SELECT question from questions where classification = 'symptom' and Sub_ID =  $n");
-				$row = $result->fetch_assoc();
-				echo $row['question'];
-				switch ($_SESSION['symptom_' .$n]){
-					case 0:
-						echo ": Not bothered at all";
-						break;
-					case 1:
-						echo ": Bothered a little";
-						break;
-					case 2:
-						echo ": Bothered a lot";
-						break;
-				}
-				echo "<br/>";
-			}
-			$n++;
-		}
-		echo "</div>";
-	}
-	//////////////////////////////////Print our symptoms////////////////////////////////////////////////
 	if($_SESSION['diagnosis_check'] == 1) {
 		$n = 1;
 		$first = 0;

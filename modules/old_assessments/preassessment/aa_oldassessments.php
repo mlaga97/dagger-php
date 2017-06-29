@@ -4,22 +4,17 @@
 	$_SESSION['pp_check'] = 0;
 	$_SESSION['events_check'] = 0;
 	$_SESSION['health_check'] = 0;
-	$_SESSION['symptom_check'] = 0;
 	$_SESSION['gad_check'] = 0;
 	$_SESSION['phq_check'] = 0;
 	$_SESSION['audit_check'] = 0;
 	$_SESSION['cage_check'] = 0;
-	$_SESSION['cd_check'] = 0;
 	$_SESSION['pcl_check'] = 0;
 	$_SESSION['psc_check'] = 0;
 	$_SESSION['ces_check'] = 0;
 	$_SESSION['dast_check'] = 0;
 	$_SESSION['duke_check'] = 0;
 	$_SESSION['self_check'] = 0;
-	$_SESSION['gad2_check'] = 0;
 	$_SESSION['life_check'] = 0;
-	$_SESSION['crafft_check'] = 0;
-	$_SESSION['pcl2_check'] = 0;
 	$_SESSION['sdq_check'] = 0;
 	$_SESSION['diagnosis_check'] = 0;
 	$_SESSION['diag_me_check'] = 0;
@@ -65,20 +60,11 @@
 			<div title=\"This section contains questions life attitudes.\">
 				<label><input id=\"life_check\" input type=\"checkbox\" name=\"life_check\" value=\"1\" />Life Attitudes</label>
 			</div>
-			<div title=\"This section contains the Crafft substance abuse questions.\">
-				<label><input id=\"crafft_check\" input type=\"checkbox\" name=\"crafft_check\" value=\"1\" />Crafft Substance Abuse</label>
-			</div>
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>
 			</div>
-			<div title=\"This section asks questions about the symptoms the client is currently experiencing.\">
-				<label><input id=\"symptom_check\" input type=\"checkbox\" name=\"symptom_check\" value=\"1\" />PHQ-15</label>
-			</div>
 			<div title = \"The Generalized Anxiety Disorder (GAD) asks questions concerning anxiety.\">
 				<label><input id=\"gad_check\"    input type=\"checkbox\" name=\"gad_check\"    value=\"1\" />GAD-7</label>
-			</div>
-			<div title = \"The Generalized Anxiety Disorder (GAD) asks questions concerning anxiety.\">
-				<label><input id=\"gad2_check\"    input type=\"checkbox\" name=\"gad2_check\"    value=\"1\" />GAD-2</label>
 			</div>
 			<div title=\"Patient Depression Questionnaire asks questions concerning depression.\">
 				<label><input id=\"phq_check\"    input type=\"checkbox\" name=\"phq_check\"    value=\"1\" />PHQ-9</label>
@@ -89,14 +75,8 @@
 			<div title=\"The CAGE is a 4- item, relatively non-confrontational questionnaire for detection of alcoholism.\">
 				<label><input id=\"cage_check\"   input type=\"checkbox\" name=\"cage_check\"   value=\"1\" />CAGE</label>
 			</div>
-			<div title=\"The Connor-Davidson Resilience assessment asks questions concerning client resilience.\">
-				<label><input id=\"cd_check\"     input type=\"checkbox\" name=\"cd_check\"     value=\"1\" />Connor-Davidson</label>
-			</div>
 			<div title=\"The PCL-C (civilian) asks about symptoms in relation to &quot;stressful experiences.&quot;\">
 				<label><input id=\"pcl_check\"    input type=\"checkbox\" name=\"pcl_check\"    value=\"1\" />PCL-C</label>
-			</div>
-			<div title=\"The PCL-C (Civilian and Abbreviated) asks about symptoms in relation to &quot;stressful experiences.&quot;\">
-				<label><input id=\"pcl2_check\"    input type=\"checkbox\" name=\"pcl2_check\"    value=\"1\" />PCL-C (Abbreviated)</label>
 			</div>
 			<div title=\"The CES-D is a screening test for depression and depressive disorder. \">
 				<label><input id=\"ces_check\"    input type=\"checkbox\" name=\"ces_check\"    value=\"1\" />CES-D</label>
@@ -269,20 +249,11 @@
 			<div title=\"This section contains questions life attitudes.\">
 				<label><input id=\"life_check\" input type=\"checkbox\" name=\"life_check\" value=\"1\" />Life Attitudes</label>
 			</div>
-			<div title=\"This section contains the Crafft substance abuse questions.\">
-				<label><input id=\"crafft_check\" input type=\"checkbox\" name=\"crafft_check\" value=\"1\" />Crafft Substance Abuse</label>
-			</div>
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>
 			</div>
-			<div title=\"This section asks questions about the symptoms the client is currently experiencing.\">
-				<label><input id=\"symptom_check\" input type=\"checkbox\" name=\"symptom_check\" value=\"1\" />PHQ-15</label>
-			</div>
 			<div title = \"The Generalized Anxiety Disorder (GAD) asks questions concerning anxiety.\">
 				<label><input id=\"gad_check\"    input type=\"checkbox\" name=\"gad_check\"    value=\"1\" />GAD-7</label>
-			</div>
-			<div title = \"The Generalized Anxiety Disorder (GAD) asks questions concerning anxiety.\">
-				<label><input id=\"gad2_check\"    input type=\"checkbox\" name=\"gad2_check\"    value=\"1\" />GAD-2</label>
 			</div>
 			<div title=\"Patient Depression Questionnaire asks questions concerning depression.\">
 				<label><input id=\"phq_check\"    input type=\"checkbox\" name=\"phq_check\"    value=\"1\" />PHQ-9</label>
@@ -293,14 +264,8 @@
 			<div title=\"The CAGE is a 4- item, relatively non-confrontational questionnaire for detection of alcoholism.\">
 				<label><input id=\"cage_check\"   input type=\"checkbox\" name=\"cage_check\"   value=\"1\" />CAGE</label>
 			</div>
-			<div title=\"The Connor-Davidson Resilience assessment asks questions concerning client resilience.\">
-				<label><input id=\"cd_check\"     input type=\"checkbox\" name=\"cd_check\"     value=\"1\" />Connor-Davidson</label>
-			</div>
 			<div title=\"The PCL-C (civilian) asks about symptoms in relation to &quot;stressful experiences.&quot;\">
 				<label><input id=\"pcl_check\"    input type=\"checkbox\" name=\"pcl_check\"    value=\"1\" />PCL-C</label>
-			</div>
-			<div title=\"The PCL-C (Civilian and Abbreviated) asks about symptoms in relation to &quot;stressful experiences.&quot;\">
-				<label><input id=\"pcl2_check\"    input type=\"checkbox\" name=\"pcl2_check\"    value=\"1\" />PCL-C (Abbreviated)</label>
 			</div>
 			<div title=\"The CES-D is a screening test for depression and depressive disorder. \">
 				<label><input id=\"ces_check\"    input type=\"checkbox\" name=\"ces_check\"    value=\"1\" />CES-D</label>

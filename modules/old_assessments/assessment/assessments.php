@@ -7,22 +7,17 @@
 	include __DIR__ . '/../health.php';
 	include __DIR__ . '/../events.php';
 	include __DIR__ . '/../gad.php';
-	include __DIR__ . '/../gad-2.php';
 	include __DIR__ . '/../phq.php';
 	include __DIR__ . '/../audit.php';
 	include __DIR__ . '/../cage.php';
-	include __DIR__ . '/../cd.php';
 	include __DIR__ . '/../pcl.php';
 	include __DIR__ . '/../ces_d.php';
-	include __DIR__ . '/../symptoms.php';
 	include __DIR__ . '/../psc.php';
 	include __DIR__ . '/../dast.php';
 	include __DIR__ . '/../duke.php';
 	include __DIR__ . '/../self.php';
 	include __DIR__ . '/../sdq.php';
 	include __DIR__ . '/../life.php';
-	include __DIR__ . '/../crafft.php';
-	include __DIR__ . '/../pcl-2.php';
 	include __DIR__ . '/../diagnosis.php';
 	include __DIR__ . '/../diag_me.php';
 	include __DIR__ . '/../adhd.php';
@@ -76,10 +71,10 @@
 		echo "</div>";
 	}
 
-// Retained if we want to present a heading before the real Assessments
-/*
-	if (($_SESSION['gad_check'] == 1)||($_SESSION['phq_check'] == 1)||($_SESSION['audit_check'] == 1)||($_SESSION['gad2_check']==1)||
-			($_SESSION['cage_check'] == 1)||($_SESSION['cd_check'] == 1)||($_SESSION['pcl_check'] == 1)||($_SESSION['ces_check'] == 1)||
+	// Retained if we want to present a heading before the real Assessments
+	/*
+	if (($_SESSION['gad_check'] == 1)||($_SESSION['phq_check'] == 1)||($_SESSION['audit_check'] == 1)||
+			($_SESSION['cage_check'] == 1)||($_SESSION['pcl_check'] == 1)||($_SESSION['ces_check'] == 1)||
 			($_SESSION['psc_check'] == 1)||	($_SESSION['dast_check'] == 1)||($_SESSION['duke_check'] == 1)) {
 
 	} */
@@ -99,24 +94,10 @@
 		echo "<div class=\"page-break\"></div><!--force page break here. good for 8.5X11 pages -->";//these are manual page breaks for printing. May need to move them if you print the instruments in different order!
 	}
 
-	if($_SESSION['gad2_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>GAD-2</h3>";
-		write_gad2($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
 	if($_SESSION['phq_check'] == 1) {
 		echo "<div class='write'>";
 		echo "<h3>PHQ-9</h3>";
 		write_phq($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
-	if( $_SESSION['symptom_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>Symptoms</h3>";
-		write_symptoms($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 
@@ -135,24 +116,10 @@
 		echo "</div>";
 	}
 
-	if($_SESSION['cd_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>CD/h3>";
-		write_cd($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
 	if($_SESSION['pcl_check'] == 1) {
 		echo "<div class='write'>";
 		echo "<h3>PCL-C</h3>";
 		write_pcl($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
-	if($_SESSION['pcl2_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>PCL-2</h3>";
-		write_pcl2($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 
@@ -211,10 +178,6 @@
 		write_life($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 
-	}
-
-	if($_SESSION['crafft_check'] == 1) {
-		write_crafft($_SESSION['assessment_type'], $mysqli);
 	}
 
 	if($_SESSION['adhd_check'] == 1) {

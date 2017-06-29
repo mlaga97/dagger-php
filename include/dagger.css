@@ -4,23 +4,19 @@
 *****            Other stuff that hasn't been dealt with yet...            *****
 *******************************************************************************/
 
-table#major_events, table#symptoms_questions,
+table#major_events,
 table#chronic, table#table_sugar, table#table_chol, table#table_blood, table#phq_scoring_guide,
 table#health, table#c_stress, table#bio_mark, table#table_stressors, table#table_pp_steps,
 table#table_pp_area, table#life_questions, table#gad_questions, table#phq_questions,
-table#cd_questions, table#dast_questions, table#duke_questions, table#duke_physical_questions,
+table#dast_questions, table#duke_questions, table#duke_physical_questions,
 table#duke_week_questions, table#duke_social_questions, table#duke_living_questions,
 table#psc_questions, table#psc_fu_questions, table#audit_questions, table#cage_questions,
-table#crafft_questions, table#self_questions, table#self_questions_smoking {
+table#self_questions, table#self_questions_smoking {
 	width: 800px;
 }
 
 table#table_physical{
 	width: 400px;
-}
-
-#symptom_section {
-	width: 800px;
 }
 
 td.date_label{
@@ -35,18 +31,9 @@ td.c_ed{
 	width: 20px;
 }
 
-
-td.crafft_scale{
-	width: 100px;
-}
-
 td.clinic_select
 {
 	width: 100px;
-}
-
-td.cd_scale{
-	width: 75px;
 }
 
 td.psc_scale{
@@ -79,10 +66,6 @@ td.duke_scale{
 }
 
 td.cage_scale{
-	width: 100px;
-}
-
-td.crafft_scale{
 	width: 100px;
 }
 

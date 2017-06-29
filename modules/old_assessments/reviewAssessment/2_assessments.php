@@ -6,7 +6,6 @@
 	include __DIR__ . '/../presenting_problem.php';
 	include __DIR__ . '/../events.php';
 	include __DIR__ . '/../health.php';
-	include __DIR__ . '/../cd.php';
 	include __DIR__ . '/../gad.php';
 	include __DIR__ . '/../phq.php';
 	include __DIR__ . '/../audit.php';
@@ -18,9 +17,6 @@
 	include __DIR__ . '/../duke.php';
 	include __DIR__ . '/../self.php';
 	include __DIR__ . '/../sdq.php';
-	include __DIR__ . '/../pcl-2.php';
-	include __DIR__ . '/../gad-2.php';
-	include __DIR__ . '/../crafft.php';
 	include __DIR__ . '/../life.php';
 	include __DIR__ . '/../adhd.php';
 
@@ -50,19 +46,10 @@
 		self_scoring($copy, $mysqli);
 		echo "</div>";
 	}
-	if($_SESSION['cd_check'] == 1) {
-		cd_scoring($_SESSION['assessment_type'], $copy, $mysqli);
-	}
 	if($_SESSION['gad_check'] == 1) {
 		echo "<div class='scoring'>";
 		echo "<h3>GAD-7</h3>";
 		gad_scoring($copy, $mysqli);
-		echo "</div>";
-	}
-	if($_SESSION['gad2_check'] == 1) {
-		echo "<div class='scoring'>";
-		echo "<h3>GAD-2</h3>";
-		gad2_scoring($copy, $mysqli);
 		echo "</div>";
 	}
 	if($_SESSION['phq_check'] == 1) {
@@ -95,12 +82,6 @@
 		echo "<h3>PCL-C</h3>";
 		pcl_scoring($copy, $mysqli);
 		echo "</div>";
-	}
-	if($_SESSION['pcl2_check'] == 1) {
-		pcl2_scoring($copy, $mysqli);
-	}
-	if($_SESSION['crafft_check'] == 1) {
-		crafft_scoring($copy, $mysqli);
 	}
 	if($_SESSION['ces_check'] == 1) {
 		echo "<div class='scoring'>";

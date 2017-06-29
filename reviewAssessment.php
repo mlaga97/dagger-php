@@ -7,7 +7,7 @@
 	postToSession(array('status', 'previous'));
 
 	//we'll make a copy of the values saved in $_SESSION and set all '-1' values to 0 so we can do the cut-off calculations.
-	//except the duke and the cd-risc. They need to keep the -1 values for scoring.
+	//except the duke. They need to keep the -1 values for scoring.
 	$copy = $_SESSION;
 	if($value == '-1' && !multiPregMatch(getConfigKey("dagger.main.reviewAssessment.dontSet_-1_to_0"), $key)) {
 		$copy[$key] = 0;
