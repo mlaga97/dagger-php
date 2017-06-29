@@ -16,11 +16,20 @@
 	 * If the user is not logged out, then the current page is assigned the new
 	 * name provided.
 	 * 
+	 * NOTE: This check will be skipped if the debug flag for the user is set
+	 * 
 	 * @param string|string[]|boolean $access_whitelist New page access rules to enforce.
 	 * 
 	 * @param string $new_name New name to give to current page.
 	 */
 	function allowPrevious($access_whitelist, $new_name) {
+
+		// Check debug flag first
+		if(array_key_exists("debug", $_SESSION) && $_SESSION["debug"]) {
+			$_SESSION['previous'] = $new_name;
+			return;
+		}
+
 		$type = gettype($access_whitelist);
 
 		switch ($type) {

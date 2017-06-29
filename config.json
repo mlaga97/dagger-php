@@ -21,7 +21,7 @@
 	],
 
 	"edu.usm.dagger.main.login.user.keys": [
-		"university_id", "clinic_id", "admin", "grouping", "test_acc"
+		"university_id", "clinic_id", "admin", "grouping", "test_acc", "debug"
 	],
 
 	"edu.usm.dagger.main.insert.whitelist": [
@@ -67,7 +67,8 @@
 				"employee_id": "varchar(30)",
 				"active": "tinyint",
 				"grouping": "tinyint",
-				"test_acc": "tinyint"
+				"test_acc": "tinyint",
+				"debug": "tinyint"
 			}
 		}
 	}
