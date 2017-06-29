@@ -85,14 +85,14 @@ function renderQuestionSection($questions, $types, $classes) {
 		if($questionNumber == 0 || !areFriends($types, $question, $questions[$questionNumber-1])) {
 
 			// Check if current class has a header to display
-			if(array_key_exists("header", $questionTypeHandlers[$class])) {
-				$questionTypeHandlers[$class]["header"]($options);
+			if(array_key_exists("header", $classes[$class])) {
+				$classes[$class]["header"]($options);
 			}
 
 		}
 
 		// Render question
-		$questionTypeHandlers[$class]["render"]($question, $questionNumber, $options);
+		$classes[$class]["render"]($question, $questionNumber, $options);
 
 		echo "</tr>";
 
