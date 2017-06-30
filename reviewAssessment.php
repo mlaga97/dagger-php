@@ -1,10 +1,13 @@
 <?php
 	include 'include/dagger.php';
 	global $log, $mysqli, $today;
-	allowPrevious(array('/postassessment.php', '/updateAssessment.php'), '/reviewAssessment.php');
+	allowPrevious('/assessment.php', '/reviewAssessment.php');
 	$pageTitle = "Assessment Review";
 
 	postToSession(array('status', 'previous'));
+
+	// Run postAssessment scripts
+	moduleLoad('postassessment');
 
 	//we'll make a copy of the values saved in $_SESSION and set all '-1' values to 0 so we can do the cut-off calculations.
 	//except the duke. They need to keep the -1 values for scoring.

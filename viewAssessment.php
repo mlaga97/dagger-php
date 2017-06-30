@@ -4,6 +4,8 @@
 	allowPrevious('/searchAssessments.php', '/viewAssessment.php');
 	$pageTitle = "Patient Record";
 
+	// TODO: Much of this doesn't belong...
+
 	postToSession(array('status', 'previous'));
 
 	foreach ( $_POST as $key => $value ) {
