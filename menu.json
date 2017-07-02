@@ -13,6 +13,11 @@
 				"href": "/moduleList.php",
 				"displayOnlyIfThisSessionKeyIsTrue": "admin"
 			},
+			"edu.usm.dagger.menu.hamburger.dumpConfig": {
+				"name": "Configuration",
+				"href": "/dumpConfig.php",
+				"displayOnlyIfThisSessionKeyIsTrue": "debug"
+			},
 			"edu.usm.dagger.menu.hamburger.userStatistics": {
 				"name": "User Statistics",
 				"href": "/userStatistics.php"
