@@ -4,14 +4,23 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment
 $assessments = getUnmergedConfig($filename = "assessment.json");
 
 foreach($assessments as $assessment) {
+
+	// Assessment variables
+	$metadata = $assessment["metadata"];
+
+	// Metadata variables
+	$id = $metadata["id"];
+	$text = $metadata["text"];
+	$class = $metadata["class"];
+	$title = $metadata["title"];
+
+	// Default to not doing assessments
 	$_SESSION[$assessment["metadata"]["id"]] = 0;
-?>
 
-<div class="<?php echo $assessment["metadata"]["class"]?>" title="<?php echo $assessment["metadata"]["title"]?>" >
-	<label><input id="<?php echo $assessment["metadata"]["id"]?>" type="checkbox" name="<?php echo $assessment["metadata"]["id"]?>" value="1" /><?php echo $assessment["metadata"]["text"]?></label>
-</div>
+	// Show selection box
+	echo "<div class='" . $class . "' title='" . $title . "' >";
+	echo "	<label><input id='" . $id . "' type='checkbox' name='" . $id . "' value='1' />" . $text . "</label>";
+	echo "</div>";
 
-<?php
 }
-
 ?>
