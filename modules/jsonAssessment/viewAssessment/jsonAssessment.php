@@ -1,11 +1,17 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment.php');
 
-$pageName = "viewAssessment";
+// Render different content depending on whether we are reviewing or viewing
+$pageNames = array(
+	"/viewAssessment.php" => "viewAssessment",
+	"/reviewAssessment.php" => "reviewAssessment"
+);
+$pageName = $pageNames[$_SESSION["previous"]];
 
+// Retrieve all of our assessments
 $assessments = getUnmergedConfig($filename = "assessment.json");
 
-// TODO: Make this look less like spaghetti and more like code.
+// TODO: Document
 foreach($assessments as $assessment) {
 
 	// Assessment variables
