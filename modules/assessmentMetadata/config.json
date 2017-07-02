@@ -1,14 +1,48 @@
 {
 	"edu.usm.dagger.main.insert.whitelist": [
-		"assessment_type", "contact_type", "visit_type", "clinic_id"
+		"dob",
+		"pt_id",
+		"clinic_id",
+		"visit_type",
+		"contact_type",
+		"assessment_date",
+		"assessment_type",
+		"behavioralHealth_check",
+		"nutritionCounseling_check"
 	],
 
 	"edu.usm.dagger.main.insert.deprecate": [
-		"assessment_type", "contact_type", "visit_type", "clinic_id"
+		"assessment_type", "contact_type", "visit_type", "clinic_id", "pt_id", "assessment_date"
 	],
 
 	"edu.usm.dagger.main.insert.transform": {
 		"activityType": "contact_type",
-		"clinicID": "clinic_id"
+		"clinicID": "clinic_id",
+		"patientID": "pt_id",
+		"activityDate": "assessment_date"
+	},
+
+	"edu.usm.dagger.main.insert.blacklist": [
+		"activityDate_check"
+	],
+
+	"edu.usm.dagger.main.insert.encryption_whitelist": [
+		"pt_id"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"dob": "varchar(45)",
+				"pt_id": "varchar(500)",
+				"clinic_id": "int",
+				"visit_type": "varchar(45)",
+				"contact_type": "varchar(45)",
+				"assessment_date": "date",
+				"assessment_type": "varchar(15)",
+				"behavioralHealth_check": "tinyint(1)",
+				"nutritionCounseling_check": "tinyint(1)"
+			}
+		}
 	}
 }

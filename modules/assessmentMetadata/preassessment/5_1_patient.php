@@ -71,7 +71,7 @@ function setAssessmentTypeVal(dateString) {
 </script>
 
 
-
+<!-- TODO: Move to demographics? -->
 <label>
 	<h3>Patient DOB</h3>
 	<input type="date" name="dob" onblur="formatDate(this);setAssessmentTypeVal(this.value);" min="1900-01-01" max="<?php echo date('Y-m-d'); ?>" placeholder="mm/dd/yyyy" required />
