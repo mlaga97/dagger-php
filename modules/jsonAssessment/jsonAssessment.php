@@ -2,34 +2,34 @@
 
 // Handlers for various question classes
 $questionClasses = array(
-		"radioOptions" => array(
-				"render" => function($question, $questionNumber, $options) {
+	"radioOptions" => array(
+		"render" => function($question, $questionNumber, $options) {
 				echo "<table><tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol>";
 				foreach($options as $optionText => $value) {
 					echo "<label><input type='radio' name='" . $question["id"] . "' value='" . $value . "' />" . $optionText . "</label><br/>";
 				}
 				echo "</td></tr></table>";
-				}
-				),
-				"radioScale" => array(
-						"header" => function($options) {
-						echo "<table><tr><th>Question</th>";
-						foreach($options as $optionText => $value) {
-							echo "<th>" . $optionText . "</th>";
-						}
-						echo "</tr>";
-						},
-						"render" => function($question, $questionNumber, $options) {
-						if($questionNumber == 0) {
-							echo "<br/>";
-						}
-						echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td>";
-						foreach($options as $optionText => $value) {
-							echo "<td><center><label class='radio_caption'><br/><input type='radio' name='" . $question["id"] . "' value='" . $value . "' /><br/>" . $optionText . "</label></center></td>";
-						}
-						}
-						)
-				);
+			}
+		),
+	"radioScale" => array(
+		"header" => function($options) {
+			echo "<table><tr><th>Question</th>";
+			foreach($options as $optionText => $value) {
+				echo "<th>" . $optionText . "</th>";
+			}
+			echo "</tr>";
+		},
+		"render" => function($question, $questionNumber, $options) {
+			if($questionNumber == 0) {
+				echo "<br/>";
+			}
+			echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td>";
+			foreach($options as $optionText => $value) {
+				echo "<td><center><label class='radio_caption'><br/><input type='radio' name='" . $question["id"] . "' value='" . $value . "' /><br/>" . $optionText . "</label></center></td>";
+			}
+		}
+	)
+);
 
 /******************************************************************************
 *******************************************************************************
@@ -106,7 +106,7 @@ function renderQuestionSection($questions, $types, $classes) {
 ******************************************************************************/
 
 $scoreClasses = array(
-		"sumOfValues" => function($assessment, $questions) {
+	"sumOfValues" => function($assessment, $questions) {
 		$scorable = true;
 		$total = 0;
 		$unanswered = 0;
@@ -148,8 +148,8 @@ $scoreClasses = array(
 			echo " cannot be scored due to an insufficient number of responses.";
 		}
 		echo "</td></tr>";
-		},
-		"averageValue_excludingBlank" => function($assessment, $questions) {
+	},
+	"averageValue_excludingBlank" => function($assessment, $questions) {
 		$total = 0;
 		$count = 0;
 
@@ -180,15 +180,15 @@ $scoreClasses = array(
 			// Output result
 			echo "<tr><td>" . $category . "</td><td class='score'>" . round(($total/$count), 2) . "</td></tr>";
 		}
-		}
-		);
+	}
+);
 
 /******************************************************************************
 *******************************************************************************
 ******************************************************************************/
 
 $responseClasses = array(
-		"human_readable" => function($question, $assessment) {
+	"human_readable" => function($question, $assessment) {
 		echo "<tr><td><ol start='" . substr($question["id"], strpos($question["id"], "_") + 1) . "'><li>" . $question["text"] . "</li></ol></td><td class='score'>";
 
 		// TODO: Is array_key_exists and check -1 redundant?
@@ -199,8 +199,8 @@ $responseClasses = array(
 		}
 
 		echo "</td></tr>";
-		}
-		);
+	}
+);
 
 /******************************************************************************
 *******************************************************************************
