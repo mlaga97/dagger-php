@@ -8,14 +8,12 @@ $pageNames = array(
 );
 $pageName = $pageNames[$_SESSION["previous"]];
 
-// Retrieve all of our assessments
-$assessments = getUnmergedConfig($filename = "assessment.json");
-
 // TODO: Document
-foreach($assessments as $assessment) {
+foreach($jsonAssessments as $assessment) {
 
 	// Assessment variables
 	$metadata = $assessment["metadata"];
+	$sections = $assessment["sections"];
 	$questions = getQuestions($assessment);
 
 	// Metadata variables
@@ -35,7 +33,7 @@ foreach($assessments as $assessment) {
 	// Only show if the assessment was selected
 	if($_SESSION[$id]) {
 
-		// Begin Container
+		// Begin container
 		echo "<div id='" . $id . "_reviewAssessment_container' class='jsonAssessment'>";
 
 		// Show assessment title
@@ -45,28 +43,18 @@ foreach($assessments as $assessment) {
 		if($showResponses) {
 			echo "<table><tr><th>Question</th><th>Response</th></tr>";
 
-			if(array_key_exists("questions", $assessment)) {
-				foreach($assessment["questions"] as $question) {
+			// Render sections
+			foreach($sections as $section) {
+
+				// Show preface
+				if(array_key_exists("preface", $section)) {
+					echo "<tr><td colspan=2>" . $section["preface"] . "</td><tr>";
+				}
+
+				// Render questions
+				foreach($section["questions"] as $question) {
 					$responseClasses[$responseClass]($question, $assessment, $absoluteQuestionNumber);
 					$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
-				}
-			}
-
-			// Render sections
-			if(array_key_exists("sections", $assessment)) {
-				// Display preface before first question of section
-				foreach($assessment["sections"] as $section) {
-
-					// Show preface
-					if(array_key_exists("preface", $section)) {
-						echo "<tr><td colspan=2>" . $section["preface"] . "</td><tr>";
-					}
-
-					// Render questions
-					foreach($section["questions"] as $question) {
-						$responseClasses[$responseClass]($question, $assessment, $absoluteQuestionNumber);
-						$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
-					}
 				}
 			}
 
@@ -96,7 +84,7 @@ foreach($assessments as $assessment) {
 			echo "</table>";
 		}
 
-		// Footer
+		// End container
 		echo "</div><!-- END " . $id . "_reviewAssessment_container-->";
 	}
 }

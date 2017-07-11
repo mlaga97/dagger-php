@@ -1,13 +1,13 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment.php');
 
-$assessments = getUnmergedConfig($filename = "assessment.json");
+foreach($jsonAssessments as $assessment) {
 
-foreach($assessments as $assessment) {
 	// Assessment variables
 	$types = $assessment["types"];
 	$scoring = $assessment["scoring"];
 	$metadata = $assessment["metadata"];
+	$sections = $assessment["sections"];
 
 	// Metadata variables
 	$id = $metadata["id"];
@@ -28,24 +28,71 @@ foreach($assessments as $assessment) {
 		// Show assessment title
 		echo "<h3>" . $title . "</h3>";
 
-		// TODO: Determine precedence of "questions" vs "sections"
-		if(array_key_exists("questions", $assessment) && array_key_exists("sections", $assessment)) {
-			echo "Error: an assessment.json file has both 'questions' and 'sections'";
-		}
-
-		// Render questions
-		if(array_key_exists("questions", $assessment)) {
-			renderQuestionSection($assessment["questions"], $types, $questionClasses, $absoluteQuestionNumber);
-		}
-
 		// Render sections
-		if(array_key_exists("sections", $assessment)) {
-			foreach($assessment["sections"] as $section) {
+		foreach($sections as $section) {
+			// TODO: Are header and description duplicate functionality?
 
-				// Render questions
-				renderQuestionSection($section["questions"], $types, $questionClasses, $absoluteQuestionNumber);
+			// Show header if it exists
+			if(array_key_exists("header", $section) || array_key_exists("preface", $section) ) {
+				echo "<center>";
 
+				if(array_key_exists("header", $section)) {
+					echo "<br/><br/><strong>" . $section["header"] . "</strong><br/><br/>";
+				}
+
+				if(array_key_exists("preface", $section)) {
+
+					// Ask Luc what he thinks about PHP requiring parentheses in the line below.
+					echo "<br/><br/><br/>Questions " . $absoluteQuestionNumber . " - " . ($absoluteQuestionNumber + count($section["questions"]) - 1) . " should be prefaced with<br/><br/><br/>";
+					echo "<div class='question_criteria'>" . $section["preface"] . "</div>";
+				}
+
+				echo "</center>";
 			}
+
+			// Show description if it exists
+			if(array_key_exists("description", $section)) {
+				echo "<br/>" . $section["description"] . "<br/>";
+			}
+
+			// Render Questions
+			foreach($questions as $relativeQuestionNumber=>$question) {
+
+				// Question related variables
+				$id = $question["id"];
+				$text = $question["text"];
+				$typeName = $question["type"];
+
+				// Type related variables
+				$type = $types[$typeName];
+				$class = $type["class"];
+				$options = $type["options"];
+
+				// Set empty value, if appropriate
+				if(array_key_exists("emptyValue", $type)) {
+					$_SESSION[$id] = $type["emptyValue"];
+				}
+
+				// Only display header if we are starting a new block of questions
+				if($relativeQuestionNumber == 0 || !areFriends($types, $question, $questions[$relativeQuestionNumber-1])) {
+
+					// Check if current class has a header to display
+					if(array_key_exists("header", $classes[$class])) {
+						$classes[$class]["header"]($options);
+					}
+
+				}
+
+				// Render question
+				$classes[$class]["render"]($question, $relativeQuestionNumber, $absoluteQuestionNumber, $options);
+
+				// Update absolute question number
+				$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
+
+				echo "</tr>";
+			}
+
+			echo "</table>";
 		}
 
 		// End container

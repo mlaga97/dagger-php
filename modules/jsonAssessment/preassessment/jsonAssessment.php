@@ -1,9 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment.php');
 
-$assessments = getUnmergedConfig($filename = "assessment.json");
-
-foreach($assessments as $assessment) {
+foreach($jsonAssessments as $assessment) {
 
 	// Assessment variables
 	$metadata = $assessment["metadata"];
