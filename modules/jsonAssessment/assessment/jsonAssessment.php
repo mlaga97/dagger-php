@@ -4,17 +4,20 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment
 $assessments = getUnmergedConfig($filename = "assessment.json");
 
 foreach($assessments as $assessment) {
-	# Assessment variables
+	// Assessment variables
 	$types = $assessment["types"];
 	$scoring = $assessment["scoring"];
 	$metadata = $assessment["metadata"];
 
-	# Metadata variables
+	// Metadata variables
 	$id = $metadata["id"];
 	$text = $metadata["text"];
 	$class = $metadata["class"];
 	$notes = $metadata["notes"];
 	$title = $metadata["title"];
+
+	// Local variables
+	$absoluteQuestionNumber = 1;
 
 	// Only render when assessment has been selected
 	if($_SESSION[$id]) {
@@ -32,20 +35,15 @@ foreach($assessments as $assessment) {
 
 		// Render questions
 		if(array_key_exists("questions", $assessment)) {
-			renderQuestionSection($assessment["questions"], $types, $questionClasses);
+			renderQuestionSection($assessment["questions"], $types, $questionClasses, $absoluteQuestionNumber);
 		}
 
 		// Render sections
 		if(array_key_exists("sections", $assessment)) {
 			foreach($assessment["sections"] as $section) {
 
-				// Show description if it exists
-				if(array_key_exists("description", $section)) {
-					echo "<br/>" . $section["description"] . "<br/>";
-				}
-
 				// Render questions
-				renderQuestionSection($section["questions"], $types, $questionClasses);
+				renderQuestionSection($section["questions"], $types, $questionClasses, $absoluteQuestionNumber);
 
 			}
 		}

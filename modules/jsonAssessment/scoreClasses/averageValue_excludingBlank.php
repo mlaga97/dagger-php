@@ -2,7 +2,7 @@
 
 global $scoreClasses;
 
-$scoreClasses["averageValue_excludingBlank"] = function($assessment, $questions) {
+$scoreClasses["averageValue_excludingBlank"] = function($assessment, $questions, &$absoluteQuestionNumber) {
 	$total = 0;
 	$count = 0;
 

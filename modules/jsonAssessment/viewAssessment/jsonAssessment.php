@@ -29,20 +29,45 @@ foreach($assessments as $assessment) {
 	$showResponses = $assessment["scoring"][$pageName]["showResponses"];
 	$responseClass = $assessment["scoring"][$pageName]["responseFormat"];
 
+	// Local variables
+	$absoluteQuestionNumber = 1;
+
 	// Only show if the assessment was selected
 	if($_SESSION[$id]) {
 
-		// Header
+		// Begin Container
 		echo "<div id='" . $id . "_reviewAssessment_container' class='jsonAssessment'>";
+
+		// Show assessment title
 		echo "<h3>" . $title . "</h3>";
 
 		// Responses
 		if($showResponses) {
 			echo "<table><tr><th>Question</th><th>Response</th></tr>";
 
-			// Call handler for each question
-			foreach($questions as $question) {
-				$responseClasses[$responseClass]($question, $assessment);
+			if(array_key_exists("questions", $assessment)) {
+				foreach($assessment["questions"] as $question) {
+					$responseClasses[$responseClass]($question, $assessment, $absoluteQuestionNumber);
+					$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
+				}
+			}
+
+			// Render sections
+			if(array_key_exists("sections", $assessment)) {
+				// Display preface before first question of section
+				foreach($assessment["sections"] as $section) {
+
+					// Show preface
+					if(array_key_exists("preface", $section)) {
+						echo "<tr><td colspan=2>" . $section["preface"] . "</td><tr>";
+					}
+
+					// Render questions
+					foreach($section["questions"] as $question) {
+						$responseClasses[$responseClass]($question, $assessment, $absoluteQuestionNumber);
+						$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
+					}
+				}
 			}
 
 			echo "</table>";
@@ -55,10 +80,12 @@ foreach($assessments as $assessment) {
 			// Allow assessment to use multiple scoring methods
 			if(gettype($scoreTypes) == "array") {
 				foreach($scoreTypes as $scoreType) {
-					$scoreClasses[$scoreType]($assessment, $questions);
+					$scoreClasses[$scoreType]($assessment, $questions, $absoluteQuestionNumber);
+					$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
 				}
 			} else {
-				$scoreClasses[$scoreTypes]($assessment, $questions);
+				$scoreClasses[$scoreTypes]($assessment, $questions, $absoluteQuestionNumber);
+				$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
 			}
 
 			// Print notes below score

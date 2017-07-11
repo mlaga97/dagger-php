@@ -2,7 +2,7 @@
 
 global $scoreClasses;
 
-$scoreClasses["sumOfValues"] = function($assessment, $questions) {
+$scoreClasses["sumOfValues"] = function($assessment, $questions, &$absoluteQuestionNumber) {
 	$scorable = true;
 	$total = 0;
 	$unanswered = 0;

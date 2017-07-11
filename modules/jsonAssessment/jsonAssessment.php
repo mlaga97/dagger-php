@@ -47,9 +47,34 @@ function areFriends($types, $question1, $question2) {
 
 }
 
-function renderQuestionSection($questions, $types, $classes) {
+function renderQuestionSection($questions, $types, $classes, &$absoluteQuestionNumber) {
+	// TODO: Pick one
 
-	foreach($questions as $questionNumber=>$question) {
+	// Show header if it exists
+	if(array_key_exists("header", $section) || array_key_exists("preface", $section) ) {
+		echo "<center>";
+
+		if(array_key_exists("header", $section)) {
+			echo "<br/><br/><strong>" . $section["header"] . "</strong><br/><br/>";
+		}
+
+		if(array_key_exists("preface", $section)) {
+
+			// Ask Luc what he thinks about PHP requiring parentheses in the line below.
+			echo "<br/><br/><br/>Questions " . $absoluteQuestionNumber . " - " . ($absoluteQuestionNumber + count($section["questions"]) - 1) . " should be prefaced with<br/><br/><br/>";
+			echo "<div class='question_criteria'>" . $section["preface"] . "</div>";
+		}
+
+		echo "</center>";
+	}
+
+	// Show description if it exists
+	if(array_key_exists("description", $section)) {
+		echo "<br/>" . $section["description"] . "<br/>";
+	}
+
+	// Render Questions
+	foreach($questions as $relativeQuestionNumber=>$question) {
 
 		// Question related variables
 		$id = $question["id"];
@@ -67,7 +92,7 @@ function renderQuestionSection($questions, $types, $classes) {
 		}
 
 		// Only display header if we are starting a new block of questions
-		if($questionNumber == 0 || !areFriends($types, $question, $questions[$questionNumber-1])) {
+		if($relativeQuestionNumber == 0 || !areFriends($types, $question, $questions[$relativeQuestionNumber-1])) {
 
 			// Check if current class has a header to display
 			if(array_key_exists("header", $classes[$class])) {
@@ -77,10 +102,12 @@ function renderQuestionSection($questions, $types, $classes) {
 		}
 
 		// Render question
-		$classes[$class]["render"]($question, $questionNumber, $options);
+		$classes[$class]["render"]($question, $relativeQuestionNumber, $absoluteQuestionNumber, $options);
+
+		// Update absolute question number
+		$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
 
 		echo "</tr>";
-
 	}
 
 	echo "</table>";

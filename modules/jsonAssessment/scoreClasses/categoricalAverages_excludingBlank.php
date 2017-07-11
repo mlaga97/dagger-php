@@ -2,7 +2,7 @@
 
 global $scoreClasses;
 
-$scoreClasses["categoricalAverages_excludingBlank"] = function($assessment, $questions) {
+$scoreClasses["categoricalAverages_excludingBlank"] = function($assessment, $questions, &$absoluteQuestionNumber) {
 	echo "<tr><th>Category</th><th>Score</th></tr>";
 
 	foreach($assessment["scoring"]["categoricalAverages"] as $category => $keys) {
