@@ -11,6 +11,7 @@
 	}
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Clinic Stats</title>

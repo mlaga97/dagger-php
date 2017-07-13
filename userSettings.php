@@ -10,6 +10,7 @@
 	$row = $info->fetch_assoc();
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Options</title>

@@ -9,6 +9,7 @@
 	$log->info("CLINIC LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">

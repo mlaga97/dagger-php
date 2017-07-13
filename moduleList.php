@@ -5,6 +5,7 @@
 	$pageTitle = "Module List";
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Module List</title>

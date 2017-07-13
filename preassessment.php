@@ -9,6 +9,7 @@
 	unsetAllButTheseKeys(getConfigKey("edu.usm.dagger.main.preassessment.keysToKeep"));
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">

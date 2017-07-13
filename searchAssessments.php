@@ -7,6 +7,7 @@
 	unset($_SESSION ['search_select']);
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">

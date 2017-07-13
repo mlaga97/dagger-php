@@ -6,6 +6,7 @@
 	postToSession(array('status', 'previous'));
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Assessment Evaluation</title>
