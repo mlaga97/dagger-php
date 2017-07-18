@@ -30,6 +30,9 @@ foreach($jsonAssessments as $assessment) {
 
 		// Render sections
 		foreach($sections as $section) {
+			$questions = $section["questions"];
+
+			// TODO: Remove array accesses from of conditionals
 			// TODO: Are header and description duplicate functionality?
 
 			// Show header if it exists
@@ -77,14 +80,14 @@ foreach($jsonAssessments as $assessment) {
 				if($relativeQuestionNumber == 0 || !areFriends($types, $question, $questions[$relativeQuestionNumber-1])) {
 
 					// Check if current class has a header to display
-					if(array_key_exists("header", $classes[$class])) {
-						$classes[$class]["header"]($options);
+					if(array_key_exists("header", $questionClasses[$class])) {
+						$questionClasses[$class]["header"]($options);
 					}
 
 				}
 
 				// Render question
-				$classes[$class]["render"]($question, $relativeQuestionNumber, $absoluteQuestionNumber, $options);
+				$questionClasses[$class]["render"]($question, $relativeQuestionNumber, $absoluteQuestionNumber, $options);
 
 				// Update absolute question number
 				$absoluteQuestionNumber = $absoluteQuestionNumber + 1;

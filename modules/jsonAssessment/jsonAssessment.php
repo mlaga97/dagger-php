@@ -28,10 +28,10 @@ $jsonAssessments = getUnmergedConfig($filename = "assessment.json");
 
 // Convert "questions" field to "sections" field
 // TODO: explain better
-foreach($jsonAssessments as $assessment) {
+foreach($jsonAssessments as $index => $assessment) {
 	if(array_key_exists("questions", $assessment)) {
 		$section = array(
-				"questions" => $assessment["questions"]
+			"questions" => $assessment["questions"]
 		);
 
 		// Make the "questions" section appear as a "section"
@@ -40,6 +40,8 @@ foreach($jsonAssessments as $assessment) {
 		} else {
 			$assessment["sections"] = array($section);
 		}
+
+		$jsonAssessments[$index] = $assessment;
 	}
 }
 
