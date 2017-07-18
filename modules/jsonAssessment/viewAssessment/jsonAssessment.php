@@ -85,7 +85,7 @@ foreach($jsonAssessments as $assessment) {
 		}
 
 		// End container
-		echo "</div><!-- END " . $id . "_reviewAssessment_container-->";
+		echo "</div><hr/><!-- END " . $id . "_reviewAssessment_container-->";
 	}
 }
 

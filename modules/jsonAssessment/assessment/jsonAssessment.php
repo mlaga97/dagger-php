@@ -99,7 +99,7 @@ foreach($jsonAssessments as $assessment) {
 		}
 
 		// End container
-		echo "</div><!-- END " . $assessment["metadata"]["id"] . "_assessment_container-->";
+		echo "</div><hr/><!-- END " . $assessment["metadata"]["id"] . "_assessment_container-->";
 
 	}
 }
