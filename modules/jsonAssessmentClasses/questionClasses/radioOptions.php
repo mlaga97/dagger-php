@@ -11,4 +11,12 @@ $questionClasses["radioOptions"]["render"] = function($question, $relativeQuesti
 	echo "</td></tr></table>";
 };
 
+$questionClasses["radioOptions"]["parseResponse"] = function($rawAnswer, $type) {
+	if($rawAnswer == $type["emptyValue"]) {
+		return "No Response";
+	}
+
+	return array_search($rawAnswer, $type["options"]);
+}
+
 ?>

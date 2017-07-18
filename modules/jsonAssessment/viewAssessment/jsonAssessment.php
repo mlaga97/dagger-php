@@ -53,8 +53,40 @@ foreach($jsonAssessments as $assessment) {
 
 				// Render questions
 				foreach($section["questions"] as $question) {
-					$responseClasses[$responseClass]($question, $assessment, $absoluteQuestionNumber);
+
+					// Question variables
+					$id = $question["id"];
+					$text = $question["text"];
+					$type = $question["type"];
+
+					// Type variables
+					$questionType = $assessment["types"][$type];
+					$class = $questionType["class"];
+					$options = $questionType["options"];
+					$emptyValue = $questionType["emptyValue"];
+					$responseSuffix = $questionType["responseSuffix"];
+
+					// Other variables
+					$rawAnswer = $_SESSION[$id];
+
+					// Calculate answer
+					// TODO: Add suffixes back
+					if(array_key_exists($id, $_SESSION)) {
+						if(array_key_exists("parseResponse", $questionClasses[$class])) {
+							$answer = $questionClasses[$class]["parseResponse"]($rawAnswer, $questionType);
+						} else {
+							$answer = $rawAnswer;
+						}
+					} else {
+						$answer = "No Response";
+					}
+
+					// Show question
+					echo "<tr><td><ol start='" . $absoluteQuestionNumber . "'><li>" . $text . "</li></ol></td><td class='score'>" . $answer . "</td></tr>";
+
+					// Increment counter
 					$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
+
 				}
 			}
 

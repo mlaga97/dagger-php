@@ -20,3 +20,13 @@ $questionClasses["radioScale"]["render"] = function($question, $relativeQuestion
 		echo "<td><center><label class='radio_caption'><br/><input type='radio' name='" . $question["id"] . "' value='" . $value . "' /><br/>" . $optionText . "</label></center></td>";
 	}
 };
+
+$questionClasses["radioScale"]["parseResponse"] = function($rawAnswer, $type) {
+	if($rawAnswer == $type["emptyValue"]) {
+		return "No Response";
+	}
+
+	return array_search($rawAnswer, $type["options"]);
+}
+
+?>
