@@ -13,13 +13,6 @@
 			$sum += $_SESSION[$field_name . '-5'];
 			$sum += $_SESSION[$field_name . '-6'];
 
-			unset($_SESSION[$field_name . '-1']);
-			unset($_SESSION[$field_name . '-2']);
-			unset($_SESSION[$field_name . '-3']);
-			unset($_SESSION[$field_name . '-4']);
-			unset($_SESSION[$field_name . '-5']);
-			unset($_SESSION[$field_name . '-6']);
-
 			$_SESSION[$field_name] = $sum;
 		}
 	}

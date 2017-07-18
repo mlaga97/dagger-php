@@ -1,0 +1,199 @@
+{
+	"metadata": {
+		"class": "pediatric",
+		"title": "The Pediatric Healthy Lifestyles Screening",
+		"text": "Pediatric HLS",
+		"id": "pediatric_check"
+	},
+	"scoring": {
+		"reviewAssessment": {
+			"showResponses": true,
+			"responseFormat": "human_readable",
+			"showScore": false
+		},
+		"viewAssessment": {
+			"showResponses": true,
+			"responseFormat": "human_readable",
+			"showScore": false
+		}
+	},
+	"types": {
+		"HLS_familyHealth": {
+			"class": "bitwiseTable",
+			"emptyValue": 0,
+			"options": ["Mother", "Father", "Sibling", "Grandparent", "Aunt/Uncle", "Other"]
+		},
+		"HLS_servings": {
+			"class": "radioScale",
+			"emptyValue": 99,
+			"responseSuffix": "servings",
+			"options": {
+				"0-1": 0,
+				"2-3": 2,
+				"4-5": 4,
+				"6-7": 6
+			}
+		},
+		"HLS_screentime": {
+			"class": "radioScale",
+			"emptyValue": 99,
+			"options": {
+				"Less than 1 hour": 4,
+				"1-2 hours": 3,
+				"3-4 hours": 2,
+				"More than 4 hours": 1
+			}
+		},
+		"HLS_days": {
+			"class": "radioScale",
+			"emptyValue": 99,
+			"responseSuffix": "days",
+			"options": {
+				"0-1": 0,
+				"2-3": 2,
+				"4-5": 4,
+				"6-7": 6
+			}
+		},
+		"HLS_daysInverted": {
+			"class": "radioScale",
+			"emptyValue": 99,
+			"responseSuffix": "",
+			"options": {
+				"0-1": 4,
+				"2-3": 3,
+				"4-5": 2,
+				"6-7": 1
+			}
+		},
+		"HLS_drink": {
+			"class": "radioScale",
+			"emptyValue": 99,
+			"responseSuffix": "times",
+			"options": {
+				"0": 4,
+				"1-2": 3,
+				"3-4": 2,
+				"More than 4": 1
+			}
+		},
+		"HLS_scale_1": {
+			"class": "radioScale",
+			"emptyValue": 99,
+			"options": {
+				"Never": 4,
+				"Rarely": 3,
+				"Sometimes": 2,
+				"Often": 1
+			}
+		},
+		"HLS_scale_2": {
+			"class": "radioScale",
+			"emptyValue": 99,
+			"options": {
+				"0-1 (Low)": 4,
+				"2-4": 3,
+				"5-7": 2,
+				"8-10 (Very)": 1
+			}
+		},
+		"HLS_scale_3": {
+			"class": "radioScale",
+			"emptyValue": 99,
+			"options": {
+				"0-1 (No)": 4,
+				"2-4 (Maybe)": 3,
+				"5-7 (Yes)": 2,
+				"8-10 (Definitely)": 1
+			}
+		}
+	},
+	"questions": [
+		{
+			"id": "HLS_FH_Diab",
+			"text": "Has anyone in your family ever been diagnosed with diabetes/gestational diabetes?",
+			"type": "HLS_familyHealth"
+		},
+		{
+			"id": "HLS_FH_HBP",
+			"text": "Has anyone in your family ever been diagnosed with high blood pressure?",
+			"type": "HLS_familyHealth"
+		},
+		{
+			"id": "HLS_FH_HD",
+			"text": "Has anyone in your family ever been diagnosed with heart disease (heart attack, stroke, high cholesterol)?",
+			"type": "HLS_familyHealth"
+		},
+		{
+			"id": "HLS_FH_Overwt",
+			"text": "Has anyone in your family every been diagnosed as overweight?",
+			"type": "HLS_familyHealth"
+		},
+		{
+			"id": "HLS_Servings",
+			"text": "How many servings per day (1 serving = 1/2 cup) of fruits and vegetables does your child eat?",
+			"type": "HLS_servings"
+		},
+		{
+			"id": "HLS_Screentime",
+			"text": "In total, how many hours per day does your child watch TV or movies, play video or computer games?",
+			"type": "HLS_screentime"
+		},
+		{
+			"id": "HLS_PhysAct",
+			"text": "How many days per week is your child physically active, outside of school time, for at least 60 minutes? (walking, running, biking, swimming, playing outside, dancing, etc.)",
+			"type": "HLS_days"
+		},
+		{
+			"id": "HLS_FamAct",
+			"text": "How many days per week does your family do something active together?",
+			"type": "HLS_days"
+		},
+		{
+			"id": "HLS_Drink",
+			"text": "How many times per day does your child drink any of the following: juice, soda, sports drinks, energy drinks, flavored milk, lemonade, sweetened tea, or coffee drinks?",
+			"type": "HLS_drink"
+		},
+		{
+			"id": "HLS_Brkfst",
+			"text": "How many days per week does your child eat breakfast?",
+			"type": "HLS_days"
+		},
+		{
+			"id": "HLS_Table",
+			"text": "How many days per week does your family eat dinner together at the table?",
+			"type": "HLS_days"
+		},
+		{
+			"id": "HLS_EatOut",
+			"text": "How many days per week does your child eat food outside the home/school?",
+			"type": "HLS_daysInverted"
+		},
+		{
+			"id": "HLS_Money",
+			"text": "Are you ever worried that food will run out before you get more money to buy more?",
+			"type": "HLS_scale_1"
+		},
+		{
+			"id": "HLS_Sleep",
+			"text": "Is your child having difficulty with sleeping or snoring?",
+			"type": "HLS_scale_1"
+		},
+		{
+			"id": "HLS_Health",
+			"text": "How worried are you about your child's health?",
+			"type": "HLS_scale_2"
+		},
+		{
+			"id": "HLS_Weight",
+			"text": "How worried are you about your child's weight?",
+			"type": "HLS_scale_2"
+		},
+		{
+			"id": "HLS_Now",
+			"text": "Is now a good time to work on family eating and activity habits?",
+			"type": "HLS_scale_3"
+		}
+	]
+}
+
