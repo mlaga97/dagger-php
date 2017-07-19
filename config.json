@@ -25,7 +25,7 @@
 	],
 
 	"edu.usm.dagger.main.insert.whitelist": [
-		"id", "user_id", "date", "assessment_time"
+		"id", "user_id", "date", "assessment_time", "versionString"
 	],
 
 	"edu.usm.dagger.main.insert.deprecate": [
@@ -54,7 +54,8 @@
 				"id": "int(11)",
 				"user_id": "int(11)",
 				"date": "date",
-				"assessment_time": "varchar(15)"
+				"assessment_time": "varchar(15)",
+				"versionString": "varchar(45)"
 			}
 		},
 		"users": {

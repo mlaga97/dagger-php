@@ -17,7 +17,12 @@
 		<img src="/include/images/usm.png" style="width:80px;height:80px;" alt="USM" />
 	</div>
 
-	<div style="float:left;font-size:12px;color:gray;padding-top:20px;text-align:center;width:600px;" >
+	<div style="float:left;font-size:12px;color:gray;padding-top:<?php if($_SESSION['previous'] == '/login.php') echo 20; else echo 0; ?>px;text-align:center;width:600px;" >
+		<?php
+			if($_SESSION['previous'] != '/login.php') {
+				echo "Dagger " . $_SESSION['versionString'] . " (" . date("Y-m-d H:m:s", $_SESSION['revisionDate']) . ")<br/>";
+			}
+		?>
 		&copy; The University of Southern Mississippi<br>Funded by the Gulf Region Health Outreach Program, 2012
 	</div>
 
