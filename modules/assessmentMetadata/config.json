@@ -6,20 +6,22 @@
 		"visit_type",
 		"contact_type",
 		"assessment_date",
+		"assessment_time",
 		"assessment_type",
 		"behavioralHealth_check",
 		"nutritionCounseling_check"
 	],
 
 	"edu.usm.dagger.main.insert.deprecate": [
-		"assessment_type", "contact_type", "visit_type", "clinic_id", "pt_id", "assessment_date"
+		"assessment_type", "contact_type", "visit_type", "clinic_id", "pt_id", "assessment_date", "assessment_time"
 	],
 
 	"edu.usm.dagger.main.insert.transform": {
 		"activityType": "contact_type",
 		"clinicID": "clinic_id",
 		"patientID": "pt_id",
-		"activityDate": "assessment_date"
+		"activityDate": "assessment_date",
+		"assesmentTime": "assessment_time"
 	},
 
 	"edu.usm.dagger.main.insert.blacklist": [
@@ -39,6 +41,7 @@
 				"visit_type": "varchar(45)",
 				"contact_type": "varchar(45)",
 				"assessment_date": "date",
+				"assessment_time": "varchar(15)",
 				"assessment_type": "varchar(15)",
 				"behavioralHealth_check": "tinyint(1)",
 				"nutritionCounseling_check": "tinyint(1)"
