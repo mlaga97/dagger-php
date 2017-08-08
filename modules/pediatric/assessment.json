@@ -5,6 +5,18 @@
 		"text": "Pediatric HLS",
 		"id": "pediatric_check"
 	},
+	"visibilityRules": [
+		{
+			"type": "default",
+			"show": false
+		},
+		{
+			"type": "ifKeyMatches",
+			"key": "assessmentType",
+			"matches": "Child",
+			"show": true
+		}
+	],
 	"scoring": {
 		"reviewAssessment": {
 			"showResponses": true,

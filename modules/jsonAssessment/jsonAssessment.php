@@ -26,9 +26,10 @@ global $jsonAssessments;
 // Go ahead and load all the assessments now
 $jsonAssessments = getUnmergedConfig($filename = "assessment.json");
 
-// Convert "questions" field to "sections" field
 // TODO: explain better
 foreach($jsonAssessments as $index => $assessment) {
+
+	// Convert "questions" field to "sections" field
 	if(array_key_exists("questions", $assessment)) {
 		$section = array(
 			"questions" => $assessment["questions"]
@@ -41,10 +42,50 @@ foreach($jsonAssessments as $index => $assessment) {
 			$assessment["sections"] = array($section);
 		}
 
+		// TODO: Why is it this way?
 		$jsonAssessments[$index] = $assessment;
 	}
+
+	// Determine visibility
+	// TODO: The following code may or may not work.
+	$visibility = true;
+	if(array_key_exists("visibilityRules", $assessment)) {
+		foreach($assessment["visibilityRules"] as $rule) {
+			switch($rule["type"]) {
+				case "default":
+					$visibility = $rule["show"];
+					break;
+				case "ifKeyMatches":
+					$key = $rule["key"];
+					$show = $rule["show"];
+
+					if(gettype($rule["matches"]) == "array") {
+						$matches = $rule["matches"];
+					} else {
+						$matches = array($rule["matches"]);
+					}
+
+					if(in_array($_SESSION[$key], $matches)) {
+						$visibility = true;
+						break 3;
+					} else {
+						break 2;
+					}
+			}
+		}
+	}
+	$jsonAssessments[$index]["visibility"] = $visibility;
 }
 
+
+/*
+
+"visibility": [
+{ "type": "default", "show": false },
+{ "type": "ifKeyMatches", "key": "assessmentType", "matches": "Child", "show": true }
+],
+
+*/
 /******************************************************************************
 *******************************************************************************
 ******************************************************************************/
