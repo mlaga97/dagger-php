@@ -18,10 +18,10 @@ function enableSubmit(c_pt_id) {
 <div id="dagger.confirm.submit" style="text-align:center;margin-bottom:20px;padding:20px;border:1px solid black;background-color:lightyellow;">
 
 	<!-- TODO: Move elsewhere -->
-	<!-- TODO: Add conditionals -->
-	<label for="dagger.reviewAssessment.assessmentTime" > Appointment Duration</label>
-	<input type="text" id="dagger.reviewAssessment.assessmentTime" name="assessmentTime" /><br/>
-
+	<?php if(in_array($_SESSION["activityType"], array("Appointment", "Warm Hand Off", "Warm Hand Off and Consult", "Phone Call")) ) { ?>
+		<label for="dagger.reviewAssessment.assessmentTime" > Appointment Duration</label>
+		<input type="text" id="dagger.reviewAssessment.assessmentTime" name="assessmentTime" /><br/>
+	<?php } ?>
 
 	<label for="dagger.reviewAssessment.confirm_patientID" > Confirm Patient ID</label>
 	<input type="text" id="dagger.reviewAssessment.confirm_patientID" oninput="enableSubmit(this.value);"/>
