@@ -3,7 +3,8 @@
 	header('Content-Type: application/json');
 
 	// Only get first member of split
-	$truncatedURI = explode('?', $_SERVER['REQUEST_URI'])[0];
+	$explodedURI = explode('?', $_SERVER['REQUEST_URI']);
+	$truncatedURI = $explodedURI[0];
 	$uri = explode('/', $truncatedURI);
 
 	// Get rid of blank first element
@@ -62,6 +63,7 @@
 	do {
 		$shortURI = '';
 
+		// TODO: Add reverse of this, to get additional request data
 		foreach(array_slice($uri, 2, count($uri) - 2 - $cut++) as $slice)
 			$shortURI = $shortURI . '/' . $slice;
 
@@ -97,5 +99,6 @@
 		$output['error'] = $error;
 
 	// Send the response
-	echo(prettyPrint(json_encode($output, JSON_UNESCAPED_SLASHES)));
+	// TODO: Replace with JSON_UNESCAPED_SLASHES when server is upgraded
+	echo(prettyPrint(str_replace('\\/', '/', json_encode($output))));
 ?>
