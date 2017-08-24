@@ -45,6 +45,7 @@
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/utility.php');
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/menu.php');
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/version.php');
+	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/json.php');
 
 	// Reset the $noRedirect key used on the login page now that setup is done
 	if(!empty($noRedirect)) {

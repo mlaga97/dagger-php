@@ -65,11 +65,13 @@ foreach($jsonAssessments as $index => $assessment) {
 						$matches = array($rule["matches"]);
 					}
 
-					if(in_array($_SESSION[$key], $matches)) {
-						$visibility = true;
-						break 3;
-					} else {
-						break 2;
+					if(array_key_exists($key, $_SESSION)) {
+						if(in_array($_SESSION[$key], $matches)) {
+							$visibility = true;
+							break 3;
+						} else {
+							break 2;
+						}
 					}
 			}
 		}

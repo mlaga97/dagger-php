@@ -24,8 +24,9 @@
 					console.log(update.key + " = " + update.value);
 				},
 
-				loader: function(jsonAssessments) {
-					dagger.jsonAssessment.jsonAssessments = jsonAssessments;
+				loader: function(response) {
+					// TODO: Handle Errors?
+					dagger.jsonAssessment.jsonAssessments = response.response;
 
 					_(dagger.jsonAssessment.jsonAssessments).each(function(jsonAssessment) {
 						var metadata = jsonAssessment.metadata;
@@ -63,7 +64,7 @@
 
 	$.ajax({
 		dataType: "json",
-		url: "/modules/jsonAssessment/dumpAssessments.php",
+		url: "/api/v1/assessment/all",
 		data: {},
 		success: dagger.jsonAssessment.preassessment.loader
 	});
