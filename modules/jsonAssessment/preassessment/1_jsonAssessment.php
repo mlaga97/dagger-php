@@ -3,6 +3,28 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script> -->
 
 <script type="text/javascript">
+	var visibilityKeys = {
+		"assessment_type": [
+			function(assessment_type) {
+				var elements = document.getElementsByClassName("pediatric");
+				var display = "";
+
+				switch(assessment_type) {
+					case "Adult":
+						display = "none";
+						break;
+					case "Child":
+						display = "block";
+						break;
+				}
+
+				_(elements).each(function(element) {
+					element.style.display = display;
+				})
+			}
+		]
+	}
+
 	var dagger = {
 		jsonAssessment: {
 			jsonAssessments: {},
@@ -22,6 +44,13 @@
 				updater: function() {
 					var update = dagger.jsonAssessment.preassessment.domListener(this);
 					console.log(update.key + " = " + update.value);
+
+					// TODO: FIX THIS
+					if(_(visibilityKeys).has(update.key)) {
+						_(visibilityKeys[update.key]).each(function(f) {
+							f(update.value);
+						})
+					}
 				},
 
 				loader: function(response) {
@@ -32,7 +61,7 @@
 						var metadata = jsonAssessment.metadata;
 
 						var div = document.createElement("div");
-						div.class = metadata.class;
+						div.className = metadata.class;
 						div.title = metadata.title;
 
 						var label = document.createElement("label");
