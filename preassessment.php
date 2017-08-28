@@ -15,6 +15,10 @@
 		<meta charset="utf-8">
 		<title>Assessment Options</title>
 		<link rel="stylesheet" href="/include/dagger.css" type="text/css">
+
+		<script src="/lib/jquery/3.2.1/jquery.min.js"></script>
+		<script src="/lib/lodash/4.17.4/lodash.min.js"></script>
+
 		<script type="text/javascript" src="/include/scripts.js"></script>
 	</head>
 	<body>
