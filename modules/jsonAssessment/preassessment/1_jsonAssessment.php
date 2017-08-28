@@ -37,21 +37,23 @@
 					}
 				},
 
-				updater: function() {
-					var update = dagger.jsonAssessment.preassessment.domListener(this);
-					console.log(update.key + " = " + update.value);
+				updateKey: function(key, value) {
+					console.log(key + " = " + value);
 
 					// TODO: FIX THIS
-					if(_(visibilityKeys).has(update.key)) {
-						_(visibilityKeys[update.key]).each(function(f) {
-							f(update.value);
+					if(_(visibilityKeys).has(key)) {
+						_(visibilityKeys[key]).each(function(f) {
+							f(value);
 						})
 					}
 				},
 
 				loader: function(response) {
-					// TODO: Handle Errors?
-					dagger.jsonAssessment.jsonAssessments = response.response;
+					if(_(response).has("response")) {
+						dagger.jsonAssessment.jsonAssessments = response.response;
+					} else {
+						throw("No response field in response");
+					}
 
 					_(dagger.jsonAssessment.jsonAssessments).each(function(jsonAssessment) {
 						var metadata = jsonAssessment.metadata;
@@ -80,7 +82,15 @@
 					// Iterate over all input elements to add event handlers
 					var elements = document.getElementsByTagName('input');
 					_(elements).each(function(element) {
-						element.addEventListener('change', dagger.jsonAssessment.preassessment.updater, false);
+						element.addEventListener('change', function() {
+
+							// Get data from DOM
+							var update = dagger.jsonAssessment.preassessment.domListener(this);
+
+							// Then call updater hook
+							dagger.jsonAssessment.preassessment.updateKey(update.key, update.value);
+
+						}, false);
 					})
 				}
 			}

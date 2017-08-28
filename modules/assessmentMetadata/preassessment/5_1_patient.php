@@ -21,27 +21,12 @@ function setAssessmentTypeVal(dateString) {
 		hiddenField.value = "Child";
 		displayedField.value = "Child";
 
-		// TODO: Not this
-		if ("createEvent" in document) {
-		    var evt = document.createEvent("HTMLEvents");
-		    evt.initEvent("change", false, true);
-		    hiddenField.dispatchEvent(evt);
-		}
-		else
-			hiddenField.fireEvent("onchange");
+		dagger.jsonAssessment.preassessment.updateKey('assessment_type', 'Child');
 	}
 	else if (age >= 18) {
 		hiddenField.value = "Adult";
 		displayedField.value = "Adult";
-
-		// TODO: Not this
-		if ("createEvent" in document) {
-		    var evt = document.createEvent("HTMLEvents");
-		    evt.initEvent("change", false, true);
-		    hiddenField.dispatchEvent(evt);
-		}
-		else
-			hiddenField.fireEvent("onchange");
+		dagger.jsonAssessment.preassessment.updateKey('assessment_type', 'Adult');
 	}
 	else {
 		displayedField.value = "";
