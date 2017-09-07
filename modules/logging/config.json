@@ -1,0 +1,15 @@
+{
+	"moduleName": "logging",
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"userAgent"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"userAgent": "varchar(255)"
+			}
+		}
+	}
+}
