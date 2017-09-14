@@ -2,13 +2,18 @@
 	"moduleName": "logging",
 
 	"edu.usm.dagger.main.insert.whitelist": [
-		"userAgent"
+		"userAgent", "assessmentStartTime", "insertAssessmentStartTime", "postAssessmentStartTime", "preassessmentStartTime", "reviewAssessmentStartTime"
 	],
 
 	"edu.usm.dagger.dbConfig.tables": {
 		"response": {
 			"keys": {
-				"userAgent": "varchar(255)"
+				"userAgent": "varchar(255)",
+				"assessmentStartTime": "datetime",
+				"insertAssessmentStartTime": "datetime",
+				"postAssessmentStartTime": "datetime",
+				"preassessmentStartTime": "datetime",
+				"reviewAssessmentStartTime": "datetime"
 			}
 		}
 	}
