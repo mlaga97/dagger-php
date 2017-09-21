@@ -6,7 +6,22 @@
 
 	$log->info("CLINICS LOG: " . $today ." ". $_SERVER['REMOTE_ADDR'] ." ". print_r($_SESSION, true));
 
+	// TODO: This should do the thing below it.
 	unsetAllButTheseKeys(getConfigKey("edu.usm.dagger.main.preassessment.keysToKeep"));
+
+	// Reset all the session variables returned from the search
+	// TODO: Don't pull the DB response into $_SESSION in the first place. (MVC would help)
+	foreach($_SESSION as $key=>$value) {
+		if(!in_array($key, getConfigKey("edu.usm.dagger.main.assessment.dontReset"))) {
+			if(in_array($key, $_SESSION)) {
+				unset($_SESSION[$key]);
+			}
+
+			if(in_array($key, getConfigKey("edu.usm.dagger.main.assessment.setBlank"))) {
+				$_SESSION[$key] = '';
+			}
+		}
+	}
 ?>
 
 <!DOCTYPE html>
