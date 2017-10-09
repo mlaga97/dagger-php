@@ -3,6 +3,8 @@
 	global $log, $mysqli, $today;
 	allowPrevious($_SESSION['admin'] == 1, '/moduleList.php');
 	$pageTitle = "Module List";
+
+	require_once($_SERVER['DOCUMENT_ROOT'] . '/api/v1/parser.php');
 ?>
 
 <!DOCTYPE html>
@@ -32,17 +34,13 @@
 						<td>
 							<h2>Files by Module</h2>
 							<?php
-								foreach(moduleList() as $module) {
-									echo '<br/><br/><h4>' . $module . '</h4>';
-
-									foreach(moduleProvides($module) as $directory) {
-										$directoryList[$directory] = true;
-
-										$files = array_diff(scandir("modules/" . $module . '/' . $directory), array('..', '.'));
-
-										foreach($files as $file) {
-											$path = '/var/www/html/modules/' . $module . '/' . $directory . '/' . $file;
-											echo $directory . '/' . $file . ' (' . substr(md5_file($path), 0, 5) . ')<br/>';
+								$providerList = daggerAPI('/api/v1/module/provider/list');
+								foreach($providerList['response'] as $moduleName) {
+									$moduleData = daggerAPI('/api/v1/module/provider/' . $moduleName, array("debug" => 1, "trace" => 1));
+									echo '<br/><br/><h4>' . $moduleName . '</h4>';
+									foreach($moduleData['response']['files'] as $directory => $files) {
+										foreach($files as $file => $hash) {
+											echo $directory . '/' . $file . ' (' . $hash . ')<br/>';
 										}
 									}
 								}
@@ -51,12 +49,15 @@
 						<td>
 							<h2>Files by Key</h2>
 							<?php
-								foreach(moduleListKeys() as $key) {
-									echo '<br/><br/><h4>' . $key . '</h4>';
+								// TODO: Show file hash again
+								$keyList = daggerAPI('/api/v1/module/key/list');
+								foreach($keyList['response'] as $keyName) {
+									// TODO: Get truncated paths [module]/[file]
+									$keyProviders = daggerAPI('/api/v1/module/key/' . $keyName . '/truncatedPaths');
 
-									foreach(moduleListPaths($key) as $path) {
-										$explodedPath = explode('/', $path);
-										echo $explodedPath[5] . '/' . $explodedPath[7] . ' (' . substr(md5_file($path), 0, 5) . ')<br/>';
+									echo '<br/><br/><h4>' . $keyName . '</h4>';
+									foreach($keyProviders['response'] as $index=>$path) {
+										echo $path . "<br/>";
 									}
 								}
 							?>

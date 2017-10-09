@@ -155,4 +155,32 @@
 		}
 	}
 
+	function moduleFiles($provider) {
+		$output = array();
+		foreach(moduleProvides($provider) as $key) {
+			$output[$key] = array();
+
+			$files = array_diff(scandir("/var/www/html/modules/" . $provider . '/' . $key), array('..', '.'));
+
+			foreach($files as $file) {
+				$path = '/var/www/html/modules/' . $provider . '/' . $key . '/' . $file;
+
+				$output[$key][$file] = substr(md5_file($path), 0, 5);
+			}
+		}
+		return $output;
+	}
+
+	function moduleListTruncatedPaths($key) {
+		$output = array();
+
+		foreach(moduleListPaths($key) as $path) {
+			$explodedPath = explode('/', $path);
+			$truncatedPath = $explodedPath[5] . '/' . $explodedPath[7]; // . ' (' . substr(md5_file($path), 0, 5) . ')<br/>';
+			array_push($output, $truncatedPath);
+		}
+
+		return $output;
+	}
+
 ?>

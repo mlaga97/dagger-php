@@ -106,4 +106,16 @@ $globalAPIContext['methods']['/api/v1/assessment'] = function($localURI, $contex
 	return recursiveParser($localURI, $context, $getVars);
 };
 
+
+/*******************************************************************************
+********************************************************************************
+*******************************************************************************/
+
+// TODO: Make not use http
+function daggerAPI($uri, $getVars = array()) {
+	global $globalAPIContext;
+	return json_decode(file_get_contents('http://localhost' . $uri), true);
+	//return recursiveParser($uri, $globalAPIContext, $getVars);
+}
+
 ?>
