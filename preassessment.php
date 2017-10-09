@@ -11,15 +11,20 @@
 
 	// Reset all the session variables returned from the search
 	// TODO: Don't pull the DB response into $_SESSION in the first place. (MVC would help)
-	foreach($_SESSION as $key=>$value) {
-		if(!in_array($key, getConfigKey("edu.usm.dagger.main.assessment.dontReset"))) {
-			if(in_array($key, $_SESSION)) {
-				unset($_SESSION[$key]);
-			}
 
-			if(in_array($key, getConfigKey("edu.usm.dagger.main.assessment.setBlank"))) {
-				$_SESSION[$key] = '';
-			}
+	// Get list of session keys
+	$keys = array();
+	foreach($_SESSION as $key=>$value)
+		array_push($keys, $key);
+
+	// Iterate over list of session keys to remove the unwanted ones
+	foreach($keys as $key) {
+		if(!in_array($key, getConfigKey("edu.usm.dagger.main.assessment.dontReset"))) {
+			unset($_SESSION[$key]);
+		}
+
+		if(in_array($key, getConfigKey("edu.usm.dagger.main.assessment.setBlank"))) {
+			$_SESSION[$key] = '';
 		}
 	}
 ?>
