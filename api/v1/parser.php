@@ -98,16 +98,9 @@ $globalAPIContext['methods']['/api/v1/module'] = function($localURI, $context, $
 	return recursiveParser($localURI, $context, $getVars);
 };
 
-$globalAPIContext['methods']['/api/v1/assessment'] = function($localURI, $context, $getVars) {
-	$methods = array();
-	require_once 'assessment.php';
-	$context['methods'] = $methods;
-
-	return recursiveParser($localURI, $context, $getVars);
-};
-
 require_once 'user.php';
 require_once 'clinic.php';
+require_once 'assessment.php';
 
 /*******************************************************************************
 ********************************************************************************
