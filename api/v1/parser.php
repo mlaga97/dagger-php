@@ -38,10 +38,18 @@ function recursiveParser($localURI, $context, $getVars) {
 			}
 
 			if(!$done)
-				$error = 'No match!';
+				$error = 'Invalid option! No match!';
+				// Print valid options
+				foreach($methods as $methodID => $method) {
+					array_push($response, str_replace('/api/v1', '', $methodID));
+				}
 		}
 	} else {
-		$error = 'Nothing left to do!';
+		$error = 'Invalid option!';
+		// Print valid options
+		foreach($methods as $methodID => $method) {
+			array_push($response, $methodID);
+		}
 	}
 
 	/***********************************************************************
