@@ -106,6 +106,7 @@ $globalAPIContext['methods']['/api/v1/assessment'] = function($localURI, $contex
 	return recursiveParser($localURI, $context, $getVars);
 };
 
+require_once 'user.php';
 
 /*******************************************************************************
 ********************************************************************************
