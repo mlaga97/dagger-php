@@ -1,8 +1,37 @@
 <?php
-	// TODO: Config items for user keys
-
 	// Set up database
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/db.php');
+
+	function DB2User($userRow) {
+
+		// Add structure
+		$user = array();
+		$user['flags'] = array();
+		$user['login'] = array();
+		$user['associations'] = array();
+		$user['associations']['groups'] = array();
+		$user['associations']['clinics'] = array();
+
+		// Primary Key
+		$user['userID'] = $userRow['id'];
+
+		// Login
+		$user['login']['active'] = $userRow['active'];
+		$user['login']['username'] = $userRow['uname'];
+		//$user['login']['password'] = $userRow['pswd'];
+
+		// Associations
+		// TODO: Fold 'grouping' and 'university' both into 'groups'
+		$user['associations']['grouping'] = $userRow['grouping'];
+		$user['associations']['university'] = $userRow['university_id'];
+
+		// Flags
+		$user['flags']['admin'] = $userRow['admin'];
+		$user['flags']['debug'] = $userRow['debug'];
+		$user['flags']['test_acc'] = $userRow['test_acc'];
+
+		return $user;
+	}
 
 	function getUserClinics($id) {
 		global $mysqli;
@@ -25,11 +54,11 @@
 		// Get user
 		// TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
 		if($result = $mysqli->query('SELECT id, uname, university_id, clinic_id, admin, region, state, active, grouping, test_acc, debug FROM msihdp.users WHERE id = "' . $id . '" OR uname = "' . $id . '"')) {
-			$output = $result->fetch_assoc();
+			$output = DB2User($result->fetch_assoc());
 			$result->close();
 		}
 
-		$output['clinics'] = getUserClinics($id);
+		$output['associations']['clinics'] = getUserClinics($id);
 
 		return $output;
 	}
@@ -40,7 +69,7 @@
 
 		if($result = $mysqli->query('SELECT id, uname, university_id, clinic_id, admin, region, state, active, grouping, test_acc, debug FROM msihdp.users')) {
 			while($row = $result->fetch_assoc()) {
-				$output[$row["id"]] = $row;
+				$output[$row["id"]] = DB2User($row);
 				$output[$row["id"]]['clinics'] = getUserClinics($row["id"]);
 			}
 		}
