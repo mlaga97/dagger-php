@@ -108,6 +108,7 @@ $globalAPIContext['methods']['/api/v1/module'] = function($localURI, $context, $
 
 require_once 'user.php';
 require_once 'clinic.php';
+require_once 'response.php';
 require_once 'assessment.php';
 
 /*******************************************************************************
