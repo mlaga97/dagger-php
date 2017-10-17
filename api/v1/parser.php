@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/uri.php');
 
-function recursiveParser($localURI, $context, $getVars) {
+function recursiveParser($localURI, $context, $method, $getVars, $postVars) {
 
 	// Explode context
 	$trace = $context['trace'];
@@ -20,7 +20,7 @@ function recursiveParser($localURI, $context, $getVars) {
 	// Find longest valid match.
 	if($uriString != '') {
 		if(array_key_exists($uriString, $methods)) {
-			$trace = $methods[$uriString]('', $context, $getVars);
+			$trace = $methods[$uriString]('', $context, $method, $getVars, $postVars);
 		} else {
 			$explodedURI = explodeURI($uriString);
 
@@ -33,7 +33,7 @@ function recursiveParser($localURI, $context, $getVars) {
 
 				if(array_key_exists($matchingURI, $methods)) {
 					$done = true;
-					$trace = $methods[$matchingURI]($subURI, $context, $getVars);
+					$trace = $methods[$matchingURI]($subURI, $context, $method, $getVars, $postVars);
 				}
 			}
 
@@ -98,12 +98,12 @@ function newAPIContext() {
 
 $globalAPIContext = newAPIContext();
 
-$globalAPIContext['methods']['/api/v1/module'] = function($localURI, $context, $getVars) {
+$globalAPIContext['methods']['/api/v1/module'] = function($localURI, $context, $method, $getVars, $postVars) {
 	$methods = array();
 	require_once 'module.php';
 	$context['methods'] = $methods;
 
-	return recursiveParser($localURI, $context, $getVars);
+	return recursiveParser($localURI, $context, $method, $getVars, $postVars);
 };
 
 require_once 'user.php';
@@ -116,7 +116,8 @@ require_once 'assessment.php';
 *******************************************************************************/
 
 // TODO: Make not use http
-function daggerAPI($uri, $getVars = array()) {
+// TODO: Pass method and GET and POST variables
+function daggerAPI($uri, $method = 'GET', $getVars = array(), $postVars = array()) {
 	global $globalAPIContext;
 	return json_decode(file_get_contents('http://localhost' . $uri), true);
 	//return recursiveParser($uri, $globalAPIContext, $getVars);

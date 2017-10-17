@@ -7,7 +7,7 @@
 
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/include/user.php';
 
-	$globalAPIContext['methods']['/api/v1/user'] = function($subURI, $context, $getVars) {
+	$globalAPIContext['methods']['/api/v1/user'] = function($subURI, $context, $method, $getVars, $postVars) {
 		$explodedURI = explodeURI($subURI);
 		$response = array();
 

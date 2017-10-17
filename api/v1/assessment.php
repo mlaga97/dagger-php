@@ -12,7 +12,7 @@
 
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment.php';
 
-	$globalAPIContext['methods']['/api/v1/assessment'] = function($subURI, $context, $getVars) {
+	$globalAPIContext['methods']['/api/v1/assessment'] = function($subURI, $context, $method, $getVars, $postVars) {
 		global $jsonAssessments;
 
 		$explodedURI = explodeURI($subURI);

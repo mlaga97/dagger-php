@@ -49,7 +49,7 @@
 
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/include/module.php';
 
-	$methods["/key/list"] = function($subURI, $context, $getVars) {
+	$methods["/key/list"] = function($subURI, $context, $method, $getVars, $postVars) {
 		$response = array();
 
 		// TODO: Move to library
@@ -61,7 +61,7 @@
 		return $context;
 	};
 
-	$methods["/key"] = function($subURI, $context, $getVars) {
+	$methods["/key"] = function($subURI, $context, $method, $getVars, $postVars) {
 		$explodedURI = explodeURI($subURI);
 		$response = array();
 
@@ -94,7 +94,7 @@
 		return $context;
 	};
 
-	$methods["/provider/list"] = function($subURI, $context, $getVars) {
+	$methods["/provider/list"] = function($subURI, $context, $method, $getVars, $postVars) {
 		$response = array();
 
 		// TODO: Move to library
@@ -106,7 +106,7 @@
 		return $context;
 	};
 
-	$methods["/provider"] = function($subURI, $context, $getVars) {
+	$methods["/provider"] = function($subURI, $context, $method, $getVars, $postVars) {
 		$explodedURI = explodeURI($subURI);
 
 		if(!array_key_exists(0, $explodedURI)) {
