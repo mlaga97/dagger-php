@@ -111,16 +111,4 @@ require_once 'clinic.php';
 require_once 'response.php';
 require_once 'assessment.php';
 
-/*******************************************************************************
-********************************************************************************
-*******************************************************************************/
-
-// TODO: Make not use http
-// TODO: Pass method and GET and POST variables
-function daggerAPI($uri, $method = 'GET', $getVars = array(), $postVars = array()) {
-	global $globalAPIContext;
-	return json_decode(file_get_contents('http://localhost' . $uri), true);
-	//return recursiveParser($uri, $globalAPIContext, $getVars);
-}
-
 ?>

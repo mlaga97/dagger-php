@@ -3,8 +3,6 @@
 	global $log, $mysqli, $today;
 	allowPrevious($_SESSION['admin'] == 1, '/moduleList.php');
 	$pageTitle = "Module List";
-
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/api/v1/parser.php');
 ?>
 
 <!DOCTYPE html>
