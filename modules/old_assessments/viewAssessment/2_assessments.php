@@ -8,7 +8,6 @@
 	include __DIR__ . '/../health.php';
 	include __DIR__ . '/../gad.php';
 	include __DIR__ . '/../phq.php';
-	include __DIR__ . '/../cage.php';
 	include __DIR__ . '/../pcl.php';
 	include __DIR__ . '/../psc.php';
 	include __DIR__ . '/../ces_d.php';
@@ -59,12 +58,6 @@
 		echo "<div class='scoring'>";
 		echo "<h3>PSC-17</h3>";
 		psc_scoring($copy, $mysqli);
-		echo "</div>";
-	}
-	if($_SESSION['cage_check'] == 1) {
-		echo "<div class='scoring'>";
-		echo "<h3>CAGE</h3>";
-		cage_scoring($copy, $mysqli);
 		echo "</div>";
 	}
 	if($_SESSION['pcl_check'] == 1) {

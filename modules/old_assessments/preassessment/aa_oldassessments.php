@@ -6,7 +6,6 @@
 	$_SESSION['health_check'] = 0;
 	$_SESSION['gad_check'] = 0;
 	$_SESSION['phq_check'] = 0;
-	$_SESSION['cage_check'] = 0;
 	$_SESSION['pcl_check'] = 0;
 	$_SESSION['psc_check'] = 0;
 	$_SESSION['ces_check'] = 0;
@@ -67,9 +66,6 @@
 			</div>
 			<div title=\"Patient Depression Questionnaire asks questions concerning depression.\">
 				<label><input id=\"phq_check\"    input type=\"checkbox\" name=\"phq_check\"    value=\"1\" />PHQ-9</label>
-			</div>
-			<div title=\"The CAGE is a 4- item, relatively non-confrontational questionnaire for detection of alcoholism.\">
-				<label><input id=\"cage_check\"   input type=\"checkbox\" name=\"cage_check\"   value=\"1\" />CAGE</label>
 			</div>
 			<div title=\"The PCL-C (civilian) asks about symptoms in relation to &quot;stressful experiences.&quot;\">
 				<label><input id=\"pcl_check\"    input type=\"checkbox\" name=\"pcl_check\"    value=\"1\" />PCL-C</label>
@@ -150,10 +146,6 @@
 					</div>
 
 					<!-- Substance Use (Adults only)  -->
-
-					<div class=\"adultonly\" title=\"The CAGE is a 4- item, relatively non-confrontational questionnaire for detection of alcoholism.\">
-						<label><input id=\"cage_check\"   input type=\"checkbox\" name=\"cage_check\"   value=\"1\" />CAGE</label>
-					</div>
 
 					<div class=\"adultonly\" title=\"The Drug Abuse Screen Test (DAST-10) is a 10-item, yes/no self-report instrument that has been condensed from the 28-item DAST. The DAST-10 was designed to provide a brief instrument for clinical screening and treatment evaluation and can be used with adults and older youth.\">
 						<label><input id=\"dast_check\"    input type=\"checkbox\" name=\"dast_check\"    value=\"1\" />DAST-10</label>
@@ -248,9 +240,6 @@
 			</div>
 			<div title=\"Patient Depression Questionnaire asks questions concerning depression.\">
 				<label><input id=\"phq_check\"    input type=\"checkbox\" name=\"phq_check\"    value=\"1\" />PHQ-9</label>
-			</div>
-			<div title=\"The CAGE is a 4- item, relatively non-confrontational questionnaire for detection of alcoholism.\">
-				<label><input id=\"cage_check\"   input type=\"checkbox\" name=\"cage_check\"   value=\"1\" />CAGE</label>
 			</div>
 			<div title=\"The PCL-C (civilian) asks about symptoms in relation to &quot;stressful experiences.&quot;\">
 				<label><input id=\"pcl_check\"    input type=\"checkbox\" name=\"pcl_check\"    value=\"1\" />PCL-C</label>
