@@ -6,7 +6,6 @@
 	include __DIR__ . '/../presenting_problem.php';
 	include __DIR__ . '/../events.php';
 	include __DIR__ . '/../health.php';
-	include __DIR__ . '/../gad.php';
 	include __DIR__ . '/../phq.php';
 	include __DIR__ . '/../pcl.php';
 	include __DIR__ . '/../psc.php';
@@ -40,12 +39,6 @@
 		echo "<div class='scoring'>";
 		echo "<h3>Self-care</h3>";
 		self_scoring($copy, $mysqli);
-		echo "</div>";
-	}
-	if($_SESSION['gad_check'] == 1) {
-		echo "<div class='scoring'>";
-		echo "<h3>GAD-7</h3>";
-		gad_scoring($copy, $mysqli);
 		echo "</div>";
 	}
 	if($_SESSION['phq_check'] == 1) {

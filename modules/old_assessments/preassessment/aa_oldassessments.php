@@ -4,7 +4,6 @@
 	$_SESSION['pp_check'] = 0;
 	$_SESSION['events_check'] = 0;
 	$_SESSION['health_check'] = 0;
-	$_SESSION['gad_check'] = 0;
 	$_SESSION['phq_check'] = 0;
 	$_SESSION['pcl_check'] = 0;
 	$_SESSION['psc_check'] = 0;
@@ -61,9 +60,6 @@
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>
 			</div>
-			<div title = \"The Generalized Anxiety Disorder (GAD) asks questions concerning anxiety.\">
-				<label><input id=\"gad_check\"    input type=\"checkbox\" name=\"gad_check\"    value=\"1\" />GAD-7</label>
-			</div>
 			<div title=\"Patient Depression Questionnaire asks questions concerning depression.\">
 				<label><input id=\"phq_check\"    input type=\"checkbox\" name=\"phq_check\"    value=\"1\" />PHQ-9</label>
 			</div>
@@ -108,10 +104,6 @@
 
 					<div class=\"adultonly\" title=\"The ADHD Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.\">
 						<label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" />ADHD Self-Report Scale</label>
-					</div>
-
-					<div class=\"adultonly\"  title = \"The Generalized Anxiety Disorder (GAD) asks questions concerning anxiety.\">
-						<label><input id=\"gad_check\"    input type=\"checkbox\" name=\"gad_check\"    value=\"1\" />GAD-7</label>
 					</div>
 
 					<div class=\"adultonly\"  title=\"Patient Depression Questionnaire asks questions concerning depression.\">
@@ -234,9 +226,6 @@
 			</div>
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>
-			</div>
-			<div title = \"The Generalized Anxiety Disorder (GAD) asks questions concerning anxiety.\">
-				<label><input id=\"gad_check\"    input type=\"checkbox\" name=\"gad_check\"    value=\"1\" />GAD-7</label>
 			</div>
 			<div title=\"Patient Depression Questionnaire asks questions concerning depression.\">
 				<label><input id=\"phq_check\"    input type=\"checkbox\" name=\"phq_check\"    value=\"1\" />PHQ-9</label>
