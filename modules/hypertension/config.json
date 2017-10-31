@@ -17,5 +17,44 @@
 		"HT_Wt_7", "HT_Wt_8", "HT_Wt_9", "HT_Wt_10", 
 
 		"HT_Alc_1", "HT_Alc_2", "HT_Alc_3"
-	]
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"hypertension_check": "tinyint(4)",
+				"HT_Med_1": "tinyint(4)",
+				"HT_Med_2": "tinyint(4)",
+				"HT_Med_3": "tinyint(4)",
+				"HT_Diet_1": "tinyint(4)",
+				"HT_Diet_2": "tinyint(4)",
+				"HT_Diet_3": "tinyint(4)",
+				"HT_Diet_4": "tinyint(4)",
+				"HT_Diet_5": "tinyint(4)",
+				"HT_Diet_6": "tinyint(4)",
+				"HT_Diet_7": "tinyint(4)",
+				"HT_Diet_8": "tinyint(4)",
+				"HT_Diet_9": "tinyint(4)",
+				"HT_Diet_10": "tinyint(4)",
+				"HT_Diet_11": "tinyint(4)",
+				"HT_Diet_12": "tinyint(4)",
+				"HT_Phys_1": "tinyint(4)",
+				"HT_Phys_2": "tinyint(4)",
+				"HT_Smoke_1": "tinyint(4)",
+				"HT_Wt_1": "tinyint(4)",
+				"HT_Wt_2": "tinyint(4)",
+				"HT_Wt_3": "tinyint(4)",
+				"HT_Wt_4": "tinyint(4)",
+				"HT_Wt_5": "tinyint(4)",
+				"HT_Wt_6": "tinyint(4)",
+				"HT_Wt_7": "tinyint(4)",
+				"HT_Wt_8": "tinyint(4)",
+				"HT_Wt_9": "tinyint(4)",
+				"HT_Wt_10": "tinyint(4)",
+				"HT_Alc_1": "tinyint(4)",
+				"HT_Alc_2": "tinyint(4)",
+				"HT_Alc_3": "tinyint(4)"
+			}
+		}
+	}
 }

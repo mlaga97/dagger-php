@@ -12,5 +12,31 @@
 		"HLS_FH_Overwt", "HLS_Servings", "HLS_Screentime", "HLS_PhysAct",
 		"HLS_FamAct", "HLS_Drink", "HLS_Brkfst", "HLS_EatOut", "HLS_Table",
 		"HLS_Money", "HLS_Sleep", "HLS_Health", "HLS_Weight", "HLS_Now"
-	]
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"pediatric_check": "tinyint(4)",
+				"HLS_Date_Perf": "tinyint(4)",
+				"HLS_FH_Diab": "tinyint(4)",
+				"HLS_FH_HBP": "tinyint(4)",
+				"HLS_FH_HD": "tinyint(4)",
+				"HLS_FH_Overwt": "tinyint(4)",
+				"HLS_Servings": "tinyint(4)",
+				"HLS_Screentime": "tinyint(4)",
+				"HLS_PhysAct": "tinyint(4)",
+				"HLS_FamAct": "tinyint(4)",
+				"HLS_Drink": "tinyint(4)",
+				"HLS_Brkfst": "tinyint(4)",
+				"HLS_EatOut": "tinyint(4)",
+				"HLS_Table": "tinyint(4)",
+				"HLS_Money": "tinyint(4)",
+				"HLS_Sleep": "tinyint(4)",
+				"HLS_Health": "tinyint(4)",
+				"HLS_Weight": "tinyint(4)",
+				"HLS_Now": "tinyint(4)"
+			}
+		}
+	}
 }
