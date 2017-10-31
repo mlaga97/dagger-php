@@ -8,7 +8,6 @@
 	include __DIR__ . '/../events.php';
 	include __DIR__ . '/../gad.php';
 	include __DIR__ . '/../phq.php';
-	include __DIR__ . '/../audit.php';
 	include __DIR__ . '/../cage.php';
 	include __DIR__ . '/../pcl.php';
 	include __DIR__ . '/../ces_d.php';
@@ -71,14 +70,6 @@
 		echo "</div>";
 	}
 
-	// Retained if we want to present a heading before the real Assessments
-	/*
-	if (($_SESSION['gad_check'] == 1)||($_SESSION['phq_check'] == 1)||($_SESSION['audit_check'] == 1)||
-			($_SESSION['cage_check'] == 1)||($_SESSION['pcl_check'] == 1)||($_SESSION['ces_check'] == 1)||
-			($_SESSION['psc_check'] == 1)||	($_SESSION['dast_check'] == 1)||($_SESSION['duke_check'] == 1)) {
-
-	} */
-
 	if( $_SESSION['sdq_check'] == 1) {
 		echo "<div class='write'>";
 		echo "<h3>SDQ</h3>";
@@ -99,14 +90,6 @@
 		echo "<h3>PHQ-9</h3>";
 		write_phq($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
-	}
-
-	if($_SESSION['audit_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>Audit-C</h3>";
-		write_audit($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-		echo "<div class=\"page-break\"></div><!--force page break here. good for 8.5X11 pages -->";//these are manual page breaks for printing. May need to move them if you print the instruments in different order!
 	}
 
 	if($_SESSION['cage_check'] == 1) {

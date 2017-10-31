@@ -6,7 +6,6 @@
 	$_SESSION['health_check'] = 0;
 	$_SESSION['gad_check'] = 0;
 	$_SESSION['phq_check'] = 0;
-	$_SESSION['audit_check'] = 0;
 	$_SESSION['cage_check'] = 0;
 	$_SESSION['pcl_check'] = 0;
 	$_SESSION['psc_check'] = 0;
@@ -68,9 +67,6 @@
 			</div>
 			<div title=\"Patient Depression Questionnaire asks questions concerning depression.\">
 				<label><input id=\"phq_check\"    input type=\"checkbox\" name=\"phq_check\"    value=\"1\" />PHQ-9</label>
-			</div>
-			<div title=\"The Alcohol Use Disorders Identification Test (AUDIT-C) is an alcohol screen that can help identify patients who are hazardous drinkers or have active alcohol use disorders (including alcohol abuse or dependence).\">
-				<label><input id=\"audit_check\"  input type=\"checkbox\" name=\"audit_check\"  value=\"1\" />Audit-C</label>
 			</div>
 			<div title=\"The CAGE is a 4- item, relatively non-confrontational questionnaire for detection of alcoholism.\">
 				<label><input id=\"cage_check\"   input type=\"checkbox\" name=\"cage_check\"   value=\"1\" />CAGE</label>
@@ -154,11 +150,6 @@
 					</div>
 
 					<!-- Substance Use (Adults only)  -->
-
-					<div class=\"adultonly\" title=\"The Alcohol Use Disorders Identification Test (AUDIT-C) is an alcohol screen that can help identify patients who are hazardous drinkers or have active alcohol use disorders (including alcohol abuse or dependence).\">
-					<h3>Alcohol &amp; Substance Use</h3>
-						<label><input id=\"audit_check\"  input type=\"checkbox\" name=\"audit_check\"  value=\"1\" />Audit-C</label>
-					</div>
 
 					<div class=\"adultonly\" title=\"The CAGE is a 4- item, relatively non-confrontational questionnaire for detection of alcoholism.\">
 						<label><input id=\"cage_check\"   input type=\"checkbox\" name=\"cage_check\"   value=\"1\" />CAGE</label>
@@ -257,9 +248,6 @@
 			</div>
 			<div title=\"Patient Depression Questionnaire asks questions concerning depression.\">
 				<label><input id=\"phq_check\"    input type=\"checkbox\" name=\"phq_check\"    value=\"1\" />PHQ-9</label>
-			</div>
-			<div title=\"The Alcohol Use Disorders Identification Test (AUDIT-C) is an alcohol screen that can help identify patients who are hazardous drinkers or have active alcohol use disorders (including alcohol abuse or dependence).\">
-				<label><input id=\"audit_check\"  input type=\"checkbox\" name=\"audit_check\"  value=\"1\" />Audit-C</label>
 			</div>
 			<div title=\"The CAGE is a 4- item, relatively non-confrontational questionnaire for detection of alcoholism.\">
 				<label><input id=\"cage_check\"   input type=\"checkbox\" name=\"cage_check\"   value=\"1\" />CAGE</label>

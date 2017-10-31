@@ -11,7 +11,6 @@
 		"health_check":	"Health",
 		"gad_check": "GAD-7",
 		"phq_check": "PHQ-9",
-		"audit_check": "Audit",
 		"cage_check": "Cage",
 		"pcl_check": "PCL-C",
 		"psc_check": "PSC",
@@ -29,8 +28,6 @@
 	"edu.usm.dagger.main.insert.whitelist": [
 		"adhd_check", "adhd_1", "adhd_2", "adhd_3", "adhd_4", "adhd_5", "adhd_6", "adhd_7", "adhd_8", "adhd_9", "adhd_10",
 		"adhd_11", "adhd_12", "adhd_13", "adhd_14", "adhd_15", "adhd_16", "adhd_17", "adhd_18",
-
-		"audit_check", "audit_1", "audit_2", "audit_3",
 
 		"cage_check", "cage_1", "cage_2", "cage_3", "cage_4",
 

@@ -1,0 +1,79 @@
+{
+	"metadata": {
+		"class": "audit",
+		"title": "The Alcohol Use Disorders Identification Test (AUDIT-C)",
+		"text": "Audit-C",
+		"id": "audit_check",
+		"notes": "The Alcohol Use Disorders Identification Test (AUDIT-C) is an alcohol screen that can help identify patients who are hazardous drinkers or have active alcohol use disorders (including alcohol abuse or dependence)."
+	},
+	"scoring": {
+		"reviewAssessment": {
+			"showResponses": true,
+			"responseFormat": "human_readable",
+			"showScore": true,
+			"scoreType": "audit-c"
+		},
+		"viewAssessment": {
+			"showResponses": false,
+			"showScore": true,
+			"scoreType": "audit-c"
+		}
+	},
+	"types": {
+		"audit_scale_1": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"Never": 0,
+				"Monthly or less": 1,
+				"2-4 times per month": 2,
+				"2-3 times per week": 3,
+				"4 or more times a week": 4
+			}
+		},
+		"audit_scale_2": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"0 to 2": 0,
+				"3 to 4": 1,
+				"5 or 6": 2,
+				"7 to 9": 3,
+				"10 or more": 4
+			}
+		},
+		"audit_scale_3": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"Never": 0,
+				"Monthly or less": 1,
+				"Monthly": 2,
+				"Weekly": 3,
+				"Daily or almost daily": 4
+			}
+		}
+	},
+	"sections": [
+		{
+			"description": "For the following questions, consider a \"drink\" to be a can or bottle of beer, a glass of wine, a wine cooler, or one cocktail or shot of hard liquor (like scotch, gin, or vodka). (Audit-C)",
+			"questions": [
+				{
+					"id": "audit_1",
+					"text": "How often do you have a drink containing alcohol?",
+					"type": "audit_scale_1"
+				},
+				{
+					"id": "audit_2",
+					"text": "How many standard drinks do you have on a typical day when you are drinking?",
+					"type": "audit_scale_2"
+				},
+				{
+					"id": "audit_3",
+					"text": "How often do you have 6 or more drinks on one occasion?",
+					"type": "audit_scale_3"
+				}
+			]
+		}
+	]
+}
