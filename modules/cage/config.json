@@ -1,0 +1,23 @@
+{
+	"moduleName": "cage",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"cage_check": "Cage"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"cage_check", "cage_1", "cage_2", "cage_3", "cage_4"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"cage_check": "tinyint(4)",
+				"cage_1": "tinyint(4)",
+				"cage_2": "tinyint(4)",
+				"cage_3": "tinyint(4)",
+				"cage_4": "tinyint(4)"
+			}
+		}
+	}
+}

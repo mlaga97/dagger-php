@@ -8,7 +8,6 @@
 	include __DIR__ . '/../events.php';
 	include __DIR__ . '/../gad.php';
 	include __DIR__ . '/../phq.php';
-	include __DIR__ . '/../cage.php';
 	include __DIR__ . '/../pcl.php';
 	include __DIR__ . '/../ces_d.php';
 	include __DIR__ . '/../psc.php';
@@ -89,13 +88,6 @@
 		echo "<div class='write'>";
 		echo "<h3>PHQ-9</h3>";
 		write_phq($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
-	if($_SESSION['cage_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>CAGE</h3>";
-		write_cage($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 
