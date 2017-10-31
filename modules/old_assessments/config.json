@@ -9,7 +9,6 @@
 		"stress_check": "Stress",
 		"events_check":	"Event",
 		"health_check":	"Health",
-		"gad_check": "GAD-7",
 		"phq_check": "PHQ-9",
 		"pcl_check": "PCL-C",
 		"psc_check": "PSC",
@@ -49,8 +48,6 @@
 		"duke_11", "duke_12", "duke_13", "duke_14", "duke_15", "duke_16", "duke_17",
 
 		"events_check", "e_1", "e_2", "e_3", "e_4", "e_5", "e_6", "e_7", "e_8", "e_9", "e_10",
-
-		"gad_check", "gad_1", "gad_2", "gad_3", "gad_4", "gad_5", "gad_6", "gad_7",
 
 		"health_check", "h_1", "h_2", "h_3", "h_4", "h_5", "h_6", "h_7", "h_8", "h_9", "h_10",
 		"h_11", "h_12", "h_13", "h_14", "h_15", "h_16", "h_17", "h_18", "h_19",
