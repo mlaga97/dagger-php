@@ -43,6 +43,4 @@
 			<td class=\"st\">Most stress ever felt.</td>";
 		echo "</tr></table></div><!-- close div current_stress_level -->";
 	}
-
-	write_current_stress('Child');
 ?>
