@@ -1,0 +1,28 @@
+{
+	"moduleName": "self",
+
+	"edu.usm.dagger.main.reviewAssessment.dontSet_-1_to_0": [
+		"/self_*/"
+	],
+
+	"edu.usm.dagger.main.viewAssessment.dontSet_-1_to_0": [
+		"/self_*/"
+	],
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"self_check": "Diabetes Self-Care"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"self_check", "self_1", "self_2", "self_3", "self_4", "self_5", "self_6", "self_7", "self_8", "self_9", "self_10",
+		"self_11", "self_12", "self_13", "self_14", "self_15", "self_16", "self_17", "self_18", "self_19", "self_20",
+		"self_21", "self_22"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+			}
+		}
+	}
+}

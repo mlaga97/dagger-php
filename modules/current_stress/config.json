@@ -1,0 +1,16 @@
+{
+	"moduleName": "",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+			}
+		}
+	}
+}

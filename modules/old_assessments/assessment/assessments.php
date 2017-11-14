@@ -2,24 +2,24 @@
 	echo "<!--oldassessments-assessments-assessments.php -->";
 	global $mysqli;
 
-	include __DIR__ . '/../stressors.php';
-	include __DIR__ . '/../current_stress.php';
-	include __DIR__ . '/../health.php';
-	include __DIR__ . '/../events.php';
-	include __DIR__ . '/../phq.php';
-	include __DIR__ . '/../pcl.php';
-	include __DIR__ . '/../ces_d.php';
-	include __DIR__ . '/../psc.php';
-	include __DIR__ . '/../dast.php';
-	include __DIR__ . '/../duke.php';
-	include __DIR__ . '/../self.php';
-	include __DIR__ . '/../sdq.php';
-	include __DIR__ . '/../life.php';
-	include __DIR__ . '/../diagnosis.php';
-	include __DIR__ . '/../diag_me.php';
-	include __DIR__ . '/../adhd.php';
-	include __DIR__ . '/../presenting_problem.php';
-	include __DIR__ . '/../childStressors.php';
+	include __DIR__ . '/../../stressors/stressors.php';
+	include __DIR__ . '/../../current_stress/current_stress.php';
+	include __DIR__ . '/../../health/health.php';
+	include __DIR__ . '/../../events/events.php';
+	include __DIR__ . '/../../phq/phq.php';
+	include __DIR__ . '/../../pcl/pcl.php';
+	include __DIR__ . '/../../ces_d/ces_d.php';
+	include __DIR__ . '/../../psc/psc.php';
+	include __DIR__ . '/../../dast/dast.php';
+	include __DIR__ . '/../../duke/duke.php';
+	include __DIR__ . '/../../self/self.php';
+	include __DIR__ . '/../../sdq/sdq.php';
+	include __DIR__ . '/../../life/life.php';
+	include __DIR__ . '/../../diagnosis/diagnosis.php';
+	include __DIR__ . '/../../diag_me/diag_me.php';
+	include __DIR__ . '/../../adhd/adhd.php';
+	include __DIR__ . '/../../presenting_problem/presenting_problem.php';
+	include __DIR__ . '/../../childStressors/childStressors.php';
 
 	if($_SESSION['pp_check'] == 1) {
 		echo "<div class='write'>";

@@ -1,0 +1,18 @@
+{
+	"moduleName": "events",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"events_check":	"Event"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"events_check", "e_1", "e_2", "e_3", "e_4", "e_5", "e_6", "e_7", "e_8", "e_9", "e_10"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+			}
+		}
+	}
+}

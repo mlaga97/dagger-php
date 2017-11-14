@@ -1,0 +1,22 @@
+{
+	"moduleName": "",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"pp_check": "Presenting Problem"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"pp_check", "pp_5", "pp", "pp_time", "pp_fam_dist",	"pp_steps_classes", "pp_steps_tutoring", "pp_steps_mh_individual",
+		"pp_steps_mh_family", "pp_steps_mh_school", "pp_steps_inpatient", "pp_steps_IEP", "pp_steps_DHS", "pp_steps_law",
+		"pp_steps_extracurricular", "pp_steps_volunteer", "pp_steps_healthcare", "pp_steps_religious", "pp_steps_mentoring",
+		"pp_steps_counseling", "pp_steps_speech", "interfere_area_home", "interfere_area_friendship", "interfere_area_school",
+		"interfere_area_leisure"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+			}
+		}
+	}
+}

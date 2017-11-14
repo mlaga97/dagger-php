@@ -1,0 +1,18 @@
+{
+	"moduleName": "dast",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"dast_check": "DAST"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"dast_check", "dast_1", "dast_2", "dast_3", "dast_4", "dast_5", "dast_6", "dast_7", "dast_8", "dast_9", "dast_10"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+			}
+		}
+	}
+}
