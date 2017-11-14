@@ -145,11 +145,4 @@
 		echo "</div>";
 
 	}
-
-	if($_SESSION['adhd_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>ADHD Self-Report Scale</h3>";
-		write_adhd($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
 ?>

@@ -15,7 +15,6 @@
 	$_SESSION['sdq_check'] = 0;
 	$_SESSION['diagnosis_check'] = 0;
 	$_SESSION['diag_me_check'] = 0;
-	$_SESSION['adhd_check'] = 0;
 
 	// Current Grouping is as follows:
 	// 1. is for MS test accounts.
@@ -78,9 +77,6 @@
 			<div title=\"The Duke Health Profile (Duke) is a 17-item generic self-report standardized instrument containing six health measures (physical, mental, social, general, perceived health, and self-esteem), and four dysfunction measures (anxiety, depression, pain, and disability).\">
 				<label><input id=\"duke_check\"    input type=\"checkbox\" name=\"duke_check\"    value=\"1\" />The Duke</label>
 			</div>
-			<div title=\"The ADHD Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.\">
-				<label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" />ADHD Self-Report Scale</label>
-			</div>
 		";
 	} else if ($_SESSION['grouping'] == 2 || $_SESSION['grouping'] == 10) { //grouping = 2 is for the MS GRHOP
 		echo "
@@ -100,10 +96,6 @@
 
 					<div  class=\"childonly\" title=\"This section contains questions life attitudes.\">
 						<label><input id=\"life_check\" input type=\"checkbox\" name=\"life_check\" value=\"1\" />Life Attitudes</label>
-					</div>
-
-					<div class=\"adultonly\" title=\"The ADHD Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.\">
-						<label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" />ADHD Self-Report Scale</label>
 					</div>
 
 					<div class=\"adultonly\"  title=\"Patient Depression Questionnaire asks questions concerning depression.\">
@@ -164,9 +156,6 @@
 						<label><input id=\"self_check\" input type=\"checkbox\" name=\"self_check\" value=\"1\" />Diabetes Self-Care</label>
 					</div>
 
-					<!-- hypertension h-scale in its own module -->
-					<!-- pediatric healthy lifestyles in its own module -->
-
 
 
 
@@ -196,9 +185,6 @@
 			</div>
 			<div title=\"This section contains questions life attitudes.\" style=\"display: none;\">
 				<label><input id=\"life_check\" input type=\"checkbox\" name=\"life_check\" value=\"1\" />Life Attitudes</label>
-			</div>
-			<div title=\"The ADHD Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.\">
-				<label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" />ADHD Self-Report Scale</label>
 			</div>
 		";
 	} else { //default is everything
@@ -244,9 +230,6 @@
 			</div>
 			<div title=\"The Duke Health Profile (Duke) is a 17-item generic self-report standardized instrument containing six health measures (physical, mental, social, general, perceived health, and self-esteem), and four dysfunction measures (anxiety, depression, pain, and disability).\">
 				<label><input id=\"duke_check\"    input type=\"checkbox\" name=\"duke_check\"    value=\"1\" />The Duke</label>
-			</div>
-			<div title=\"The ADHD Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.\">
-				<label><input id=\"adhd_check\"    input type=\"checkbox\" name=\"adhd_check\"    value=\"1\" />ADHD Self-Report Scale</label>
 			</div>
 		";
 	}
