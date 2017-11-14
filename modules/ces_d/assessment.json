@@ -1,0 +1,154 @@
+{
+	"metadata": {
+		"class": "ces_d",
+		"title": "The CES-D is a screening test for depression and depressive disorder.",
+		"text": "CES-D",
+		"id": "ces_check"
+	},
+	"scoring": {
+		"reviewAssessment": {
+			"showResponses": false,
+			"responseFormat": "human_readable",
+			"showScore": false,
+			"scoreType": "sumOfValues"
+		},
+		"viewAssessment": {
+			"showResponses": false,
+			"showScore": false,
+			"scoreType": "sumOfValues"
+		}
+	},
+	"types": {
+		"ces_question": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"Rarely or none of the time (less than 1 day)": 1,
+				"Some of a little of the time (1-2 days)": 2,
+				"Occasionally or a moderate amount of time (3-4 days)": 3,
+				"Most or all of the time (5-7 days)": 4
+			},
+			"hideLabel": true,
+			"friends": ["ces_question_reverse"]
+		},
+		"ces_question_reverse": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"Rarely or none of the time (less than 1 day)": 4,
+				"Some of a little of the time (1-2 days)": 3,
+				"Occasionally or a moderate amount of time (3-4 days)": 2,
+				"Most or all of the time (5-7 days)": 1
+			},
+			"hideLabel": true,
+			"friends": ["ces_question"]
+		}
+	},
+	"sections": [
+		{
+			"description": "Below is a list of the ways you might have felt of behaved. Please tell me how often you have felt this way during the past week. (CES-D)",
+			"questions": [
+				{
+					"id": "ces_d_1",
+					"text": "I was bothered by things that usually don't bother me.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_2",
+					"text": "I did not feel like eating; my appetite was poor.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_3",
+					"text": "I felt that I could not shake off my blues even with help from my family or friends.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_4",
+					"text": "I felt I was just as good as other people.",
+					"type": "ces_question_reverse"
+				},
+				{
+					"id": "ces_d_5",
+					"text": "I had trouble keeping my mind on what I was doing.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_6",
+					"text": "I felt depressed.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_7",
+					"text": "I felt that everything I did was an effort.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_8",
+					"text": "I felt hopeful about the future.",
+					"type": "ces_question_reverse"
+				},
+				{
+					"id": "ces_d_9",
+					"text": "I thought my life had been a failure.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_10",
+					"text": "I felt fearful.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_11",
+					"text": "My sleep was restless.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_12",
+					"text": "I was happy.",
+					"type": "ces_question_reverse"
+				},
+				{
+					"id": "ces_d_13",
+					"text": "I talked less than usual.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_14",
+					"text": "I felt lonely.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_15",
+					"text": "People were unfriendly.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_16",
+					"text": "I enjoyed life.",
+					"type": "ces_question_reverse"
+				},
+				{
+					"id": "ces_d_17",
+					"text": "I had crying spells.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_18",
+					"text": "I felt sad.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_19",
+					"text": "I felt that people dislike me.",
+					"type": "ces_question"
+				},
+				{
+					"id": "ces_d_20",
+					"text": " I could not get \"going.\"",
+					"type": "ces_question"
+				}
+			]
+		}
+	]
+}

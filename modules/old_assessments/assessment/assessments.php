@@ -8,7 +8,6 @@
 	include __DIR__ . '/../../events/events.php';
 	include __DIR__ . '/../../phq/phq.php';
 	include __DIR__ . '/../../pcl/pcl.php';
-	include __DIR__ . '/../../ces_d/ces_d.php';
 	include __DIR__ . '/../../psc/psc.php';
 	include __DIR__ . '/../../dast/dast.php';
 	include __DIR__ . '/../../duke/duke.php';
@@ -100,13 +99,6 @@
 		echo "<div class='write'>";
 		echo "<h3>Diagnosis ME</h3>";
 		write_diag_me($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
-	if($_SESSION['ces_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>CES-D</h3>";
-		write_ces_d($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 
