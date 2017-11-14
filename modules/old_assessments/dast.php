@@ -8,21 +8,21 @@
 	function write_dast($type, $mysqli){
 	global $i;
 
-  	if ($mysqli->connect_errno)
-	{
-    printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
-	}	
-	if (($type == "Adult") || ($type == "Child") || ($type == "Adolescent")){
-			$query = 'SELECT * FROM questions WHERE classification="DAST-10" AND ' . $type . '=1';
-		}	
-	else{
+  	if ($mysqli->connect_errno) {
+	    printf("Connect failed: %s\n", $mysqli->connect_error);
+	    exit();
+	}
+
+	if (($type == "Adult") || ($type == "Child") || ($type == "Adolescent")) {
+		$query = 'SELECT * FROM questions WHERE classification="DAST-10" AND ' . $type . '=1';
+	} else {
 		exit();
-		}	
-	if($result = $mysqli->query($query))
-	{
-		if ($i == 0) {$i=1;
-			};
+	}
+
+	if($result = $mysqli->query($query)) {
+		if ($i == 0) {
+			$i=1;
+		};
 
 		if($result->num_rows > 0 ) { //If there are questions to write, write them. Otherwise don't.
 			echo "<br><hr>";
@@ -40,33 +40,26 @@
 					//write_gad_question($i, $row['question']);
 					echo "<td class=\"dast_question\">" . $i . ". "; 
 					echo $row['question'] . "</td>\n"; 
-					if ($row['Sub_ID'] === '3')
-					{          
-					echo "<td class=\"dast_response\" id=\"dast_" . $row['Sub_ID'] . "-" . "1\"><center><input type=\"radio\" name=\"dast_" . $row['Sub_ID'] . "\" value=\"0\" /></center></td>\n";
-					echo "<td class=\"dast_response\" id=\"dast_" . $row['Sub_ID'] . "-" . "2\"><center><input type=\"radio\" name=\"dast_" . $row['Sub_ID'] . "\" value=\"1\" /></center></td>\n";
+					if ($row['Sub_ID'] === '3') {
+						echo "<td class=\"dast_response\" id=\"dast_" . $row['Sub_ID'] . "-" . "1\"><center><input type=\"radio\" name=\"dast_" . $row['Sub_ID'] . "\" value=\"0\" /></center></td>\n";
+						echo "<td class=\"dast_response\" id=\"dast_" . $row['Sub_ID'] . "-" . "2\"><center><input type=\"radio\" name=\"dast_" . $row['Sub_ID'] . "\" value=\"1\" /></center></td>\n";
+					} else {
+						echo "<td class=\"dast_response\" id=\"dast_" . $row['Sub_ID'] . "-" . "1\"><center><input type=\"radio\" name=\"dast_" . $row['Sub_ID'] . "\" value=\"1\" /></center></td>\n";
+						echo "<td class=\"dast_response\" id=\"dast_" . $row['Sub_ID'] . "-" . "2\"><center><input type=\"radio\" name=\"dast_" . $row['Sub_ID'] . "\" value=\"0\" /></center></td>\n";	
 					}
-					else
-					{
-					echo "<td class=\"dast_response\" id=\"dast_" . $row['Sub_ID'] . "-" . "1\"><center><input type=\"radio\" name=\"dast_" . $row['Sub_ID'] . "\" value=\"1\" /></center></td>\n";
-					echo "<td class=\"dast_response\" id=\"dast_" . $row['Sub_ID'] . "-" . "2\"><center><input type=\"radio\" name=\"dast_" . $row['Sub_ID'] . "\" value=\"0\" /></center></td>\n";	
-					}	
 					$_SESSION["dast_" . $row['Sub_ID']] = "-1";
-					$i++;               
-
-		}// end while
-			echo "</tr>\n"; //close table row.
+					$i++;
+				}
+				echo "</tr>\n"; //close table row.
+			} else {
+				echo "Dast Query error!";
+			}
+			echo "</table></div><!--end div dast_section -->\n";
 		}
-		else{
-			echo "Dast Query error!";
-		}
-		echo "</table></div><!--end div dast_section -->\n";
-		
 	}
-}
 };
 
-function dast_scoring($copy, $mysqli)
-{
+function dast_scoring($copy, $mysqli) {
 	/*dast scoring
 	0 = no problems
 	1-2 = low level, re-assess at later date
@@ -78,7 +71,7 @@ function dast_scoring($copy, $mysqli)
 	$dast_score = 	$copy['dast_1']+$copy['dast_2']+$copy['dast_3']+$copy['dast_4']+$copy['dast_5']+
 					$copy['dast_6']+$copy['dast_7']+$copy['dast_8']+$copy['dast_9']+$copy['dast_10'];
 
-	if ($dast_score > 0){
+	if ($dast_score > 0) {
 		echo "<tr><td>";		
 		echo "<p style = \"color: red; text-align: left\"> As scored by the DAST-10, the patient shows signs of Substance Abuse. </p>";		
 		echo "SCORE: ";
@@ -87,9 +80,7 @@ function dast_scoring($copy, $mysqli)
 		echo '<br><br>If an applicant/recipient meets the criteria for a positive screen (a score of 8 or more) on the AUDIT and/or
 		the moderate level for the DAST-10, refer to the Qualified Substance Abuse Professional.';
 		echo "</td></tr>";
-	}
-	else 
-	{
+	} else {
 		echo "<tr><td>";		
 		echo "<p> As scored by the DAST-10, the patient shows NO signs of Substance Abuse. </p>'";		
 		echo "SCORE: ";
