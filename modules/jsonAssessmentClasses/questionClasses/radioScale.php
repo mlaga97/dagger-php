@@ -11,12 +11,17 @@ $questionClasses["radioScale"]["header"] = function($options) {
 	echo "</tr>";
 };
 
-$questionClasses["radioScale"]["render"] = function($question, $relativeQuestionNumber, $absoluteQuestionNumber, $options) {
+$questionClasses["radioScale"]["render"] = function($question, $relativeQuestionNumber, $absoluteQuestionNumber, $type) {
+	$options = $type['options'];
+
 	if($relativeQuestionNumber == 0) {
 		echo "<br/>";
 	}
 	echo "<tr><td><ol start='" . $absoluteQuestionNumber .  "'><li>" . $question["text"] . "</li></ol></td>";
 	foreach($options as $optionText => $value) {
+		if(array_key_exists('hideLabel', $type) && $type['hideLabel']) {
+			$optionText = '';
+		}
 		echo "<td><center><label class='radio_caption'><br/><input type='radio' name='" . $question["id"] . "' value='" . $value . "' /><br/>" . $optionText . "</label></center></td>";
 	}
 };
