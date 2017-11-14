@@ -1,4 +1,8 @@
 {
+	"edu.usm.dagger.main.viewAssessment.dontSet_-1_to_0": [
+		"/value*/"
+	],
+
 	"edu.usm.dagger.main.insert.whitelist": [
 		"valueA1C", "A1CDate", "valueEAG", "eAGDate", "valueLDL", "valueHDL", "cholestoralDate", "valueSYS", "valueDIA", "bpDate", "valueHeight", "valueWeight", "physicalDate",
 

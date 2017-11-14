@@ -1,0 +1,21 @@
+{
+	"moduleName": "sdq",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"sdq_check": "SDQ"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"sdq_check", "sdq_1", "sdq_2", "sdq_3", "sdq_4", "sdq_5", "sdq_6", "sdq_7", "sdq_8", "sdq_9", "sdq_10",
+		"sdq_11", "sdq_12", "sdq_13", "sdq_14", "sdq_15", "sdq_16", "sdq_17", "sdq_18", "sdq_19", "sdq_20",
+		"sdq_21", "sdq_22", "sdq_23", "sdq_24", "sdq_25", "sdq_26", "sdq_27", "sdq_28", "sdq_29", "sdq_30",
+		"sdq_31", "sdq_32", "sdq_33"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+			}
+		}
+	}
+}

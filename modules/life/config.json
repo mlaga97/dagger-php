@@ -1,0 +1,18 @@
+{
+	"moduleName": "",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"life_check": "Life Attitudes"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"life_check", "life_1", "life_2", "life_3", "life_4", "life_5"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+			}
+		}
+	}
+}

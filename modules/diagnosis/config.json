@@ -1,0 +1,20 @@
+{
+	"moduleName": "diagnosis",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"diagnosis_check": "Diagnosis"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"diagnosis_check", "diagnosis_1", "diagnosis_1_3", "diagnosis_2", "diagnosis_2_3", "diagnosis_3", "diagnosis_3_3", "diagnosis_4",
+		"diagnosis_4_3", "diagnosis_5", "diagnosis_5_3", "diagnosis_6", "diagnosis_6_3", "diagnosis_7", "diagnosis_7_3", "diagnosis_8",
+		"diagnosis_8_3", "diagnosis_9", "diagnosis_9_3", "diagnosis_10", "diagnosis_10_3"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+			}
+		}
+	}
+}

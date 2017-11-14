@@ -1,0 +1,19 @@
+{
+	"moduleName": "pcl",
+
+	"edu.usm.dagger.main.searchAssessment.tags": {
+		"pcl_check": "PCL-C"
+	},
+
+	"edu.usm.dagger.main.insert.whitelist": [
+		"pcl_check", "pcl_1", "pcl_2", "pcl_3", "pcl_4", "pcl_5", "pcl_6", "pcl_7", "pcl_8", "pcl_9", "pcl_10",
+		"pcl_11", "pcl_12", "pcl_13", "pcl_14", "pcl_15", "pcl_16", "pcl_17"
+	],
+
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+			}
+		}
+	}
+}
