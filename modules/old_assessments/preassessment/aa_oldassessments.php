@@ -7,7 +7,6 @@
 	$_SESSION['phq_check'] = 0;
 	$_SESSION['pcl_check'] = 0;
 	$_SESSION['psc_check'] = 0;
-	$_SESSION['ces_check'] = 0;
 	$_SESSION['dast_check'] = 0;
 	$_SESSION['duke_check'] = 0;
 	$_SESSION['self_check'] = 0;
@@ -65,9 +64,6 @@
 			<div title=\"The PCL-C (civilian) asks about symptoms in relation to &quot;stressful experiences.&quot;\">
 				<label><input id=\"pcl_check\"    input type=\"checkbox\" name=\"pcl_check\"    value=\"1\" />PCL-C</label>
 			</div>
-			<div title=\"The CES-D is a screening test for depression and depressive disorder. \">
-				<label><input id=\"ces_check\"    input type=\"checkbox\" name=\"ces_check\"    value=\"1\" />CES-D</label>
-			</div>
 			<div title=\"The Pediatric Symptom Checklist-17 (PSC-17) is a psychosocial screen designed to facilitate the recognition of cognitive, emotional, and behavioral problems \">
 				<label><input id=\"psc_check\"    input type=\"checkbox\" name=\"psc_check\"    value=\"1\" />PSC-17</label>
 			</div>
@@ -100,11 +96,6 @@
 
 					<div class=\"adultonly\"  title=\"Patient Depression Questionnaire asks questions concerning depression.\">
 						<label><input id=\"phq_check\"    input type=\"checkbox\" name=\"phq_check\"    value=\"1\" />PHQ-9</label>
-					</div>
-
-					<!-- Adult and Child -->
-					<div title=\"The CES-D is a screening test for depression and depressive disorder. \">
-						<label><input id=\"ces_check\"    input type=\"checkbox\" name=\"ces_check\"    value=\"1\" />CES-D</label>
 					</div>
 
 					<!-- Adult and Child -->
@@ -218,9 +209,6 @@
 			</div>
 			<div title=\"The PCL-C (civilian) asks about symptoms in relation to &quot;stressful experiences.&quot;\">
 				<label><input id=\"pcl_check\"    input type=\"checkbox\" name=\"pcl_check\"    value=\"1\" />PCL-C</label>
-			</div>
-			<div title=\"The CES-D is a screening test for depression and depressive disorder. \">
-				<label><input id=\"ces_check\"    input type=\"checkbox\" name=\"ces_check\"    value=\"1\" />CES-D</label>
 			</div>
 			<div title=\"The Pediatric Symptom Checklist-17 (PSC-17) is a psychosocial screen designed to facilitate the recognition of cognitive, emotional, and behavioral problems \">
 				<label><input id=\"psc_check\"    input type=\"checkbox\" name=\"psc_check\"    value=\"1\" />PSC-17</label>
