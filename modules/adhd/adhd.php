@@ -1,67 +1,10 @@
 <?php
-	// write_adhd() will write the adhd questions and the response matrix on the page.
-
 	/*
 	 * Description: The Symptom Checklist is an instrument consisting of the eighteen DSM-IV-TR criteria.
 	 * Six of the eighteen questions were found to be the most predictive of symptoms consistent with ADHD.
 	 * These six questions are the basis for the ASRS v1.1 Screener and are also Part A of the Symptom Checklist.
 	 * Part B of the Symptom Checklist contains the remaining twelve questions.
 	 */
-
-	function write_adhd($type, $mysqli) {
-		global $i;
-		$first = true;
-
-		if ($mysqli->connect_errno) {
-			printf("Connect failed: %s\n", $mysqli->connect_error);
-			exit();
-		}
-
-		if($result = $mysqli->query('SELECT * FROM questions WHERE classification="ADHD" AND '.$type.'=1 order by ordering' )) {
-			if ($i == 0) {
-				$i=1;
-			}
-
-			if($result->num_rows > 0 ) {
-				//If there are questions to write, write them. Otherwise don't.
-				echo "<br><hr>\n";
-				echo "<div id=\"adhd_section\">";
-
-				if ($result) {
-					//we got a result from the query
-					echo "<table id=\"adhd_questions\" border=\"1\">\n";
-					while($row = $result->fetch_assoc()) {
-						if ($first == true){
-							echo "<tr><td class=\"adhd_scale_pad\">Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist</td><td class=\"adhd_scale\"><center>Never</center></td>\n";
-							echo "<td class=\"adhd_scale\" ><center>Rarely</center></td><td class=\"adhd_scale\" ><center>Sometimes</center></td>\n";
-							echo "<td class=\"adhd_scale\" ><center>Often</center></td>";
-							echo "<td class=\"adhd_scale\" ><center>Very often</center></td></tr>\n";
-							$first = false;
-						}
-						echo "<tr class=\"adhd_row\"";
-						if ($i%2 == 0)
-							echo "style=\"background-color: #EFFBFB;\"";
-							echo ">";
-							echo "<td class=\"adhd_question\">" . $i . ". ";
-							echo $row['question'] . "</td>\n";
-							echo "<td class=\"adhd_response\" id=\"adhd_" . $row['Sub_ID'] . "-" . "1\"><center><input type=\"radio\" name=\"adhd_" . $row['Sub_ID'] . "\" value=\"0\" /></center></td>\n";
-							echo "<td class=\"adhd_response\" id=\"adhd_" . $row['Sub_ID'] . "-" . "2\"><center><input type=\"radio\" name=\"adhd_" . $row['Sub_ID'] . "\" value=\"1\" /></center></td>\n";
-							echo "<td class=\"adhd_response\" id=\"adhd_" . $row['Sub_ID'] . "-" . "3\"><center><input type=\"radio\" name=\"adhd_" . $row['Sub_ID'] . "\" value=\"2\" /></center></td>\n";
-							echo "<td class=\"adhd_response\" id=\"adhd_" . $row['Sub_ID'] . "-" . "4\"><center><input type=\"radio\" name=\"adhd_" . $row['Sub_ID'] . "\" value=\"3\" /></center></td>\n";
-							echo "<td class=\"adhd_response\" id=\"adhd_" . $row['Sub_ID'] . "-" . "5\"><center><input type=\"radio\" name=\"adhd_" . $row['Sub_ID'] . "\" value=\"4\" /></center></td>\n";
-							echo "</tr>\n"; //close table row.
-							$_SESSION["adhd_" . $row['Sub_ID']] = "-1";
-							$i++;
-					}// end while
-
-				}
-				else{
-					echo "ADHD Query error!";
-				}
-				echo "</table></div><!--end div adhd_section -->\n";
-			}
-		}
-	};
 
 	function adhd_scoring($copy, $mysqli) {
 		if ($mysqli->connect_errno) {
