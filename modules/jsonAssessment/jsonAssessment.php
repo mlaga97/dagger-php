@@ -92,6 +92,7 @@ foreach($jsonAssessments as $index => $assessment) {
 *******************************************************************************
 ******************************************************************************/
 
+// TODO: This, but automatically.
 function areFriends($types, $question1, $question2) {
 
 	// Check if questions have same type

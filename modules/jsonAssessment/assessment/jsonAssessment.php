@@ -87,7 +87,7 @@ foreach($jsonAssessments as $assessment) {
 				}
 
 				// Render question
-				$questionClasses[$class]["render"]($question, $relativeQuestionNumber, $absoluteQuestionNumber, $options);
+				$questionClasses[$class]["render"]($question, $relativeQuestionNumber, $absoluteQuestionNumber, $type);
 
 				// Update absolute question number
 				$absoluteQuestionNumber = $absoluteQuestionNumber + 1;

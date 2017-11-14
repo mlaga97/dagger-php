@@ -13,7 +13,9 @@ $questionClasses["bitwiseTable"]["header"] = function($options) {
 	echo "</tr>";
 };
 
-$questionClasses["bitwiseTable"]["render"] = function($question, $relativeQuestionNumber, $absoluteQuestionNumber, $options) {
+$questionClasses["bitwiseTable"]["render"] = function($question, $relativeQuestionNumber, $absoluteQuestionNumber, $type) {
+	$options = $type["options"];
+
 	if($relativeQuestionNumber == 0) {
 		echo "<br/>";
 	}
