@@ -5,6 +5,10 @@
 		"userAgent", "assessmentStartTime", "insertAssessmentStartTime", "postAssessmentStartTime", "preassessmentStartTime", "reviewAssessmentStartTime"
 	],
 
+	"edu.usm.dagger.main.insert.blacklist": [
+		"revisionDate"
+	],
+
 	"edu.usm.dagger.dbConfig.tables": {
 		"response": {
 			"keys": {

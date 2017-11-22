@@ -10,8 +10,7 @@
 	],
 
 	"edu.usm.dagger.main.insert.blacklist": [
-		"id", "university_id", "admin", "grouping", "test_acc", "status", "previous", "date",
-
+		"id", "university_id", "admin", "grouping", "test_acc", "status", "previous", "date", "debug",
 		"search_select", "contact_date", "entry_date", "contact_outcome", "outcome_other", "contact_reason", "reason_other"
 	],
 
