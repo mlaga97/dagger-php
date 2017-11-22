@@ -20,7 +20,7 @@ function enableSubmit(c_pt_id) {
 	<!-- TODO: Move elsewhere -->
 	<?php if(in_array($_SESSION["activityType"], array("Appointment", "Warm Hand Off", "Warm Hand Off and Consult", "Phone Call")) ) { ?>
 		<label for="dagger.reviewAssessment.assessmentTime" > Appointment Duration</label>
-		<input type="text" id="dagger.reviewAssessment.assessmentTime" name="assessmentTime" /><br/>
+		<input type="number" min="0" max="600" step="1" id="dagger.reviewAssessment.assessmentTime" name="assessmentTime" /><br/>
 	<?php } ?>
 
 	<label for="dagger.reviewAssessment.confirm_patientID" > Confirm Patient ID</label>
