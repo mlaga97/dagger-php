@@ -23,10 +23,10 @@
 			"class": "radioScale",
 			"emptyValue": -1,
 			"options": {
-				"Rarely or none of the time (less than 1 day)": 1,
-				"Some of a little of the time (1-2 days)": 2,
-				"Occasionally or a moderate amount of time (3-4 days)": 3,
-				"Most or all of the time (5-7 days)": 4
+				"Rarely or none of the time (less than 1 day)": 0,
+				"Some of a little of the time (1-2 days)": 1,
+				"Occasionally or a moderate amount of time (3-4 days)": 2,
+				"Most or all of the time (5-7 days)": 3
 			},
 			"hideLabel": true,
 			"friends": ["ces_question_reverse"]
@@ -35,10 +35,10 @@
 			"class": "radioScale",
 			"emptyValue": -1,
 			"options": {
-				"Rarely or none of the time (less than 1 day)": 4,
-				"Some of a little of the time (1-2 days)": 3,
-				"Occasionally or a moderate amount of time (3-4 days)": 2,
-				"Most or all of the time (5-7 days)": 1
+				"Rarely or none of the time (less than 1 day)": 3,
+				"Some of a little of the time (1-2 days)": 2,
+				"Occasionally or a moderate amount of time (3-4 days)": 1,
+				"Most or all of the time (5-7 days)": 0
 			},
 			"hideLabel": true,
 			"friends": ["ces_question"]
