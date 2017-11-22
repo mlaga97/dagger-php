@@ -80,8 +80,8 @@
 			} else {
 
 				// Error if configuration makes no sense
-				echo '"' . $key . '" not whitelisted AND blacklisted!<br/>';
-				$log->error('"' . $key . '" not whitelisted AND blacklisted!');
+				echo '"' . $key . '" whitelisted AND blacklisted!<br/>';
+				$log->error('"' . $key . '" whitelisted AND blacklisted!');
 			}
 		} else {
 
