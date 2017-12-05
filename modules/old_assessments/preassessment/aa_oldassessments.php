@@ -7,7 +7,6 @@
 	$_SESSION['phq_check'] = 0;
 	$_SESSION['pcl_check'] = 0;
 	$_SESSION['psc_check'] = 0;
-	$_SESSION['duke_check'] = 0;
 	$_SESSION['self_check'] = 0;
 	$_SESSION['life_check'] = 0;
 	$_SESSION['sdq_check'] = 0;
@@ -66,9 +65,6 @@
 			<div title=\"The Pediatric Symptom Checklist-17 (PSC-17) is a psychosocial screen designed to facilitate the recognition of cognitive, emotional, and behavioral problems \">
 				<label><input id=\"psc_check\"    input type=\"checkbox\" name=\"psc_check\"    value=\"1\" />PSC-17</label>
 			</div>
-			<div title=\"The Duke Health Profile (Duke) is a 17-item generic self-report standardized instrument containing six health measures (physical, mental, social, general, perceived health, and self-esteem), and four dysfunction measures (anxiety, depression, pain, and disability).\">
-				<label><input id=\"duke_check\"    input type=\"checkbox\" name=\"duke_check\"    value=\"1\" />The Duke</label>
-			</div>
 		";
 	} else if ($_SESSION['grouping'] == 2 || $_SESSION['grouping'] == 10) { //grouping = 2 is for the MS GRHOP
 		echo "
@@ -97,10 +93,6 @@
 					<!-- Adult and Child -->
 					<div title=\"The PCL-C (civilian) asks about symptoms in relation to &quot;stressful experiences.&quot;\">
 						<label><input id=\"pcl_check\"    input type=\"checkbox\" name=\"pcl_check\"    value=\"1\" />PCL-C</label>
-					</div>
-
-					<div class=\"adultonly\"  title=\"The Duke Health Profile (Duke) is a 17-item generic self-report standardized instrument containing six health measures (physical, mental, social, general, perceived health, and self-esteem), and four dysfunction measures (anxiety, depression, pain, and disability).\">
-						<label><input id=\"duke_check\"    input type=\"checkbox\" name=\"duke_check\"    value=\"1\" />The Duke</label>
 					</div>
 
 					<!-- Adult and Child -->
@@ -202,9 +194,6 @@
 			</div>
 			<div title=\"The Pediatric Symptom Checklist-17 (PSC-17) is a psychosocial screen designed to facilitate the recognition of cognitive, emotional, and behavioral problems \">
 				<label><input id=\"psc_check\"    input type=\"checkbox\" name=\"psc_check\"    value=\"1\" />PSC-17</label>
-			</div>
-			<div title=\"The Duke Health Profile (Duke) is a 17-item generic self-report standardized instrument containing six health measures (physical, mental, social, general, perceived health, and self-esteem), and four dysfunction measures (anxiety, depression, pain, and disability).\">
-				<label><input id=\"duke_check\"    input type=\"checkbox\" name=\"duke_check\"    value=\"1\" />The Duke</label>
 			</div>
 		";
 	}

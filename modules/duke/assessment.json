@@ -1,0 +1,193 @@
+{
+	"metadata": {
+		"class": "duke",
+		"title": "The Duke Health Profile (Duke) is a 17-item generic self-report standardized instrument containing six health measures (physical, mental, social, general, perceived health, and self-esteem), and four dysfunction measures (anxiety, depression, pain, and disability).",
+		"text": "The Duke",
+		"id": "duke_check"
+	},
+	"scoring": {
+		"reviewAssessment": {
+			"showResponses": false,
+			"responseFormat": "human_readable",
+			"showScore": false,
+			"scoreType": "sumOfValues"
+		},
+		"viewAssessment": {
+			"showResponses": false,
+			"showScore": false,
+			"scoreType": "sumOfValues"
+		}
+	},
+	"types": {
+		"duke-g_reverse": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"Yes, describes me exactly.": 0,
+				"Somewhat describes me.": 1,
+				"No, doesn't describe me at all.": 2
+			},
+			"hideLabel": true,
+			"friends": ["duke-g"]
+		},
+		"duke-g": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"Yes, describes me exactly.": 2,
+				"Somewhat describes me.": 1,
+				"No, doesn't describe me at all.": 0
+			},
+			"hideLabel": true,
+			"friends": ["duke-g_reverse"]
+		},
+		"duke-t": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"None": 2,
+				"Some": 1,
+				"A Lot": 0
+			}
+		},
+		"duke-w": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"None": 2,
+				"Some": 1,
+				"A Lot": 0
+			}
+		},
+		"duke-sw": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"None": 2,
+				"Some": 1,
+				"A Lot": 0
+			}
+		},
+		"duke-lw": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"None": 2,
+				"1-4 Days": 1,
+				"5-7 Days": 0
+			}
+		}
+	},
+	"sections": [
+		{
+			"description": "Please select situation that best fits you.",
+			"questions": [
+				{
+					"id": "duke_1",
+					"text": "I like who I am.",
+					"type": "duke-g"
+				},
+				{
+					"id": "duke_2",
+					"text": "I am not an easy person to get along with.",
+					"type": "duke-g_reverse"
+				},
+				{
+					"id": "duke_3",
+					"text": "I am basically a healthy person.",
+					"type": "duke-g"
+				},
+				{
+					"id": "duke_4",
+					"text": "I give up too easily.",
+					"type": "duke-g_reverse"
+				},
+				{
+					"id": "duke_5",
+					"text": "I have difficulty concentrating.",
+					"type": "duke-g_reverse"
+				},
+				{
+					"id": "duke_6",
+					"text": "I am happy with my family relationships.",
+					"type": "duke-g"
+				},
+				{
+					"id": "duke_7",
+					"text": "I am comfortable being around people.",
+					"type": "duke-g"
+				}
+			]
+		},
+		{
+			"description": "TODAY would you have any physical trouble or difficulty:",
+			"questions": [
+				{
+					"id": "duke_8",
+					"text": "Walking up a flight of stairs.",
+					"type": "duke-t"
+				},
+				{
+					"id": "duke_9",
+					"text": "Running the length of a football field.",
+					"type": "duke-t"
+				}
+			]
+		},
+		{
+			"description": "DURING THE PAST WEEK: How much trouble have you had with:",
+			"questions": [
+				{
+					"id": "duke_10",
+					"text": "Sleeping.",
+					"type": "duke-w"
+				},
+				{
+					"id": "duke_11",
+					"text": "Hurting or aching in any part of your body.",
+					"type": "duke-w"
+				},
+				{
+					"id": "duke_12",
+					"text": "Getting tired easily.",
+					"type": "duke-w"
+				},
+				{
+					"id": "duke_13",
+					"text": "Feeling depressed or sad.",
+					"type": "duke-w"
+				},
+				{
+					"id": "duke_14",
+					"text": "Nervousness.",
+					"type": "duke-w"
+				}
+			]
+		},
+		{
+			"description": "DURING THE PAST WEEK: How often did you:",
+			"questions": [
+				{
+					"id": "duke_15",
+					"text": "Socialize with other people (talk or visit with friends or relatives).",
+					"type": "duke-sw"
+				},
+				{
+					"id": "duke_16",
+					"text": "Take part in social, religious, or recreation activities (meetings, church, movies, sports, parties).",
+					"type": "duke-sw"
+				}
+			]
+		},
+		{
+			"description": "DURING THE PAST WEEK: How often did you:",
+			"questions": [
+				{
+					"id": "duke_17",
+					"text": "Stay in your home, a nursing home, or hospital because of a sickness, injury, or other health problem.",
+					"type": "duke-lw"
+				}
+			]
+		}
+	]
+}
