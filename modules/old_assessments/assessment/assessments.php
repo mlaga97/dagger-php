@@ -9,7 +9,6 @@
 	include __DIR__ . '/../../phq/phq.php';
 	include __DIR__ . '/../../pcl/pcl.php';
 	include __DIR__ . '/../../psc/psc.php';
-	include __DIR__ . '/../../duke/duke.php';
 	include __DIR__ . '/../../self/self.php';
 	include __DIR__ . '/../../sdq/sdq.php';
 	include __DIR__ . '/../../life/life.php';
@@ -105,13 +104,6 @@
 		echo "<div class='write'>";
 		echo "<h3>PSC-17</h3>";
 		write_psc($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
-	if($_SESSION['duke_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>The Duke</h3>";
-		write_duke($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 
