@@ -12,65 +12,6 @@
 *								poor response to therapy, expedited referral to a mental health 
 *								specialist for psychotherapy and/or collaborative management. 
 */
-function write_phq($type, $mysqli)
-{
-	global $i;
-
-  	if ($mysqli->connect_errno)
-	{
-    printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
-	}	
-	if (($type == "Adult") || ($type == "Child") || ($type == "Adolescent")){
-			$query = 'SELECT * FROM questions WHERE classification="PHQ-9" AND '.$type.'=1';
-		}	
-	else{
-		exit();
-		}	
-
-	if($result = $mysqli->query($query))
-	{
-	if ($i == 0)
-	 	{
-	 	$i=1;
-		};
-
-	if($result->num_rows > 0 ) { //If there are questions to write, write them. Otherwise don't.
-		echo "<br><hr>\n";
-	echo "<div id=\"phq_section\"><p>During the <b>last 2 weeks,</b> how often have you ";
-	echo "been bothered by any of the following problems? (PHQ-9)</p>\n";
-	echo "<table id=\"phq_questions\" border=\"1\">\n";
-	echo "<tr><td class=\"phq_scale_pad\"></td><td class=\"phq_scale\"><center>Not at all</center></td>\n";
-	echo "<td class=\"phq_scale\" ><center>Several days</center></td><td class=\"phq_scale\" ><center>Over half the days</center></td>\n";
-	echo "<td class=\"phq_scale\" ><center>Nearly everyday</center></td></tr>\n";
-
-	if ($result){ //we got a result from the query  
-		while($row = $result->fetch_assoc())  {
-				echo "<tr class=\"phq_row\"";
-				if ($i%2 == 0) 
-						echo "style=\"background-color: #EFFBFB;\"";
-				echo ">";
-				//write_gad_question($i, $row['question']);
-				echo "<td class=\"phq_question\">" . $i . ". "; 
-				echo $row['question'] . "</td>\n";           
-				echo "<td class=\"phq_response\" id=\"phq_" . $row['Sub_ID'] . "-" . "1\"><center><input type=\"radio\" name=\"phq_" . $row['Sub_ID'] . "\" value=\"0\" /></center></td>\n";
-				echo "<td class=\"phq_response\" id=\"phq_" . $row['Sub_ID'] . "-" . "2\"><center><input type=\"radio\" name=\"phq_" . $row['Sub_ID'] . "\" value=\"1\" /></center></td>\n";
-				echo "<td class=\"phq_response\" id=\"phq_" . $row['Sub_ID'] . "-" . "3\"><center><input type=\"radio\" name=\"phq_" . $row['Sub_ID'] . "\" value=\"2\" /></center></td>\n";
-				echo "<td class=\"phq_response\" id=\"phq_" . $row['Sub_ID'] . "-" . "4\"><center><input type=\"radio\" name=\"phq_" . $row['Sub_ID'] . "\" value=\"3\" /></center></td>\n";
-				$_SESSION["phq_" . $row['Sub_ID']] = "-1";
-				$i++;             
-
-	}// end while
-		echo "</tr>\n"; //close table row.
-	}
-	else{
-		echo "Query error!";
-	}
-	echo "</table></div><!--end div phq_section -->\n";
-}
-}
-};
-
 function phq_scoring($copy, $mysqli)
 {
 
