@@ -122,6 +122,13 @@
 			$files = array_merge($files, array_diff(scandir($providerPath), array('..', '.')));
 		}
 
+		// Remove all but '.php'
+		foreach($files as $key => $file) {
+			if(!preg_match('/.php$/', $file)) {
+				unset($files[$key]);
+			}
+		}
+
 		sort($files);
 
 		return array_unique($files);
