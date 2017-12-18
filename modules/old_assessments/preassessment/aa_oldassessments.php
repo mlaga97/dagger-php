@@ -5,7 +5,6 @@
 	$_SESSION['events_check'] = 0;
 	$_SESSION['health_check'] = 0;
 	$_SESSION['psc_check'] = 0;
-	$_SESSION['self_check'] = 0;
 	$_SESSION['life_check'] = 0;
 	$_SESSION['sdq_check'] = 0;
 	$_SESSION['diagnosis_check'] = 0;
@@ -26,9 +25,6 @@
 		echo "
 			<div title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\">
 				<label><input id=\"sdq_check\" input type=\"checkbox\" name=\"sdq_check\" value=\"1\" />SDQ</label>
-			</div>
-			<div title=\"This section contains questions pertaining to the client's diabetes self-care behavior.\">
-				<label><input id=\"self_check\" input type=\"checkbox\" name=\"self_check\" value=\"1\" />Self-care</label>
 			</div>
 			<div title=\"This section contains questions pertaining to the client's current stress level and specific stressors.\">
 				<label><input id=\"stress_check\" input type=\"checkbox\" name=\"stress_check\" value=\"1\" />Stress</label>
@@ -107,10 +103,6 @@
 						<label><input id=\"diagnosis_check\" input type=\"checkbox\" name=\"diagnosis_check\" value=\"1\" />Diagnosis</label>
 					</div>
 
-					<!-- self_check -->
-					<div class=\"adultonly\" title=\"This section contains questions pertaining to the client's diabetes self-care behavior.\">
-						<label><input id=\"self_check\" input type=\"checkbox\" name=\"self_check\" value=\"1\" />Diabetes Self-Care</label>
-					</div>
 
 
 
@@ -123,9 +115,6 @@
 		echo "
 			<div title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\" style=\"display: none;\">
 				<label><input id=\"sdq_check\" input type=\"checkbox\" name=\"sdq_check\" value=\"1\" />SDQ</label>
-			</div>
-			<div title=\"This section contains questions pertaining to the client's diabetes self-care behavior.\">
-				<label><input id=\"self_check\" input type=\"checkbox\" name=\"self_check\" value=\"1\" />Self-care</label>
 			</div>
 			<div title=\"This section contains questions pertaining to the client's current stress level and specific stressors.\">
 				<label><input id=\"stress_check\" input type=\"checkbox\" name=\"stress_check\" value=\"1\" />Stress</label>
@@ -147,9 +136,6 @@
 		echo "
 			<div title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\">
 				<label><input id=\"sdq_check\" input type=\"checkbox\" name=\"sdq_check\" value=\"1\" />SDQ</label>
-			</div>
-			<div title=\"This section contains questions pertaining to the client's diabetes self-care behavior.\">
-				<label><input id=\"self_check\" input type=\"checkbox\" name=\"self_check\" value=\"1\" />Self-care</label>
 			</div>
 			<div title=\"This section contains questions pertaining to the client's current stress level and specific stressors.\">
 				<label><input id=\"stress_check\" input type=\"checkbox\" name=\"stress_check\" value=\"1\" />Stress</label>
