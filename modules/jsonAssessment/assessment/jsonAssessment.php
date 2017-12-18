@@ -69,7 +69,6 @@ foreach($jsonAssessments as $assessment) {
 				// Type related variables
 				$type = $types[$typeName];
 				$class = $type["class"];
-				$options = $type["options"];
 
 				// Set empty value, if appropriate
 				if(array_key_exists("emptyValue", $type)) {
@@ -81,7 +80,7 @@ foreach($jsonAssessments as $assessment) {
 
 					// Check if current class has a header to display
 					if(array_key_exists("header", $questionClasses[$class])) {
-						$questionClasses[$class]["header"]($options);
+						$questionClasses[$class]["header"]($type["options"]);
 					}
 
 				}
