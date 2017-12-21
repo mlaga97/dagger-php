@@ -7,7 +7,6 @@
 	include __DIR__ . '/../../health/health.php';
 	include __DIR__ . '/../../events/events.php';
 	include __DIR__ . '/../../psc/psc.php';
-	include __DIR__ . '/../../sdq/sdq.php';
 	include __DIR__ . '/../../life/life.php';
 	include __DIR__ . '/../../diagnosis/diagnosis.php';
 	include __DIR__ . '/../../diag_me/diag_me.php';
@@ -59,13 +58,6 @@
 		echo "<div class='write'>";
 		echo "<h3>Events</h3>";
 		write_events($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
-	if( $_SESSION['sdq_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>SDQ</h3>";
-		write_sdq($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 

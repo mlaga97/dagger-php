@@ -6,7 +6,6 @@
 	$_SESSION['health_check'] = 0;
 	$_SESSION['psc_check'] = 0;
 	$_SESSION['life_check'] = 0;
-	$_SESSION['sdq_check'] = 0;
 	$_SESSION['diagnosis_check'] = 0;
 	$_SESSION['diag_me_check'] = 0;
 
@@ -23,9 +22,6 @@
 
 	if ($_SESSION['grouping'] == 1) { //groupong = 1 is for test accounts.
 		echo "
-			<div title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\">
-				<label><input id=\"sdq_check\" input type=\"checkbox\" name=\"sdq_check\" value=\"1\" />SDQ</label>
-			</div>
 			<div title=\"This section contains questions pertaining to the client's current stress level and specific stressors.\">
 				<label><input id=\"stress_check\" input type=\"checkbox\" name=\"stress_check\" value=\"1\" />Stress</label>
 			</div>
@@ -60,10 +56,6 @@
 
 					<div class=\"childonly\" title=\"This section contains questions pertaining to the client's presenting problem.\">
 						<label><input id=\"pp_check\" input type=\"checkbox\" name=\"pp_check\" value=\"1\" />Presenting Problem</label>
-					</div>
-
-					<div class=\"childonly\" title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\">
-						<label><input id=\"sdq_check\" input type=\"checkbox\" name=\"sdq_check\" value=\"1\" />SDQ</label>
 					</div>
 
 					<div class=\"childonly\" title=\"The Pediatric Symptom Checklist-17 (PSC-17) is a psychosocial screen designed to facilitate the recognition of cognitive, emotional, and behavioral problems \">
@@ -113,9 +105,6 @@
 		";
 	} else if ($_SESSION['grouping'] == 6) { //grouping = 6 is for the MS GRHOP non social work students
 		echo "
-			<div title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\" style=\"display: none;\">
-				<label><input id=\"sdq_check\" input type=\"checkbox\" name=\"sdq_check\" value=\"1\" />SDQ</label>
-			</div>
 			<div title=\"This section contains questions pertaining to the client's current stress level and specific stressors.\">
 				<label><input id=\"stress_check\" input type=\"checkbox\" name=\"stress_check\" value=\"1\" />Stress</label>
 			</div>
@@ -134,9 +123,6 @@
 		";
 	} else { //default is everything
 		echo "
-			<div title=\"This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.\">
-				<label><input id=\"sdq_check\" input type=\"checkbox\" name=\"sdq_check\" value=\"1\" />SDQ</label>
-			</div>
 			<div title=\"This section contains questions pertaining to the client's current stress level and specific stressors.\">
 				<label><input id=\"stress_check\" input type=\"checkbox\" name=\"stress_check\" value=\"1\" />Stress</label>
 			</div>
