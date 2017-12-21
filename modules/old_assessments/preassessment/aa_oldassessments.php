@@ -4,7 +4,6 @@
 	$_SESSION['pp_check'] = 0;
 	$_SESSION['events_check'] = 0;
 	$_SESSION['health_check'] = 0;
-	$_SESSION['psc_check'] = 0;
 	$_SESSION['life_check'] = 0;
 	$_SESSION['diagnosis_check'] = 0;
 	$_SESSION['diag_me_check'] = 0;
@@ -46,9 +45,6 @@
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>
 			</div>
-			<div title=\"The Pediatric Symptom Checklist-17 (PSC-17) is a psychosocial screen designed to facilitate the recognition of cognitive, emotional, and behavioral problems \">
-				<label><input id=\"psc_check\"    input type=\"checkbox\" name=\"psc_check\"    value=\"1\" />PSC-17</label>
-			</div>
 		";
 	} else if ($_SESSION['grouping'] == 2 || $_SESSION['grouping'] == 10) { //grouping = 2 is for the MS GRHOP
 		echo "
@@ -56,10 +52,6 @@
 
 					<div class=\"childonly\" title=\"This section contains questions pertaining to the client's presenting problem.\">
 						<label><input id=\"pp_check\" input type=\"checkbox\" name=\"pp_check\" value=\"1\" />Presenting Problem</label>
-					</div>
-
-					<div class=\"childonly\" title=\"The Pediatric Symptom Checklist-17 (PSC-17) is a psychosocial screen designed to facilitate the recognition of cognitive, emotional, and behavioral problems \">
-						<label><input id=\"psc_check\"    input type=\"checkbox\" name=\"psc_check\"    value=\"1\" />PSC-17</label>
 					</div>
 
 					<div  class=\"childonly\" title=\"This section contains questions life attitudes.\">
@@ -140,9 +132,6 @@
 			</div>
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>
-			</div>
-			<div title=\"The Pediatric Symptom Checklist-17 (PSC-17) is a psychosocial screen designed to facilitate the recognition of cognitive, emotional, and behavioral problems \">
-				<label><input id=\"psc_check\"    input type=\"checkbox\" name=\"psc_check\"    value=\"1\" />PSC-17</label>
 			</div>
 		";
 	}

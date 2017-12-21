@@ -6,7 +6,6 @@
 	include __DIR__ . '/../../current_stress/current_stress.php';
 	include __DIR__ . '/../../health/health.php';
 	include __DIR__ . '/../../events/events.php';
-	include __DIR__ . '/../../psc/psc.php';
 	include __DIR__ . '/../../life/life.php';
 	include __DIR__ . '/../../diagnosis/diagnosis.php';
 	include __DIR__ . '/../../diag_me/diag_me.php';
@@ -72,13 +71,6 @@
 		echo "<div class='write'>";
 		echo "<h3>Diagnosis ME</h3>";
 		write_diag_me($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
-	if($_SESSION['psc_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>PSC-17</h3>";
-		write_psc($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 
