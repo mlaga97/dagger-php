@@ -4,7 +4,6 @@
 	$_SESSION['pp_check'] = 0;
 	$_SESSION['events_check'] = 0;
 	$_SESSION['health_check'] = 0;
-	$_SESSION['life_check'] = 0;
 	$_SESSION['diagnosis_check'] = 0;
 	$_SESSION['diag_me_check'] = 0;
 
@@ -39,9 +38,6 @@
 			<div title=\"This section contains questions about what major life events the client has experienced.\">
 				<label><input id=\"events_check\" input type=\"checkbox\" name=\"events_check\" value=\"1\" />Events</label>
 			</div>
-			<div title=\"This section contains questions life attitudes.\">
-				<label><input id=\"life_check\" input type=\"checkbox\" name=\"life_check\" value=\"1\" />Life Attitudes</label>
-			</div>
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>
 			</div>
@@ -52,10 +48,6 @@
 
 					<div class=\"childonly\" title=\"This section contains questions pertaining to the client's presenting problem.\">
 						<label><input id=\"pp_check\" input type=\"checkbox\" name=\"pp_check\" value=\"1\" />Presenting Problem</label>
-					</div>
-
-					<div  class=\"childonly\" title=\"This section contains questions life attitudes.\">
-						<label><input id=\"life_check\" input type=\"checkbox\" name=\"life_check\" value=\"1\" />Life Attitudes</label>
 					</div>
 
 					<!-- Adult and Child -->
@@ -109,9 +101,6 @@
 			<div title=\"This section contains questions about what major life events the client has experienced.\">
 				<label><input id=\"events_check\" input type=\"checkbox\" name=\"events_check\" value=\"1\" />Events</label>
 			</div>
-			<div title=\"This section contains questions life attitudes.\" style=\"display: none;\">
-				<label><input id=\"life_check\" input type=\"checkbox\" name=\"life_check\" value=\"1\" />Life Attitudes</label>
-			</div>
 		";
 	} else { //default is everything
 		echo "
@@ -126,9 +115,6 @@
 			</div>
 			<div title=\"This section contains questions about what major life events the client has experienced.\">
 				<label><input id=\"events_check\" input type=\"checkbox\" name=\"events_check\" value=\"1\" />Events</label>
-			</div>
-			<div title=\"This section contains questions life attitudes.\">
-				<label><input id=\"life_check\" input type=\"checkbox\" name=\"life_check\" value=\"1\" />Life Attitudes</label>
 			</div>
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>
