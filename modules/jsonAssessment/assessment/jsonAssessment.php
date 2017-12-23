@@ -13,14 +13,14 @@ foreach($jsonAssessments as $assessment) {
 	$id = $metadata["id"];
 	$text = $metadata["text"];
 	$class = $metadata["class"];
-	$notes = $metadata["notes"];
 	$title = $metadata["title"];
 
 	// Local variables
 	$absoluteQuestionNumber = 1;
 
 	// Only render when assessment has been selected
-	if($_SESSION[$id]) {
+	// TODO: Add the key as 'false' if not doing it?
+	if(array_key_exists($id, $_SESSION) && $_SESSION[$id]) {
 
 		// Begin container
 		echo "<div class='jsonAssessment " . $class . "'>";
