@@ -3,7 +3,7 @@
 global $questionClasses;
 $questionClasses["checkboxScale"] = array();
 
-$questionClasses["checkboxScale"]["header"] = function($options) {
+$questionClasses["checkboxScale"]["header"] = function($type) {
 	echo "<table><tr><th>Question</th>";
 	echo "<th></th>";
 	echo "</tr>";

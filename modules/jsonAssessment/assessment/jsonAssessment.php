@@ -80,7 +80,7 @@ foreach($jsonAssessments as $assessment) {
 
 					// Check if current class has a header to display
 					if(array_key_exists("header", $questionClasses[$class])) {
-						$questionClasses[$class]["header"]($type["options"]);
+						$questionClasses[$class]["header"]($type);
 					}
 
 				}

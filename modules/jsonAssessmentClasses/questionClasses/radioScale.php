@@ -3,9 +3,9 @@
 global $questionClasses;
 $questionClasses["radioScale"] = array();
 
-$questionClasses["radioScale"]["header"] = function($options) {
+$questionClasses["radioScale"]["header"] = function($type) {
 	echo "<table><tr><th>Question</th>";
-	foreach($options as $optionText => $value) {
+	foreach($type["options"] as $optionText => $value) {
 		echo "<th>" . $optionText . "</th>";
 	}
 	echo "</tr>";

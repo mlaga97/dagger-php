@@ -5,9 +5,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/modules/bitwise/bitwise.php');
 global $questionClasses;
 $questionClasses["bitwiseTable"] = array();
 
-$questionClasses["bitwiseTable"]["header"] = function($options) {
+$questionClasses["bitwiseTable"]["header"] = function($type) {
 	echo "<table><tr><th>Question</th>";
-	foreach($options as $number => $option) {
+	foreach($type["options"] as $number => $option) {
 		echo "<th>" . $option . "</th>";
 	}
 	echo "</tr>";
