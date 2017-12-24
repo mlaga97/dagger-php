@@ -5,7 +5,6 @@
 	include __DIR__ . '/../../stressors/stressors.php';
 	include __DIR__ . '/../../current_stress/current_stress.php';
 	include __DIR__ . '/../../health/health.php';
-	include __DIR__ . '/../../events/events.php';
 	include __DIR__ . '/../../diagnosis/diagnosis.php';
 	include __DIR__ . '/../../diag_me/diag_me.php';
 	include __DIR__ . '/../../adhd/adhd.php';
@@ -49,13 +48,6 @@
 		echo "<div class='write'>";
 		echo "<h3>Health</h3>";
 		write_health($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
-	if($_SESSION['events_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>Events</h3>";
-		write_events($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 

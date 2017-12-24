@@ -2,7 +2,6 @@
 	$_SESSION['stress_check'] = 0;
 	$_SESSION['c_stress_check'] = 0;
 	$_SESSION['pp_check'] = 0;
-	$_SESSION['events_check'] = 0;
 	$_SESSION['health_check'] = 0;
 	$_SESSION['diagnosis_check'] = 0;
 	$_SESSION['diag_me_check'] = 0;
@@ -35,9 +34,6 @@
 			<div title=\"This section contains questions pertaining to the client's past and/or current MH diagnoses.\">
 				<label><input id=\"diag_me_check\" input type=\"checkbox\" name=\"diag_me_check\" value=\"1\" />MH Diagnosis</label>
 			</div>
-			<div title=\"This section contains questions about what major life events the client has experienced.\">
-				<label><input id=\"events_check\" input type=\"checkbox\" name=\"events_check\" value=\"1\" />Events</label>
-			</div>
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>
 			</div>
@@ -59,12 +55,6 @@
 						<label><input id=\"diag_me_check\" input type=\"checkbox\" name=\"diag_me_check\" value=\"1\" />MH Diagnosis</label>
 					</div>
 
-					<div class=\"adultonly\"  title=\"This section contains questions about what major life events the client has experienced.\">
-						<label><input id=\"events_check\" input type=\"checkbox\" name=\"events_check\" value=\"1\" />Events</label>
-					</div>
-
-
-
 
 					<h3>Health</h3>
 
@@ -78,14 +68,6 @@
 					<div class=\"adultonly\" title=\"This section contains questions pertaining to the client's past and/or current medical diagnoses.\">
 						<label><input id=\"diagnosis_check\" input type=\"checkbox\" name=\"diagnosis_check\" value=\"1\" />Diagnosis</label>
 					</div>
-
-
-
-
-
-
-
-
 		";
 	} else if ($_SESSION['grouping'] == 6) { //grouping = 6 is for the MS GRHOP non social work students
 		echo "
@@ -98,9 +80,6 @@
 			<div title=\"This section contains questions pertaining to the client's past and/or current MH diagnoses.\">
 				<label><input id=\"diag_me_check\" input type=\"checkbox\" name=\"diag_me_check\" value=\"1\" />MH Diagnosis</label>
 			</div>
-			<div title=\"This section contains questions about what major life events the client has experienced.\">
-				<label><input id=\"events_check\" input type=\"checkbox\" name=\"events_check\" value=\"1\" />Events</label>
-			</div>
 		";
 	} else { //default is everything
 		echo "
@@ -112,9 +91,6 @@
 			</div>
 			<div title=\"This section contains questions pertaining to the client's past and/or current MH diagnoses.\">
 				<label><input id=\"diag_me_check\" input type=\"checkbox\" name=\"diag_me_check\" value=\"1\" />MH Diagnosis</label>
-			</div>
-			<div title=\"This section contains questions about what major life events the client has experienced.\">
-				<label><input id=\"events_check\" input type=\"checkbox\" name=\"events_check\" value=\"1\" />Events</label>
 			</div>
 			<div title=\"This section asks questions about the client's current health situation.\">
 				<label><input id=\"health_check\" input type=\"checkbox\" name=\"health_check\" value=\"1\" />Health</label>

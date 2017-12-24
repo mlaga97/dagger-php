@@ -1,0 +1,81 @@
+{
+	"metadata": {
+		"class": "events",
+		"title": "This section contains questions about what major life events the client has experienced.",
+		"text": "Events",
+		"id": "events_check",
+		"notes": ""
+	},
+	"scoring": {
+		"reviewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		},
+		"viewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		}
+	},
+	"types": {
+		"events_checkbox": {
+			"class": "checkboxScale"
+		}
+	},
+	"sections": [
+		{
+			"description": "Please indicate if you have experienced any of the following events (Mark all that apply.)",
+			"questions": [
+				{
+					"id": "e_1",
+					"text": "Natural disaster.",
+					"type": "events_checkbox"
+				},
+				{
+					"id": "e_2",
+					"text": "Sexual abuse or assault.",
+					"type": "events_checkbox"
+				},
+				{
+					"id": "e_3",
+					"text": "Physical abuse or assault.",
+					"type": "events_checkbox"
+				},
+				{
+					"id": "e_4",
+					"text": "Emotional abuse or maltreatment.",
+					"type": "events_checkbox"
+				},
+				{
+					"id": "e_5",
+					"text": "Domestic violence.",
+					"type": "events_checkbox"
+				},
+				{
+					"id": "e_6",
+					"text": "War/terrorism/political violence.",
+					"type": "events_checkbox"
+				},
+				{
+					"id": "e_7",
+					"text": "Illness/medical trauma.",
+					"type": "events_checkbox"
+				},
+				{
+					"id": "e_8",
+					"text": "Serious injury/accident.",
+					"type": "events_checkbox"
+				},
+				{
+					"id": "e_9",
+					"text": "Loss of lifestyle due to Deep Water Horizon Oil-spill.",
+					"type": "events_checkbox"
+				},
+				{
+					"id": "e_10",
+					"text": "Other",
+					"type": "events_checkbox"
+				}
+			]
+		}
+	]
+}
