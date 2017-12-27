@@ -1,0 +1,107 @@
+{
+	"metadata": {
+		"class": "diag_me",
+		"title": "This section contains questions pertaining to the client's past and/or current MH diagnoses.",
+		"text": "MH Diagnosis",
+		"id": "diag_me_check",
+		"notes": ""
+	},
+	"scoring": {
+		"reviewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		},
+		"viewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		}
+	},
+	"types": {
+		"diag_me_scale": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"span": "Past and/or current mental diagnosis.",
+			"options": [
+				{
+					"span": "Came today because of this?",
+					"options": {
+						"Yes": 1,
+						"No": 0
+					}
+				},
+				{
+					"span": "Discomfort/Stress Level due to this issue?",
+					"suffix": "_3",
+					"options": {
+						"1": 0,
+						"2": 1,
+						"3": 2,
+						"4": 3,
+						"5": 4
+					}
+				}
+			]
+		}
+	},
+	"sections": [
+		{
+			"questions": [
+				{
+					"id": "diag_me_1",
+					"text": "Bipolar",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_2",
+					"text": "Depression",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_3",
+					"text": "Anxiety",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_4",
+					"text": "Obsessive-compulsive Disorder",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_5",
+					"text": "Schizophrenia",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_6",
+					"text": "Attention Deficit Hyperactivity Disorder",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_7",
+					"text": "Dissociative Disorder",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_8",
+					"text": "Personality Disorder",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_9",
+					"text": "Feeding and Eating Disorder",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_10",
+					"text": "Somatic Disorder",
+					"type": "diag_me_scale"
+				},
+				{
+					"id": "diag_me_11",
+					"text": "Other",
+					"type": "diag_me_scale"
+				}
+			]
+		}
+	]
+}

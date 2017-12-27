@@ -5,7 +5,6 @@
 	include __DIR__ . '/../../stressors/stressors.php';
 	include __DIR__ . '/../../current_stress/current_stress.php';
 	include __DIR__ . '/../../health/health.php';
-	include __DIR__ . '/../../diag_me/diag_me.php';
 	include __DIR__ . '/../../adhd/adhd.php';
 	include __DIR__ . '/../../presenting_problem/presenting_problem.php';
 	include __DIR__ . '/../../childStressors/childStressors.php';
@@ -47,13 +46,6 @@
 		echo "<div class='write'>";
 		echo "<h3>Health</h3>";
 		write_health($_SESSION['assessment_type'], $mysqli);
-		echo "</div>";
-	}
-
-	if($_SESSION['diag_me_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>Diagnosis ME</h3>";
-		write_diag_me($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 
