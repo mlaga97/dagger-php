@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"class": "phq",
+		"class": "phq adultonly",
 		"title": "Patient Depression Questionnaire asks questions concerning depression.",
 		"text": "PHQ-9",
 		"id": "phq_check",

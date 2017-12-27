@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"class": "events",
+		"class": "events adultonly",
 		"title": "This section contains questions about what major life events the client has experienced.",
 		"text": "Events",
 		"id": "events_check",

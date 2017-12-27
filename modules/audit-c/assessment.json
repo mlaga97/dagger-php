@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"class": "audit",
+		"class": "audit adultonly",
 		"title": "The Alcohol Use Disorders Identification Test (AUDIT-C)",
 		"text": "Audit-C",
 		"id": "audit_check",

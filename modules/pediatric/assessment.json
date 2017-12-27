@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"class": "pediatric",
+		"class": "pediatric childonly",
 		"title": "The Pediatric Healthy Lifestyles Screening",
 		"text": "Pediatric HLS",
 		"id": "pediatric_check"

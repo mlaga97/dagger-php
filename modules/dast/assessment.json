@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"class": "dast",
+		"class": "dast adultonly",
 		"title": "The Drug Abuse Screen Test (DAST-10) is a 10-item, yes/no self-report instrument that has been condensed from the 28-item DAST. The DAST-10 was designed to provide a brief instrument for clinical screening and treatment evaluation and can be used with adults and older youth.",
 		"text": "DAST-10",
 		"id": "dast_check"

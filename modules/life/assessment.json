@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"class": "life",
+		"class": "life childonly",
 		"title": "This section contains questions about what major life events the client has experienced.",
 		"text": "Life Attitudes",
 		"id": "life_check",
