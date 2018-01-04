@@ -59,7 +59,8 @@ foreach($jsonAssessments as $assessment) {
 			}
 
 			// Render Questions
-			foreach($questions as $relativeQuestionNumber=>$question) {
+			$relativeQuestionNumber = 0;
+			foreach($questions as $questionIndex=>$question) {
 
 				// Question related variables
 				$id = $question["id"];
@@ -70,28 +71,41 @@ foreach($jsonAssessments as $assessment) {
 				$type = $types[$typeName];
 				$class = $type["class"];
 
-				// Set empty value, if appropriate
-				if(array_key_exists("emptyValue", $type)) {
-					$_SESSION[$id] = $type["emptyValue"];
-				}
-
-				// Only display header if we are starting a new block of questions
-				if($relativeQuestionNumber == 0 || !areFriends($types, $question, $questions[$relativeQuestionNumber-1])) {
-
-					// Check if current class has a header to display
-					if(array_key_exists("header", $questionClasses[$class])) {
-						$questionClasses[$class]["header"]($type);
+				// Check showOnly
+				// TODO: There _HAS_ to be a better way.
+				if(
+					!array_key_exists("showOnly", $question) || (
+						array_key_exists("showOnly", $question) && (
+							($_SESSION['assessment_type'] == 'Adult' && $question["showOnly"] == "adult")
+							||
+							($_SESSION['assessment_type'] == 'Child' && $question["showOnly"] == "child")
+						)
+					)
+				) {
+					// Set empty value, if appropriate
+					if(array_key_exists("emptyValue", $type)) {
+						$_SESSION[$id] = $type["emptyValue"];
 					}
 
+					// Only display header if we are starting a new block of questions
+					if($relativeQuestionNumber == 0 || !areFriends($types, $question, $questions[$questionIndex-1])) {
+
+						// Check if current class has a header to display
+						if(array_key_exists("header", $questionClasses[$class])) {
+							$questionClasses[$class]["header"]($type);
+						}
+
+					}
+
+					// Render question
+					$questionClasses[$class]["render"]($question, $questionIndex, $absoluteQuestionNumber, $type);
+
+					// Update absolute question number
+					$relativeQuestionNumber = $relativeQuestionNumber + 1;
+					$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
+
+					echo "</tr>";
 				}
-
-				// Render question
-				$questionClasses[$class]["render"]($question, $relativeQuestionNumber, $absoluteQuestionNumber, $type);
-
-				// Update absolute question number
-				$absoluteQuestionNumber = $absoluteQuestionNumber + 1;
-
-				echo "</tr>";
 			}
 
 			echo "</table>";
