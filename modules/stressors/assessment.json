@@ -1,0 +1,353 @@
+{
+	"metadata": {
+		"class": "stress",
+		"title": "This section contains questions pertaining to the client's current stress level and specific stressors.",
+		"text": "Stress",
+		"id": "stress_check",
+		"notes": ""
+	},
+	"scoring": {
+		"reviewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		},
+		"viewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		}
+	},
+	"types": {
+		"stress_checkbox": {
+			"class": "checkboxScale"
+		},
+		"stress_scale": {
+			"class": "radioOptions",
+			"emptyValue": -1,
+			"options": {
+				"0   (No stress)": 0,
+				"10": 1,
+				"20  (Minimal stress)": 2,
+				"30": 3,
+				"40": 4,
+				"50  (Moderate stress)": 5,
+				"60": 6,
+				"70": 7,
+				"80  (Very much stressed)": 8,
+				"90": 9,
+				"100 (Most stress ever felt)": 10
+			}
+		}
+	},
+	"sections": [
+		{
+			"header": "Current Stressors",
+			"description": "(Mark all that apply.)",
+			"questions": [
+				{
+					"id": "s_1",
+					"text": "Divorce/separation.",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_2",
+					"text": "Death or life-threatening illness of a very close friend or close family member.",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_3",
+					"text": "Marital or relationship problems.",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_4",
+					"text": "Personally experiencing a life threatening illness/injury.",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_5",
+					"text": "Home or family life conflict.",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_6",
+					"text": "Employment problems (Loss of business, Unemployment or Lack of job opportunties, job dissatisfaction, etc.).",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_7",
+					"text": "Birth of a child.",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_8",
+					"text": "Natural disasters (hurricanes, flooding, tornadoes, etc.).",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_9",
+					"text": "Trouble with the police (arrested, jail, etc.).",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_10",
+					"text": "Loss of usual way of life.",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_11",
+					"text": "Anxiety.",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_12",
+					"text": "Depression.",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_13",
+					"text": "Stress.",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_14",
+					"text": "Academic Problems",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_15",
+					"text": "Housing problems (homeless, unsafe neighborhood, etc.)",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_16",
+					"text": "Poor healthcare services (inadequate health insurance, etc.)",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_17",
+					"text": "Transportation difficulties",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_18",
+					"text": "Relationship problems.",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_19",
+					"text": "Divorce (e.g., parental divorce)",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_20",
+					"text": "Loss or separation (e.g., imprisoned loved one).",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_21",
+					"text": "Personally arrested or imprisoned.",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_22",
+					"text": "Death (e.g., family member, friend).",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_23",
+					"text": "Police involvement (e.g., self or family member).",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_24",
+					"text": "Military deployment.",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_25",
+					"text": "Birth of a sibling.",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_26",
+					"text": "Moving.",
+					"type": "stress_checkbox"
+				},
+				{
+					"id": "s_27",
+					"text": "Man-made disasters.",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_28",
+					"text": "Other",
+					"type": "stress_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "s_31",
+					"text": "Financial stressors",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_32",
+					"text": "Change of custody",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_33",
+					"text": "Home/family life conflict",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_34",
+					"text": "DHS Involvement",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_35",
+					"text": "Loss of lifestyle due to DW Horizon oil spill",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_36",
+					"text": "Violence in the home (witnessed and/or experienced)",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_37",
+					"text": "Bullying",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_38",
+					"text": "Police involvement",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_39",
+					"text": "Employment problems",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_40",
+					"text": "Self-esteem",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_41",
+					"text": "Sleeping",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_42",
+					"text": "Depression",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_43",
+					"text": "Suicidal/Homocidal ideation",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_44",
+					"text": "Self-harm",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_45",
+					"text": "Eating/body image",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_46",
+					"text": "Substance abuse (self)",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_47",
+					"text": "Substance abuse (by family member)",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_48",
+					"text": "Sexual abuse or assault",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_49",
+					"text": "Physical abuse or assault",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_50",
+					"text": "Emotional abuse or maltreatment",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_51",
+					"text": "Illness/medical trama",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_52",
+					"text": "Serious injury/accident",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "s_53",
+					"text": "Parent/guardian incarcerated",
+					"type": "stress_checkbox",
+					"showOnly": "child"
+				}
+			]
+		},
+		{
+			"header": "Current Stress Level",
+			"questions": [
+				{
+					"id": "stress",
+					"text": "Taking all of these into consideration, what is your overall stress level right now?",
+					"type": "stress_scale"
+				}
+			]
+		}
+	]
+}
