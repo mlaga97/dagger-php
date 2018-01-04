@@ -1,0 +1,123 @@
+{
+	"metadata": {
+		"class": "health",
+		"title": "This section asks questions about the client's current health situation.",
+		"text": "Health",
+		"id": "health_check",
+		"notes": ""
+	},
+	"scoring": {
+		"reviewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		},
+		"viewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		}
+	},
+	"types": {
+		"health_checkbox": {
+			"class": "checkboxScale"
+		}
+	},
+	"sections": [
+		{
+			"description": "",
+			"questions": [
+				{
+					"id": "h_1",
+					"text": "Do you suffer from Asthma?",
+					"type": "health_checkbox",
+					"showOnly": "adult"
+				},
+				{
+					"id": "h_2",
+					"text": "Do you suffer from Diabetes?",
+					"type": "health_checkbox",
+					"showOnly": "adult"
+
+				},
+				{
+					"id": "h_3",
+					"text": "Do you suffer from Heart Disease?",
+					"type": "health_checkbox",
+					"showOnly": "adult"
+
+				},
+				{
+					"id": "h_4",
+					"text": "Do you suffer from Cancer?",
+					"type": "health_checkbox",
+					"showOnly": "adult"
+
+				},
+				{
+					"id": "h_5",
+					"text": "Do you suffer from Obesity?",
+					"type": "health_checkbox",
+					"showOnly": "adult"
+
+				},
+				{
+					"id": "h_6",
+					"text": "Do you use tobacco products?",
+					"type": "health_checkbox",
+					"showOnly": "adult"
+
+				},
+				{
+					"id": "h_7",
+					"text": "Have you ever been diagnosed with Asthma?",
+					"type": "health_checkbox",
+					"showOnly": "adult"
+
+				},
+				{
+					"id": "h_8",
+					"text": "Have you ever been diagnosed with Diabetes?",
+					"type": "health_checkbox",
+					"showOnly": "adult"
+
+				},
+				{
+					"id": "h_11",
+					"text": "Have you ever been diagnosed with Obesity?",
+					"type": "health_checkbox",
+					"showOnly": "child"
+
+				},
+				{
+					"id": "h_15",
+					"text": "Have you ever been diagnosed with Hypertension?",
+					"type": "health_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "h_16",
+					"text": "Do you use tobacco products?",
+					"type": "health_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "h_17",
+					"text": "Do you live with or spend time with someone who smokes?",
+					"type": "health_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "h_18",
+					"text": "Have you ever been diagnosed with ADHD?",
+					"type": "health_checkbox",
+					"showOnly": "child"
+				},
+				{
+					"id": "h_19",
+					"text": "Have you ever been diagnosed with a developmental delay and/or learning disablity?",
+					"type": "health_checkbox",
+					"showOnly": "child"
+				}
+			]
+		}
+	]
+}

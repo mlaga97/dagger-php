@@ -1,43 +1,4 @@
 <?php
-
-function write_health($type, $mysqli) {
-	if ($mysqli->connect_errno) {
-		printf ( "Connect failed: %s\n", $mysqli->connect_error );
-		exit ();
-	}
-
-	if (($type == "Adult") || ($type == "Child") || ($type == "Adolescent")) {
-		$query = 'SELECT * FROM questions WHERE classification="HEALTH" AND ' . $type . '=1 ORDER BY ordering';
-	} else {
-		exit ();
-	}
-
-	if ($result = $mysqli->query ( $query )) {
-
-		if ($result->num_rows > 0) {
-			if ($type === "Child") {
-				echo "<p><center>Please indicate if any of these current health trends are true for your child. (Mark all that apply.)</center></p>\n
-				<div id=\"health\">\n
-				<table border=\"1\" id=\"health\">\n";
-			} else {
-				echo "<p><center>Please indicate if any of these current health trends are true. (Mark all that apply.)</center></p>\n
-				<div id=\"health\">\n
-				<table border=\"1\" id=\"health\">\n";
-			}
-
-			if ($result) { // we got a result from the query
-				while ( $row = $result->fetch_assoc () ) {
-					echo "<td class=\"event\" width = \"800\">" . $row ['question'] . "</td><td class=\"event_input\" width = \"50\">\n<center><input type=\"checkbox\" name=\"h_" . $row ['Sub_ID'] . "\" value=\"" . $row ['Sub_ID'] . "
-					\" style=\"vertical-align: bottom\"/></center></td></tr>\n";
-					$_SESSION ["h_" . $row ['Sub_ID']] = "-1";
-					// $c++;
-				}
-				echo "</table><!-- end table_health -->\n</div><!-- end div health -->\n<br><br>\n";
-			}
-		}
-	}
-}
-
 function score_chronic_health_reviewAssessment($a) {
 	$a ['valueA1C'] = $a ['chronicHealth_A1C_value'];
 	$a ['A1CDate'] = $a ['chronicHealth_A1C_date'];

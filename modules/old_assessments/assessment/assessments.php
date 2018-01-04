@@ -4,7 +4,6 @@
 
 	include __DIR__ . '/../../stressors/stressors.php';
 	include __DIR__ . '/../../current_stress/current_stress.php';
-	include __DIR__ . '/../../health/health.php';
 	include __DIR__ . '/../../adhd/adhd.php';
 	include __DIR__ . '/../../presenting_problem/presenting_problem.php';
 	include __DIR__ . '/../../childStressors/childStressors.php';
@@ -39,13 +38,6 @@
 		echo "<div class='write'>";
 		// Assessment header in fxn
 		write_current_stress($_SESSION['assessment_type']);
-		echo "</div>";
-	}
-
-	if($_SESSION['health_check'] == 1) {
-		echo "<div class='write'>";
-		echo "<h3>Health</h3>";
-		write_health($_SESSION['assessment_type'], $mysqli);
 		echo "</div>";
 	}
 
