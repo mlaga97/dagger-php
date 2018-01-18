@@ -1,0 +1,198 @@
+{
+	"metadata": {
+		"class": "presenting_problem",
+		"title": "This section contains questions pertaining to the client's presenting problem.",
+		"text": "Presenting Problem",
+		"id": "pp_check",
+		"notes": ""
+	},
+	"scoring": {
+		"reviewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		},
+		"viewAssessment": {
+			"showResponses": false,
+			"showScore": false
+		}
+	},
+	"types": {
+		"interfere_area": {
+			"class": "radioScale",
+			"emptyValue": -1,
+			"options": {
+				"Not at all": "not at all",
+				"Only a little": "only a little",
+				"A moderate amount": "a moderate amount",
+				"A great deal": "a great deal"
+			}
+		},
+		"pp_steps": {
+			"class": "checkboxScale"
+		}
+	},
+	"sections": [
+		{
+			"description": "",
+			"questions": [
+				{
+					"id": "",
+					"text": "What is the child/teen/family's main concern?",
+					"type": {
+						"class": "radioOptions",
+						"emptyValue": -1,
+						"options": {
+							"Medical": 1,
+							"Behavioral": 2,
+							"Developmental": 3,
+							"Juvenile Justice Involvement": 4,
+							"Emotional": 5,
+							"Social": 6,
+							"Academic": 7,
+							"Abuse/Neglect/DHS Involvement": 8
+						}
+					}
+				},
+				{
+					"id": "pp_time",
+					"text": "How long has this been a problem?",
+					"type": {
+						"class": "radioOptions",
+						"emptyValue": -1,
+						"options": {
+							"Less than 30 days.": "1-3 months",
+							"1-3 months": "3-6 months",
+							"3-6 months": "6-9 months",
+							"6-12 months": "9-12 months",
+							"More than 1 year": "more than 1 year"
+						}
+					}
+				},
+				{
+					"id": "pp_fam_dist",
+					"text": "Does the problem upset or distress the child/teen/family?",
+					"type": {
+						"class": "radioOptions",
+						"emptyValue": -1,
+						"options": {
+							"Not at all": "Not at all.",
+							"Only a little": "Only a little.",
+							"A medium amount": "A medium amount.",
+							"A great deal": "A great deal."
+						}
+					}
+				}
+			]
+		},
+		{
+			"description": "Does the problem interfere with the child's everyday activities?",
+			"questions": [
+				{
+					"id": "interfere_area_home",
+					"text": "Home life",
+					"type": "interfere_area"
+				},
+				{
+					"id": "interfere_area_friendship",
+					"text": "Friendships",
+					"type": "interfere_area"
+				},
+				{
+					"id": "interfere_area_school",
+					"text": "School",
+					"type": "interfere_area"
+				},
+				{
+					"id": "interfere_area_leisure",
+					"text": "Leisure activities",
+					"type": "interfere_area"
+				}
+			]
+		},
+		{
+			"description": "What steps has the child/teen/family taken to deal with the presenting problem?",
+			"questions": [
+				{
+					"id": "pp_steps_classes",
+					"text": "Parenting classes",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_tutoring",
+					"text": "Tutoring",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_mh_individual",
+					"text": "Individual mental health treatment",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_mh_family",
+					"text": "Family mental health treatment",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_mh_school",
+					"text": "School mental health treatment",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_inpatient",
+					"text": "Inpatient mental health treatment",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_IEP",
+					"text": "Individual education plan (IEP)",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_speech",
+					"text": "Speech therapy",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_DHS",
+					"text": "DHS involvement",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_law",
+					"text": "Law enforcement involvement",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_extracurricular",
+					"text": "Extracurricular activities",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_volunteer",
+					"text": "Community involvement (Volunteer involvement)",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_healthcare",
+					"text": "Healthcare specialist involvement",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_religious",
+					"text": "Religious/spiritual involvement",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_mentoring",
+					"text": "Mentoring program",
+					"type": "pp_steps"
+				},
+				{
+					"id": "pp_steps_counseling",
+					"text": "Counseling",
+					"type": "pp_steps"
+				}
+			]
+		}
+	]
+}
