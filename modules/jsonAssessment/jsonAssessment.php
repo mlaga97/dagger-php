@@ -95,6 +95,10 @@ foreach($jsonAssessments as $index => $assessment) {
 // TODO: This, but automatically.
 function areFriends($types, $question1, $question2) {
 
+	// TODO: Maybe somehow allow being friends with an anonymous type?
+	if(!is_string($question1["type"]) && !is_string($question2["type"]))
+		return false;
+
 	// Check if questions have same type
 	if($question1["type"] == $question2["type"]) {
 		return true;

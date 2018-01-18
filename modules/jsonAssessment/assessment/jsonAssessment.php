@@ -65,10 +65,18 @@ foreach($jsonAssessments as $assessment) {
 				// Question related variables
 				$id = $question["id"];
 				$text = $question["text"];
-				$typeName = $question["type"];
 
 				// Type related variables
-				$type = $types[$typeName];
+				if(is_array($question['type'])) {
+					// Anonymous type
+					$type = $question['type'];
+				} else {
+					// Referenced type
+					$typeName = $question['type'];
+					$type = $types[$typeName];
+				}
+				
+				// Type class
 				$class = $type["class"];
 
 				// Check showOnly
