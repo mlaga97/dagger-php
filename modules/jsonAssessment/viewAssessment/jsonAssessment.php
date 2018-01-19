@@ -18,20 +18,23 @@ foreach($jsonAssessments as $assessment) {
 
 	// Metadata variables
 	$id = $metadata["id"];
-	$notes = $metadata["notes"];
 	$title = $metadata["title"];
 
 	// Scoring variables
 	$showScore = $assessment["scoring"][$pageName]["showScore"];
-	$scoreTypes = $assessment["scoring"][$pageName]["scoreType"];
+	if($showScore) {
+		$scoreTypes = $assessment["scoring"][$pageName]["scoreType"];
+	}
 	$showResponses = $assessment["scoring"][$pageName]["showResponses"];
-	$responseClass = $assessment["scoring"][$pageName]["responseFormat"];
+	if($showResponses) {
+		$responseClass = $assessment["scoring"][$pageName]["responseFormat"];
+	}
 
 	// Local variables
 	$absoluteQuestionNumber = 1;
 
 	// Only show if the assessment was selected
-	if($_SESSION[$id]) {
+	if(array_key_exists($id, $_SESSION) && $_SESSION[$id]) {
 
 		// Begin container
 		echo "<div id='" . $id . "_reviewAssessment_container' class='jsonAssessment'>";
@@ -64,7 +67,9 @@ foreach($jsonAssessments as $assessment) {
 					$class = $questionType["class"];
 					$options = $questionType["options"];
 					$emptyValue = $questionType["emptyValue"];
-					$responseSuffix = $questionType["responseSuffix"];
+					if(array_key_exists("responseSuffix", $questionType)) {
+						$responseSuffix = $questionType["responseSuffix"];
+					}
 
 					// Other variables
 					$rawAnswer = $_SESSION[$id];
@@ -110,7 +115,7 @@ foreach($jsonAssessments as $assessment) {
 
 			// Print notes below score
 			if(array_key_exists("notes", $metadata)) {
-				echo "<tr><td colspan='2' class='notes'>" . $notes . "</td></tr>";
+				echo "<tr><td colspan='2' class='notes'>" . $metadata["notes"] . "</td></tr>";
 			}
 
 			echo "</table>";

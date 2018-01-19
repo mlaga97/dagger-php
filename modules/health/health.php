@@ -132,15 +132,23 @@ function score_chronic_health($a) {
 function score_questions_reviewAssessment($a) {
 	$a ['q2'] = $a ['outsideVisits_emergencyRoom'];
 	$a ['er_visit_date'] = $a ['outsideVisits_emergencyRoom_visitDate'];
-	$a ['er_visit_reason'] = $a ['outsideVisits_emergencyRoom_reasonForVisit'];
-	$a ['er_visit_other'] = $a ['outsideVisits_emergencyRoom_otherReasonForVisit'];
+	if(array_key_exists('outsideVisits_emergencyRoom_reasonForVisit', $a)) {
+		$a ['er_visit_reason'] = $a ['outsideVisits_emergencyRoom_reasonForVisit'];
+	}
+	if(array_key_exists('outsideVisits_emergencyRoom_otherReasonForVisit', $a)) {
+		$a ['er_visit_other'] = $a ['outsideVisits_emergencyRoom_otherReasonForVisit'];
+	}
 	$a ['q1'] = $a ['outsideVisits_hospital_nonER'];
 	$a ['hospital_visit_date'] = $a ['outsideVisits_hospital_nonER_dischargeDate'];
-	$a ['hospital_visit_reason'] = $a ['outsideVisits_hospital_nonER_reasonForVisit'];
+	if(array_key_exists('outsideVisits_hospital_nonER_reasonForVisit', $a)) {
+		$a ['hospital_visit_reason'] = $a ['outsideVisits_hospital_nonER_reasonForVisit'];
+	}
 	$a ['hospital_visit_other'] = $a ['outsideVisits_hospital_nonER_otherReasonForVisit'];
 	$a ['q3'] = $a ['outsideVisits_other'];
 	$a ['office_visit_date'] = $a ['outsideVisits_other_visitDate'];
-	$a ['office_visit_reason'] = $a ['outsideVisits_other_reasonForVisit'];
+	if(array_key_exists('outsideVisits_other_reasonForVisit', $a)) {
+		$a ['office_visit_reason'] = $a ['outsideVisits_other_reasonForVisit'];
+	}
 	$a ['office_visit_other'] = $a ['outsideVisits_other_otherReasonForVisit'];
 	score_questions ( $a );
 }

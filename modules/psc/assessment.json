@@ -133,17 +133,17 @@
 			"description": "Note: The following questions will only be scored with an affirmative score on the previous PSC-17 questions.",
 			"questions": [
 				{
-					"id": "psc_18",
+					"id": "psc_fu_1",
 					"text": "Does your child have any emotional or behavioral problems for which he or she needs help?",
 					"type": "psc_followup"
 				},
 				{
-					"id": "psc_19",
+					"id": "psc_fu_2",
 					"text": "Are there any services that you would like your child to receive for these problems?",
 					"type": "psc_followup"
 				},
 				{
-					"id": "psc_20",
+					"id": "psc_fu_3",
 					"text": "If yes to the previous question, what services?",
 					"type": "psc_text"
 				}

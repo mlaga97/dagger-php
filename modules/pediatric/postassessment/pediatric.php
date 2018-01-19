@@ -1,7 +1,7 @@
 <?php
 	// Do the other side of pediatric.php
 	// TODO: Much of this could be moved into the bitmask library.
-	if($_SESSION['pediatric_check']) {
+	if(array_key_exists('pediatric_check', $_SESSION) && $_SESSION['pediatric_check']) {
 		$pediatric_bitmask_fields = array("HLS_FH_Diab", "HLS_FH_HBP", "HLS_FH_HD", "HLS_FH_Overwt");
 		foreach($pediatric_bitmask_fields as $field_name) {
 			$sum = 0;

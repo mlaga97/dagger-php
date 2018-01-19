@@ -6,8 +6,7 @@ function psc_scoring($copy, $mysqli) {
     }
     $result = $mysqli->query('SELECT cutoff_value FROM scoring WHERE name ="PSC-17" AND type = "PSC-cutoff"');
     $row = $result->fetch_assoc();
-    $psc_score = $copy['psc_1'] + $copy['psc_2'] + $copy['psc_3'] + $copy['psc_4'] + $copy['psc_5'] + $copy['psc_6'] + $copy['psc_7'] + $copy['psc_8'] + $copy['psc_9'] + $copy['psc_10'] +
-            $copy['psc_11'] + $copy['psc_12'] + $copy['psc_13'] + $copy['psc_14'] + $copy['psc_15'] + $copy['psc_16'] + $copy['psc_17'] + $copy['psc_18'] + $copy['psc_19'] + $copy['psc_20'] + $copy['psc_21'] + $copy['psc_22'] + $copy['psc_23'] + $copy['psc_24'] + $copy['psc_25'] + $copy['psc_26'] + $copy['psc_27'] + $copy['psc_28'] + $copy['psc_29'] + $copy['psc_30'] + $copy['psc_31'];
+    $psc_score = $copy['psc_1'] + $copy['psc_2'] + $copy['psc_3'] + $copy['psc_4'] + $copy['psc_5'] + $copy['psc_6'] + $copy['psc_7'] + $copy['psc_8'] + $copy['psc_9'] + $copy['psc_10'] + $copy['psc_11'] + $copy['psc_12'] + $copy['psc_13'] + $copy['psc_14'] + $copy['psc_15'] + $copy['psc_16'] + $copy['psc_17'];
 
     if ($psc_score >= $row['cutoff_value']) {
         echo "<tr>";
@@ -22,7 +21,7 @@ function psc_scoring($copy, $mysqli) {
         echo "/34. The cutoff score is suggested to be 15.<br></td>";
         echo "</tr>";
     }
-    if (($copy['psc_fu_1'] == 1) || ($copy['psc_fu_4'] == 1)) {
+    if ($copy['psc_fu_1'] == 1) {
         echo "<tr>";
         echo '<td><p style = "color: red; text-align: left">';
         echo "The client or parent reported the existence of emotional or behavioral problems for which they need help. ";
@@ -33,15 +32,12 @@ function psc_scoring($copy, $mysqli) {
         echo "The client or parent DID NOT report the existence of emotional or behavioral problems for which they need help. ";
         echo "</tr>";
     }
-    if (($copy['psc_fu_2'] == 1) || ($copy['psc_fu_5'] == 1)) {
+    if ($copy['psc_fu_2'] == 1) {
         echo "<tr>";
         echo '<td><p style = "color: red; text-align: left">';
         echo "The client or parent reported a desire for services to help with those problems. ";
         if (($copy['psc_fu_3'] != "")) {
             echo 'Specifically, ' . $copy['psc_fu_3'] . '.';
-        }
-        if ($copy['psc_fu_6'] != "") {
-            echo 'Specifically, ' . $copy['psc_fu_6'] . '.';
         }
         echo "</tr>";
     } else {

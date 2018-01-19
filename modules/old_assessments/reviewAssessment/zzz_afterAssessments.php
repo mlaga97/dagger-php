@@ -9,7 +9,7 @@
 		}
 	}
 	if(isset($_SESSION['life_check'])&&($_SESSION['life_check']>0)) {
-		if(($_SESSION['life_1']>0)||($_SESSION['life_2']>0)) {
+		if((array_key_exists('life_1', $_SESSION) && $_SESSION['life_1']>0)||($_SESSION['life_2']>0)) {
 			$alert=true;
 		}
 	}
@@ -22,7 +22,7 @@
 	/////////////////////////////////////Printing our stressors////////////////////////////////////////
 	// Removed ||($_SESSION['assessment_type'] == 'Child') condition - displaying when assessment not selected
 	// Replaced with c_stress_check
-	if($_SESSION['stress_check'] == 1 || $_SESSION['c_stress_check'] == 1) {
+	if((array_key_exists('stress_check', $_SESSION) && $_SESSION['stress_check'] == 1) || (array_key_exists('c_stress_check', $_SESSION) && $_SESSION['c_stress_check'] == 1)) {
 		$n = 1;
 		$first = 0;
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'stressor'");
@@ -55,7 +55,7 @@
 		echo "</div><!-- End div stress scoring -->";
 	}
 	//////////////////////////////////Print our life events////////////////////////////////////////////////
-	if($_SESSION['events_check'] == 1) {
+	if(array_key_exists('events_check', $_SESSION) && $_SESSION['events_check'] == 1) {
 		$n = 1;
 		$first = 0;
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'event'");
@@ -84,7 +84,7 @@
 
 
 	//////////////////////////////////Print our health////////////////////////////////////////////////
-	if($_SESSION['health_check'] == 1) {
+	if(array_key_exists('health_check', $_SESSION) && $_SESSION['health_check'] == 1) {
 		$n = 1;
 		$first = 0;
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'Health'");
@@ -94,7 +94,7 @@
 		while($n <= $count_no['num']) {
 			// Exclude NULL values from health
 			// changed condition from > -1 to > 0
-			if($_SESSION['h_' .$n] > 0) {
+			if(array_key_exists('h_' . $n, $_SESSION) && $_SESSION['h_' .$n] > 0) {
 				$first++;
 				if($first == 1) {
 					echo "The patient responded <i>Yes</i> to the following questions on health.";
@@ -110,7 +110,7 @@
 		echo "</div>";
 	}
 
-	if($_SESSION['diagnosis_check'] == 1) {
+	if(array_key_exists('diagnosis_check', $_SESSION) && $_SESSION['diagnosis_check'] == 1) {
 		$n = 1;
 		$first = 0;
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'Diagnosis'");
@@ -139,7 +139,7 @@
 		}
 		echo "</div><!-- End div for Diagnosis -->";
 	}
-	if ($_SESSION['diag_me_check'] == 1) {
+	if (array_key_exists('diag_me_check', $_SESSION) && $_SESSION['diag_me_check'] == 1) {
 		$n = 1;
 		$first = 0;
 		$count = $mysqli->query("SELECT COUNT(id) as num FROM questions WHERE classification= 'Diag_me'");
