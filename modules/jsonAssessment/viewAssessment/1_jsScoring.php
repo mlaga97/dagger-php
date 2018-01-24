@@ -9,3 +9,4 @@
 <!-- Assessment Scoring Functions -->
 <script src='/modules/duke/scoring.js'></script>
 <script src='/modules/phq/scoring.js'></script>
+<script src='/modules/gad/scoring.js'></script>
