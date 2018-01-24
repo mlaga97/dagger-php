@@ -13,3 +13,4 @@
 <script src='/modules/dast/scoring.js'></script>
 <script src='/modules/cage/scoring.js'></script>
 <script src='/modules/audit-c/scoring.js'></script>
+<script src='/modules/ces_d/scoring.js'></script>
