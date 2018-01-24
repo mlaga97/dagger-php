@@ -1,3 +1,20 @@
+scoring.duke = function(r) {
+	result = {};
+
+	_(r).each(function(val, key) {
+		r[key] = parseInt(val);
+	});
+
+	result.valid = (r.duke_1 >= 0) && (r.duke_2 >= 0) && (r.duke_3 >= 0) && (r.duke_4 >= 0) && (r.duke_5 >= 0) && (r.duke_6 >= 0) && (r.duke_7 >= 0) && (r.duke_8 >= 0) && (r.duke_9 >= 0) && (r.duke_10 >= 0) && (r.duke_11 >= 0) && (r.duke_12 >= 0) && (r.duke_13 >= 0) && (r.duke_14 >= 0) && (r.duke_15 >= 0) && (r.duke_16 >= 0) && (r.duke_17 >= 0);
+
+	if(result.valid) {
+		// TODO: Don't rely on outside function for this
+		result.scores = scoreDuke(r);
+	}
+
+	return result;
+}
+
 function scoreDuke(response) {
 	var r = {};
 	var scores = {};

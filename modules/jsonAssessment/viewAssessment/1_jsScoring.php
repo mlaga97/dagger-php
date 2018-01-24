@@ -7,3 +7,4 @@
 <script src='/modules/jsonAssessment/viewAssessment.js'></script>
 
 <!-- Assessment Scoring Functions -->
+<script src='/modules/duke/scoring.js'></script>
