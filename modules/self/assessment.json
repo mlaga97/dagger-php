@@ -8,11 +8,11 @@
 	},
 	"scoring": {
 		"reviewAssessment": {
-			"showResponses": false,
+			"showResponses": true,
 			"showScore": false
 		},
 		"viewAssessment": {
-			"showResponses": false,
+			"showResponses": true,
 			"showScore": false
 		}
 	},

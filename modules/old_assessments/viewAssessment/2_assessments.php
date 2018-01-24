@@ -4,7 +4,6 @@
 	// Assessments
 	include __DIR__ . '/../../stressors/stressors.php';
 	include __DIR__ . '/../../presenting_problem/presenting_problem.php';
-	include __DIR__ . '/../../events/events.php';
 	include __DIR__ . '/../../health/health.php';
 	include __DIR__ . '/../../phq/phq.php';
 	include __DIR__ . '/../../pcl/pcl.php';
@@ -12,7 +11,6 @@
 	include __DIR__ . '/../../ces_d/ces_d.php';
 	include __DIR__ . '/../../dast/dast.php';
 	include __DIR__ . '/../../duke/duke.php';
-	include __DIR__ . '/../../self/self.php';
 	include __DIR__ . '/../../sdq/sdq.php';
 	include __DIR__ . '/../../life/life.php';
 	include __DIR__ . '/../../adhd/adhd.php';
@@ -33,12 +31,6 @@
 		echo "<div class='scoring'>";
 		echo "<h3>Stress</h3>";
 		stressors_scoring($copy, $mysqli);
-		echo "</div>";
-	}
-	if($_SESSION['self_check'] == 1) {
-		echo "<div class='scoring'>";
-		echo "<h3>Self-care</h3>";
-		self_scoring($copy, $mysqli);
 		echo "</div>";
 	}
 	if($_SESSION['phq_check'] == 1) {
