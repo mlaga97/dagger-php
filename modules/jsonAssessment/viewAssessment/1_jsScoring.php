@@ -15,3 +15,4 @@
 <script src='/modules/audit-c/scoring.js'></script>
 <script src='/modules/ces_d/scoring.js'></script>
 <script src='/modules/pcl/scoring.js'></script>
+<script src='/modules/stressors/scoring.js'></script>
