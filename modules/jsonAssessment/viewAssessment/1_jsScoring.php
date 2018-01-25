@@ -16,3 +16,4 @@
 <script src='/modules/ces_d/scoring.js'></script>
 <script src='/modules/pcl/scoring.js'></script>
 <script src='/modules/stressors/scoring.js'></script>
+<script src='/modules/sdq/scoring.js'></script>
