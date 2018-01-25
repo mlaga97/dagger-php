@@ -11,7 +11,6 @@
 	include __DIR__ . '/../../ces_d/ces_d.php';
 	include __DIR__ . '/../../dast/dast.php';
 	include __DIR__ . '/../../duke/duke.php';
-	include __DIR__ . '/../../self/self.php';
 	include __DIR__ . '/../../sdq/sdq.php';
 	include __DIR__ . '/../../life/life.php';
 	include __DIR__ . '/../../adhd/adhd.php';
@@ -30,12 +29,6 @@
 		echo "<div class='scoring'>";
 		echo "<h3>Stress</h3>";
 		stressors_scoring($copy, $mysqli);
-		echo "</div>";
-	}
-	if(array_key_exists('self_check', $_SESSION) && $_SESSION['self_check'] == 1) {
-		echo "<div class='scoring'>";
-		echo "<h3>Self-care</h3>";
-		self_scoring($copy, $mysqli);
 		echo "</div>";
 	}
 	if(array_key_exists('phq_check', $_SESSION) && $_SESSION['phq_check'] == 1) {

@@ -6,12 +6,24 @@
 		foreach($pediatric_bitmask_fields as $field_name) {
 			$sum = 0;
 
-			$sum += $_SESSION[$field_name . '-1'];
-			$sum += $_SESSION[$field_name . '-2'];
-			$sum += $_SESSION[$field_name . '-3'];
-			$sum += $_SESSION[$field_name . '-4'];
-			$sum += $_SESSION[$field_name . '-5'];
-			$sum += $_SESSION[$field_name . '-6'];
+			if(array_key_exists($field_name . '-1', $_SESSION)) {
+				$sum += $_SESSION[$field_name . '-1'];
+			}
+			if(array_key_exists($field_name . '-2', $_SESSION)) {
+				$sum += $_SESSION[$field_name . '-2'];
+			}
+			if(array_key_exists($field_name . '-3', $_SESSION)) {
+				$sum += $_SESSION[$field_name . '-3'];
+			}
+			if(array_key_exists($field_name . '-4', $_SESSION)) {
+				$sum += $_SESSION[$field_name . '-4'];
+			}
+			if(array_key_exists($field_name . '-5', $_SESSION)) {
+				$sum += $_SESSION[$field_name . '-5'];
+			}
+			if(array_key_exists($field_name . '-6', $_SESSION)) {
+				$sum += $_SESSION[$field_name . '-6'];
+			}
 
 			$_SESSION[$field_name] = $sum;
 		}
