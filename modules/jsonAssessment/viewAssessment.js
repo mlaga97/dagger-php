@@ -52,15 +52,13 @@ function viewAssessment(assessment, response) {
 
 	*/
 
-	console.log(response);
+	//console.log(response);
 
 	var truncatedClass = assessment.metadata.class.split(" ")[0];
-	if(scoring[truncatedClass]) {
-		console.log(scoring[truncatedClass](response));
-	}
 
+	// TODO: Remove jsonAssessment class
 	$container = $('<div>', {
-		'class': assessment.metadata.class + ' viewAssessment'
+		'class': assessment.metadata.class + ' viewAssessment jsonAssessment'
 	});
 
 	// Assessment Header
@@ -72,9 +70,59 @@ function viewAssessment(assessment, response) {
 	}
 
 	// Scoring
-	if(assessment.scoring.reviewAssessment.showScore) {
+	// TODO: Do we need the extra data?
+	if(scoring[truncatedClass]) {
+		score = scoring[truncatedClass](response)
+		console.log(score)
+
+		if(score.valid) {
+			if(assessment.scoring.reviewAssessment.showScore) {
+				// TODO: Don't use html strings
+				// TODO: This should probably be a loader of some sort
+				if(score.score) {
+					$container.append(`
+						<table>
+							<tbody>
+								<tr>
+									<td>Score</td>
+									<td class="score">${score.score}</td>
+								</tr>
+								<tr>
+									<td colspan="2">${score.recommendation}</td>
+								</tr>
+							</tbody>
+						</table>
+					`)
+				} else if(score.scores) {
+					$container.append(`
+						<table>
+							<tbody>
+					`)
+
+					_(score.scores).each(function(value, key) {
+						$container.append(`
+								<tr>
+									<td>${key}</td>
+									<td>${value}</td>
+								</tr>
+						`)
+					})
+
+					$container.append(`
+							</tbody>
+						</table>
+					`)
+				} else {
+					console.log(truncatedClass + ' did not generate a valid response!')
+				}
+			} else {
+				console.log(truncatedClass + ' did not want to show scores!')
+			}
+		} else {
+			console.log(truncatedClass + ' did not provide valid score!')
+		}
 	} else {
-		console.log(assessment.metadata.class + ' does not want to show scores!');
+		console.log(truncatedClass + ' did not provide scoring!')
 	}
 	
 	$('<hr>').appendTo($container);

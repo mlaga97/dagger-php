@@ -9,11 +9,11 @@
 	"scoring": {
 		"reviewAssessment": {
 			"showResponses": false,
-			"showScore": false
+			"showScore": true
 		},
 		"viewAssessment": {
 			"showResponses": false,
-			"showScore": false
+			"showScore": true
 		}
 	},
 	"types": {

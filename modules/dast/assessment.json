@@ -9,12 +9,12 @@
 		"reviewAssessment": {
 			"showResponses": false,
 			"responseFormat": "human_readable",
-			"showScore": false,
+			"showScore": true,
 			"scoreType": "sumOfValues"
 		},
 		"viewAssessment": {
 			"showResponses": false,
-			"showScore": false,
+			"showScore": true,
 			"scoreType": "sumOfValues"
 		}
 	},
