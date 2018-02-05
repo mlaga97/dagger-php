@@ -1,3 +1,4 @@
+// TODO: Why do scores differ?
 scoring.duke = function(r) {
 	result = {};
 

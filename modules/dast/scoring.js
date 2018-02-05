@@ -16,19 +16,20 @@ scoring.dast = function(r) {
 			result.recommendation = 'Patient DOES NOT show signs of substance abuse.';
 		} else if(result.score < 3) {
 			result.severity = 'Low Level (1-2)';
-			result.recommendation = 'FIXME';
+			result.recommendation = 'Patient shows signs of substance abuse.';
 		} else if(result.score < 6) {
 			result.severity = 'Moderate (3-5)';
-			result.recommendation = 'FIXME';
+			result.recommendation = 'Patient shows signs of substance abuse.';
 		} else if(result.score < 9) {
 			result.severity = 'Substantial (6-8)';
-			result.recommendation = 'FIXME';
+			result.recommendation = 'Patient shows signs of substance abuse.';
 		} else {
 			result.severity = 'Severe (9-10)';
 			result.recommendation = 'Patient shows signs of substance abuse.';
 		}
 
-		if(result.score >= 8) {
+		// TODO: Determine actual cutoff here.
+		if(result.score >= 3) {
 			result.recommendation = 'Patient shows signs of substance abuse. Refer to a qualified substance abuse professional.';
 		}
 	}
