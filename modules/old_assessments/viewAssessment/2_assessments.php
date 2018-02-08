@@ -16,6 +16,7 @@
 	include __DIR__ . '/../../adhd/adhd.php';
 
 	////////////////////////////////////////These are where we score our tests/////////////////////
+	/*
 	if (($_SESSION['assessment_type'] == 'Child')&&($_SESSION['pp'] != "")) {
 		//we need to do presenting problem.
 		echo "<div class='scoring'>";
@@ -87,4 +88,5 @@
 		adhd_scoring($copy, $mysqli);
 		echo "</div>";
 	}
+	*/
 ?>
