@@ -21,7 +21,7 @@
 		"clinicID": "clinic_id",
 		"patientID": "pt_id",
 		"activityDate": "assessment_date",
-		"assesmentTime": "assessment_time"
+		"assessmentTime": "assessment_time"
 	},
 
 	"edu.usm.dagger.main.insert.blacklist": [
