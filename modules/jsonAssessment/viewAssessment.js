@@ -1,5 +1,6 @@
 var api = {};
 var scoring = {};
+var questionClasses = {}
 
 // Get session data
 $.getJSON('/api/v1/session', function(raw) {
@@ -61,19 +62,19 @@ function viewAssessment(assessment, response) {
 	// Responses
 	// TODO: Either switch based on [re]viewAssessment, or modify json so that it doesn't matter
 	if(assessment.scoring.reviewAssessment.showResponses) {
-		console.log(truncatedClass + ' wants to show responses!')
+		//console.log(truncatedClass + ' wants to show responses!')
 		$container.append(showAssessmentResponses(assessment, response))
 	} else {
-		console.log(truncatedClass + ' did not want to show responses!')
+		//console.log(truncatedClass + ' did not want to show responses!')
 	}
 
 	// Scoring
 	if(assessment.scoring.reviewAssessment.showScore) {
-		consol.log(truncatedClass + ' wants to show score!')
+		//console.log(truncatedClass + ' wants to show score!')
 		// TODO: Should be appended?
 		showAssessmentScore(assessment, response)
 	} else {
-		console.log(truncatedClass + ' did not want to show scores!')
+		//console.log(truncatedClass + ' did not want to show scores!')
 	}
 
 	// End container
@@ -87,11 +88,13 @@ function viewAssessment(assessment, response) {
 
 // TODO: Stop using html literals
 // TODO: Severity?
+// TODO: Break this function up
 function showAssessmentScore(assessment, response) {
 	var truncatedClass = assessment.metadata.class.split(' ')[0];
 
 	if(scoring[truncatedClass]) {
 		score = scoring[truncatedClass](response)
+		console.log(truncatedClass)
 		console.log(score)
 
 		if(score.valid) {
@@ -146,7 +149,10 @@ function showAssessmentScore(assessment, response) {
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+// TODO: Break up this function
 function showAssessmentResponses(assessment, response) {
+	var truncatedClass = assessment.metadata.class.split(' ')[0];
+
 	var questionNumber = 1
 	var $container = $('<div>', {
 		'class': assessment.metadata.class + ' showResponses'
@@ -155,18 +161,20 @@ function showAssessmentResponses(assessment, response) {
 	// Header
 	$container.append('<table><tr><th>Question</th><th>Response</th></tr>')
 
-	// TODO: Split into function
 	_(assessment.sections).each(function(section) {
 		// Show preface
 		// Render questions
 		_(section.questions).each(function(question) {
 			// Calulate answer
+			// TODO: Empty value?
 			var answer
 			if(response[question.id]) {
-				// TODO: Functions
+				// Get the human readable response
 				if(assessment.scoring.reviewAssessment.responseFormat == 'human_readable') {
-					answer = 'IMPLEMENT ME!'
+					// TODO: Fix this utter piece of shit
+					answer = _.invert(assessment.types[question.type].options)[response[question.id]]
 				} else {
+					console.log('Did not want human_readable?')
 					answer = response[question.id]
 				}
 			} else {
