@@ -2,7 +2,6 @@
 	global $mysqli, $copy;
 
 	// Assessments
-	include __DIR__ . '/../../stressors/stressors.php';
 	include __DIR__ . '/../../presenting_problem/presenting_problem.php';
 	include __DIR__ . '/../../health/health.php';
 	include __DIR__ . '/../../psc/psc.php';
@@ -18,15 +17,6 @@
 		pp_scoring($_SESSION, $mysqli);
 		echo "</div>";
 		echo "<div class='scoring'>";
-		echo "<h3>Stress</h3>";
-		stressors_scoring($_SESSION, $mysqli);
-		echo "</div>";
-	}
-	if($_SESSION['stress_check'] == 1) {
-		echo "<div class='scoring'>";
-		echo "<h3>Stress</h3>";
-		stressors_scoring($copy, $mysqli);
-		echo "</div>";
 	}
 	if($_SESSION['psc_check'] == 1) {
 		echo "<div class='scoring'>";

@@ -34,6 +34,7 @@ foreach($jsonAssessments as $assessment) {
 	$absoluteQuestionNumber = 1;
 
 	// Only show if the assessment was selected
+	echo $id;
 	if(array_key_exists($id, $_SESSION) && $_SESSION[$id]) {
 
 		// Begin container
