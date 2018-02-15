@@ -15,7 +15,7 @@ function enableSubmit(c_pt_id) {
 }
 </script>
 
-<div id="dagger.confirm.submit" style="text-align:center;margin-bottom:20px;padding:20px;border:1px solid black;background-color:lightyellow;">
+<form id="dagger.confirm.submit" style="text-align:center;margin-bottom:21px;padding:20px;border:1px solid black;background-color:lightyellow;" action="/insertAssessment.php" method="post">
 
 	<!-- TODO: Move elsewhere -->
 	<?php if(in_array($_SESSION["activityType"], array("Appointment", "Warm Hand Off", "Warm Hand Off and Consult", "Phone Call")) ) { ?>
@@ -26,11 +26,11 @@ function enableSubmit(c_pt_id) {
 	<label for="dagger.reviewAssessment.confirm_patientID" > Confirm Patient ID</label>
 	<input type="text" id="dagger.reviewAssessment.confirm_patientID" oninput="enableSubmit(this.value);"/>
 
-	<input type="button" value="Submit" id="dagger.reviewAssessment.submitButton" disabled onclick="window.location='/insertAssessment.php';" />
+	<input type="submit" value="Submit" id="dagger.reviewAssessment.submitButton" disabled />
 	<?php if ($_SESSION['grouping'] != 10) { ?>
 		<!--<input type="button" value="Edit Personal Data" style="height: 25px; width: 125px" onclick="window.location='/updateAssessment.php'"/> -->
 	<?php } ?>
 
-</div> <!-- End div dagger.confirm.submit -->
+</form> <!-- End div dagger.confirm.submit -->
 
 <br /><br />
