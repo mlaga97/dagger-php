@@ -34,5 +34,13 @@
 		"carePath_careTeam": "care_team",
 		"carePath_chronicCare": "chronic_care",
 		"carePath_ryanWhite": "ryan_white"
+	},
+	
+	"edu.usm.dagger.dbConfig.tables": {
+		"response": {
+			"keys": {
+				"demographics_highestGradeCompleted": "tinyint"
+			}
+		}
 	}
 }
