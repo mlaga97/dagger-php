@@ -34,7 +34,7 @@ function viewAssessments() {
 
 	// Render each assessment
 	_(assessments).each(function(assessment) {
-		$('.jsScoringTarget').append(viewAssessment(assessment, getFields(assessment, api.response)));
+		$('.jsScoringTarget').append(viewAssessment(assessment, getAssessmentResponse(assessment, api.response)));
 	});
 
 }
@@ -201,36 +201,3 @@ function showAssessmentResponses(assessment, response) {
 	return $container;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-function getSelectedAssessments(response) {
-	selected = [];
-
-	_(api.assessments).each(function(assessment) {
-		if(api.response[assessment.metadata.id] == 1) {
-			selected.push(assessment);
-		}
-	});
-
-	return selected;
-}
-
-function getFields(assessment, response) {
-	var fields = {};
-
-	if(assessment.sections) {
-		_(assessment.sections).each(function(section) {
-			_(section.questions).each(function(question) {
-				fields[question.id] = response[question.id]
-			});
-		});
-	} else if(assessment.questions) {
-		_(assessment.questions).each(function(question) {
-			fields[question.id] = response[question.id]
-		});
-	}
-
-	return fields;
-}
