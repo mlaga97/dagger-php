@@ -5,7 +5,7 @@
 <script src="/lib/lodash/4.17.4/lodash.min.js"></script>
 
 <!-- Main script -->
-<script src='/modules/jsonAssessment/viewAssessment.js'></script>
+<script src='/modules/jsAssessment/js/viewAssessment/viewAssessment.js'></script>
 
 <!-- Assessment Scoring Functions -->
 <script src='/modules/duke/scoring.js'></script>
