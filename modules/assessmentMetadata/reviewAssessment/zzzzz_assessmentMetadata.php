@@ -18,8 +18,8 @@ function enableSubmit(c_pt_id) {
 <form id="dagger.confirm.submit" style="text-align:center;margin-bottom:21px;padding:20px;border:1px solid black;background-color:lightyellow;" action="/insertAssessment.php" method="post">
 
 	<!-- TODO: Move elsewhere -->
-	<?php if(in_array($_SESSION["activityType"], array("Appointment", "Warm Hand Off", "Warm Hand Off and Consult", "Phone Call")) ) { ?>
-		<label for="dagger.reviewAssessment.assessmentTime" > Appointment Duration</label>
+	<?php if(in_array($_SESSION["activityType"], array("Appointment", "Warm Hand Off", "Warm Hand Off and Physician Consult", "Physician Consult Only", "Patient Assistance", "HCH Screening", "Phone Call")) ) { ?>
+		<label for="dagger.reviewAssessment.assessmentTime" > Activity Duration (Minutes)</label>
 		<input type="number" min="0" max="600" step="1" id="dagger.reviewAssessment.assessmentTime" name="assessmentTime" /><br/>
 	<?php } ?>
 
