@@ -24,7 +24,7 @@ function enableSubmit(c_pt_id) {
 	<?php } ?>
 
 	<label for="dagger.reviewAssessment.confirm_patientID" > Confirm Patient ID</label>
-	<input type="text" id="dagger.reviewAssessment.confirm_patientID" oninput="enableSubmit(this.value);"/>
+	<input type="text" id="dagger.reviewAssessment.confirm_patientID" oninput="enableSubmit(this.value);" autocomplete="off"/>
 
 	<input type="submit" value="Submit" id="dagger.reviewAssessment.submitButton" disabled />
 	<?php if ($_SESSION['grouping'] != 10) { ?>
