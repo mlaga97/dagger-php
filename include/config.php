@@ -51,15 +51,15 @@
 	function getUnmergedConfig($filename = 'config.json') {
 		$config = array();
 
-		if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $filename)) {
-			$path = $_SERVER['DOCUMENT_ROOT'] . '/' . $filename;
+		if(file_exists('./' . $filename)) {
+			$path = './' . $filename;
 			$contents = file_get_contents($path);
 			$config = json_decode($contents, true);
 		}
 
 		foreach(moduleList() as $module) {
-			if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename)) {
-				$path = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename;
+			if(file_exists('./modules/' . $module . '/' . $filename)) {
+				$path = './modules/' . $module . '/' . $filename;
 				$contents = file_get_contents($path);
 				array_push($config, json_decode($contents, true));
 			}
@@ -84,15 +84,15 @@
 		$config = array();
 
 		// TODO: SHOULD we error if /config.json is missing? If so, where is appropriate?
-		if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $filename)) {
-			$path = $_SERVER['DOCUMENT_ROOT'] . '/' . $filename;
+		if(file_exists('./' . $filename)) {
+			$path = './' . $filename;
 			$contents = file_get_contents($path);
 			$config = json_decode($contents, true);
 		}
 
 		foreach(moduleList() as $module) {
-			if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename)) {
-				$path = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . $module . '/' . $filename;
+			if(file_exists('./modules/' . $module . '/' . $filename)) {
+				$path = './modules/' . $module . '/' . $filename;
 				$contents = file_get_contents($path);
 				$config = array_merge_recursive($config, json_decode($contents, true));
 			}

@@ -1,8 +1,8 @@
 <?php
 
 	// Log4php Setup
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/log4php/Logger.php');
-	Logger::configure($_SERVER['DOCUMENT_ROOT'] . '/include/log4php/config.xml');
+	require_once('./include/log4php/Logger.php');
+	Logger::configure('./include/log4php/config.xml');
 	$log = Logger::getLogger('myLogger');
 
 	// Set Timezone Data
@@ -21,13 +21,13 @@
 	}
 
 	// Set up database
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/db.php');
+	require_once('./include/db.php');
 
 	// Ensure that everything is set up properly
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/setupCheck.php');
+	require_once('./include/setupCheck.php');
 
 	// Import the dependencies for user access
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/access.php');
+	require_once('./include/access.php');
 
 	// Reload user settings and reject anyone that is inactive
 	if(empty($noRedirect)) {
@@ -35,11 +35,11 @@
 	}
 
 	// Load the remaining libraries
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/utility.php');
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/menu.php');
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/version.php');
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/json.php');
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/api.php');
+	require_once('./include/utility.php');
+	require_once('./include/menu.php');
+	require_once('./include/version.php');
+	require_once('./include/json.php');
+	require_once('./include/api.php');
 
 	// Reset the $noRedirect key used on the login page now that setup is done
 	if(!empty($noRedirect)) {

@@ -32,7 +32,7 @@
 				</div>
 
 				<div style="text-align:center;margin-bottom:70px;">
-					<input type="button" value="Logout / Login" onclick="window.location='/index.php';" autofocus />
+					<input type="button" value="Logout / Login" onclick="window.location='index.php';" autofocus />
 					<br><br>
 				</div>
 

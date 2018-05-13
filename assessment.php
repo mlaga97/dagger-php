@@ -27,7 +27,7 @@
 			<?php include 'modules/main/header.php'; ?>
 
 			<!-- Body -->
-			<form class='assessment_form' action='/reviewAssessment.php' method='post' autocomplete='off' >
+			<form class='assessment_form' action='reviewAssessment.php' method='post' autocomplete='off' >
 				<?php moduleLoad('assessment'); ?>
 			</form>
 

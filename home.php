@@ -29,8 +29,8 @@
 
 			<!-- Body -->
 			<div style="text-align:center;margin-bottom:295px;">
-				<input type="submit" value="Assessment" onclick="window.location='/preassessment.php'" autofocus />
-				<input type="submit" value="Search" onclick="window.location='/searchAssessments.php';" />
+				<input type="submit" value="Assessment" onclick="window.location='preassessment.php'" autofocus />
+				<input type="submit" value="Search" onclick="window.location='searchAssessments.php';" />
 			</div>
 
 			<!-- Footer -->

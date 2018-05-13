@@ -51,7 +51,7 @@
 			<?php include 'modules/main/header.php'; ?>
 
 			<!-- Body -->
-			<form id='preassessment_form' action='/assessment.php' method='post' autocomplete='off' >
+			<form id='preassessment_form' action='assessment.php' method='post' autocomplete='off' >
 				<?php moduleLoad('preassessment'); ?>
 			</form>
 

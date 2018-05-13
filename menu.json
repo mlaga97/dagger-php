@@ -5,40 +5,40 @@
 		"children": {
 			"edu.usm.dagger.menu.hamburger.clinicStatistics": {
 				"name": "Clinic Statistics",
-				"href": "/clinicStatistics.php",
+				"href": "clinicStatistics.php",
 				"displayOnlyIfThisSessionKeyIsTrue": "admin"
 			},
 			"edu.usm.dagger.menu.hamburger.moduleList": {
 				"name": "Modules",
-				"href": "/moduleList.php",
+				"href": "moduleList.php",
 				"displayOnlyIfThisSessionKeyIsTrue": "admin"
 			},
 			"edu.usm.dagger.menu.hamburger.dumpConfig": {
 				"name": "Configuration",
-				"href": "/dumpConfig.php",
+				"href": "dumpConfig.php",
 				"displayOnlyIfThisSessionKeyIsTrue": "debug"
 			},
 			"edu.usm.dagger.menu.hamburger.userStatistics": {
 				"name": "User Statistics",
-				"href": "/userStatistics.php"
+				"href": "userStatistics.php"
 			},
 			"edu.usm.dagger.menu.hamburger.userSettings": {
 				"name": "User Settings",
-				"href": "/userSettings.php"
+				"href": "userSettings.php"
 			},
 			"edu.usm.dagger.menu.hamburger.index": {
 				"name": "Logout",
-				"href": "/index.php"
+				"href": "index.php"
 			}
 		}
 	},
 	"edu.usm.dagger.menu.assessment": {
 		"name": "Assessment",
-		"href": "/preassessment.php"
+		"href": "preassessment.php"
 	},
 	"edu.usm.dagger.menu.search": {
 		"name": "Search",
-		"href": "/searchAssessments.php"
+		"href": "searchAssessments.php"
 	},
 	"edu.usm.dagger.menu.help": {
 		"name": "Help",

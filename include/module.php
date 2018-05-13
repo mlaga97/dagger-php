@@ -48,7 +48,7 @@
 	 * @return array List of all currently installed modules.
 	 */
 	function moduleList() {
-		return array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/"), array('..', '.'));
+		return array_diff(scandir("./modules/"), array('..', '.'));
 	}
 
 	/**
@@ -59,11 +59,11 @@
 	 * @return array List of all keys provided by the module in question.
 	 */
 	function moduleProvides($module) {
-		$raw = array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module), array('..', '.'));
+		$raw = array_diff(scandir("./modules/" . $module), array('..', '.'));
 
 		$processed = array();
 		foreach($raw as $file) {
-			if(is_dir($_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module . '/' . $file)) {
+			if(is_dir("./modules/" . $module . '/' . $file)) {
 				array_push($processed, $file);
 			}
 		}
@@ -118,7 +118,7 @@
 		$files = array();
 
 		foreach(moduleListProviders($key) as $module) {
-			$providerPath = $_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module . '/' . $key;
+			$providerPath = "./modules/" . $module . '/' . $key;
 			$files = array_merge($files, array_diff(scandir($providerPath), array('..', '.')));
 		}
 
@@ -145,7 +145,7 @@
 		$paths = array();
 
 		foreach(moduleListFiles($key) as $file) {
-			$paths = array_merge($paths, array_diff(glob($_SERVER['DOCUMENT_ROOT'] . "/modules/*/" . $key . '/' . $file), array('..', '.')));
+			$paths = array_merge($paths, array_diff(glob("./modules/*/" . $key . '/' . $file), array('..', '.')));
 		}
 
 		return $paths;
@@ -167,10 +167,10 @@
 		foreach(moduleProvides($provider) as $key) {
 			$output[$key] = array();
 
-			$files = array_diff(scandir("/var/www/html/modules/" . $provider . '/' . $key), array('..', '.'));
+			$files = array_diff(scandir("./modules/" . $provider . '/' . $key), array('..', '.'));
 
 			foreach($files as $file) {
-				$path = '/var/www/html/modules/' . $provider . '/' . $key . '/' . $file;
+				$path = './modules/' . $provider . '/' . $key . '/' . $file;
 
 				$output[$key][$file] = substr(md5_file($path), 0, 5);
 			}
