@@ -1,9 +1,11 @@
 <?php
+	/*
+	 * /session			$_SESSION
+	 */
 
-	$globalAPIContext['methods']['/api/v1/session'] = function($subURI, $context, $method, $getVars, $postVars) {
-		$context['response'] = $_SESSION;
-		return $context;
-	};
+	$router->map('GET', '/session', function() {
+		session_start();
+		jsonResponse($_SESSION);
+	});
 
 ?>
-
