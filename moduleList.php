@@ -33,10 +33,10 @@
 							<h2>Files by Module</h2>
 							<?php
 								$providerList = daggerAPI('/api/v1/module/provider/list');
-								foreach($providerList['response'] as $moduleName) {
+								foreach($providerList as $moduleName) {
 									$moduleData = daggerAPI('/api/v1/module/provider/' . $moduleName, array("debug" => 1, "trace" => 1));
 									echo '<br/><br/><h4>' . $moduleName . '</h4>';
-									foreach($moduleData['response']['files'] as $directory => $files) {
+									foreach($moduleData['files'] as $directory => $files) {
 										foreach($files as $file => $hash) {
 											echo $directory . '/' . $file . ' (' . $hash . ')<br/>';
 										}
@@ -49,12 +49,12 @@
 							<?php
 								// TODO: Show file hash again
 								$keyList = daggerAPI('/api/v1/module/key/list');
-								foreach($keyList['response'] as $keyName) {
+								foreach($keyList as $keyName) {
 									// TODO: Get truncated paths [module]/[file]
 									$keyProviders = daggerAPI('/api/v1/module/key/' . $keyName . '/truncatedPaths');
 
 									echo '<br/><br/><h4>' . $keyName . '</h4>';
-									foreach($keyProviders['response'] as $index=>$path) {
+									foreach($keyProviders as $index=>$path) {
 										echo $path . "<br/>";
 									}
 								}

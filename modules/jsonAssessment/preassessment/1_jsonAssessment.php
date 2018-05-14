@@ -49,11 +49,8 @@
 				},
 
 				loader: function(response) {
-					if(_(response).has("response")) {
-						dagger.jsonAssessment.jsonAssessments = response.response;
-					} else {
-						throw("No response field in response");
-					}
+					// TODO: Validation?
+					dagger.jsonAssessment.jsonAssessments = response;
 
 					_(dagger.jsonAssessment.jsonAssessments).each(function(jsonAssessment) {
 						var metadata = jsonAssessment.metadata;
