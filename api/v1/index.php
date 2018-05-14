@@ -2,13 +2,7 @@
 	$noRedirect = true;
 	require_once '../../include/dagger.php';
 
-	// Helper Function
-	// TODO: Place somewhere else
 	require_once '../../include/json.php';
-	function jsonResponse($input) {
-		header('Content-Type: application/json');
-		echo(prettyPrint(str_replace('\\/', '/', json_encode($input))));
-	}
 
 	/*
 		case 'GET':

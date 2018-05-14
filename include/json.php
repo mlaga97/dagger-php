@@ -57,4 +57,10 @@
 		return $result;
 	}
 
+	// Helper function for producing a json response
+	function jsonResponse($input) {
+		header('Content-Type: application/json');
+		echo(prettyPrint(str_replace('\\/', '/', json_encode($input))));
+	}
+
 ?>
