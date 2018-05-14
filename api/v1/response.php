@@ -1,9 +1,12 @@
 <?php
-	/*
-	 * /response		listResponseIDs
-	 * /response/all	listResponsesByID
-	 * /response/[id]	getResponse
-	 */
+
+	$router->map('OPTIONS', '/response', function() {
+		jsonResponse(array(
+			'/' => 'Show list of valid response IDs',
+			'/all' => 'Show all response data by response ID',
+			'/[:id]' => 'Show response data for a particular response id',
+		));
+	});
 
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/include/response.php';
 	$router->addRoutes(array(

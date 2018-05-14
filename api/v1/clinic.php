@@ -1,9 +1,12 @@
 <?php
-	/*
-	 * /clinic			listClinicIDs
-	 * /clinic/all		listClinicsByID
-	 * /clinic/[id]		getClinic
-	 */
+
+	$router->map('OPTIONS', '/clinic', function() {
+		jsonResponse(array(
+			'/' => 'Show list of valid clinic IDs',
+			'/all' => 'Show all clinic data by clinic ID',
+			'/[:id]' => 'Show clinic data for a particular clinic ID',
+		));
+	});
 
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/include/clinic.php';
 	$router->addRoutes(array(

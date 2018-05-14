@@ -1,29 +1,31 @@
 <?php
-	/*
-	 *	/module/
-	 *		/key/
-	 *			/all
-	 *			/list						moduleListKeys()
-	 *			/{key-name}/
-	 *				/files					moduleListFiles($key)
-	 *				/paths					moduleListPaths($key)
-	 *				/providers				moduleListProviders($key)
-	 *				/truncatedPaths			moduleListTruncatedPaths($key)
-	 *		/provider/
-	 *			/all
-	 *			/list						moduleList()
-	 *			/{provider-name}/
-	 *				/load					????
-	 *				/files					moduleFiles($module)
-	 *				/paths					????
-	 *				/provides				moduleProvides($module)
-	 */
+
 	// TODO: A lot
+
+	$router->map('OPTIONS', '/module', function() {
+		jsonResponse(array(
+			'/key' => '',
+			'/provider' => '',
+		));
+	});
 
 	/***************************************************************************
 	****************************************************************************
 	***************************************************************************/
 	// By Key
+
+	$router->map('OPTIONS', '/module/key', function() {
+		jsonResponse(array(
+			'/key' => '',
+			'/all' => '',
+			'/list' => '',
+			'/[:key]' => '',
+			'/[:key]/files' => '',
+			'/[:key]/paths' => '',
+			'/[:key]/providers' => '',
+			'/[:key]/truncatedPaths' => '',
+		));
+	});
 
 	$router->addRoutes(array(
 		array('GET', '/module/key/all', function() {jsonResponse('Method not implemented');}),
@@ -47,6 +49,19 @@
 	****************************************************************************
 	***************************************************************************/
 	// By provider
+
+	$router->map('OPTIONS', '/module/provider', function() {
+		jsonResponse(array(
+			'/provider' => '',
+			'/all' => '',
+			'/list' => '',
+			'/[:provider]' => '',
+			'/[:provider]/load' => '',
+			'/[:provider]/files' => '',
+			'/[:provider]/paths' => '',
+			'/[:provider]/provides' => '',
+		));
+	});
 
 	$router->addRoutes(array(
 		array('GET', '/module/provider/all', function() {jsonResponse('Method not implemented');}),
