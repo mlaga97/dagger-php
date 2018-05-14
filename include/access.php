@@ -90,7 +90,7 @@
 			}
 
 			$_SESSION['status'] = 'authorized';
-			header("location: /home.php");
+			return true;
 		} else {
 			return "Please enter a correct username and password.";
 		}

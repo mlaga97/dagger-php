@@ -1,4 +1,15 @@
 <?php
+	$noRedirect = true;
+	require_once '../../include/dagger.php';
+
+	// Helper Function
+	// TODO: Place somewhere else
+	require_once '../../include/json.php';
+	function jsonResponse($input) {
+		header('Content-Type: application/json');
+		echo(prettyPrint(str_replace('\\/', '/', json_encode($input))));
+	}
+
 	/*
 		case 'GET':
 			// Retrieve information. GET requests must be safe and idempotent,
@@ -28,22 +39,18 @@
 			// For documentation
 	*/
 
-
 	require_once '../../include/AltoRouter/AltoRouter.php';
 
 	$router = new AltoRouter();
 	$router->setBasePath('/api/v2');
 
-	/***************************************************************************
-	****************************************************************************
-	***************************************************************************/
+	// Auth routes come first to allow rejecting access
+	require_once './auth.php';
 
-	// Handler
-	require_once '../../include/json.php';
-	function jsonResponse($input) {
-		header('Content-Type: application/json');
-		echo(prettyPrint(str_replace('\\/', '/', json_encode($input))));
-	}
+	// Base Routes
+	$router->map('GET', '/', function() {
+		jsonResponse('Welcome to the dagger api!');
+	});
 
 	// Add Assorted Routes
 	// TODO: Modules?
@@ -54,21 +61,25 @@
 	require_once './session.php';
 	require_once './user.php';
 
-	// Base Routes
-	$router->addRoutes(array(
-		array('GET', '/', function() {jsonResponse('Welcome to the dagger api!');}),
-	));
-
-	/***************************************************************************
-	****************************************************************************
-	***************************************************************************/
+	// Documentation Route
+	// TODO: Modules?
+	$router->map('OPTIONS', '/', function() {
+		jsonResponse(array(
+			'assessment' => '',
+			'clinic' => '',
+			'module' => '',
+			'response' => '',
+			'session' => '',
+			'user' => '',
+		));
+	});
 
 	$match = $router->match();
 
-	// Either call the function (if it exists) or throw a 404 error
-	if( $match && is_callable( $match['target'] ) ) {
-		call_user_func_array( $match['target'], $match['params'] ); 
+	// Either call the function (if it exists) or throw a 404 (Not Found) error
+	if( $match && is_callable($match['target'])) {
+		call_user_func_array($match['target'], $match['params']); 
 	} else {
-		header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+		header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 	}
 ?>

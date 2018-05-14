@@ -7,8 +7,6 @@
 	 */
 
 	$router->map('GET', '/assessment', function() {
-		$noRedirect = true;
-		session_start();
 		require_once $_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment.php';
 
 		$response = array();
@@ -20,8 +18,6 @@
 	});
 
 	$router->map('GET', '/assessment/short', function() {
-		$noRedirect = true;
-		session_start();
 		require_once $_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment.php';
 
 		$response = array();
@@ -33,8 +29,6 @@
 	});
 
 	$router->map('GET', '/assessment/all', function() {
-		$noRedirect = true;
-		session_start();
 		require_once $_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment.php';
 
 		$response = array();
@@ -46,8 +40,6 @@
 	});
 
 	$router->map('GET', '/assessment/[:class]', function($class) {
-		$noRedirect = true;
-		session_start();
 		require_once $_SERVER['DOCUMENT_ROOT'] . '/modules/jsonAssessment/jsonAssessment.php';
 
 		$response = array();

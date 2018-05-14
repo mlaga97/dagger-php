@@ -10,6 +10,11 @@
 	// Checking to see if the username and password were entered correctly.
 	if ($_POST && !empty($_POST['username']) && !empty($_POST['password'])) {
 	    $response = login($_POST['username'], $_POST['password']);
+
+		if(getType($response) == 'string') {
+		} else {
+			header("location: /home.php");
+		}
 	}
 
 	// Here we set our session previous variable. This variable is used to allow user access to the next web-page.

@@ -4,7 +4,6 @@
 	 */
 
 	$router->map('GET', '/session', function() {
-		session_start();
 		jsonResponse($_SESSION);
 	});
 
