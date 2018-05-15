@@ -31,6 +31,7 @@ function viewAssessments() {
 
 	// Only render the selected assessments
 	var assessments = getSelectedAssessments(api.response);
+	console.log(getSelectedAssessmentList(api.response))
 
 	// Render each assessment
 	_(assessments).each(function(assessment) {
@@ -45,7 +46,7 @@ function viewAssessments() {
 
 function viewAssessment(assessment, response) {
 	var questionNumber = 1
-	var truncatedClass = assessment.metadata.class.split(' ')[0];
+	var truncatedClass = getClass(assessment);
 
 	// Start container
 	// TODO: Remove jsonAssessment class
@@ -61,7 +62,7 @@ function viewAssessment(assessment, response) {
 
 	// Responses
 	// TODO: Either switch based on [re]viewAssessment, or modify json so that it doesn't matter
-	if(assessment.scoring.reviewAssessment.showResponses) {
+	if(true || assessment.scoring.reviewAssessment.showResponses) {
 		//console.log(truncatedClass + ' wants to show responses!')
 		$container.append(showAssessmentResponses(assessment, response))
 	} else {
@@ -90,7 +91,7 @@ function viewAssessment(assessment, response) {
 // TODO: Severity?
 // TODO: Break this function up
 function showAssessmentScore(assessment, response) {
-	var truncatedClass = assessment.metadata.class.split(' ')[0];
+	var truncatedClass = getClass(assessment);
 
 	if(scoring[truncatedClass]) {
 		score = scoring[truncatedClass](response)
@@ -143,61 +144,5 @@ function showAssessmentScore(assessment, response) {
 	} else {
 		console.log(truncatedClass + ' did not provide scoring!')
 	}
-}
-
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-// TODO: Break up this function
-function showAssessmentResponses(assessment, response) {
-	var truncatedClass = assessment.metadata.class.split(' ')[0];
-
-	var questionNumber = 1
-	var $container = $('<div>', {
-		'class': assessment.metadata.class + ' showResponses'
-	});
-
-	// Header
-	$container.append('<table><tr><th>Question</th><th>Response</th></tr>')
-
-	_(assessment.sections).each(function(section) {
-		// Show preface
-		// Render questions
-		_(section.questions).each(function(question) {
-			// Calulate answer
-			// TODO: Empty value?
-			var answer
-			if(response[question.id]) {
-				// Get the human readable response
-				if(assessment.scoring.reviewAssessment.responseFormat == 'human_readable') {
-					// TODO: Fix this utter piece of shit
-					answer = _.invert(assessment.types[question.type].options)[response[question.id]]
-				} else {
-					console.log('Did not want human_readable?')
-					answer = response[question.id]
-				}
-			} else {
-				answer = 'No Response'
-			}
-
-			// Append
-			$container.append(`
-				<tr>
-					<td>
-						<ol start='${questionNumber}'>
-							<li>${question.text}</li>
-						</ol>
-					</td>
-					<td class='score'>${answer}</td>
-				</tr>
-			`)
-			questionNumber++
-		})
-	})
-
-	$container.append('</table>')
-
-	return $container;
 }
 

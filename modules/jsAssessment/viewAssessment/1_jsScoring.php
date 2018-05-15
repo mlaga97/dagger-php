@@ -6,6 +6,7 @@
 
 <!-- Main script -->
 <script src='/modules/jsAssessment/js/viewAssessment/viewAssessment.js'></script>
+<script src='/modules/jsAssessment/js/viewAssessment/showAssessmentResponses.js'></script>
 <script src='modules/jsAssessment/js/helper.js'</script>
 
 <!-- Assessment Scoring Functions -->

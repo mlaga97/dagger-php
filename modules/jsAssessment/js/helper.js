@@ -1,3 +1,7 @@
+function getClass(assessment) {
+	return assessment.metadata.class.split(' ')[0];
+}
+
 function getSelectedAssessments(response) {
 	selected = [];
 
@@ -10,18 +14,30 @@ function getSelectedAssessments(response) {
 	return selected;
 }
 
+function getSelectedAssessmentList(response) {
+	selected = [];
+
+	_(api.assessments).each(function(assessment) {
+		if(api.response[assessment.metadata.id] == 1) {
+			selected.push(getClass(assessment));
+		}
+	});
+
+	return selected;
+}
+
 function getAssessmentResponse(assessment, response) {
 	var fields = {};
 
 	if(assessment.sections) {
 		_(assessment.sections).each(function(section) {
 			_(section.questions).each(function(question) {
-				fields[question.id] = response[question.id]
+				fields[question.id] = response[question.id];
 			});
 		});
 	} else if(assessment.questions) {
 		_(assessment.questions).each(function(question) {
-			fields[question.id] = response[question.id]
+			fields[question.id] = response[question.id];
 		});
 	}
 
