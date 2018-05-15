@@ -4,6 +4,10 @@
 	// TODO: Find a more elegant solution
 	$noRedirect = true;
 
+	// Ensure that the api can be used externally
+	// TODO: Whitelist instead of global allow?
+	header("Access-Control-Allow-Origin: *");
+
 	// Load libraries
 	require_once '../../include/dagger.php';
 	require_once '../../include/json.php';
