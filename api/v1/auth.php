@@ -13,6 +13,10 @@
 	// Present a limited feature set if the user is not logged in
 	if(!isset($_SESSION['status']) || $_SESSION['status'] != 'authorized') {
 
+		$router->map('GET', '/auth', function() {
+			jsonResponse(false);
+		});
+
 		$router->map('POST', '/auth/login', function() {
 			$postData = json_decode(file_get_contents("php://input"), true);
 			$response = login($postData['username'], $postData['password']);
@@ -37,11 +41,16 @@
 		die();
 	}
 
+	$router->map('GET', '/auth', function() {
+		jsonResponse(true);
+	});
+
 	$router->map('POST', '/auth/login', function() {
 		jsonResponse('Already logged in!');
 	});
 
 	$router->map('POST', '/auth/logout', function() {
+		jsonResponse('Logged out!');
 		session_unset();
 	});
 ?>

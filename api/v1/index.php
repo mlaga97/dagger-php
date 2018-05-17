@@ -5,8 +5,17 @@
 	$noRedirect = true;
 
 	// Ensure that the api can be used externally
-	// TODO: Whitelist instead of global allow?
-	header("Access-Control-Allow-Origin: *");
+	// TODO: Figure out what the proper thing to do here is, as opposed to just adding things until it works.
+	if(array_key_exists('HTTP_ORIGIN', $_SERVER)) {
+		$http_origin = $_SERVER['HTTP_ORIGIN'];
+
+		// TODO: Whitelist
+		//if($http_origin == "http://www.domain1.com" || $http_origin == "http://www.domain2.com") {  
+			header("Access-Control-Allow-Origin: $http_origin");
+		//}
+
+		header('Access-Control-Allow-Credentials: true');
+	}
 
 	// Load libraries
 	require_once '../../include/dagger.php';
