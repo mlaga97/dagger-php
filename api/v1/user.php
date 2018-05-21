@@ -13,6 +13,7 @@
 		array('GET', '/user', function() {jsonResponse(listUserIDs());}),
 		array('GET', '/user/', function() {jsonResponse(listUserIDs());}),
 		array('GET', '/user/all', function() {jsonResponse(listUsersByID());}),
+		array('GET', '/user/current', function() {jsonResponse(getUser($_SESSION['user_id']));}),
 		array('GET', '/user/[:id]', function($id) {jsonResponse(getUser($id));}),
 	));
 

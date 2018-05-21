@@ -28,7 +28,11 @@
 		// Flags
 		$user['flags']['admin'] = $userRow['admin'];
 		$user['flags']['debug'] = $userRow['debug'];
-		$user['flags']['test_acc'] = $userRow['test_acc'];
+		$user['flags']['tester'] = $userRow['test_acc'];
+
+		// Special Flags
+		if($_SESSION['user_id'] == $user['userID'])
+			$user['flags']['currentUser'] = true;
 
 		return $user;
 	}
