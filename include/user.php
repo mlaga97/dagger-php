@@ -13,7 +13,7 @@
 		$user['associations']['clinics'] = array();
 
 		// Primary Key
-		$user['userID'] = $userRow['id'];
+		$user['id'] = $userRow['id'];
 
 		// Login
 		$user['login']['active'] = $userRow['active'];
@@ -31,7 +31,7 @@
 		$user['flags']['tester'] = $userRow['test_acc'];
 
 		// Special Flags
-		if($_SESSION['user_id'] == $user['userID'])
+		if($_SESSION['user_id'] == $user['id'])
 			$user['flags']['currentUser'] = true;
 
 		return $user;
