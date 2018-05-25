@@ -17,6 +17,8 @@
 			jsonResponse(false);
 		});
 
+		$router->map('OPTIONS', '/auth/login', function() {});
+
 		$router->map('POST', '/auth/login', function() {
 			$postData = json_decode(file_get_contents("php://input"), true);
 			$response = login($postData['username'], $postData['password']);

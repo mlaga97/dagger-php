@@ -16,6 +16,7 @@
 
 		header('Access-Control-Allow-Credentials: true');
 	}
+	header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 
 	// Load libraries
 	require_once '../../include/dagger.php';
