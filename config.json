@@ -1,5 +1,5 @@
 {
-	"edu.usm.dagger.main.db.server": "localhost",
+	"edu.usm.dagger.main.db.server": "db",
 	"edu.usm.dagger.main.db.user": "hho",
 	"edu.usm.dagger.main.db.password": "tommymyson",
 	"edu.usm.dagger.main.db.database": "msihdp",
