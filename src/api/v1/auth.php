@@ -18,6 +18,7 @@
 		});
 
 		$router->map('OPTIONS', '/auth/login', function() {});
+    $router->map('OPTIONS', '/response', function() {}); // TODO: Not this.
 
 		$router->map('POST', '/auth/login', function() {
 			$postData = json_decode(file_get_contents("php://input"), true);
@@ -26,7 +27,11 @@
 			if(getType($response) == 'string') {
 				jsonResponse('Authentication failed!');
 			} else {
-				jsonResponse('Authentication succeeded!');
+        jsonResponse([
+          'message' => 'Authentication succeeded',
+          'success' => true,
+          'userID' => $_SESSION['user_id'],
+        ]);
 			}
 		});
 
@@ -48,7 +53,11 @@
 	});
 
 	$router->map('POST', '/auth/login', function() {
-		jsonResponse('Already logged in!');
+    jsonResponse([
+      'message' => 'Already logged in!',
+      'success' => false,
+      'userID' => $_SESSION['id'],
+    ]);
 	});
 
 	$router->map('POST', '/auth/logout', function() {
