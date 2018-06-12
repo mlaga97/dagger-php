@@ -20,6 +20,28 @@
 		return $output;
 	}
 
+  function postResponse($response) {
+    global $mysqli;
+
+    // Prepare statement
+    if (!($query = $mysqli->prepare('INSERT INTO `json_response` (`data`) VALUES (?)'))) {
+      echo 'Prepare failed: (' . $mysqli->errno . ') ' . $mysqli->error;
+    }
+
+    // Bind statement
+    if (!$query->bind_param('s', json_encode($response))) {
+      echo 'Binding parameters failed: (' . $query->errno . ') ' . $query->error;
+    }
+
+    // Execute statement
+    if (!$query->execute()) {
+      echo 'Execute parameters failed: (' . $query->errno . ') ' . $query->error;
+    }
+
+    $insertID = $mysqli->insert_id;
+    return $insertID;
+  }
+
 	function listResponsesByID() {
 		global $mysqli;
 		$output = array();
