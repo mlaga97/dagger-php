@@ -9,11 +9,12 @@
 	});
 
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/include/clinic.php';
-	$router->addRoutes(array(
-		array('GET', '/clinic', function() {jsonResponse(listClinicIDs());}),
-		array('GET', '/clinic/', function() {jsonResponse(listClinicIDs());}),
-		array('GET', '/clinic/all', function() {jsonResponse(listClinicsByID());}),
-		array('GET', '/clinic/[:id]', function($id) {jsonResponse(getClinic($id));}),
-	));
+	$router->addRoutes([
+		['GET', '/clinic', function() {jsonResponse(listClinicIDs());}],
+		['GET', '/clinic/', function() {jsonResponse(listClinicIDs());}],
+		['GET', '/clinic/all', function() {jsonResponse(listClinicsByID());}],
+    ['GET', '/clinic/current', function() {jsonResponse(getClinic($_SESSION['clinic_id']));}],
+		['GET', '/clinic/[:id]', function($id) {jsonResponse(getClinic($id));}],
+	]);
 
 ?>
