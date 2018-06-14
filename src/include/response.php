@@ -23,23 +23,45 @@
   function postResponse($response) {
     global $mysqli;
 
-    // Prepare statement
-    if (!($query = $mysqli->prepare('INSERT INTO `json_response` (`data`) VALUES (?)'))) {
-      echo 'Prepare failed: (' . $mysqli->errno . ') ' . $mysqli->error;
-    }
+    // Parse out values into proper fields
+    $userID = $response['metadata']['user']['id'];
+    $clinicID = $response['metadata']['clinic']['id'];
+    $patientID = $response['metadata']['patient']['id'];
+    $patientDOB = $response['metadata']['patient']['dob'];
+    $selectedAssessments = json_encode($response['assessments']['selected']);
+    $assessmentResponses = json_encode($response['assessments']['responses']);
 
-    // Bind statement
-    if (!$query->bind_param('s', json_encode($response))) {
-      echo 'Binding parameters failed: (' . $query->errno . ') ' . $query->error;
-    }
+    // Escape each string in place to avoid SQL injection
+    $userID = $mysqli->real_escape_string($userID);
+    $clinicID = $mysqli->real_escape_string($clinicID);
+    $patientID = $mysqli->real_escape_string($patientID);
+    $patientDOB = $mysqli->real_escape_string($patientDOB);
+    $selectedAssessments = $mysqli->real_escape_string($selectedAssessments);
+    $assessmentResponses = $mysqli->real_escape_string($assessmentResponses);
 
-    // Execute statement
-    if (!$query->execute()) {
-      echo 'Execute parameters failed: (' . $query->errno . ') ' . $query->error;
-    }
+    $result = $mysqli->query("
+      INSERT INTO `json_response` (
+        `user_id`,
+        `clinic_id`,
+        `patient_id`,
+        `patient_dob`,
+        `selected_assessments`,
+        `assessment_responses`
+      ) VALUES (
+        '$userID',
+        '$clinicID',
+        '$patientID',
+        '$patientDOB',
+        '$selectedAssessments',
+        '$assessmentResponses'
+      )
+    ");
 
-    $insertID = $mysqli->insert_id;
-    return $insertID;
+    // Get the id of the new record
+    $responseID = $mysqli->insert_id;
+
+    // Return the response ID to the client
+    return $responseID;
   }
 
 	function listResponsesByID() {
