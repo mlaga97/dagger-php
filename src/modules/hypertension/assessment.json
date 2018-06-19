@@ -1,10 +1,10 @@
 {
 	"metadata": {
-		"class": "hypertension",
-		"title": "Hypertension - Self-care Activity Level Effects (H-SCALE)",
-		"text": "H-SCALE",
-		"id": "hypertension_check",
-		"notes": "The GSE score range is 10 - 40.  Higher scores indicate greater self-efficacy. GSE requires a minimum of 7 responses to score."
+    "id": "hypertension",
+    "tag": "H-SCALE",
+    "title": "H-SCALE",
+    "overview": "Hypertension - Self-care Activity Level Effects (H-SCALE)",
+		"description": "The GSE score range is 10 - 40.  Higher scores indicate greater self-efficacy. GSE requires a minimum of 7 responses to score."
 	},
 	"scoring": {
 		"reviewAssessment": {

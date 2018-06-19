@@ -1,10 +1,13 @@
 {
 	"metadata": {
-		"class": "sdq childonly",
-		"title": "This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.",
-		"text": "SDQ",
-		"id": "sdq_check",
-		"notes": ""
+		"id": "sdq",
+		"tag": "SDQ",
+		"title": "SDQ",
+    "overview": "Strengths and Difficulties Questionnaire (SDQ)",
+		"description": "This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.",
+    "tags": [
+      "childonly"
+    ]
 	},
 	"scoring": {
 		"reviewAssessment": {

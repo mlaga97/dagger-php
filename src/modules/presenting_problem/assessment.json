@@ -1,10 +1,9 @@
 {
 	"metadata": {
-		"class": "presenting_problem",
-		"title": "This section contains questions pertaining to the client's presenting problem.",
-		"text": "Presenting Problem",
-		"id": "pp_check",
-		"notes": ""
+		"id": "presenting_problem",
+		"tag": "Presenting Problem",
+		"title": "Presenting Problem",
+		"description": "This section contains questions pertaining to the client's presenting problem."
 	},
 	"scoring": {
 		"reviewAssessment": {

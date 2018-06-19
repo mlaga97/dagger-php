@@ -1,9 +1,11 @@
 {
 	"metadata": {
-		"class": "adhd adultonly",
-		"title": "ADHD Self-Report Scale",
-		"text": "ADHD Self-Report Scale",
-		"id": "adhd_check"
+    "id": "adhd",
+    "tag": "ADHD",
+    "title": "ADHD Self-Report Scale",
+    "tags": [
+      "adultOnly"
+    ]
 	},
 	"scoring": {
 		"reviewAssessment": {

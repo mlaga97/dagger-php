@@ -1,9 +1,12 @@
 {
 	"metadata": {
-		"class": "pediatric childonly",
-		"title": "The Pediatric Healthy Lifestyles Screening",
-		"text": "Pediatric HLS",
-		"id": "pediatric_check"
+    "id": "pediatric_hls",
+    "tag": "HLS",
+    "title": "Pediatric HLS",
+    "overview": "Pediatric Healthy Lifestyles Screening (HLS)",
+    "flags": [
+      "childonly"
+    ]
 	},
 	"visibilityRules": [
 		{

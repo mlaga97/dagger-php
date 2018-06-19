@@ -1,10 +1,12 @@
 {
 	"metadata": {
-		"class": "life childonly",
-		"title": "This section contains questions about what major life events the client has experienced.",
-		"text": "Life Attitudes",
-		"id": "life_check",
-		"notes": ""
+    "id": "life_attitudes",
+    "tag": "Life Attitudes",
+    "title": "Life Attitudes",
+		"description": "This section contains questions about what major life events the client has experienced.",
+    "tags": [
+      "childOnly"
+    ]
 	},
 	"scoring": {
 		"reviewAssessment": {

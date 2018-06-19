@@ -1,10 +1,9 @@
 {
 	"metadata": {
-		"class": "self",
-		"title": "This section contains questions pertaining to the client's diabetes self-care behavior.",
-		"text": "Diabetes Self-Care",
-		"id": "self_check",
-		"notes": ""
+		"id": "self",
+		"tag": "Diabetes Self-Care",
+		"title": "Diabetes Self-Care",
+		"description": "This section contains questions pertaining to the client's diabetes self-care behavior."
 	},
 	"scoring": {
 		"reviewAssessment": {

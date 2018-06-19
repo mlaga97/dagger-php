@@ -1,10 +1,13 @@
 {
 	"metadata": {
-		"class": "gad adultonly",
+		"id": "gad",
+		"tag": "GAD",
 		"title": "GAD-7",
-		"text": "GAD-7",
-		"id": "gad_check",
-		"notes": "The Generalized Anxiety Disorder (GAD) asks questions concerning anxiety."
+    "overview": "Generalized Anxiety Disorder (GAD) Assessment",
+		"description": "The Generalized Anxiety Disorder (GAD) asks questions concerning anxiety.",
+    "flags": [
+      "adultonly"
+    ]
 	},
 	"scoring": {
 		"reviewAssessment": {
