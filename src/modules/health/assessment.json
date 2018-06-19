@@ -1,10 +1,9 @@
 {
 	"metadata": {
-		"class": "health",
-		"title": "This section asks questions about the client's current health situation.",
-		"text": "Health",
-		"id": "health_check",
-		"notes": ""
+    "id": "health",
+    "tag": "Health",
+    "title": "Health",
+		"description": "This section asks questions about the client's current health situation."
 	},
 	"scoring": {
 		"reviewAssessment": {

@@ -1,10 +1,12 @@
 {
 	"metadata": {
-		"class": "diag_me adultonly",
-		"title": "This section contains questions pertaining to the client's past and/or current MH diagnoses.",
-		"text": "MH Diagnosis",
-		"id": "diag_me_check",
-		"notes": ""
+    "id": "diag_me",
+    "tag": "DIAG-ME",
+    "title": "Mental Health Diagnosis",
+		"description": "This section contains questions pertaining to the client's past and/or current MH diagnoses.",
+    "flags": [
+      "adultonly"
+    ]
 	},
 	"scoring": {
 		"reviewAssessment": {

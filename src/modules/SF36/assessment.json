@@ -1,10 +1,10 @@
 {
 	"metadata": {
-		"class": "sf36",
-		"title": "RAND 36-Item Health Survey",
-		"text": "SF-36",
-		"id": "sf36_check",
-		"notes": "The RAND SF-36 scale score range is 0 - 100.  Scale scores are the average of questions responded to for each scale category.  Non-responses are ignored."
+		"id": "sf36",
+		"tag": "SF-36",
+		"title": "SF-36",
+		"overview": "RAND Short-Form Health Survey (SF-36)",
+		"description": "The RAND Short-Form Health Survey (SF-36) scale score range is 0 - 100. Scale scores are the average of questions responded to for each scale category. Non-responses are ignored."
 	},
 	"scoring": {
 		"reviewAssessment": {

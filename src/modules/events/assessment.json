@@ -1,10 +1,12 @@
 {
 	"metadata": {
-		"class": "events adultonly",
-		"title": "This section contains questions about what major life events the client has experienced.",
-		"text": "Events",
-		"id": "events_check",
-		"notes": ""
+    "id": "events",
+    "tag": "Events",
+    "title": "Life Events",
+		"description": "This section contains questions about what major life events the client has experienced.",
+    "flags": [
+      "adultonly"
+    ]
 	},
 	"scoring": {
 		"reviewAssessment": {

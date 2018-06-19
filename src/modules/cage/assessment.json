@@ -1,10 +1,12 @@
 {
 	"metadata": {
-		"class": "cage adultonly",
-		"title": "CAGE",
-		"text": "CAGE",
-		"id": "cage_check",
-		"notes": "The CAGE is a 4-item, relatively non-confrontational questionnaire for detection of alcoholism."
+    "id": "cage",
+    "tag": "CAGE",
+    "title": "CAGE",
+		"description": "The CAGE is a 4-item, relatively non-confrontational questionnaire for detection of alcoholism.",
+    "flags": [
+      "adultonly"
+    ]
 	},
 	"scoring": {
 		"reviewAssessment": {

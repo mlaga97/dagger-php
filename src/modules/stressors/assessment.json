@@ -1,10 +1,9 @@
 {
 	"metadata": {
-		"class": "stress",
-		"title": "This section contains questions pertaining to the client's current stress level and specific stressors.",
-		"text": "Stress",
-		"id": "stress_check",
-		"notes": ""
+		"id": "stress",
+		"tag": "Stress",
+		"title": "Stress",
+		"description": "This section contains questions pertaining to the client's current stress level and specific stressors."
 	},
 	"scoring": {
 		"reviewAssessment": {

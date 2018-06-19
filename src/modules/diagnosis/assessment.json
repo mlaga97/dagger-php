@@ -1,10 +1,12 @@
 {
 	"metadata": {
-		"class": "diagnosis adultonly",
-		"title": "This section contains questions pertaining to the client's past and/or current medical diagnoses.",
-		"text": "Diagnosis",
-		"id": "diagnosis_check",
-		"notes": ""
+    "id": "diagnosis",
+    "tag": "Diagnosis",
+    "title": "Diagnosis",
+		"description": "This section contains questions pertaining to the client's past and/or current medical diagnoses.",
+    "flags": [
+      "adultonly"
+    ]
 	},
 	"scoring": {
 		"reviewAssessment": {
