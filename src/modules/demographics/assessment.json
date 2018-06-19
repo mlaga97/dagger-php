@@ -1,0 +1,112 @@
+{
+	"metadata": {
+    "id": "demographics",
+    "title": "Demographics",
+    "flags": [
+      "required"
+    ],
+    "formatID": 0
+	},
+	"questions": [
+		{
+			"id": "gender",
+			"text": "Gender",
+			"type": {
+        "class": "radioOptions",
+        "options": {
+          "Male": "male",
+          "Female": "female",
+          "Transgender": "transgender",
+          "Other": "other",
+          "No response": null
+        }
+      }
+		},
+    {
+      "id": "ethnicity",
+      "text": "Ethnicity",
+      "type": {
+        "class": "radioOptions",
+        "options": {
+          "White/Caucasian": "white",
+          "Hispanic/Latino": "latino",
+          "Asian": "asian",
+          "Native Hawaiian/Pacific Islander": "pacificIslander",
+          "Middle Eastern": "middleEastern",
+          "Black": "black",
+          "Native American": "nativeAmerican",
+          "Other": "other",
+          "No Response": null
+        }
+      }
+    },
+    {
+      "id": "maritalStatus",
+      "text": "Marital Status",
+      "type": {
+        "class": "radioOptions",
+        "options": {
+          "Currently Married": "married",
+          "Separated": "separated",
+          "Divorced": "divorced",
+          "Widowed": "widowed",
+          "Never Married": "never_married",
+          "No Response": null
+        }
+      }
+    },
+    {
+      "id": "livingArrangements",
+      "text": "Living Arrangements",
+      "type": {
+        "class": "radioOptions",
+        "options": {
+          "with Parents": "withParents",
+          "with Family": "withFamily",
+          "with Friends": "withFriends",
+          "Foster Care": "fosterCare",
+          "Shelter": "shelter",
+          "Homeless": "homeless",
+          "Alone": "alone",
+          "No Response": null
+        }
+      }
+    },
+    {
+      "id": "zip",
+      "text": "Zip Code",
+      "type": {
+        "class": "zip"
+      }
+    },
+    {
+      "id": "education",
+      "text": "Education",
+      "type": {
+        "class": "radioOptions",
+        "options": {
+          "No School": "none",
+          "1st Grade": 1,
+          "2nd Grade": 2,
+          "3rd Grade": 3,
+          "4th Grade": 4,
+          "5th Grade": 5,
+          "6th Grade": 6,
+          "7th Grade": 7,
+          "8th Grade": 8,
+          "9th Grade": 9,
+          "10th Grade": 10,
+          "11th Grade": 11,
+          "12th Grade": "highScool",
+          "GED": "ged",
+          "Some College": "someCollege",
+          "2-year Degree": "associates",
+          "4-year Degree": "bachelors",
+          "Master's Degree": "masters",
+          "Doctorate": "doctorate",
+          "No Response": null
+        }
+      }
+    }
+  ]
+}
