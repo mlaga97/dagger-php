@@ -2,10 +2,7 @@
 	"metadata": {
     "id": "demographics",
     "title": "Demographics",
-    "flags": [
-      "required"
-    ],
-    "formatID": 0
+    "required": true
 	},
 	"questions": [
 		{
@@ -76,7 +73,7 @@
       "id": "zip",
       "text": "Zip Code",
       "type": {
-        "class": "zip"
+        "class": "textField"
       }
     },
     {
