@@ -1,7 +1,13 @@
 <?php
 
 function getAssessments() {
-  $assessments = getUnmergedConfig($filename = 'assessment.json');
+  $rawAssessments = getUnmergedConfig($filename = 'assessment.json');
+
+  // Index by ID
+  $assessments = [];
+  foreach($rawAssessments as $assessment) {
+    $assessments[$assessment['metadata']['id']] = $assessment;
+  }
 
   // TODO: Filtering, etc.
 
