@@ -4,22 +4,6 @@
 	// Set up database
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/db.php');
 
-	function getResponse($id) {
-		global $mysqli;
-		$output = array();
-
-		// TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
-		if($result = $mysqli->query('SELECT * FROM msihdp.response WHERE id = ' . $id)) {
-			foreach($result->fetch_assoc() as $key => $value) {
-				if($value != null) {
-					$output[$key] = $value;
-				}
-			}
-		}
-
-		return $output;
-	}
-
   function postResponse($response) {
     global $mysqli;
 
@@ -64,19 +48,60 @@
     return $responseID;
   }
 
+  function responseToObject($result) {
+
+    // Extract values
+    $userID = $result['user_id'];
+    $clinicID = $result['clinic_id'];
+    $patientID = $result['patient_id'];
+    $patientDOB = $result['patient_dob'];
+    $selectedAssessments = $result['selected_assessments'];
+    $assessmentResponses = $result['assessment_responses'];
+
+    // Unescape values
+    $selectedAssessments = json_decode($selectedAssessments);
+    $assessmentResponses = json_decode($assessmentResponses);
+
+    // Parse out values into proper fields
+    return [
+      metadata => [
+        user => [ id => $userID ],
+        clinic => [ id => $clinicID ],
+        patient => [
+          id => $patientID,
+          dob => $patientDOB,
+        ],
+      ],
+      assessments => [
+        selected => $selectedAssessments,
+        responses => $assessmentResponses,
+      ],
+    ];
+  }
+
+	function getResponse($id) {
+		global $mysqli;
+
+    // Avoid SQL injection
+    $id = $mysqli->real_escape_string($id);
+
+    // Get response and convert into useful shape
+    if($result = $mysqli->query('SELECT * FROM msihdp.json_response WHERE id = ' . $id)) {
+      $row = $result->fetch_assoc();
+      return responseToObject($row);
+		}
+
+		return [];
+  }
+
 	function listResponsesByID() {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
-		if($result = $mysqli->query('SELECT * FROM msihdp.response')) {
+		if($result = $mysqli->query('SELECT * FROM msihdp.json_response')) {
 			while($row = $result->fetch_assoc()) {
-				$output[$row["id"]] = array();
-
-				foreach($row as $key => $value) {
-					if($value != null) {
-						$output[$row["id"]][$key] = $value;
-					}
-				}
+        $row = $result->fetch_assoc();
+        $output[$row['id']] = responseToObject($row);
 			}
 		}
 
@@ -85,9 +110,9 @@
 
 	function listResponseIDs() {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
-		if($result = $mysqli->query('SELECT id FROM msihdp.response')) {
+		if($result = $mysqli->query('SELECT id FROM msihdp.json_response')) {
 			while($row = $result->fetch_assoc()) {
 				array_push($output, $row["id"]);
 			}
