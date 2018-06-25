@@ -100,7 +100,6 @@
 
 		if($result = $mysqli->query('SELECT * FROM msihdp.json_response')) {
 			while($row = $result->fetch_assoc()) {
-        $row = $result->fetch_assoc();
         $output[$row['id']] = responseToObject($row);
 			}
 		}
