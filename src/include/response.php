@@ -51,6 +51,7 @@
   function responseToObject($result) {
 
     // Extract values
+    $responseID = $result['id'];
     $userID = $result['user_id'];
     $clinicID = $result['clinic_id'];
     $patientID = $result['patient_id'];
@@ -65,6 +66,7 @@
     // Parse out values into proper fields
     return [
       metadata => [
+        id => $responseID,
         user => [ id => $userID ],
         clinic => [ id => $clinicID ],
         patient => [
