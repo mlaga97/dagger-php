@@ -15,7 +15,7 @@
           "Female": "female",
           "Transgender": "transgender",
           "Other": "other",
-          "No response": null
+          "No response": "noResponse"
         }
       }
 		},
@@ -33,7 +33,7 @@
           "Black": "black",
           "Native American": "nativeAmerican",
           "Other": "other",
-          "No Response": null
+          "No Response": "noResponse"
         }
       }
     },
@@ -48,7 +48,7 @@
           "Divorced": "divorced",
           "Widowed": "widowed",
           "Never Married": "never_married",
-          "No Response": null
+          "No Response": "noResponse"
         }
       }
     },
@@ -65,7 +65,7 @@
           "Shelter": "shelter",
           "Homeless": "homeless",
           "Alone": "alone",
-          "No Response": null
+          "No Response": "noResponse"
         }
       }
     },
@@ -101,7 +101,7 @@
           "4-year Degree": "bachelors",
           "Master's Degree": "masters",
           "Doctorate": "doctorate",
-          "No Response": null
+          "No Response": "noResponse"
         }
       }
     }
