@@ -7,7 +7,8 @@
 		"description": "The Alcohol Use Disorders Identification Test (AUDIT-C) is an alcohol screen that can help identify patients who are hazardous drinkers or have active alcohol use disorders (including alcohol abuse or dependence).",
     "flags": [
       "adultOnly"
-    ]
+    ],
+    "scorable": true
 	},
 	"scoring": {
 		"reviewAssessment": {
