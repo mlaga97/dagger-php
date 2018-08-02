@@ -10,7 +10,7 @@
 		// Generate request using tag list
 		// TODO: Determine why the following line is not a suitable substitute.
 		//$query_clinic = "SELECT * FROM response, clinic where pt_id = '$info_store' AND clinic.id = response.clinic_id AND clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by response.id  DESC";
-    	$query_clinic = "SELECT response.pt_id, response.id, response.date, clinic.name";
+    	$query_clinic = "SELECT response.pt_id, response.id, response.assessment_date, clinic.name";
     	foreach(getConfigKey("edu.usm.dagger.main.searchAssessment.tags") as $key => $value) {
     		$query_clinic = $query_clinic . ', response.' . $key;
     	}
@@ -44,7 +44,7 @@
 			// TODO: pull assessment_date
 			echo "<td>";
 			echo "<p>";
-			echo $row ['date'];
+			echo $row ['assessment_date'];
 			echo "</p>";
 			echo "</td>";
 
