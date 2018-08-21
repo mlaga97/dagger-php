@@ -96,11 +96,11 @@
 		return [];
   }
 
-	function listResponsesByID() {
+	function listResponsesByID($query = '') {
 		global $mysqli;
 		$output = [];
 
-		if($result = $mysqli->query('SELECT * FROM msihdp.json_response')) {
+		if($result = $mysqli->query('SELECT * FROM msihdp.json_response' . $query)) {
 			while($row = $result->fetch_assoc()) {
         $output[$row['id']] = responseToObject($row);
 			}
@@ -109,11 +109,11 @@
 		return $output;
 	}
 
-	function listResponseIDs() {
+	function listResponseIDs($query = '') {
 		global $mysqli;
 		$output = [];
 
-		if($result = $mysqli->query('SELECT id FROM msihdp.json_response')) {
+		if($result = $mysqli->query('SELECT id FROM msihdp.json_response' . $query)) {
 			while($row = $result->fetch_assoc()) {
 				array_push($output, $row["id"]);
 			}
