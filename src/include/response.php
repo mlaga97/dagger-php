@@ -10,16 +10,20 @@
     // Parse out values into proper fields
     $userID = $response['metadata']['user']['id'];
     $clinicID = $response['metadata']['clinic']['id'];
+    $visitDate = $response['metadata']['visit']['date'];
     $patientID = $response['metadata']['patient']['id'];
     $patientDOB = $response['metadata']['patient']['dob'];
+    //$dateSubmitted = $response['metadata']['dateSubmitted'];
     $selectedAssessments = json_encode($response['assessments']['selected']);
     $assessmentResponses = json_encode($response['assessments']['responses']);
 
     // Escape each string in place to avoid SQL injection
     $userID = $mysqli->real_escape_string($userID);
     $clinicID = $mysqli->real_escape_string($clinicID);
+    $visitDate = $mysqli->real_escape_string($visitDate);
     $patientID = $mysqli->real_escape_string($patientID);
     $patientDOB = $mysqli->real_escape_string($patientDOB);
+    //$dateSubmitted = $mysqli->real_escape_string($dateSubmitted);
     $selectedAssessments = $mysqli->real_escape_string($selectedAssessments);
     $assessmentResponses = $mysqli->real_escape_string($assessmentResponses);
 
@@ -27,6 +31,8 @@
       INSERT INTO `json_response` (
         `user_id`,
         `clinic_id`,
+        `visit_date`,
+        `date_submitted`,
         `patient_id`,
         `patient_dob`,
         `selected_assessments`,
@@ -34,6 +40,8 @@
       ) VALUES (
         '$userID',
         '$clinicID',
+        '$visitDate',
+        NOW(),
         '$patientID',
         '$patientDOB',
         '$selectedAssessments',
@@ -54,8 +62,10 @@
     $responseID = $result['id'];
     $userID = $result['user_id'];
     $clinicID = $result['clinic_id'];
+    $visitDate = $result['visit_date'];
     $patientID = $result['patient_id'];
     $patientDOB = $result['patient_dob'];
+    $dateSubmitted = $result['date_submitted'];
     $selectedAssessments = $result['selected_assessments'];
     $assessmentResponses = $result['assessment_responses'];
 
@@ -73,6 +83,10 @@
           id => $patientID,
           dob => $patientDOB,
         ],
+        visit => [
+          date => $visitDate,
+        ],
+        dateSubmitted => $dateSubmitted,
       ],
       assessments => [
         selected => $selectedAssessments,
