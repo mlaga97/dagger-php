@@ -1,10 +1,43 @@
 <?php
 
+  // TODO: Rewrite this in a much more generic way
   function getSearch($parameters) {
     global $mysqli;
 
     $query = '';
     $search = false;
+
+    if(array_key_exists('visitDateStart', $parameters)) {
+      if($search)
+        $query .= ' AND ';
+
+      $search = true;
+      $query .= 'visit_date >= "' . $mysqli->real_escape_string($parameters['visitDateStart']) . '"';
+    }
+
+    if(array_key_exists('visitDateEnd', $parameters)) {
+      if($search)
+        $query .= ' AND ';
+
+      $search = true;
+      $query .= 'visit_date <= "' . $mysqli->real_escape_string($parameters['visitDateEnd']) . '"';
+    }
+
+    if(array_key_exists('dateSubmittedStart', $parameters)) {
+      if($search)
+        $query .= ' AND ';
+
+      $search = true;
+      $query .= 'date_submitted >= "' . $mysqli->real_escape_string($parameters['dateSubmittedStart']) . '"';
+    }
+
+    if(array_key_exists('dateSubmittedEnd', $parameters)) {
+      if($search)
+        $query .= ' AND ';
+
+      $search = true;
+      $query .= 'date_submitted <= "' . $mysqli->real_escape_string($parameters['dateSubmittedEnd']) . '"';
+    }
 
     if(array_key_exists('userID', $parameters)) {
       if($search)
