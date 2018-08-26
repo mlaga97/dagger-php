@@ -17,7 +17,16 @@
     	$query_clinic = $query_clinic . " FROM response, clinic where pt_id = '$info_store' AND clinic.id = response.clinic_id AND clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by response.assessment_date  DESC";
 
 		$info = $mysqli->query ( $query_clinic );
-		echo "<table border = \"0\"><td>";
+		echo "<table border = \"0\">";
+		echo "<thead>";
+		echo "	<tr>";
+		echo "		<th>&nbsp;</th>";
+		echo " 		<th>Clinic</th>";
+		echo "		<th>Assessment Date</th>";
+		echo "		<th>Assessments Performed</th>";
+		echo "	</tr>";
+		echo "</thead>";
+		echo "<td>";
 		// TODO: Add column headings; Make records clickable, lose the radio button - view button bullshit
 		echo "<tr>";
 		$first = 0;
@@ -37,12 +46,11 @@
 			echo "<input type =\"radio\" input id = \"id\" name =\"search_select\"  value=\"" . $row ['id'] . "\">";
 			echo "</td>";
 
-			echo "<td>";
+			echo "<td style=\"width:160px;\">"; // It's fine.
 			print_r ( $row ['name'] );
 			echo "</td>";
 
-			// TODO: pull assessment_date
-			echo "<td>";
+			echo "<td style=\"width:90px\";>";  // I promise.
 			echo "<p>";
 			echo $row ['assessment_date'];
 			echo "</p>";
