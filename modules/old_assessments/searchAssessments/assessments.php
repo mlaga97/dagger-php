@@ -14,7 +14,7 @@
     	foreach(getConfigKey("edu.usm.dagger.main.searchAssessment.tags") as $key => $value) {
     		$query_clinic = $query_clinic . ', response.' . $key;
     	}
-    	$query_clinic = $query_clinic . " FROM response, clinic where pt_id = '$info_store' AND clinic.id = response.clinic_id AND clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by response.id  DESC";
+    	$query_clinic = $query_clinic . " FROM response, clinic where pt_id = '$info_store' AND clinic.id = response.clinic_id AND clinic_id IN(select clinic_id FROM groups where user_id = '$id_store')order by response.assessment_date  DESC";
 
 		$info = $mysqli->query ( $query_clinic );
 		echo "<table border = \"0\"><td>";
