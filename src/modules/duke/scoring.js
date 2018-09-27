@@ -1,9 +1,13 @@
-function scoreDuke(response) {
+window.scoring.duke = {};
+
+window.scoring.duke.score = function(response) {
 	var r = {};
-	var scores = {};
-	
+  var scores = {};
+
 	// Some preprocessing
-	_(response).each(function(val, key) {
+  Object.keys(response).forEach(function(key) {
+    var val = parseInt(response[key]);
+
 		if(key.match("duke_[0-9]+")) {
 			val = parseInt(val);
 
@@ -14,7 +18,7 @@ function scoreDuke(response) {
 				return false;
 			}
 		}
-	});
+  });
 
 	// Calculate scores
 	scores.physical = (r[8] + r[9] + r[10] + r[11] + r[12]) * 10;
@@ -31,29 +35,30 @@ function scoreDuke(response) {
 	return scores
 }
 
-function renderDuke(scores) {
-	var $container = $('<div/>');
+window.scoring.duke.render = function(scores) {
+  var html = '<div>';
 
-	// TODO: Do better
-	$container.append("<center><h1>Duke Health Profile (The Duke)</h1></center>");
-	$container.append("<center>Copyright &#169; 1989-2005 by the Department of Community and Family Medicine.</center>");
-	$container.append("<center>Duke University Medical Center, Durham, NC, USA </center><br/>");
+  html += '<center><h1>Duke Health Profile (The Duke)</h1></center>';
+  html += '<center>Copyright &#169; 1989-2005 by the Department of Community and Family Medicine.</center>';
+  html += '<center>Duke University Medical Center, Durham, NC, USA </center><br/>';
 
 	if(!scores) {
-		$container.append('<br><br>The assessment was not scored due to incomplete responses.<br>');
+		html += '<br><br>The assessment was not scored due to incomplete responses.<br>';
 	} else {
-		$container.append('Physical Health Score: ' + scores.physical + '<br/>');
-		$container.append('Mental Health Score: ' + scores.mental + '<br/>');
-		$container.append('Social Health Score: ' + scores.social + '<br/>');
-		$container.append('Social Health Score: ' + scores.social + '<br/>');
-		$container.append('General Health Score: ' + scores.general + '<br/>');
-		$container.append('Perceived Health Score: ' + scores.perceived + '<br/>');
-		$container.append('Self-Esteem Score: ' + scores.esteem + '<br/>');
-		$container.append('Anxiety Score: ' + scores.anxiety + '<br/>');
-		$container.append('Depression Score: ' + scores.depression + '<br/>');
-		$container.append('Pain Score: ' + scores.pain + '<br/>');
-		$container.append('Disablity Score: ' + scores.disability + '<br/>');
-	}
+		html += 'Physical Health Score: ' + scores.physical + '<br/>';
+		html += 'Mental Health Score: ' + scores.mental + '<br/>';
+		html += 'Social Health Score: ' + scores.social + '<br/>';
+		html += 'Social Health Score: ' + scores.social + '<br/>';
+		html += 'General Health Score: ' + scores.general + '<br/>';
+		html += 'Perceived Health Score: ' + scores.perceived + '<br/>';
+		html += 'Self-Esteem Score: ' + scores.esteem + '<br/>';
+		html += 'Anxiety Score: ' + scores.anxiety + '<br/>';
+		html += 'Depression Score: ' + scores.depression + '<br/>';
+		html += 'Pain Score: ' + scores.pain + '<br/>';
+		html += 'Disablity Score: ' + scores.disability + '<br/>';
+  }
 
-	return $container;
+  html += '</div>';
+
+	return html;
 }
