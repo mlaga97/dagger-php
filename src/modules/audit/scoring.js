@@ -1,36 +1,39 @@
-// TODO: Substance abuse flag?
-window.scoring.audit = function(r) {
-  result = {};
+window.scoring.audit = {};
 
-  Object.keys(r).forEach(function(key) {
-    r[key] = parseInt(r[key]);
+window.scoring.audit.score = function(response, flags) {
+  result = {};
+  var gender = '';
+
+  Object.keys(response).forEach(function(key) {
+    response[key] = parseInt(response[key]);
   });
 
-	result.valid = (r.audit_1 >= 0) && (r.audit_2 >= 0) && (r.audit_3 >= 0);
+	result.valid = (response.audit_1 >= 0) && (response.audit_2 >= 0) && (response.audit_3 >= 0);
 
 	if(result.valid) {
-		result.score = r.audit_1 + r.audit_2 + r.audit_3;
+		result.score = response.audit_1 + response.audit_2 + response.audit_3;
 
-		// TODO: Find some more reliable way of determining this
-    //if(api.session.demographics_gender) {
-    //	result.gender = api.session.demographics_gender;
-    //} else if(api.session.sex) {
-    //	result.gender = api.session.sex;
-    //} else {
-    //	throw 'Could not determine gender!';
-    //}
-    console.warn('Could not determine gender');
+    if (!flags.gender) {
+      console.warn('Could not determine gender');
+    } else {
+      gender = flags.gender;
+    }
 
-		var scoringThreshold = result.gender == 'Male' ? 4 : 3;
+    // TODO: Verify case
+		var scoringThreshold = gender == 'male' ? 4 : 3;
 
 		if(result.score < scoringThreshold) {
-			result.severity = 'FIXME';
-			result.recommendation = 'The patient DOES NOT show signs of substance abuse.';
+			result.severity = 'The patient DOES NOT show signs of substance abuse.';
+      result.recommendation = 'N/A';
 		} else {
-			result.severity = 'FIXME';
-			result.recommendation = 'The patient shows signs of substance abuse. Refer to a qualified substance abuse professional.';
+			result.severity = 'The patient shows signs of substance abuse.';
+      result.recommendation = 'Refer to a qualified substance abuse professional.';
+      flags.substanceAbuse = true;
 		}
 	}
 
-	return result;
+  return {
+    result,
+    flags,
+  };
 }
