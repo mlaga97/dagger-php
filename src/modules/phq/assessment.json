@@ -7,7 +7,8 @@
 		"description": "Patient Health Questionnaire (PHQ-9) asks questions concerning depression.",
     "tags": [
       "adultonly"
-    ]
+    ],
+    "scorable": true
 	},
 	"scoring": {
 		"reviewAssessment": {
