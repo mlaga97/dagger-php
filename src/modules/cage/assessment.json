@@ -6,7 +6,8 @@
 		"description": "The CAGE is a 4-item, relatively non-confrontational questionnaire for detection of alcoholism.",
     "flags": [
       "adultonly"
-    ]
+    ],
+    "scorable": true
 	},
 	"scoring": {
 		"reviewAssessment": {
