@@ -29,6 +29,19 @@
 		$output['users'] = getClinicUsers($id);
 
 		return $output;
+  }
+
+	function setClinic($id) {
+		global $mysqli;
+    $output = array();
+
+    // TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
+    // TODO: Check to make sure the user is actually allowed to switch to that clinic.
+		if($result = $mysqli->query('UPDATE msihdp.users SET clinic_id=' . $id . ' WHERE id = ' . $_SESSION['user_id'])) {
+			//$output = $result->fetch_assoc();
+    }
+
+		return $output;
 	}
 
 	function listClinicsByID() {
