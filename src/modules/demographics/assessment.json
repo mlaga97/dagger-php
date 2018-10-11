@@ -9,7 +9,7 @@
 			"id": "gender",
 			"text": "Gender",
 			"type": {
-        "class": "radioOptions",
+        "class": "selectOptions",
         "options": {
           "Male": "male",
           "Female": "female",
@@ -23,7 +23,7 @@
       "id": "ethnicity",
       "text": "Ethnicity",
       "type": {
-        "class": "radioOptions",
+        "class": "selectOptions",
         "options": {
           "White/Caucasian": "white",
           "Hispanic/Latino": "latino",
@@ -41,7 +41,7 @@
       "id": "maritalStatus",
       "text": "Marital Status",
       "type": {
-        "class": "radioOptions",
+        "class": "selectOptions",
         "options": {
           "Currently Married": "married",
           "Separated": "separated",
@@ -56,7 +56,7 @@
       "id": "livingArrangements",
       "text": "Living Arrangements",
       "type": {
-        "class": "radioOptions",
+        "class": "selectOptions",
         "options": {
           "with Parents": "withParents",
           "with Family": "withFamily",
@@ -80,7 +80,7 @@
       "id": "education",
       "text": "Education",
       "type": {
-        "class": "radioOptions",
+        "class": "selectOptions",
         "options": {
           "No School": "none",
           "1st Grade": 1,
