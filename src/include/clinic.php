@@ -41,6 +41,9 @@
 			//$output = $result->fetch_assoc();
     }
 
+    // TODO: Handle this elsewhere
+    $_SESSION['clinic_id'] = $id;
+
 		return $output;
 	}
 

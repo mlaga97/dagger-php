@@ -13,7 +13,7 @@
 		['GET', '/clinic', function() {jsonResponse(listClinicIDs());}],
 		['GET', '/clinic/', function() {jsonResponse(listClinicIDs());}],
 		['GET', '/clinic/all', function() {jsonResponse(listClinicsByID());}],
-    ['GET', '/clinic/current', function() {jsonResponse(getClinic($_SESSION['clinic_id']));}],
+    ['GET', '/clinic/current', function() {jsonResponse(getClinic($_SESSION['clinic_id']));}], // TODO: Check the database first
     ['POST', '/clinic/current', function() {
       $requestData = json_decode(file_get_contents('php://input'), true);
       jsonResponse(setClinic($requestData));
