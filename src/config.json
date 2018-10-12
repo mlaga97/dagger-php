@@ -5,8 +5,7 @@
 	"edu.usm.dagger.main.db.database": "msihdp",
 
 	"edu.usm.dagger.main.db.tables": [
-		"users", "groups", "clinic", "response",
-		"scoring", "questions"
+		"users", "groups", "clinic", "json_response"
 	],
 
 	"edu.usm.dagger.main.insert.blacklist": [
@@ -53,14 +52,6 @@
 			"keys": {
 				"user_id": "int(11)",
 				"clinic_id": "int(11)"
-			}
-		},
-		"response": {
-			"keys": {
-				"id": "int(11)",
-				"user_id": "int(11)",
-				"date": "date",
-				"versionString": "varchar(45)"
 			}
 		},
 		"users": {
