@@ -55,9 +55,18 @@
 			'module' => '',
 			'response' => '',
 			'session' => '',
-			'user' => '',
+      'user' => '',
+      'info' => '',
 		));
-	});
+  });
+
+  // Version
+  $router->map('GET', '/info', function() {
+    jsonResponse([
+      versionString => $_SESSION['versionString'],
+      revisionDate => $_SESSION['revisionDate'],
+    ]);
+  });
 
 	// Perform routing
 	$match = $router->match();
