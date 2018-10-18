@@ -1,0 +1,73 @@
+{
+	"metadata": {
+    "id": "mihdp",
+    "title": "Other Information (MIHDP)",
+    "required": true
+	},
+	"questions": [
+		{
+			"id": "hasInsurance",
+			"text": "Insurance",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Yes": "yes",
+          "No": "no",
+          "No response": "noResponse"
+        }
+      }
+		},
+		{
+			"id": "behavioralHealth",
+			"text": "Behavioral Health",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Yes": "yes",
+          "No": "no"
+        }
+      }
+		},
+		{
+			"id": "chronicCare",
+			"text": "Chronic Care",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Yes": "yes",
+          "No": "no"
+        }
+      }
+		},
+		{
+			"id": "nutritionCounseling",
+			"text": "Nutrition Counseling",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Yes": "yes",
+          "No": "no"
+        }
+      }
+		},
+		{
+			"id": "activityType",
+			"text": "Activity Type",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Appointment": "appointment",
+          "Warm Hand Off": "warmHandOff",
+          "Physician Consult": "physicianConsult",
+          "Warm Hand Off and Physician Consult": "warmHandOff+physicianConsult",
+          "Patient Consult": "patientConsult",
+          "Patient Assistance": "patientAssistance",
+          "HCH Screening": "hchScreening",
+          "Phone Call": "phoneCall",
+          "Historical": "historical",
+          "No Show": "noShow"
+        }
+      }
+		}
+  ]
+}
