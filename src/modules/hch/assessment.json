@@ -1,0 +1,31 @@
+{
+	"metadata": {
+    "id": "hchScreening",
+    "tag": "HCH",
+    "title": "HCH Screening"
+	},
+	"questions": [
+		{
+			"id": "applicationType",
+			"text": "Application Type",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Initial": "initial",
+          "Recertification": "recertification"
+        }
+      }
+		},
+		{
+			"id": "hchEligible",
+			"text": "HCH Eligible",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Yes": "yes",
+          "No": "no"
+        }
+      }
+		}
+  ]
+}
