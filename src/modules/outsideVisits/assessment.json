@@ -1,0 +1,88 @@
+{
+	"metadata": {
+    "id": "outsideVisits",
+    "tag": "Outside Visits",
+    "title": "Outside Visits"
+	},
+	"questions": [
+		{
+			"id": "er",
+			"text": "Emergency Room (ER)",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Yes": "yes",
+          "No": "no",
+          "No response": "noResponse"
+        }
+      }
+		},
+		{
+			"id": "erVisitDate",
+			"text": "ER Visit Date",
+			"type": {
+        "class": "dateField"
+      }
+		},
+		{
+			"id": "erVisitReason",
+			"text": "ER Visit Reason",
+			"type": {
+        "class": "textField"
+      }
+		},
+		{
+			"id": "hospital",
+			"text": "Hospital (Not ER)",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Yes": "yes",
+          "No": "no",
+          "No response": "noResponse"
+        }
+      }
+		},
+		{
+			"id": "hospitalVisitDate",
+			"text": "Hospital Visit Date",
+			"type": {
+        "class": "dateField"
+      }
+		},
+		{
+			"id": "hospitalVisitReason",
+			"text": "Hospital Visit Reason",
+			"type": {
+        "class": "textField"
+      }
+		},
+		{
+			"id": "other",
+			"text": "Other Provider",
+			"type": {
+        "class": "selectOptions",
+        "options": {
+          "Yes": "yes",
+          "No": "no",
+          "No response": "noResponse"
+        }
+      }
+		},
+		{
+			"id": "otherVisitDate",
+			"text": "Provider Visit Date",
+			"type": {
+        "class": "dateField"
+      }
+		},
+		{
+			"id": "otherVisitReason",
+			"text": "Provider Visit Reason",
+			"type": {
+        "class": "textField"
+      }
+		}
+
+  ]
+}
