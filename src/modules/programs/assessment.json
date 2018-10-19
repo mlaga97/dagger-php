@@ -1,0 +1,49 @@
+{
+	"metadata": {
+    "id": "programs",
+    "title": "Program Involvement (MIHDP)",
+    "required": true
+	},
+	"types": {
+		"program_checkbox": {
+			"class": "checkboxScale"
+		}
+	},
+	"sections": [
+		{
+			"questions": [
+        {
+          "id": "homeless",
+          "text": "Homeless",
+          "type": "program_checkbox"
+        },
+        {
+          "id": "hepC",
+          "text": "Hepatitus C",
+          "type": "program_checkbox"
+        },
+        {
+          "id": "ryanWhite",
+          "text": "Ryan White",
+          "type": "program_checkbox"
+        },
+        {
+          "id": "other",
+          "text": "Other Program",
+          "type": "program_checkbox"
+        }
+      ]
+    },
+		{
+			"questions": [
+        {
+          "id": "otherValue",
+          "text": "Other Program(s)",
+          "type": {
+            "class": "textField"
+          }
+        }
+      ]
+    }
+  ]
+}
