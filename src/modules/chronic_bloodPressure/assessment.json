@@ -1,0 +1,29 @@
+{
+	"metadata": {
+    "id": "chronic_bloodPressure",
+    "title": "Blood Pressure"
+	},
+  "questions": [
+    {
+      "id": "bloodPressureSystolic",
+      "text": "Systolic",
+      "type": {
+        "class": "textField"
+      }
+    },
+    {
+      "id": "bloodPressureDiastolic",
+      "text": "Diastolic",
+      "type": {
+        "class": "textField"
+      }
+    },
+    {
+      "id": "date",
+      "text": "Date",
+      "type": {
+        "class": "dateField"
+      }
+    }
+  ]
+}

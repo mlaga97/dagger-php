@@ -1,0 +1,22 @@
+{
+	"metadata": {
+    "id": "chronic_a1c",
+    "title": "Hemoglobin A1C"
+	},
+  "questions": [
+    {
+      "id": "hemoglobinA1C",
+      "text": "Hemoglobin A1C (%)",
+      "type": {
+        "class": "textField"
+      }
+    },
+    {
+      "id": "date",
+      "text": "Date",
+      "type": {
+        "class": "dateField"
+      }
+    }
+  ]
+}

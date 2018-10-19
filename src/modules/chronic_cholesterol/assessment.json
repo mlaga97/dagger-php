@@ -1,0 +1,29 @@
+{
+	"metadata": {
+    "id": "chronic_cholesterol",
+    "title": "Cholesterol"
+	},
+  "questions": [
+    {
+      "id": "cholesterolLDL",
+      "text": "LDL Cholesterol (mg/dL)",
+      "type": {
+        "class": "textField"
+      }
+    },
+    {
+      "id": "cholesterolHDL",
+      "text": "HDL Cholesterol (mg/dL)",
+      "type": {
+        "class": "textField"
+      }
+    },
+    {
+      "id": "date",
+      "text": "Date",
+      "type": {
+        "class": "dateField"
+      }
+    }
+  ]
+}

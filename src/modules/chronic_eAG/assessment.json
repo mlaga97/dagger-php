@@ -1,0 +1,22 @@
+{
+	"metadata": {
+    "id": "chronic_eAG",
+    "title": "Blood Sugar eAG"
+	},
+  "questions": [
+    {
+      "id": "bloodSugar_eAG",
+      "text": "Blood Sugar eAG (mg/dL)",
+      "type": {
+        "class": "textField"
+      }
+    },
+    {
+      "id": "date",
+      "text": "Date",
+      "type": {
+        "class": "dateField"
+      }
+    }
+  ]
+}

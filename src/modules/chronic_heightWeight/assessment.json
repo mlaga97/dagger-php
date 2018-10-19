@@ -1,0 +1,29 @@
+{
+	"metadata": {
+    "id": "chronic_heightWeight",
+    "title": "Height and Weight"
+	},
+  "questions": [
+    {
+      "id": "height",
+      "text": "Height (in.)",
+      "type": {
+        "class": "textField"
+      }
+    },
+    {
+      "id": "weight",
+      "text": "Weight (lbs.)",
+      "type": {
+        "class": "textField"
+      }
+    },
+    {
+      "id": "date",
+      "text": "Date",
+      "type": {
+        "class": "dateField"
+      }
+    }
+  ]
+}
