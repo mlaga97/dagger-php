@@ -8,6 +8,7 @@
 		{
 			"id": "hasInsurance",
 			"text": "Insurance",
+      "required": true,
 			"type": {
         "class": "selectOptions",
         "options": {
@@ -20,6 +21,7 @@
 		{
 			"id": "behavioralHealth",
 			"text": "Behavioral Health",
+      "required": true,
 			"type": {
         "class": "selectOptions",
         "options": {
@@ -31,6 +33,7 @@
 		{
 			"id": "chronicCare",
 			"text": "Chronic Care",
+      "required": true,
 			"type": {
         "class": "selectOptions",
         "options": {
@@ -42,6 +45,7 @@
 		{
 			"id": "nutritionCounseling",
 			"text": "Nutrition Counseling",
+      "required": true,
 			"type": {
         "class": "selectOptions",
         "options": {
@@ -53,6 +57,7 @@
 		{
 			"id": "activityType",
 			"text": "Activity Type",
+      "required": true,
 			"type": {
         "class": "selectOptions",
         "options": {

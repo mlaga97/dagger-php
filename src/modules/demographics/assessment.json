@@ -8,6 +8,7 @@
 		{
 			"id": "gender",
 			"text": "Gender",
+      "required": true,
 			"type": {
         "class": "selectOptions",
         "options": {
@@ -22,6 +23,7 @@
     {
       "id": "ethnicity",
       "text": "Ethnicity",
+      "required": true,
       "type": {
         "class": "selectOptions",
         "options": {
@@ -40,6 +42,7 @@
     {
       "id": "maritalStatus",
       "text": "Marital Status",
+      "required": true,
       "type": {
         "class": "selectOptions",
         "options": {
@@ -55,6 +58,7 @@
     {
       "id": "livingArrangements",
       "text": "Living Arrangements",
+      "required": true,
       "type": {
         "class": "selectOptions",
         "options": {
@@ -72,6 +76,7 @@
     {
       "id": "zip",
       "text": "Zip Code",
+      "required": true,
       "type": {
         "class": "textField"
       }
@@ -79,6 +84,7 @@
     {
       "id": "education",
       "text": "Education",
+      "required": true,
       "type": {
         "class": "selectOptions",
         "options": {
