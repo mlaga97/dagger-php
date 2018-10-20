@@ -39,6 +39,7 @@
         {
           "id": "otherValue",
           "text": "Other Program(s)",
+          "width": 12,
           "type": {
             "class": "textField"
           }

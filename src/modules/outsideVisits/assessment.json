@@ -27,6 +27,7 @@
 		{
 			"id": "erVisitReason",
 			"text": "ER Visit Reason",
+      "width": 12,
 			"type": {
         "class": "textField"
       }
@@ -53,13 +54,14 @@
 		{
 			"id": "hospitalVisitReason",
 			"text": "Hospital Visit Reason",
+      "width": 12,
 			"type": {
         "class": "textField"
       }
 		},
 		{
 			"id": "other",
-			"text": "Other Provider",
+			"text": "Other Medical Provider",
 			"type": {
         "class": "selectOptions",
         "options": {
@@ -79,6 +81,7 @@
 		{
 			"id": "otherVisitReason",
 			"text": "Provider Visit Reason",
+      "width": 12,
 			"type": {
         "class": "textField"
       }
