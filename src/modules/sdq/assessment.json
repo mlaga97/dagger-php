@@ -6,7 +6,7 @@
     "overview": "Strengths and Difficulties Questionnaire (SDQ)",
 		"description": "This section contains questions pertaining to the Strengths and Difficulties Questionnaire (SDQ). It is a brief behavioural screening questionnaire about 3-16 year olds.",
     "tags": [
-      "childonly"
+      "childOnly"
     ]
 	},
 	"scoring": {

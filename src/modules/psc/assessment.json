@@ -6,7 +6,7 @@
     "overview": "Pediatric Symptom Checklist (PSC-17)",
 		"description": "The Pediatric Symptom Checklist-17 (PSC-17) is a psychosocial screen designed to facilitate the recognition of cognitive, emotional, and behavioral problems",
     "tags": [
-      "childonly"
+      "childOnly"
     ]
   },
 	"scoring": {
