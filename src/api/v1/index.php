@@ -44,6 +44,7 @@
 	require_once './response.php';
 	require_once './session.php';
 	require_once './user.php';
+	require_once './statistics.php';
 
 	// Documentation route
 	// TODO: Load from modules?
@@ -57,6 +58,7 @@
 			'session' => '',
       'user' => '',
       'info' => '',
+      'statistics' => '',
 		));
   });
 
