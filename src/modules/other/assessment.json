@@ -23,11 +23,7 @@
 			"text": "Behavioral Health",
       "required": true,
 			"type": {
-        "class": "selectOptions",
-        "options": {
-          "Yes": "yes",
-          "No": "no"
-        }
+        "class": "yesNoToggle"
       }
 		},
 		{
@@ -35,11 +31,7 @@
 			"text": "Chronic Care",
       "required": true,
 			"type": {
-        "class": "selectOptions",
-        "options": {
-          "Yes": "yes",
-          "No": "no"
-        }
+        "class": "yesNoToggle"
       }
 		},
 		{
@@ -47,11 +39,7 @@
 			"text": "Nutrition Counseling",
       "required": true,
 			"type": {
-        "class": "selectOptions",
-        "options": {
-          "Yes": "yes",
-          "No": "no"
-        }
+        "class": "yesNoToggle"
       }
 		},
 		{
