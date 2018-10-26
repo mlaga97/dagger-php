@@ -4,7 +4,8 @@
     "tag": "CES-D",
     "title": "CES-D",
     "overview": "Center for Epidemiologic Studies Depression (CES-D) Screening",
-		"description": "The CES-D is a screening test for depression and depressive disorder."
+		"description": "The CES-D is a screening test for depression and depressive disorder.",
+		"scorable": true
 	},
 	"scoring": {
 		"reviewAssessment": {
