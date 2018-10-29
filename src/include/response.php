@@ -13,7 +13,7 @@
     $visitDate = $response['metadata']['visit']['date'];
     $patientID = $response['metadata']['patient']['id'];
     $patientDOB = $response['metadata']['patient']['dob'];
-    //$dateSubmitted = $response['metadata']['dateSubmitted'];
+    $dateSubmitted = $response['metadata']['dateSubmitted']; // TODO: Stop trusting the client
     $selectedAssessments = json_encode($response['assessments']['selected']);
     $assessmentResponses = json_encode($response['assessments']['responses']);
 
@@ -23,7 +23,7 @@
     $visitDate = $mysqli->real_escape_string($visitDate);
     $patientID = $mysqli->real_escape_string($patientID);
     $patientDOB = $mysqli->real_escape_string($patientDOB);
-    //$dateSubmitted = $mysqli->real_escape_string($dateSubmitted);
+    $dateSubmitted = $mysqli->real_escape_string($dateSubmitted); // TODO: Stop trusting the client
     $selectedAssessments = $mysqli->real_escape_string($selectedAssessments);
     $assessmentResponses = $mysqli->real_escape_string($assessmentResponses);
 
@@ -41,7 +41,7 @@
         '$userID',
         '$clinicID',
         '$visitDate',
-        NOW(),
+        '$dateSubmitted',
         '$patientID',
         '$patientDOB',
         '$selectedAssessments',
