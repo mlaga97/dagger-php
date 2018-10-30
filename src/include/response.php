@@ -114,8 +114,8 @@
 		global $mysqli;
 		$output = [];
 
-		if($result = $mysqli->query('SELECT * FROM msihdp.json_response' . $query)) {
-			while($row = $result->fetch_assoc()) {
+		if($result = $mysqli->query('SELECT id, user_id, clinic_id, visit_date, date_submitted, patient_id, patient_dob, selected_assessments FROM msihdp.json_response' . $query)) {
+      while($row = $result->fetch_assoc()) {
         $output[$row['id']] = responseToObject($row);
 			}
 		}
