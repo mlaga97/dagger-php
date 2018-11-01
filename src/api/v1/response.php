@@ -9,17 +9,23 @@
 	});
 
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/include/response.php';
-	require_once $_SERVER['DOCUMENT_ROOT'] . '/include/search.php';
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/include/search.php';
 
 	$router->addRoutes(array(
-		array('GET', '/response', function() {jsonResponse(listResponseIDs(getSearch($_GET) . paginate($_GET)));}),
+    array('GET', '/response', function() {
+      queryMetadata($_GET, listResponseIDs(getSearch($_GET) . paginate($_GET)));
+    }),
     array('POST', '/response', function() {
       $requestData = json_decode(file_get_contents('php://input'), true);
       jsonResponse(postResponse($requestData));
     }),
     array('OPTIONS', '/response', function() {}),
-		array('GET', '/response/', function() {jsonResponse(listResponseIDs(getSearch($_GET) . paginate($_GET)));}),
-		array('GET', '/response/all', function() {jsonResponse(listResponsesByID(getSearch($_GET) . paginate($_GET)));}),
+    array('GET', '/response/', function() {
+      queryMetadata($_GET, listResponseIDs(getSearch($_GET) . paginate($_GET)));
+    }),
+    array('GET', '/response/all', function() {
+      queryMetadata($_GET, listResponsesByID(getSearch($_GET) . paginate($_GET)));
+    }),
 		array('GET', '/response/[:id]', function($id) {jsonResponse(getResponse($id));}),
 	));
 

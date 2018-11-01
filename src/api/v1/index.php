@@ -23,6 +23,22 @@
 	require_once '../../include/json.php';
 	require_once '../../include/AltoRouter/AltoRouter.php';
 
+  // TODO: Move somewhere else
+  function queryMetadata($parameters, $data) {
+    $queryID = $_GET['queryID'];
+
+    if ($queryID) {
+      jsonResponse([
+        queryID => $queryID,
+        params => $_GET,
+        data => $data,
+      ]);
+    } else {
+      // TODO: Deprecate
+      jsonResponse($data);
+    }
+  }
+
 	// Configure altorouter
 	// TODO: Configure basePath automatically
 	$router = new AltoRouter();
@@ -34,7 +50,7 @@
 	// Base routes
 	$router->map('GET', '/', function() {
 		jsonResponse('Welcome to the dagger api!');
-	});
+  });
 
 	// Add assorted routes
 	// TODO: Modularize?
