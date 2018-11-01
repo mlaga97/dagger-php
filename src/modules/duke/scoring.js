@@ -39,29 +39,26 @@ window.scoring.duke.score = function(response, flags) {
 }
 
 window.scoring.duke.render = function(result) {
-  var html = '<div>';
+  var html;
 
-  html += '<center><h1>Duke Health Profile (The Duke)</h1></center>';
-  html += '<center>Copyright &#169; 1989-2005 by the Department of Community and Family Medicine.</center>';
-  html += '<center>Duke University Medical Center, Durham, NC, USA </center><br/>';
+  html = '<table class="table table-scoring table-vertical table-bordered">';
 
 	if(!result) {
-		html += '<br><br>The assessment was not scored due to incomplete responses.<br>';
+		html += '<tr><td>The assessment was not scored due to incomplete responses.</td></tr>';
 	} else {
-		html += 'Physical Health Score: ' + result.physical + '<br/>';
-		html += 'Mental Health Score: ' + result.mental + '<br/>';
-		html += 'Social Health Score: ' + result.social + '<br/>';
-		html += 'Social Health Score: ' + result.social + '<br/>';
-		html += 'General Health Score: ' + result.general + '<br/>';
-		html += 'Perceived Health Score: ' + result.perceived + '<br/>';
-		html += 'Self-Esteem Score: ' + result.esteem + '<br/>';
-		html += 'Anxiety Score: ' + result.anxiety + '<br/>';
-		html += 'Depression Score: ' + result.depression + '<br/>';
-		html += 'Pain Score: ' + result.pain + '<br/>';
-		html += 'Disablity Score: ' + result.disability + '<br/>';
+		html += '<tr><th>Physical Health</th><td>' + result.physical.toFixed(3) + '</td></tr>';
+		html += '<tr><th>Mental Health</th><td>' + result.mental.toFixed(3) + '</td></tr>';
+		html += '<tr><th>Social Health</th><td>' + result.social.toFixed(3) + '</td></tr>';
+		html += '<tr><th>General Health</th><td>' + result.general.toFixed(3) + '</td></tr>';
+		html += '<tr><th>Perceived Health</th><td>' + result.perceived.toFixed(3) + '</td></tr>';
+		html += '<tr><th>Self-Esteem</th><td>' + result.esteem.toFixed(3) + '</td></tr>';
+		html += '<tr><th>Anxiety</th><td>' + result.anxiety.toFixed(3) + '</td></tr>';
+		html += '<tr><th>Depression</th><td>' + result.depression.toFixed(3) + '</td></tr>';
+		html += '<tr><th>Pain</th><td>' + result.pain.toFixed(3) + '</td></tr>';
+		html += '<tr><th>Disablity</th><td>' + result.disability.toFixed(3) + '</td></tr>';
   }
 
-  html += '</div>';
+	html += '</table>';
 
 	return html;
 }
