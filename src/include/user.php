@@ -62,6 +62,8 @@
 			$result->close();
 		}
 
+    // TODO: Deprecate one of these!
+    $output['clinics'] = getUserClinics($id);
 		$output['associations']['clinics'] = getUserClinics($id);
 
 		return $output;
@@ -73,8 +75,11 @@
 
 		if($result = $mysqli->query('SELECT id, uname, university_id, clinic_id, admin, region, state, active, grouping, test_acc, debug FROM msihdp.users')) {
 			while($row = $result->fetch_assoc()) {
-				$output[$row["id"]] = DB2User($row);
+        $output[$row["id"]] = DB2User($row);
+
+        // TODO: Deprecate one of these!
 				$output[$row["id"]]['clinics'] = getUserClinics($row["id"]);
+				$output[$row['id']]['associations']['clinics'] = getUserClinics($row['id']);
 			}
 		}
 
