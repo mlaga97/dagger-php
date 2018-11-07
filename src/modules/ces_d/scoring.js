@@ -22,7 +22,6 @@ window.scoring.ces_d.score = function(response, flags) {
 	if(result.valid) {
 		result.score = score;
 
-
     // TODO: Verify case
 		var scoringThreshold = 16;
 
