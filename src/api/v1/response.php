@@ -5,7 +5,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/include/search.php';
 
 $router->map('OPTIONS', '/response', function() {
   jsonResponse([
-    '/' => 'Show list of valid response IDs',
+    '/' => [
+      'GET' => 'Show list of valid response IDs',
+      'POST' => 'Submit a new response, and return a new response ID',
+    ],
     '/all' => 'Show all response data by response ID',
     '/[:id]' => 'Show response data for a particular response id',
   ]);

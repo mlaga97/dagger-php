@@ -7,6 +7,7 @@ $router->map('OPTIONS', '/user', function() {
     '/' => 'Show list of valid user IDs',
     '/all' => 'Shows all user data by user ID',
     '/[:id]' => 'Shows user data for a particular user ID',
+    '/current' => 'Shows user data for the current user ID',
   ]);
 });
 

@@ -5,6 +5,7 @@
 
 	$router->map('OPTIONS', '/auth', function() {
 		jsonResponse([
+			'/' => 'Check authentication status',
 			'/login' => 'Login with username and password',
 			'/logout' => 'Logout',
 		]);

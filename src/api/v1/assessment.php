@@ -7,7 +7,7 @@ $router->map('OPTIONS', '/assessment', function() {
     '/' => 'Show list of valid assessment classes',
     '/all' => 'Show data for all assessment classes',
     '/short' => 'Show metadata for all assessment classes',
-    '/[:class]' => 'Show data for a particular assessment class',
+    '/[:id]' => 'Show data for a particular assessment class',
   ]);
 });
 

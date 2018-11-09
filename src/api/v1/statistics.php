@@ -2,7 +2,7 @@
 
   $router->map('OPTIONS', '/statistics', function() {
     jsonResponse([
-      '/' => '',
+      '/user' => 'Get user statistics.',
     ]);
   });
 

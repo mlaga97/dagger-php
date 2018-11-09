@@ -7,6 +7,10 @@ $router->map('OPTIONS', '/clinic', function() {
     '/' => 'Show list of valid clinic IDs',
     '/all' => 'Show all clinic data by clinic ID',
     '/[:id]' => 'Show clinic data for a particular clinic ID',
+    '/current' => [
+      'GET' => 'Show clinic data for the current clinic ID',
+      'POST' => 'Update the current clinic ID',
+    ],
   ]);
 });
 
