@@ -4,11 +4,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/include/response.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/include/search.php';
 
 $router->map('OPTIONS', '/response', function() {
-  jsonResponse(array(
+  jsonResponse([
     '/' => 'Show list of valid response IDs',
     '/all' => 'Show all response data by response ID',
     '/[:id]' => 'Show response data for a particular response id',
-  ));
+  ]);
 });
 
 $router->map('GET', '/response', function() {

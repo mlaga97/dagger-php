@@ -1,15 +1,15 @@
 <?php
 
   $router->map('OPTIONS', '/statistics', function() {
-    jsonResponse(array(
+    jsonResponse([
       '/' => '',
-    ));
+    ]);
   });
 
   // TODO: Replace this entirely, or at least fix it.
   $router->map('GET', '/statistics/user', function() {
     global $mysqli;
-    $output = array();
+    $output = [];
 
     $userID = $_SESSION['user_id'];
 

@@ -17,7 +17,7 @@
 	}
 
 	// Check database tables
-	$tables = array();
+	$tables = [];
 	$tablesResult = $mysqli->query("SHOW TABLES");
 	while($row = $tablesResult->fetch_assoc()) {
 		foreach($row as $key => $value) {
@@ -41,7 +41,7 @@
 		$tableFieldResult = $mysqli->query('SELECT column_name FROM information_schema.columns WHERE table_schema = "' . getConfigKey("edu.usm.dagger.main.db.database") . '" AND table_name = "' . $tableName . '";');
 
 		// Iterate into array
-		$fields = array();
+		$fields = [];
 		while($row = $tableFieldResult->fetch_assoc()) {
 			array_push($fields, $row['column_name']);
 		}

@@ -5,12 +5,12 @@
 	function DB2User($userRow) {
 
 		// Add structure
-		$user = array();
-		$user['flags'] = array();
-		$user['login'] = array();
-		$user['associations'] = array();
-		$user['associations']['groups'] = array();
-		$user['associations']['clinics'] = array();
+		$user = [];
+		$user['flags'] = [];
+		$user['login'] = [];
+		$user['associations'] = [];
+		$user['associations']['groups'] = [];
+		$user['associations']['clinics'] = [];
 
 		// Primary Key
 		$user['id'] = $userRow['id'];
@@ -39,7 +39,7 @@
 
 	function getUserClinics($id) {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
 		// TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
 		if($result = $mysqli->query('SELECT clinic_id FROM msihdp.groups WHERE user_id = ' . $id)) {
@@ -53,7 +53,7 @@
 
 	function getUser($id) {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
 		// Get user
 		// TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
@@ -71,7 +71,7 @@
 
 	function listUsersByID() {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
 		if($result = $mysqli->query('SELECT id, uname, university_id, clinic_id, admin, region, state, active, grouping, test_acc, debug FROM msihdp.users')) {
 			while($row = $result->fetch_assoc()) {
@@ -88,7 +88,7 @@
 
 	function listUserIDs() {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
 		if($result = $mysqli->query('SELECT id FROM msihdp.users')) {
 			while($row = $result->fetch_assoc()) {

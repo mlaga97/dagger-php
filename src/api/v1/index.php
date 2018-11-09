@@ -81,7 +81,7 @@
 	// Documentation route
 	// TODO: Load from modules?
 	$router->map('OPTIONS', '/', function() {
-		jsonResponse(array(
+		jsonResponse([
 			'assessment' => '',
 			'auth' => '',
 			'clinic' => '',
@@ -91,7 +91,7 @@
       'user' => '',
       'info' => '',
       'statistics' => '',
-		));
+		]);
   });
 
   // Version

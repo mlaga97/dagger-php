@@ -3,11 +3,11 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/include/user.php';
 
 $router->map('OPTIONS', '/user', function() {
-  jsonResponse(array(
+  jsonResponse([
     '/' => 'Show list of valid user IDs',
     '/all' => 'Shows all user data by user ID',
     '/[:id]' => 'Shows user data for a particular user ID',
-  ));
+  ]);
 });
 
 $router->map('GET', '/user', function() {

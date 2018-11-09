@@ -49,7 +49,7 @@
 	 * @return array Array of individual configuration data loaded.
 	 */
 	function getUnmergedConfig($filename = 'config.json') {
-		$config = array();
+		$config = [];
 
 		if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $filename)) {
 			$path = $_SERVER['DOCUMENT_ROOT'] . '/' . $filename;
@@ -81,7 +81,7 @@
 	 * @return array Array of all configuration data loaded.
 	 */
 	function getConfig($filename = 'config.json') {
-		$config = array();
+		$config = [];
 
 		// TODO: SHOULD we error if /config.json is missing? If so, where is appropriate?
 		if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $filename)) {
@@ -114,7 +114,7 @@
 		if( array_key_exists($key, $config)) {
 			return $config[$key];
 		} else {
-			return array();
+			return [];
 		}
 	}
 

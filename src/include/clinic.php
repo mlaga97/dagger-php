@@ -4,7 +4,7 @@
 
 	function getClinicUsers($id) {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
 		// TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
 		if($result = $mysqli->query('SELECT user_id FROM msihdp.groups WHERE clinic_id = ' . $id)) {
@@ -18,7 +18,7 @@
 
 	function getClinic($id) {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
 		// TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
 		if($result = $mysqli->query('SELECT id, name, city, state FROM msihdp.clinic WHERE id = ' . $id)) {
@@ -33,7 +33,7 @@
 
 	function setClinic($id) {
 		global $mysqli;
-    $output = array();
+    $output = [];
 
     // TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
     // TODO: Check to make sure the user is actually allowed to switch to that clinic.
@@ -49,7 +49,7 @@
 
 	function listClinicsByID() {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
 		if($result = $mysqli->query('SELECT id, name, city, state FROM msihdp.clinic')) {
 			while($row = $result->fetch_assoc()) {
@@ -63,7 +63,7 @@
 
 	function listClinicIDs() {
 		global $mysqli;
-		$output = array();
+		$output = [];
 
 		if($result = $mysqli->query('SELECT id FROM msihdp.clinic')) {
 			while($row = $result->fetch_assoc()) {

@@ -4,10 +4,10 @@
 	// TODO: Reload user settings?
 
 	$router->map('OPTIONS', '/auth', function() {
-		jsonResponse(array(
+		jsonResponse([
 			'/login' => 'Login with username and password',
 			'/logout' => 'Logout',
-		));
+		]);
 	});
 
 	// Present a limited feature set if the user is not logged in

@@ -48,7 +48,7 @@
 	 * @return array List of all currently installed modules.
 	 */
 	function moduleList() {
-		return array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/"), array('..', '.'));
+		return array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/"), ['..', '.']);
 	}
 
 	/**
@@ -59,9 +59,9 @@
 	 * @return array List of all keys provided by the module in question.
 	 */
 	function moduleProvides($module) {
-		$raw = array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module), array('..', '.'));
+		$raw = array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module), ['..', '.']);
 
-		$processed = array();
+		$processed = [];
 		foreach($raw as $file) {
 			if(is_dir($_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module . '/' . $file)) {
 				array_push($processed, $file);
@@ -77,7 +77,7 @@
 	 * @return array List of all available keys.
 	 */
 	function moduleListKeys() {
-		$keyList = array();
+		$keyList = [];
 
 		foreach(moduleList() as $module) {
 			foreach(moduleProvides($module) as $key) {
@@ -96,7 +96,7 @@
 	 * @return array List of all modules which provide the key in question.
 	 */
 	function moduleListProviders($key) {
-		$providerList = array();
+		$providerList = [];
 
 		foreach(moduleList() as $module) {
 			if(in_array($key, moduleProvides($module))) {
@@ -115,11 +115,11 @@
 	 * @return array List of filenames associated with the key in question.
 	 */
 	function moduleListFiles($key) {
-		$files = array();
+		$files = [];
 
 		foreach(moduleListProviders($key) as $module) {
 			$providerPath = $_SERVER['DOCUMENT_ROOT'] . "/modules/" . $module . '/' . $key;
-			$files = array_merge($files, array_diff(scandir($providerPath), array('..', '.')));
+			$files = array_merge($files, array_diff(scandir($providerPath), ['..', '.']));
 		}
 
 		// Remove all but '.php'
@@ -142,10 +142,10 @@
 	 * @return array List of paths to files associated with the key in question.
 	 */
 	function moduleListPaths($key) {
-		$paths = array();
+		$paths = [];
 
 		foreach(moduleListFiles($key) as $file) {
-			$paths = array_merge($paths, array_diff(glob($_SERVER['DOCUMENT_ROOT'] . "/modules/*/" . $key . '/' . $file), array('..', '.')));
+			$paths = array_merge($paths, array_diff(glob($_SERVER['DOCUMENT_ROOT'] . "/modules/*/" . $key . '/' . $file), ['..', '.']));
 		}
 
 		return $paths;
@@ -163,11 +163,11 @@
 	}
 
 	function moduleFiles($provider) {
-		$output = array();
+		$output = [];
 		foreach(moduleProvides($provider) as $key) {
-			$output[$key] = array();
+			$output[$key] = [];
 
-			$files = array_diff(scandir("/var/www/html/modules/" . $provider . '/' . $key), array('..', '.'));
+			$files = array_diff(scandir("/var/www/html/modules/" . $provider . '/' . $key), ['..', '.']);
 
 			foreach($files as $file) {
 				$path = '/var/www/html/modules/' . $provider . '/' . $key . '/' . $file;
@@ -179,7 +179,7 @@
 	}
 
 	function moduleListTruncatedPaths($key) {
-		$output = array();
+		$output = [];
 
 		foreach(moduleListPaths($key) as $path) {
 			$explodedPath = explode('/', $path);

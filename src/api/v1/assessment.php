@@ -3,12 +3,12 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/include/assessment.php';
 
 $router->map('OPTIONS', '/assessment', function() {
-  jsonResponse(array(
+  jsonResponse([
     '/' => 'Show list of valid assessment classes',
     '/all' => 'Show data for all assessment classes',
     '/short' => 'Show metadata for all assessment classes',
     '/[:class]' => 'Show data for a particular assessment class',
-  ));
+  ]);
 });
 
 $router->map('GET', '/assessment', function() {
