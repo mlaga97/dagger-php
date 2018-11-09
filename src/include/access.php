@@ -31,7 +31,7 @@
 			$_SESSION['status'] = 'authorized';
 			return true;
 		} else {
-			return "Please enter a correct username and password.";
+			return "Incorrect username or password.";
 		}
 	}
 

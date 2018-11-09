@@ -24,8 +24,8 @@
 			$postData = json_decode(file_get_contents("php://input"), true);
 			$response = login($postData['username'], $postData['password']);
 
-			if(getType($response) == 'string') {
-				jsonResponse('Authentication failed!');
+      if(getType($response) == 'string') {
+        jsonResponse($response);
 			} else {
         jsonResponse([
           'message' => 'Authentication succeeded',
