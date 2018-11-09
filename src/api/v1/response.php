@@ -2,6 +2,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/include/response.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/include/search.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/include/paginate.php';
 
 $router->map('OPTIONS', '/response', function() {
   jsonResponse([
