@@ -27,8 +27,18 @@ $router->map('GET', '/user/current', function() {
   jsonResponse(getUser($_SESSION['user_id']));
 });
 
+$router->map('POST', '/user/current/password', function() {
+  $requestData = json_decode(file_get_contents('php://input'), true);
+  jsonResponse(changePassword($_SESSION['user_id'], $requestData['password'], $requestData['newPassword']));
+});
+
 $router->map('GET', '/user/[:id]', function($id) {
   jsonResponse(getUser($id));
+});
+
+$router->map('POST', '/user/[:id]/password', function($id) {
+  $requestData = json_decode(file_get_contents('php://input'), true);
+  jsonResponse(changePassword($id, $requestData['password'], $requestData['newPassword']));
 });
 
 ?>

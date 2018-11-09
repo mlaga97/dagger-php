@@ -17,6 +17,39 @@ function updatePassword($userID, $password) {
 }
 
 /**
+ * Change the password for the given userid.
+ * 
+ * @param string $userID
+ * @param string $password Password of the user performing the modification.
+ * @param string $newPassword Password to assign to the user specified.
+ */
+function changePassword($userID, $password, $newPassword) {
+  global $log, $mysqli;
+
+  $currentUserID = $_SESSION['user_id'];
+  $query = "SELECT admin, pswd FROM users WHERE id='$currentUserID'";
+  $results = $mysqli->query($query);
+
+  // Check that there is exactly one matching user
+  if ($results && $results->num_rows === 1) {
+    $currentUser = $results->fetch_assoc();
+
+    if (!password_verify($password, $currentUser['pswd'])) {
+      return 'Incorrect user password.';
+    }
+
+    if ($currentUserID === $userID || $currentUser['admin']) {
+      updatePassword($userID, $newPassword);
+      return true;
+    }
+
+    return 'Unauthorized.';
+  }
+
+  return 'Incorrect username.';
+}
+
+/**
  * Attempts to login with username and password.
  * 
  * If the login attempt fails, an error message will be returned, otherwise
