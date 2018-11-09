@@ -1,72 +1,72 @@
 {
-	"edu.usm.dagger.main.db.server": "db",
-	"edu.usm.dagger.main.db.user": "hho",
-	"edu.usm.dagger.main.db.password": "tommymyson",
-	"edu.usm.dagger.main.db.database": "msihdp",
+  "edu.usm.dagger.main.db.server": "db",
+  "edu.usm.dagger.main.db.user": "hho",
+  "edu.usm.dagger.main.db.password": "tommymyson",
+  "edu.usm.dagger.main.db.database": "msihdp",
 
-	"edu.usm.dagger.main.db.tables": [
-		"users", "groups", "clinic", "json_response"
-	],
+  "edu.usm.dagger.main.db.tables": [
+    "users", "groups", "clinic", "json_response"
+  ],
 
-	"edu.usm.dagger.main.insert.blacklist": [
-		"id", "university_id", "admin", "grouping", "test_acc", "status", "previous", "date", "debug",
-		"search_select", "contact_date", "entry_date", "contact_outcome", "outcome_other", "contact_reason", "reason_other"
-	],
+  "edu.usm.dagger.main.insert.blacklist": [
+    "id", "university_id", "admin", "grouping", "test_acc", "status", "previous", "date", "debug",
+    "search_select", "contact_date", "entry_date", "contact_outcome", "outcome_other", "contact_reason", "reason_other"
+  ],
 
-	"edu.usm.dagger.main.preassessment.keysToKeep": [
-		"user_id", "clinic_id", "admin", "university_id",
-		"grouping", "status", "previous", "test_acc"
-	],
+  "edu.usm.dagger.main.preassessment.keysToKeep": [
+    "user_id", "clinic_id", "admin", "university_id",
+    "grouping", "status", "previous", "test_acc"
+  ],
 
-	"edu.usm.dagger.main.assessment.dontReset": [
-		"id", "uname", "pswd", "university_id",
-		"clinic_id", "status", "user_id",
-		"previous", "admin", "grouping",
-		"versionString", "revisionDate", "debug"
-	],
+  "edu.usm.dagger.main.assessment.dontReset": [
+    "id", "uname", "pswd", "university_id",
+    "clinic_id", "status", "user_id",
+    "previous", "admin", "grouping",
+    "versionString", "revisionDate", "debug"
+  ],
 
-	"edu.usm.dagger.main.login.user.keys": [
-		"university_id", "clinic_id", "admin", "grouping", "test_acc", "debug"
-	],
+  "edu.usm.dagger.main.login.user.keys": [
+    "university_id", "clinic_id", "admin", "grouping", "test_acc", "debug"
+  ],
 
-	"edu.usm.dagger.main.insert.whitelist": [
-		"id", "user_id", "date", "versionString"
-	],
+  "edu.usm.dagger.main.insert.whitelist": [
+    "id", "user_id", "date", "versionString"
+  ],
 
-	"edu.usm.dagger.main.insert.deprecate": [
-	],
+  "edu.usm.dagger.main.insert.deprecate": [
+  ],
 
-	"edu.usm.dagger.main.insert.transform": {
-	},
+  "edu.usm.dagger.main.insert.transform": {
+  },
 
-	"edu.usm.dagger.dbConfig.tables": {
-		"clinic": {
-			"keys": {
-				"id": "int",
-				"name": "varchar(45)",
-				"city": "varchar(45)",
-				"state": "varchar(45)"
-			}
-		},
-		"groups": {
-			"keys": {
-				"user_id": "int(11)",
-				"clinic_id": "int(11)"
-			}
-		},
-		"users": {
-			"keys": {
-				"id": "int",
-				"name": "varchar(2000)",
-				"uname": "varchar(45)",
-				"pswd": "varchar(45)",
-				"admin": "tinyint",
-				"employee_id": "varchar(30)",
-				"active": "tinyint",
-				"grouping": "tinyint",
-				"test_acc": "tinyint",
-				"debug": "tinyint"
-			}
-		}
-	}
+  "edu.usm.dagger.dbConfig.tables": {
+    "clinic": {
+      "keys": {
+        "id": "int",
+        "name": "varchar(45)",
+        "city": "varchar(45)",
+        "state": "varchar(45)"
+      }
+    },
+    "groups": {
+      "keys": {
+        "user_id": "int(11)",
+        "clinic_id": "int(11)"
+      }
+    },
+    "users": {
+      "keys": {
+        "id": "int",
+        "name": "varchar(2000)",
+        "uname": "varchar(45)",
+        "pswd": "varchar(45)",
+        "admin": "tinyint",
+        "employee_id": "varchar(30)",
+        "active": "tinyint",
+        "grouping": "tinyint",
+        "test_acc": "tinyint",
+        "debug": "tinyint"
+      }
+    }
+  }
 }

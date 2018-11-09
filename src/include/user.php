@@ -1,101 +1,103 @@
 <?php
-	// Set up database
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/include/db.php');
 
-	function DB2User($userRow) {
+// Set up database
+require_once($_SERVER['DOCUMENT_ROOT'] . '/include/db.php');
 
-		// Add structure
-		$user = [];
-		$user['flags'] = [];
-		$user['login'] = [];
-		$user['associations'] = [];
-		$user['associations']['groups'] = [];
-		$user['associations']['clinics'] = [];
+function DB2User($userRow) {
 
-		// Primary Key
-		$user['id'] = $userRow['id'];
+  // Add structure
+  $user = [];
+  $user['flags'] = [];
+  $user['login'] = [];
+  $user['associations'] = [];
+  $user['associations']['groups'] = [];
+  $user['associations']['clinics'] = [];
 
-		// Login
-		$user['login']['active'] = $userRow['active'];
-		$user['login']['username'] = $userRow['uname'];
-		//$user['login']['password'] = $userRow['pswd'];
+  // Primary Key
+  $user['id'] = $userRow['id'];
 
-		// Associations
-		// TODO: Fold 'grouping' and 'university' both into 'groups'
-		$user['associations']['grouping'] = $userRow['grouping'];
-		$user['associations']['university'] = $userRow['university_id'];
+  // Login
+  $user['login']['active'] = $userRow['active'];
+  $user['login']['username'] = $userRow['uname'];
+  //$user['login']['password'] = $userRow['pswd'];
 
-		// Flags
-		$user['flags']['admin'] = $userRow['admin'];
-		$user['flags']['debug'] = $userRow['debug'];
-		$user['flags']['tester'] = $userRow['test_acc'];
+  // Associations
+  // TODO: Fold 'grouping' and 'university' both into 'groups'
+  $user['associations']['grouping'] = $userRow['grouping'];
+  $user['associations']['university'] = $userRow['university_id'];
 
-		// Special Flags
-		if($_SESSION['user_id'] == $user['id'])
-			$user['flags']['currentUser'] = true;
+  // Flags
+  $user['flags']['admin'] = $userRow['admin'];
+  $user['flags']['debug'] = $userRow['debug'];
+  $user['flags']['tester'] = $userRow['test_acc'];
 
-		return $user;
-	}
+  // Special Flags
+  if($_SESSION['user_id'] == $user['id'])
+    $user['flags']['currentUser'] = true;
 
-	function getUserClinics($id) {
-		global $mysqli;
-		$output = [];
+  return $user;
+}
 
-		// TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
-		if($result = $mysqli->query('SELECT clinic_id FROM msihdp.groups WHERE user_id = ' . $id)) {
-			while($row = $result->fetch_assoc()) {
-				array_push($output, $row['clinic_id']);
-			}
-		}
+function getUserClinics($id) {
+  global $mysqli;
+  $output = [];
 
-		return $output;
-	}
+  // TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
+  if($result = $mysqli->query('SELECT clinic_id FROM msihdp.groups WHERE user_id = ' . $id)) {
+    while($row = $result->fetch_assoc()) {
+      array_push($output, $row['clinic_id']);
+    }
+  }
 
-	function getUser($id) {
-		global $mysqli;
-		$output = [];
+  return $output;
+}
 
-		// Get user
-		// TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
-		if($result = $mysqli->query('SELECT id, uname, university_id, clinic_id, admin, region, state, active, grouping, test_acc, debug FROM msihdp.users WHERE id = "' . $id . '" OR uname = "' . $id . '"')) {
-			$output = DB2User($result->fetch_assoc());
-			$result->close();
-		}
+function getUser($id) {
+  global $mysqli;
+  $output = [];
 
-    // TODO: Deprecate one of these!
-    $output['clinics'] = getUserClinics($id);
-		$output['associations']['clinics'] = getUserClinics($id);
+  // Get user
+  // TODO: USE PREPARED STATEMENTS TO AVOID SQL INJECTION
+  if($result = $mysqli->query('SELECT id, uname, university_id, clinic_id, admin, region, state, active, grouping, test_acc, debug FROM msihdp.users WHERE id = "' . $id . '" OR uname = "' . $id . '"')) {
+    $output = DB2User($result->fetch_assoc());
+    $result->close();
+  }
 
-		return $output;
-	}
+  // TODO: Deprecate one of these!
+  $output['clinics'] = getUserClinics($id);
+  $output['associations']['clinics'] = getUserClinics($id);
 
-	function listUsersByID() {
-		global $mysqli;
-		$output = [];
+  return $output;
+}
 
-		if($result = $mysqli->query('SELECT id, uname, university_id, clinic_id, admin, region, state, active, grouping, test_acc, debug FROM msihdp.users')) {
-			while($row = $result->fetch_assoc()) {
-        $output[$row["id"]] = DB2User($row);
+function listUsersByID() {
+  global $mysqli;
+  $output = [];
 
-        // TODO: Deprecate one of these!
-				$output[$row["id"]]['clinics'] = getUserClinics($row["id"]);
-				$output[$row['id']]['associations']['clinics'] = getUserClinics($row['id']);
-			}
-		}
+  if($result = $mysqli->query('SELECT id, uname, university_id, clinic_id, admin, region, state, active, grouping, test_acc, debug FROM msihdp.users')) {
+    while($row = $result->fetch_assoc()) {
+      $output[$row["id"]] = DB2User($row);
 
-		return $output;
-	}
+      // TODO: Deprecate one of these!
+      $output[$row["id"]]['clinics'] = getUserClinics($row["id"]);
+      $output[$row['id']]['associations']['clinics'] = getUserClinics($row['id']);
+    }
+  }
 
-	function listUserIDs() {
-		global $mysqli;
-		$output = [];
+  return $output;
+}
 
-		if($result = $mysqli->query('SELECT id FROM msihdp.users')) {
-			while($row = $result->fetch_assoc()) {
-				array_push($output, $row["id"]);
-			}
-		}
+function listUserIDs() {
+  global $mysqli;
+  $output = [];
 
-		return $output;
-	}
+  if($result = $mysqli->query('SELECT id FROM msihdp.users')) {
+    while($row = $result->fetch_assoc()) {
+      array_push($output, $row["id"]);
+    }
+  }
+
+  return $output;
+}
+
 ?>
