@@ -37,23 +37,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/include/access.php');
 
 // Load libraries
 require_once '../../include/json.php';
+require_once '../../include/queryMetadata.php';
 require_once '../../include/AltoRouter/AltoRouter.php';
-
-// TODO: Move somewhere else
-function queryMetadata($parameters, $data) {
-  $queryID = $_GET['queryID'];
-
-  if ($queryID) {
-    jsonResponse([
-      queryID => $queryID,
-      params => $_GET,
-      data => $data,
-    ]);
-  } else {
-    // TODO: Deprecate
-    jsonResponse($data);
-  }
-}
 
 // Configure altorouter
 // TODO: Configure basePath automatically
