@@ -15,12 +15,12 @@ $router->map('GET', '/assessment', function() {
   jsonResponse(getAssessmentList());
 });
 
-$router->map('GET', '/assessment/short', function() {
-  jsonResponse(getAssessmentMetadata());
-});
-
 $router->map('GET', '/assessment/all', function() {
   jsonResponse(getAssessments());
+});
+
+$router->map('GET', '/assessment/short', function() {
+  jsonResponse(getAssessmentMetadata());
 });
 
 $router->map('GET', '/assessment/[:id]', function($id) {

@@ -15,16 +15,13 @@ $router->map('GET', '/response', function() {
   queryMetadata($_GET, listResponseIDs(getSearch($_GET) . paginate($_GET)));
 });
 
+$router->map('GET', '/response/', function() {
+  queryMetadata($_GET, listResponseIDs(getSearch($_GET) . paginate($_GET)));
+});
+
 $router->map('POST', '/response', function() {
   $requestData = json_decode(file_get_contents('php://input'), true);
   jsonResponse(postResponse($requestData));
-});
-
-$router->map('OPTIONS', '/response', function() {
-});
-
-$router->map('GET', '/response/', function() {
-  queryMetadata($_GET, listResponseIDs(getSearch($_GET) . paginate($_GET)));
 });
 
 $router->map('GET', '/response/all', function() {
