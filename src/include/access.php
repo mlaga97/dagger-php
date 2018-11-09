@@ -1,6 +1,22 @@
 <?php
 
 /**
+ * Updates the password for the given userID.
+ * 
+ * @param string $userID
+ * @param string $password
+ */
+function updatePassword($userID, $password) {
+  global $log, $mysqli;
+
+  $hash = password_hash($password, PASSWORD_BCRYPT);
+
+  // We use $userID because MySQL doesn't like updates on non-key fields (i.e. uname)
+  $query = "UPDATE users SET pswd='$hash' WHERE id='$userID'";
+  $results = $mysqli->query($query);
+}
+
+/**
  * Attempts to login with username and password.
  * 
  * If the login attempt fails, an error message will be returned, otherwise
@@ -10,29 +26,43 @@
  * @param string $username
  * @param string $password
  * 
- * @return string|null Returns error string if login failed.
+ * @return string|boolean Returns error string if login failed.
  */
 function login($username, $password) {
   global $log, $mysqli;
 
-  $query = 'SELECT ';
-  foreach(getConfigKey("edu.usm.dagger.main.login.user.keys") as $key) {
-    $query .= $key . ', ';
-  }
-  $query .= 'users.id AS user_id FROM users WHERE uname = "' . $mysqli->real_escape_string($username) . '" AND pswd = "' . $mysqli->real_escape_string($password) . '" AND active = 1 LIMIT 1';
-
+  $username = $mysqli->real_escape_string($username);
+  $query = "SELECT *, id as user_id FROM users WHERE uname='$username'";
   $results = $mysqli->query($query);
 
-  if($results && $results->num_rows === 1) {
-    foreach($results->fetch_assoc() as $key => $value) {
-      $_SESSION[$key] = $value;
+  // Check that there is exactly one matching user
+  if ($results && $results->num_rows === 1) {
+    $user = $results->fetch_assoc();
+
+    // Check for unhashed password
+    // TODO: Remove, eventually.
+    if (substr($user['pswd'], 0, 2) !== '$2') {
+      if ($user['pswd'] === $password) {
+        updatePassword($user['id'], $user['pswd']);
+        return login($username, $password);
+      }
     }
 
-    $_SESSION['status'] = 'authorized';
-    return true;
-  } else {
-    return "Incorrect username or password.";
+    // Verify that the password matches the hash 
+    if (password_verify($password, $user['pswd'])) {
+      $_SESSION['status'] = 'authorized';
+
+      // Don't store the hash in $_SESSION
+      unset($user['pswd']);
+      foreach($user as $key => $value) {
+        $_SESSION[$key] = $value;
+      }
+
+      return true;
+    }
   }
+
+  return 'Incorrect username or password.';
 }
 
 ?>
