@@ -29,9 +29,9 @@
         jsonResponse($response);
 			} else {
         jsonResponse([
+          'userID' => $_SESSION['user_id'],
           'message' => 'Authentication succeeded',
           'success' => true,
-          'userID' => $_SESSION['user_id'],
         ]);
 			}
 		});
@@ -55,9 +55,9 @@
 
 	$router->map('POST', '/auth/login', function() {
     jsonResponse([
+      'userID' => $_SESSION['id'],
       'message' => 'Already logged in!',
       'success' => false,
-      'userID' => $_SESSION['id'],
     ]);
 	});
 

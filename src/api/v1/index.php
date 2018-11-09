@@ -70,26 +70,26 @@
 
 	// Add assorted routes
 	// TODO: Modularize?
-	require_once './assessment.php';
+	require_once './user.php';
 	require_once './clinic.php';
 	require_once './module.php';
-	require_once './response.php';
 	require_once './session.php';
-	require_once './user.php';
+	require_once './response.php';
+	require_once './assessment.php';
 	require_once './statistics.php';
 
 	// Documentation route
 	// TODO: Load from modules?
 	$router->map('OPTIONS', '/', function() {
 		jsonResponse([
-			'assessment' => '',
 			'auth' => '',
+      'info' => '',
+      'user' => '',
 			'clinic' => '',
 			'module' => '',
-			'response' => '',
 			'session' => '',
-      'user' => '',
-      'info' => '',
+			'response' => '',
+			'assessment' => '',
       'statistics' => '',
 		]);
   });
@@ -97,8 +97,8 @@
   // Version
   $router->map('GET', '/info', function() {
     jsonResponse([
-      versionString => $_SESSION['versionString'],
       revisionDate => $_SESSION['revisionDate'],
+      versionString => $_SESSION['versionString'],
     ]);
   });
 

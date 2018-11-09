@@ -16,8 +16,8 @@
 
 	$router->map('OPTIONS', '/module/key', function() {
 		jsonResponse([
-			'/key' => '',
 			'/all' => '',
+			'/key' => '',
 			'/list' => '',
 			'/[:key]' => '',
 			'/[:key]/files' => '',
@@ -52,9 +52,9 @@
 
 	$router->map('OPTIONS', '/module/provider', function() {
 		jsonResponse([
-			'/provider' => '',
 			'/all' => '',
 			'/list' => '',
+			'/provider' => '',
 			'/[:provider]' => '',
 			'/[:provider]/load' => '',
 			'/[:provider]/files' => '',
