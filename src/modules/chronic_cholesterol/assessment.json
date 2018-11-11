@@ -17,7 +17,7 @@
     {
       "id": "cholesterolHDL",
       "min": "15",
-      "max": "1300",
+      "max": "250",
       "step": "1.0",
       "text": "HDL Cholesterol (mg/dL)",
       "type": {
