@@ -6,16 +6,22 @@
   "questions": [
     {
       "id": "cholesterolLDL",
+      "min": "15",
+      "max": "1300",
+      "step": "1.0",
       "text": "LDL Cholesterol (mg/dL)",
       "type": {
-        "class": "textField"
+        "class": "numberField"
       }
     },
     {
       "id": "cholesterolHDL",
+      "min": "15",
+      "max": "1300",
+      "step": "1.0",
       "text": "HDL Cholesterol (mg/dL)",
       "type": {
-        "class": "textField"
+        "class": "numberField"
       }
     },
     {
