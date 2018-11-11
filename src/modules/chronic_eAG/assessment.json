@@ -6,9 +6,12 @@
   "questions": [
     {
       "id": "bloodSugar_eAG",
+      "min": "20",
+      "max": "1500",
+      "step": "1.0",
       "text": "Blood Sugar eAG (mg/dL)",
       "type": {
-        "class": "textField"
+        "class": "numberField"
       }
     },
     {
