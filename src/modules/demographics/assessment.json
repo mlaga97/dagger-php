@@ -76,9 +76,12 @@
     {
       "id": "zip",
       "text": "Zip Code",
+      "placeholder": "5-Digit Zip",
+      "maxlength": "5",
+      "pattern": "[0-9]{5}",
       "required": true,
       "type": {
-        "class": "textField"
+        "class": "telField"
       }
     },
     {
