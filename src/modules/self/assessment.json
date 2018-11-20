@@ -60,7 +60,7 @@
 			}
 		},
 		"self_cigCount": {
-			"class": "textField"
+			"class": "numberField"
 		}
 	},
 	"sections": [
@@ -185,7 +185,10 @@
 				{
 					"id": "self_19",
 					"text": "If yes, how many cigarettes did you smoke on an average day?",
-					"type": "self_cigCount"
+					"type": "self_cigCount",
+					"min": "0",
+					"max": "100",
+					"step": "1"
 				},
 				{
 					"id": "self_20",
