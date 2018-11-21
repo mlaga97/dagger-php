@@ -20,21 +20,8 @@
 			"class": "checkboxScale"
 		},
 		"stress_scale": {
-			"class": "radioOptions",
-			"emptyValue": -1,
-			"options": {
-				"0   (No stress)": 0,
-				"10": 1,
-				"20  (Minimal stress)": 2,
-				"30": 3,
-				"40": 4,
-				"50  (Moderate stress)": 5,
-				"60": 6,
-				"70": 7,
-				"80  (Very much stressed)": 8,
-				"90": 9,
-				"100 (Most stress ever felt)": 10
-			}
+			"class": "numberField",
+			"emptyValue": -1
 		}
 	},
 	"sections": [
@@ -343,8 +330,11 @@
 			"questions": [
 				{
 					"id": "stress",
-					"text": "Taking all of these into consideration, what is your overall stress level right now?",
-					"type": "stress_scale"
+					"text": "On a scale of 0 to 10, what is your overall current stress level where 0 is 'No Stress' and 10 is the 'Most stress ever felt'?",
+					"type": "stress_scale",
+					"min": "0",
+					"max": "10",
+					"step": "1"
 				}
 			]
 		}
