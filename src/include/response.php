@@ -103,7 +103,7 @@ function getResponse($id) {
   $id = $mysqli->real_escape_string($id);
 
   // Get response and convert into useful shape
-  if($result = $mysqli->query('SELECT * FROM msihdp.json_response WHERE id = ' . $id)) {
+  if($result = $mysqli->query('SELECT *, "HIDDEN" as patient_id FROM msihdp.json_response WHERE id = ' . $id)) {
     $row = $result->fetch_assoc();
     return responseToObject($row);
   }
@@ -115,7 +115,7 @@ function listResponsesByID($query = '') {
   global $mysqli;
   $output = [];
 
-  if($result = $mysqli->query('SELECT id, user_id, clinic_id, visit_date, date_submitted, patient_id, patient_dob, selected_assessments FROM msihdp.json_response' . $query)) {
+  if($result = $mysqli->query('SELECT id, user_id, clinic_id, visit_date, date_submitted, "HIDDEN" as patient_id, patient_dob, selected_assessments FROM msihdp.json_response' . $query)) {
     while($row = $result->fetch_assoc()) {
       $output[$row['id']] = responseToObject($row);
     }
