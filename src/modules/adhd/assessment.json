@@ -5,8 +5,7 @@
     "title": "ADHD Self-Report Scale",
     "tags": [
       "adultOnly"
-	],
-	"scorable" : true
+	  ]
 	},
 	"scoring": {
 		"reviewAssessment": {

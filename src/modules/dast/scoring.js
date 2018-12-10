@@ -30,7 +30,7 @@ window.scoring.dast.score = function(response, flags) {
             result.severity = 'Moderate level';
             result.recommendation = 'Further investigation is required';
         } else if(result.score <= 8) {
-            result.severity = 'Substantional level';
+            result.severity = 'Substantial level';
             result.recommendation = 'Assessment required';
         } else {
             result.severity = 'Severe level';
