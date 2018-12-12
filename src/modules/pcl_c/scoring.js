@@ -1,11 +1,13 @@
-window.scoring.pcl = {};
+window.scoring.pcl_c = {};
 
-window.scoring.pcl.score = function(response, flags) {
+window.scoring.pcl_c.score = function(response, flags) {
   result = {};
     result.valid = true;
+    result.score = 0;
 
   Object.keys(response).forEach(function(key) {
     response[key] = parseInt(response[key]);
+    result.score += response[key];
     if(!(response[key] >= 0)) {
         result.valid = false;
     }
@@ -13,12 +15,6 @@ window.scoring.pcl.score = function(response, flags) {
 
 
 	if(result.valid) {
-		result.score = 0;
-        Object.keys(response).forEach(function(key) {
-            result.score += response[key];
-        }); 
-
-    // TODO: Verify case
 		
         if(result.score <= 29) {
             result.severity = 'Patient shows no signs of PTSD';
