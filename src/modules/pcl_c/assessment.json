@@ -4,7 +4,9 @@
     "tag": "PCL-C",
     "title": "PCL-C",
     "overview": "Civilian PTSD Checklist (PCL-C)",
-		"description": "The Civilian PTSD Checklist (PCL-C) asks about symptoms in relation to 'stressful experiences.'"
+		"description": "The Civilian PTSD Checklist (PCL-C) asks about symptoms in relation to 'stressful experiences.'",
+	  "scorable": true
+	
 	},
 	"scoring": {
 		"reviewAssessment": {
