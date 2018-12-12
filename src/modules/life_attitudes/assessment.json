@@ -6,7 +6,8 @@
 		"description": "This section contains questions about what major life events the client has experienced.",
     "tags": [
       "childOnly"
-    ]
+    ],
+    "scorable": true
 	},
 	"scoring": {
 		"reviewAssessment": {
