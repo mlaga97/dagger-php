@@ -18,7 +18,6 @@ window.scoring.gad.score = function(response, flags) {
             result.score += response[key];
         }); 
 
-    // TODO: Verify case
 		
         if(result.score <= 4) {
             result.severity = 'Minimal anxiety';
