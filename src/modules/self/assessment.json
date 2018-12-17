@@ -17,7 +17,7 @@
 	},
 	"types": {
 		"self_scale": {
-			"class": "radioScale",
+			"class": "rangeScale",
 			"emptyValue": -1,
 			"options": {
 				"0": 0,
@@ -70,26 +70,41 @@
 				{
 					"id": "self_1",
 					"text": "How many of the last SEVEN DAYS have you followed a healthful eating plan?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_2",
 					"text": "On average, over the past month, how many DAYS PER WEEK have you followed your eating plan?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_3",
 					"text": "On how many of the last SEVEN DAYS did you eat five or more servings of fruits and vegetables?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_4",
 					"text": "On how many of the last SEVEN DAYS did you eat high fat foods such as red meat or full-fat dairy products?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_5",
 					"text": "On how many of the last SEVEN DAYS did you space carbohydrates evenly through the day?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				}
 			]
@@ -100,16 +115,25 @@
 				{
 					"id": "self_6",
 					"text": "On how many of the last SEVEN DAYS did you take your recommended diabetes medication?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_7",
 					"text": "On how many of the last SEVEN DAYS did you take your recommended insulin injection?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_8",
 					"text": "On how many of the last SEVEN DAYS did you take your recommended number of diabetes pills?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				}
 			]
@@ -120,11 +144,17 @@
 				{
 					"id": "self_9",
 					"text": "On how many of the last SEVEN DAYS did you test your blood sugar?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_10",
 					"text": "On how many of the last SEVEN DAYS did you test your blood sugar the number of times recommended by your healthcare provider?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				}
 			]
@@ -135,11 +165,17 @@
 				{
 					"id": "self_11",
 					"text": "On how many of the last SEVEN DAYS did you participate in at least 30 minutes of physical activity (Total minutes of continuous activity, including walking)?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_12",
 					"text": "How many of the last SEVEN DAYS did you participate in a specific exercise session (such as swimming, walking, biking) othere than what you do around the house or as part of your work?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				}
 			]
@@ -150,26 +186,41 @@
 				{
 					"id": "self_13",
 					"text": "How many of the last SEVEN DAYS did you check your feet?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_14",
 					"text": "How many of the last SEVEN DAYS did you inspect inside of your shoes?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_15",
 					"text": "How many of the last SEVEN DAYS did you wash your feet?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_16",
 					"text": "How many of the last SEVEN DAYS did you soak your feet?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				},
 				{
 					"id": "self_17",
 					"text": "How many of the last SEVEN DAYS did you dry between your toes after washing?",
+					"min": "0",
+					"max": "7",
+					"step": "1",
 					"type": "self_scale"
 				}
 			]
